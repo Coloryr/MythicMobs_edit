@@ -10,6 +10,8 @@
         <TextBox Margin="620,0,0,0" TextWrapping="Wrap" Text="" Background="#AA898989"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
         <Label Content="生物名字" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+        <Label Content="生物类型" HorizontalAlignment="Left" Height="25" Margin="5,30,0,0" VerticalAlignment="Top" Width="60"/>
 
     </Grid>
 </Window>
