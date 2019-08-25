@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
@@ -12,23 +13,15 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// 是否为小兔子
         /// </summary>
         public bool Baby { get; set; } = false;
-        public class Type
+
+        public List<string> Type = new List<string>()
         {
-            public string BLACK { get { return "BLACK"; } }
-            public string BLACK_AND_WHITE { get { return "BLACK_AND_WHITE"; } }
-            public string BROWN { get { return "BROWN"; } }
-            public string GOLD { get { return "GOLD"; } }
-            public string SALT_AND_PEPPER { get { return "SALT_AND_PEPPER"; } }
-            public string THE_KILLER_BUNNY { get { return "THE_KILLER_BUNNY"; } }
-            public string WHITE { get { return "WHITE"; } }
-        }
+            "BLACK","BLACK_AND_WHITE","BROWN","GOLD", "SALT_AND_PEPPER","THE_KILLER_BUNNY","WHITE"
+        };
         public string get_type_r()
         {
-            Type Type = new Type();
-            string[] a = { Type .BLACK, Type .BLACK_AND_WHITE, Type .BROWN, Type .GOLD,
-            Type.SALT_AND_PEPPER,Type.THE_KILLER_BUNNY,Type.WHITE};
             Random b = new Random();
-            return a[b.Next(a.Length)];
+            return Type[b.Next(Type.Count)];
         }
     }
 }

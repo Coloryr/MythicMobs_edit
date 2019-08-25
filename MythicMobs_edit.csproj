@@ -70,6 +70,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Obj_save\Mob\BossBar.cs" />
+    <Compile Include="Obj_save\Mob\Mob.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\CHICKEN.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\CREEPER.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\ENDERMAN.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\FALLING_BLOCKS.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\HORSE.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\OCELOT.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\PIG.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\PRIMED_TNT.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\RABBIT.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\SILVERFISH.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\SNOWMAN.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\VILLAGER.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\ZOMBIE.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\ZOMBIE_VILLAGER.cs" />
+    <Compile Include="Obj_save\Mob\Obj_get.cs" />
+    <Compile Include="Obj_save\Mob\Options.cs" />
     <Compile Include="WPF\add_mob.xaml.cs">
       <DependentUpon>add_mob.xaml</DependentUpon>
     </Compile>

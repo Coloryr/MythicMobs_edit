@@ -2,7 +2,7 @@
 
 namespace MythicMobs_edit.Obj_save.Mob
 {
-    class BossBar
+    public class BossBar
     {
         /// <summary>
         /// BOSS血条启用

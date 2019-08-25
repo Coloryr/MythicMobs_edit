@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
@@ -28,44 +29,29 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// 马的斑点
         /// </summary>
         public bool HorseTamed { get; set; } = false;
-        public class HorseArmor
+
+        public List<string> HorseArmor = new List<string>()
         {
-            public string IRON { get { return "IRON"; } }
-            public string GOLD { get { return "GOLD"; } }
-            public string DIAMOND { get { return "DIAMOND"; } }
-        }
-        public class Color
+            "IRON","GOLD","DIAMOND"
+        };
+        public List<string> Color = new List<string>()
         {
-            public string BLACK { get { return "BLACK"; } }
-            public string BROWN { get { return "BROWN"; } }
-            public string CHESTNUT { get { return "CHESTNUT"; } }
-            public string CREAMY { get { return "CREAMY"; } }
-            public string DARK_BROWN { get { return "DARK_BROWN"; } }
-            public string GRAY { get { return "GRAY"; } }
-            public string WHITE { get { return "WHITE"; } }
-        }
-        public class Style
+            "BLACK","BROWN","CHESTNUT","CREAMY","DARK_BROWN","GRAY","WHITE"
+        };
+        public List<string> Style = new List<string>()
         {
-            public string BLACK_DOTS { get { return "BLACK_DOTS"; } }
-            public string WHITE { get { return "WHITE"; } }
-            public string WHITE_DOTS { get { return "WHITE_DOTS"; } }
-            public string WHITEFIELD { get { return "WHITEFIELD"; } }
-        }
+            "BLACK_DOTS","WHITE","WHITE_DOTS","WHITEFIELD"
+        };
 
         public string get_style_r()
         {
-            Style Style = new Style();
-            string[] a = { Style.BLACK_DOTS, Style.WHITE, Style.WHITE_DOTS, Style.WHITEFIELD };
             Random b = new Random();
-            return a[b.Next(a.Length)];
+            return Style[b.Next(Style.Count)];
         }
         public string get_color_r()
         {
-            Color Color = new Color();
-            string[] a = { Color.BLACK, Color.BROWN, Color.CHESTNUT,
-                Color.CREAMY, Color.DARK_BROWN, Color.GRAY, Color.WHITE };
             Random b = new Random();
-            return a[b.Next(a.Length)];
+            return Color[b.Next(Color.Count)];
         }
     }
 }

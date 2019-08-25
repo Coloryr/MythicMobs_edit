@@ -4,9 +4,9 @@ namespace MythicMobs_edit.Obj_save.Mob
 {
     class Obj_get
     {
-        public static object Mob_Type_get(Type type)
+        public static object Mob_Type_get(string type)
         {
-            switch (type.ToString())
+            switch (type)
             {
                 case "ARMOR_STAND":
                     return new ARMOR_STAND();

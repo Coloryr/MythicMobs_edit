@@ -1,11 +1,14 @@
-﻿namespace MythicMobs_edit.Obj_save.Mob
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace MythicMobs_edit.Obj_save.Mob
 {
-    class Mob
+    public class Mob
     {
         /// <summary>
         /// 名字
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = "newMob";
         /// <summary>
         /// 类型
         /// </summary>
@@ -13,7 +16,7 @@
         /// <summary>
         /// 显示名称
         /// </summary>
-        public string Display { get; set; }
+        public string Display { get; set; } = "Mob";
         /// <summary>
         /// 血量
         /// </summary>
@@ -42,5 +45,63 @@
         /// 选项
         /// </summary>
         public Options Options { get; set; }
+
+        public List<string> Type_list = new List<string>()
+        {
+            "ARMOR_STAND",
+            "BABY_PIG_ZOMBIE",
+            "BABY_PIG_ZOMBIE_VILLAGER",
+            "BABY_ZOMBIE",
+            "BABY_ZOMBIE_VILLAGER",
+            "BAT",
+            "BLAZE",
+            "BOAT",
+            "CAVE_SPIDER",
+            "CHICKEN",
+            "COW",
+            "CREEPER",
+            "ELDER_GUARDIAN",
+            "ENDER_DRAGON",
+            "ENDERMAN",
+            "ENDERMITE",
+            "EVOKER",
+            "FALLING_BLOCKS",
+            "GHAST",
+            "GIANT",
+            "GUARDIAN",
+            "HORSE",
+            "HUSK",
+            "IRON_GOLEM",
+            "LLAMA",
+            "MAGMA_CUBE",
+            "MUSHROOM_COW",
+            "OCELOT",
+            "PIG",
+            "PIG_ZOMBIE",
+            "PIG_ZOMBIE_VILLAGER",
+            "PRIMED_TNT",
+            "POLAR_BEAR",
+            "RABBIT",
+            "SHEEP",
+            "SILVERFISH",
+            "SKELETON",
+            "SKELETON_HORSE",
+            "SHULKER",
+            "SLIME",
+            "SNOWMAN",
+            "SPIDER",
+            "STRAY",
+            "SQUID",
+            "VEX",
+            "VILLAGER",
+            "VINDICATOR",
+            "WITCH",
+            "WITHER",
+            "WITHER_SKELETON",
+            "WOLF",
+            "ZOMBIE",
+            "ZOMBIE_HORSE",
+            "ZOMBIE_VILLAGER"
+        };
     }
 }

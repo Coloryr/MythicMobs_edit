@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit"
         mc:Ignorable="d"
-        Title="MythicMobs_edit" Height="133.25" Width="168" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="MythicMobs_edit" Height="120" Width="160" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Button Content="创建生物" Height="30" VerticalAlignment="Top" Margin="0,0,87,0"/>
-        <Button Content="创建技能" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75"/>
-        <Button Content="创建物品" Height="30" VerticalAlignment="Top" Margin="0,35,87,0"/>
-        <Button Content="创建掉落" Height="30" VerticalAlignment="Top" Margin="87,35,0,0"/>
-        <Button Content="创建刷怪点" Margin="0,70,87,4"/>
+        <Button Content="创建生物" Margin="0,0,80,57" Click="Button_Click"/>
+        <Button Content="创建技能" Margin="80,0,0,57"/>
+        <Button Content="创建物品" Margin="0,25,80,32"/>
+        <Button Content="创建掉落" Margin="80,25,0,32"/>
+        <Button Content="创建刷怪点" Margin="0,50,80,7"/>
 
     </Grid>
 </Window>

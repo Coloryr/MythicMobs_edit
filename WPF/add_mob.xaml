@@ -1,4 +1,4 @@
-﻿<Window x:Class="MythicMobs_edit.WPF.Window1"
+﻿<Window x:Class="MythicMobs_edit.WPF.add_mob"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,11 +7,29 @@
         mc:Ignorable="d"
         Title="添加生物" Height="621" Width="963" ResizeMode="CanMinimize">
     <Grid>
-        <TextBox Margin="620,0,0,0" TextWrapping="Wrap" Text="" Background="#AA898989"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
-        <Label Content="生物名字" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
-        <Label Content="生物类型" HorizontalAlignment="Left" Height="25" Margin="5,30,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox Margin="620,0,0,0" TextWrapping="Wrap" Background="#AA898989" Text="{Binding Mob.Name}"/>
 
+        <Label Content="生物名字" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="生物类型" HorizontalAlignment="Left" Height="25" Margin="5,25,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="显示名称" HorizontalAlignment="Left" Height="25" Margin="5,50,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+
+        <ComboBox HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" 
+                  Width="170" Height="20" Name="Type" Text="{Binding Mob.Type}"/>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Name}" Name ="Mob_Name"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,54,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="170" Text="{Binding Path=Mob.Display}" Name ="Mob_Display"/>
+        <Label Content="血量" HorizontalAlignment="Left" Height="25" Margin="5,75,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,79,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Health}" x:Name ="Mob_Health" PreviewTextInput="TextCompositionEventArgs"/>
+        <Label Content="伤害" HorizontalAlignment="Left" Height="25" Margin="5,100,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,104,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Damage}" x:Name ="Mob_Damage" PreviewTextInput="TextCompositionEventArgs"/>
+        <Label Content="伤害" HorizontalAlignment="Left" Height="25" Margin="5,125,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,129,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Armor}" x:Name ="Mob_Armor" PreviewTextInput="TextCompositionEventArgs"/>
+        <CheckBox Content="BOSS血条" HorizontalAlignment="Left" Height="15" Margin="10,155,0,0" VerticalAlignment="Top" Width="100"
+                  IsChecked="{Binding Mob.BossBar.Enabled}" Checked="CheckBox_Checked"/>
     </Grid>
 </Window>

@@ -1,11 +1,7 @@
 ﻿namespace MythicMobs_edit.Obj_save.Mob
 {
-    class Options
+    public class Options
     {
-        public Options(Type type)
-        {
-            Type = Obj_get.Mob_Type_get(type);
-        }
         /// <summary>
         /// 总是显示名称
         /// </summary>
