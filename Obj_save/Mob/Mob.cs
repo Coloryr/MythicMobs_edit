@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MythicMobs_edit.Obj_save.Mob
+﻿namespace MythicMobs_edit.Obj_save.Mob
 {
     class Mob
     {
@@ -15,7 +9,7 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// <summary>
         /// 类型
         /// </summary>
-        public Type Type { get; set; }
+        public string Type { get; set; }
         /// <summary>
         /// 显示名称
         /// </summary>
@@ -39,6 +33,14 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// <summary>
         /// 派系名称
         /// </summary>
-        public BossBar Faction { get; set; }
+        public string Faction { get; set; }
+        /// <summary>
+        /// 坐骑
+        /// </summary>
+        public string Mount { get; set; }
+        /// <summary>
+        /// 选项
+        /// </summary>
+        public Options Options { get; set; }
     }
 }
