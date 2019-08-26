@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class HORSE
+    public class HORSE
     {
         /// <summary>
         /// 马的盔甲种类
         /// </summary>
-        public string HorseArmor_save { get; set; } = null;
+        public string HorseArmor { get; set; } = null;
         /// <summary>
         /// 是否携带箱子
         /// </summary>

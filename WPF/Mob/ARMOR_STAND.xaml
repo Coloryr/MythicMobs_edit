@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="365" Width="290">
+             mc:Ignorable="d" Height="300" Width="290">
     <Grid>
         <Label Content="盔甲架设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
         <Label Content="戴在身体的物品" HorizontalAlignment="Left" Height="25" Margin="5,40,0,0" VerticalAlignment="Top" Width="95"/>

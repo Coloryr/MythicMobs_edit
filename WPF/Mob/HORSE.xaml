@@ -4,9 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="365" Width="290">
+             mc:Ignorable="d" Height="300" Width="290">
     <Grid>
         <Label Content="马设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
+        <Label Content="装甲类型" HorizontalAlignment="Left" Height="25" Margin="10,20,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,25,0,0" VerticalAlignment="Top" Width="135"
+                  Name="HorseArmor" Text="{Binding obj.HorseArmor}"/>
+        <Button Content="无装甲" HorizontalAlignment="Left" Height="20" Margin="210,25,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <CheckBox Content="是否携带箱子" HorizontalAlignment="Left" Height="20" Margin="10,50,0,0" VerticalAlignment="Top" Width="95"
+                  IsChecked="{Binding obj.HorseCarryingChest}"/>
+        <Label Content="马的颜色" HorizontalAlignment="Left" Height="25" Margin="10,70,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,75,0,0" VerticalAlignment="Top" Width="135"
+            x:Name="HorseColor" Text="{Binding obj.HorseColor}"/>
+        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="210,75,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click_1"/>
+        <CheckBox Content="是否携带马鞍" HorizontalAlignment="Left" Height="20" Margin="110,50,0,0" VerticalAlignment="Top" Width="95"
+            IsChecked="{Binding obj.HorseSaddled}"/>
+        <Label Content="马的斑点" HorizontalAlignment="Left" Height="25" Margin="10,95,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,100,0,0" VerticalAlignment="Top" Width="135"
+            x:Name="HorseStyle" Text="{Binding obj.HorseStyle}"/>
+        <Button Content="随机斑点" HorizontalAlignment="Left" Height="20" Margin="210,100,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click_2"/>
+        <CheckBox Content="是否为驯服状态" HorizontalAlignment="Left" Height="20" Margin="10,125,0,0" VerticalAlignment="Top" Width="115"
+            IsChecked="{Binding obj.HorseTamed}"/>
 
     </Grid>
 </UserControl>

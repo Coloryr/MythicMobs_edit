@@ -77,11 +77,11 @@
             IsChecked="{Binding Mob.Options.Collidable}" x:Name="Options_Collidable"/>
         <CheckBox Content="没有玩家时会被删除" HorizontalAlignment="Left" Height="15" Margin="10,510,0,0" VerticalAlignment="Top" Width="155"
             IsChecked="{Binding Mob.Options.Despawn}" x:Name="Options_Despawn"/>
-        <CheckBox Content="是否发光" HorizontalAlignment="Left" Height="15" Margin="10,490,0,0" VerticalAlignment="Top" Width="75"
+        <CheckBox Content="发光" HorizontalAlignment="Left" Height="15" Margin="10,490,0,0" VerticalAlignment="Top" Width="75"
             IsChecked="{Binding Mob.Options.Glowing}" x:Name="Options_Glowing"/>
-        <CheckBox Content="是否无敌" HorizontalAlignment="Left" Height="15" Margin="85,490,0,0" VerticalAlignment="Top" Width="75"
+        <CheckBox Content="无敌" HorizontalAlignment="Left" Height="15" Margin="85,490,0,0" VerticalAlignment="Top" Width="75"
             IsChecked="{Binding Mob.Options.Invincible}" x:Name="Options_Invincible"/>
-        <CheckBox Content="是否有AI" HorizontalAlignment="Left" Height="15" Margin="160,490,0,0" VerticalAlignment="Top" Width="75"
+        <CheckBox Content="无AI" HorizontalAlignment="Left" Height="15" Margin="160,490,0,0" VerticalAlignment="Top" Width="75"
             IsChecked="{Binding Mob.Options.NoAI}" x:Name="Options_NoAI"/>
         <CheckBox Content="是否有重力" HorizontalAlignment="Left" Height="15" Margin="10,530,0,0" VerticalAlignment="Top" Width="85"
             IsChecked="{Binding Mob.Options.NoGravity}" x:Name="Options_NoGravity"/>
@@ -111,8 +111,8 @@
         <Button Content="随机风格" HorizontalAlignment="Left" Height="20" Margin="245,251,0,0" VerticalAlignment="Top" Width="70"
                 x:Name="BossBar_Style_r" IsEnabled="False" Click="BossBar_Style_r_Click"/>
         
-        <StackPanel HorizontalAlignment="Left" Height="365" Margin="325,145,0,0" VerticalAlignment="Top" Width="290" Name="panel"/>
-        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="25" Margin="535,562,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="325,139,0,0" VerticalAlignment="Top" Width="290" Name="panel"/>
+        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="25" Margin="535,560,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
 
     </Grid>
 </Window>

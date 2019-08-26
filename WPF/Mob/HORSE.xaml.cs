@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MythicMobs_edit.WPF.Mob
 {
@@ -20,9 +9,30 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class HORSE : UserControl
     {
+        public Obj_save.Mob.Mob_type.HORSE obj { get; set; } = new Obj_save.Mob.Mob_type.HORSE();
         public HORSE()
         {
             InitializeComponent();
+            DataContext = this;
+            Obj_save.Mob.List List = new Obj_save.Mob.List();
+            HorseArmor.ItemsSource = List.HorseArmor;
+            HorseColor.ItemsSource = List.HorseColor;
+            HorseStyle.ItemsSource = List.HorseStyle;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            HorseArmor.SelectedItem = null;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            HorseColor.SelectedItem = obj.get_color_r();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            HorseStyle.SelectedItem = obj.get_style_r();
         }
     }
 }

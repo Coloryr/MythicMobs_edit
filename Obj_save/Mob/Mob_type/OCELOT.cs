@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class OCELOT
+    public class OCELOT
     {
         /// <summary>
         /// 豹猫种类

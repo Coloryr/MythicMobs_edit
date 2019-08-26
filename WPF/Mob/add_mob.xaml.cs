@@ -7,6 +7,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -40,7 +41,7 @@ namespace MythicMobs_edit.WPF
         private void Startup()
         {
             DataContext = this;
-            Obj_save.Mob.Mob_type.List List = new Obj_save.Mob.Mob_type.List();
+            Obj_save.Mob.List List = new Obj_save.Mob.List();
             Mob_Type.ItemsSource = List.Type_list;
             BossBar_Color.ItemsSource = List.BossBarColor;
             BossBar_Style.ItemsSource = List.BossBarStyle;
@@ -103,43 +104,43 @@ namespace MythicMobs_edit.WPF
                     panel.Children.Add(obj = new CHICKEN());
                     break;
                 case "CREEPER":
-                    panel.Children.Add(new CREEPER());
+                    panel.Children.Add(obj = new CREEPER());
                     break;
                 case "ENDERMAN":
-                    panel.Children.Add(new ENDERMAN());
+                    panel.Children.Add(obj = new ENDERMAN());
                     break;
                 case "FALLING_BLOCKS":
-                    panel.Children.Add(new FALLING_BLOCKS());
+                    panel.Children.Add(obj = new FALLING_BLOCKS());
                     break;
                 case "HORSE":
-                    panel.Children.Add(new HORSE());
+                    panel.Children.Add(obj = new HORSE());
                     break;
                 case "OCELOT":
-                    panel.Children.Add(new OCELOT());
+                    panel.Children.Add(obj = new OCELOT());
                     break;
                 case "PIG":
-                    panel.Children.Add(new PIG());
+                    panel.Children.Add(obj = new PIG());
                     break;
                 case "RABBIT":
-                    panel.Children.Add(new RABBIT());
+                    panel.Children.Add(obj = new RABBIT());
                     break;
                 case "SILVERFISH":
-                    panel.Children.Add(new SILVERFISH());
+                    panel.Children.Add(obj = new SILVERFISH());
                     break;
                 case "SNOWMAN":
-                    panel.Children.Add(new SNOWMAN());
+                    panel.Children.Add(obj = new SNOWMAN());
                     break;
                 case "PRIMED_TNT":
-                    panel.Children.Add(new PRIMED_TNT());
+                    panel.Children.Add(obj = new PRIMED_TNT());
                     break;
                 case "VILLAGER":
-                    panel.Children.Add(new VILLAGER());
+                    panel.Children.Add(obj = new VILLAGER());
                     break;
                 case "ZOMBIE":
-                    panel.Children.Add(new ZOMBIE());
+                    panel.Children.Add(obj = new ZOMBIE());
                     break;
                 case "ZOMBIE_VILLAGER":
-                    panel.Children.Add(new ZOMBIE_VILLAGER());
+                    panel.Children.Add(obj = new ZOMBIE_VILLAGER());
                     break;
                 default:
                     panel.Children.Clear();
@@ -152,29 +153,36 @@ namespace MythicMobs_edit.WPF
             switch (Mob.Type)
             {
                 case "ARMOR_STAND":
-                    ARMOR_STAND a = (ARMOR_STAND)obj;
-                    Mob.Options.Type = a.obj;
+                    ARMOR_STAND ARMOR_STAND = (ARMOR_STAND)obj;
+                    Mob.Options.Type = ARMOR_STAND.obj;
                     break;
                 case "CHICKEN":
-                    panel.Children.Add(obj = new CHICKEN());
+                    CHICKEN CHICKEN = (CHICKEN)obj;
+                    Mob.Options.Type = CHICKEN.obj;
                     break;
                 case "CREEPER":
-                    panel.Children.Add(new CREEPER());
+                    CREEPER CREEPER = (CREEPER)obj;
+                    Mob.Options.Type = CREEPER.obj;
                     break;
                 case "ENDERMAN":
-                    panel.Children.Add(new ENDERMAN());
+                    ENDERMAN ENDERMAN = (ENDERMAN)obj;
+                    Mob.Options.Type = ENDERMAN.obj;
                     break;
                 case "FALLING_BLOCKS":
-                    panel.Children.Add(new FALLING_BLOCKS());
+                    FALLING_BLOCKS FALLING_BLOCKS = (FALLING_BLOCKS)obj;
+                    Mob.Options.Type = FALLING_BLOCKS.obj;
                     break;
                 case "HORSE":
-                    panel.Children.Add(new HORSE());
+                    HORSE HORSE = (HORSE)obj;
+                    Mob.Options.Type = HORSE.obj;
                     break;
                 case "OCELOT":
-                    panel.Children.Add(new OCELOT());
+                    OCELOT OCELOT = (OCELOT)obj;
+                    Mob.Options.Type = OCELOT.obj;
                     break;
                 case "PIG":
-                    panel.Children.Add(new PIG());
+                    PIG PIG = (PIG)obj;
+                    Mob.Options.Type = PIG.obj;
                     break;
                 case "RABBIT":
                     panel.Children.Add(new RABBIT());
@@ -201,9 +209,23 @@ namespace MythicMobs_edit.WPF
                     panel.Children.Clear();
                     break;
             }
+            Out.Text = string.Empty;
             var serializer = new SerializerBuilder().Build();
             var yaml = serializer.Serialize(Mob);
-            Out.Text = yaml;
+            List<string> listLines = new List<string>();
+            listLines.Add(MobName + ":");
+            StreamReader reader = new StreamReader(new MemoryStream(Encoding.Default.GetBytes(yaml)));
+            string line = reader.ReadLine();
+            while (string.IsNullOrWhiteSpace(line) != true)
+            {
+                listLines.Add("  " + line);
+                line = reader.ReadLine();
+            }
+            foreach (string a in listLines)
+            {
+                Out.Text += a + "\n";
+            }
+            reader.Close();
         }
     }
 }

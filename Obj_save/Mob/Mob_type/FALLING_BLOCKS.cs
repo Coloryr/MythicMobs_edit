@@ -1,6 +1,6 @@
 ﻿namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class FALLING_BLOCKS
+    public class FALLING_BLOCKS
     {
         /// <summary>
         /// 方块材质

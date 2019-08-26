@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit"
         mc:Ignorable="d"
-        Title="MythicMobs_edit" Height="120" Width="160" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="MythicMobs_edit" Height="120" Width="160" WindowStartupLocation="Manual" ResizeMode="NoResize">
     <Grid>
         <Button Content="创建生物" Margin="0,0,80,57" Click="Button_Click"/>
         <Button Content="创建技能" Margin="80,0,0,57"/>

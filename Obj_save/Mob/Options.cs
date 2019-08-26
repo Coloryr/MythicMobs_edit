@@ -41,7 +41,7 @@
         /// <summary>
         /// 移动速度
         /// </summary>
-        public float MovementSpeed { get; set; } = 0.2f;
+        public double MovementSpeed { get; set; } = 0.2d;
         /// <summary>
         /// 生物有没有AI
         /// </summary>

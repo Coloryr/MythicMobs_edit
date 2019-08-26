@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MythicMobs_edit.Obj_save.Mob.Mob_type
+namespace MythicMobs_edit.Obj_save.Mob
 {
     class List
     {
