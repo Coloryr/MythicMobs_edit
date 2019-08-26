@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class RABBIT
+    public class RABBIT
     {
         /// <summary>
         /// 兔子种类

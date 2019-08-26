@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Text.RegularExpressions;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MythicMobs_edit.WPF.Mob
 {
@@ -20,9 +9,17 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class PRIMED_TNT : UserControl
     {
+        public Obj_save.Mob.Mob_type.PRIMED_TNT obj { get; set; } = new Obj_save.Mob.Mob_type.PRIMED_TNT();
         public PRIMED_TNT()
         {
             InitializeComponent();
+            DataContext = this;
+        }
+        private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
+        {
+            Regex re = new Regex("[^0-9.-]+");
+
+            e.Handled = re.IsMatch(e.Text);
         }
     }
 }

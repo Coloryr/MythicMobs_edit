@@ -4,9 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="365" Width="290">
+             mc:Ignorable="d" Height="300" Width="290">
     <Grid>
         <Label Content="兔子设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
+        <Label Content="兔子种类" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,30,0,0" VerticalAlignment="Top" Width="145"
+                  Name="Type" Text="{Binding obj.RabbitType}"/>
+        <Button Content="随机种类" HorizontalAlignment="Left" Height="20" Margin="220,30,0,0" VerticalAlignment="Top" Width="60" Click="Button_Click"/>
+        <CheckBox Content="是否为小兔子" HorizontalAlignment="Left" Height="15" Margin="10,55,0,0" VerticalAlignment="Top" Width="110"
+                  IsChecked="{Binding obj.Baby}"/>
 
     </Grid>
 </UserControl>

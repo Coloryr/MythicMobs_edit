@@ -1,6 +1,6 @@
 ﻿namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class SILVERFISH
+    public class SILVERFISH
     {
         /// <summary>
         /// 防止感染方块

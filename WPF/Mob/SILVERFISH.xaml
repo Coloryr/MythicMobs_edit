@@ -4,9 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="365" Width="290">
+             mc:Ignorable="d" Height="300" Width="290">
     <Grid>
         <Label Content="蠹虫设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
+        <CheckBox Content="阻止感染方块" HorizontalAlignment="Left" Height="20" Margin="10,25,0,0" VerticalAlignment="Top" Width="145"
+                  IsChecked="{Binding obj.PreventBlockInfection}"/>
 
     </Grid>
 </UserControl>

@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class VILLAGER
+    public class VILLAGER
     {
+        /// <summary>
+        /// 职业类型
+        /// </summary>
         public string VillagerType { get; set; }
 
         public string get_type_r()

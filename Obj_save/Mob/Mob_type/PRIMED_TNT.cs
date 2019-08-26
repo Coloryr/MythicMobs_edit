@@ -1,6 +1,6 @@
 ﻿namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class PRIMED_TNT
+    public class PRIMED_TNT
     {
         /// <summary>
         /// 爆炸时间

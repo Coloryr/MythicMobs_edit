@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="365" Width="290">
+             mc:Ignorable="d" Height="300" Width="290">
     <Grid>
         <Label Content="僵尸村民设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
+        <Label Content="村民职业" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,30,0,0" VerticalAlignment="Top" Width="135"
+            Name="Type" Text="{Binding obj.Profession}"/>
+        <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="210,30,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
 
     </Grid>
 </UserControl>

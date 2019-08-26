@@ -8,7 +8,7 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// <summary>
         /// 类型
         /// </summary>
-        public string Type { get; set; } = "ARMOR_STAND";
+        public string Type { get; set; }
         /// <summary>
         /// 显示名称
         /// </summary>

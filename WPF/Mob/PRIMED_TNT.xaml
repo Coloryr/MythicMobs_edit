@@ -4,9 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="365" Width="290">
+             mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="点燃的TNT设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
+        <Label Content="点燃的TNT设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100"/>
+        <Label Content="爆炸时间" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"
+                 Text="{Binding obj.FuseTicks}" PreviewTextInput="TextCompositionEventArgs"/>
+        <Label Content="爆炸强度" HorizontalAlignment="Left" Height="25" Margin="10,51,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"
+            Text="{Binding obj.ExplosionYield}" PreviewTextInput="TextCompositionEventArgs"/>
+        <CheckBox Content="爆炸是否产生火焰" HorizontalAlignment="Left" Height="20" Margin="10,80,0,0" VerticalAlignment="Top" Width="125"
+                  IsChecked="{Binding obj.Incendiary}"/>
 
     </Grid>
 </UserControl>

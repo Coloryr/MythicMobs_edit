@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class ZOMBIE_VILLAGER
+    public class ZOMBIE_VILLAGER
     {
         /// <summary>
         /// 职业

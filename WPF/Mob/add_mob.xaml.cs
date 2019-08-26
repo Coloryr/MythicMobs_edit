@@ -1,26 +1,13 @@
-﻿using Microsoft.JScript;
-using MythicMobs_edit.Obj_save.Mob;
+﻿using MythicMobs_edit.Obj_save.Mob;
 using MythicMobs_edit.WPF.Mob;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using YamlDotNet.RepresentationModel;
 using YamlDotNet.Serialization;
 
 namespace MythicMobs_edit.WPF
@@ -142,8 +129,18 @@ namespace MythicMobs_edit.WPF
                 case "ZOMBIE_VILLAGER":
                     panel.Children.Add(obj = new ZOMBIE_VILLAGER());
                     break;
+                case "PIG_ZOMBIE_VILLAGER":
+                    panel.Children.Add(obj = new ZOMBIE_VILLAGER());
+                    break;
+                case "SKELETON_HORSE":
+                    panel.Children.Add(obj = new HORSE());
+                    break;
+                case "ZOMBIE_HORSE":
+                    panel.Children.Add(obj = new HORSE());
+                    break;
                 default:
                     panel.Children.Clear();
+                    Mob.Options.Type = null;
                     break;
             }
         }
@@ -185,28 +182,47 @@ namespace MythicMobs_edit.WPF
                     Mob.Options.Type = PIG.obj;
                     break;
                 case "RABBIT":
-                    panel.Children.Add(new RABBIT());
+                    RABBIT RABBIT = (RABBIT)obj;
+                    Mob.Options.Type = RABBIT.obj;
                     break;
                 case "SILVERFISH":
-                    panel.Children.Add(new SILVERFISH());
+                    SILVERFISH SILVERFISH = (SILVERFISH)obj;
+                    Mob.Options.Type = SILVERFISH.obj;
                     break;
                 case "SNOWMAN":
-                    panel.Children.Add(new SNOWMAN());
+                    SNOWMAN SNOWMAN = (SNOWMAN)obj;
+                    Mob.Options.Type = SNOWMAN.obj;
                     break;
                 case "PRIMED_TNT":
-                    panel.Children.Add(new PRIMED_TNT());
+                    PRIMED_TNT PRIMED_TNT = (PRIMED_TNT)obj;
+                    Mob.Options.Type = PRIMED_TNT.obj;
                     break;
                 case "VILLAGER":
-                    panel.Children.Add(new VILLAGER());
+                    VILLAGER VILLAGER = (VILLAGER)obj;
+                    Mob.Options.Type = VILLAGER.obj;
                     break;
                 case "ZOMBIE":
-                    panel.Children.Add(new ZOMBIE());
+                    ZOMBIE ZOMBIE = (ZOMBIE)obj;
+                    Mob.Options.Type = ZOMBIE.obj;
                     break;
                 case "ZOMBIE_VILLAGER":
-                    panel.Children.Add(new ZOMBIE_VILLAGER());
+                    ZOMBIE_VILLAGER ZOMBIE_VILLAGER = (ZOMBIE_VILLAGER)obj;
+                    Mob.Options.Type = ZOMBIE_VILLAGER.obj;
+                    break;
+                case "PIG_ZOMBIE_VILLAGER":
+                    ZOMBIE_VILLAGER PIG_ZOMBIE_VILLAGER = (ZOMBIE_VILLAGER)obj;
+                    Mob.Options.Type = PIG_ZOMBIE_VILLAGER.obj;
+                    break;
+                case "SKELETON_HORSE":
+                    HORSE SKELETON_HORSE = (HORSE)obj;
+                    Mob.Options.Type = SKELETON_HORSE.obj;
+                    break;
+                case "ZOMBIE_HORSE":
+                    HORSE ZOMBIE_HORSE = (HORSE)obj;
+                    Mob.Options.Type = ZOMBIE_HORSE.obj;
                     break;
                 default:
-                    panel.Children.Clear();
+                    Mob.Options.Type = null;
                     break;
             }
             Out.Text = string.Empty;
