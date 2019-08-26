@@ -32,7 +32,7 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// <summary>
         /// BOSS血条
         /// </summary>
-        public BossBar BossBar { get; set; }
+        public BossBar BossBar { get; set; } = new BossBar();
         /// <summary>
         /// 派系名称
         /// </summary>
@@ -44,7 +44,7 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// <summary>
         /// 选项
         /// </summary>
-        public Options Options { get; set; }
+        public Options Options { get; set; } = new Options();
 
         public List<string> Type_list = new List<string>()
         {

@@ -95,8 +95,8 @@
         /// </summary>
         public bool Silent { get; set; }
         /// <summary>
-        /// 阻止生物发出原版音效
+        /// 特殊生物类型设置
         /// </summary>
-        public object Type { get; set; }
+        public object Type { get; set; } = null;
     }
 }

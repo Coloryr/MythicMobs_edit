@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob
 {
@@ -25,7 +26,7 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// </summary>
         public string Style_save { get; set; }
         /// <summary>
-        /// BOSS血条颜色
+        /// BOSS血条雾
         /// </summary>
         public bool CreateFog { get; set; }
         /// <summary>
@@ -36,40 +37,25 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// BOSS血条音乐播放
         /// </summary>
         public bool PlayMusic { get; set; }
-        public class Color
+
+        public List<string> Color = new List<string>
         {
-            public string PINK { get { return "PINK"; } }
-            public string BLUE { get { return "BLUE"; } }
-            public string RED { get { return "RED"; } }
-            public string GREEN { get { return "GREEN"; } }
-            public string YELLOW { get { return "YELLOW"; } }
-            public string PURPLE { get { return "PURPLE"; } }
-            public string WHITE { get { return "WHITE"; } }
-        }
-        public class Style
+            "PINK","BLUE","RED","GREEN","YELLOW","PURPLE","WHITE"
+        };
+        public List<string> Style = new List<string>
         {
-            public string SOLID { get { return "SOLID"; } }
-            public string SEGMENTED_6 { get { return "SEGMENTED_6"; } }
-            public string SEGMENTED_10 { get { return "SEGMENTED_10"; } }
-            public string SEGMENTED_12 { get { return "SEGMENTED_12"; } }
-            public string SEGMENTED_20 { get { return "SEGMENTED_20"; } }
-        }
+            "SOLID","SEGMENTED_6","SEGMENTED_10", "SEGMENTED_12", "SEGMENTED_20"
+        };
 
         public string get_color_r()
         {
-            Color Color = new Color();
-            string[] a = { Color .BLUE, Color .GREEN, Color .PINK, Color .PURPLE,
-            Color.RED,Color.WHITE,Color.YELLOW};
             Random b = new Random();
-            return a[b.Next(a.Length)];
+            return Color[b.Next(Color.Count)];
         }
         public string get_style_r()
         {
-            Style Style = new Style();
-            string[] a = { Style .SEGMENTED_10, Style .SEGMENTED_12, Style .SEGMENTED_20,
-            Style.SEGMENTED_6,Style.SOLID};
             Random b = new Random();
-            return a[b.Next(a.Length)];
+            return Style[b.Next(Style.Count)];
         }
     }
 }
