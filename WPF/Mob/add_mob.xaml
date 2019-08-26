@@ -3,32 +3,39 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MythicMobs_edit.WPF"
+        xmlns:userControl="clr-namespace:MythicMobs_edit.WPF.Mob"
         mc:Ignorable="d"
         Title="添加生物" Height="626" Width="963" ResizeMode="CanMinimize">
     <Grid>
-        <TextBox Margin="620,0,0,0" TextWrapping="Wrap" Background="#AA898989"/>
+        <TextBox Margin="620,0,0,0" TextWrapping="Wrap" Background="#AA898989" Name="Out"/>
 
         <Label Content="生物名字" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <Label Content="生物类型" HorizontalAlignment="Left" Height="25" Margin="5,25,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <Label Content="显示名称" HorizontalAlignment="Left" Height="25" Margin="5,50,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <Label Content="血量" HorizontalAlignment="Left" Height="25" Margin="5,75,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <Label Content="伤害" HorizontalAlignment="Left" Height="25" Margin="5,100,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
-        <Label Content="伤害" HorizontalAlignment="Left" Height="25" Margin="5,125,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="护甲" HorizontalAlignment="Left" Height="25" Margin="5,125,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <Label Content="标题" HorizontalAlignment="Left" Height="25" Margin="5,171,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <Label Content="显示范围" HorizontalAlignment="Left" Height="25" Margin="5,196,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <Label Content="血条颜色" HorizontalAlignment="Left" Height="25" Margin="5,221,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <Label Content="血条风格" HorizontalAlignment="Left" Height="25" Margin="5,246,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="派系名称" HorizontalAlignment="Left" Height="25" Margin="5,292,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="坐骑" HorizontalAlignment="Left" Height="25" Margin="5,317,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="攻击速度" HorizontalAlignment="Left" Height="25" Margin="5,342,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="跟随距离" HorizontalAlignment="Left" Height="25" Margin="5,367,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="抗击退" HorizontalAlignment="Left" Height="25" Margin="5,390,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
+        <Label Content="受伤害半径" HorizontalAlignment="Left" Height="25" Margin="0,415,0,0" VerticalAlignment="Top" Width="70" HorizontalContentAlignment="Center"/>
+        <Label Content="移动速度" HorizontalAlignment="Left" Height="25" Margin="5,440,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
 
         <ComboBox HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" 
-                  Width="170" Height="20" Name="Mob_Type" Text="{Binding Mob.Type}"/>
+                  Width="170" Height="20" Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged"/>
         <ComboBox HorizontalAlignment="Left" Margin="70,225,0,0" VerticalAlignment="Top" 
             Width="170" Height="20" x:Name="BossBar_Color" Text="{Binding Mob.BossBar.Color_save}" IsEnabled="False"/>
         <ComboBox HorizontalAlignment="Left" Margin="70,250,0,0" VerticalAlignment="Top" 
             Width="170" Height="20" x:Name="BossBar_Style" Text="{Binding Mob.BossBar.Style_save}" IsEnabled="False"/>
 
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" 
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Name}" Name ="Mob_Name"/>
+                 VerticalAlignment="Top" Width="170" Text="{Binding MobName}" Name ="Mob_Name"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,54,0,0" TextWrapping="Wrap" 
                  VerticalAlignment="Top" Width="170" Text="{Binding Path=Mob.Display}" Name ="Mob_Display"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,79,0,0" TextWrapping="Wrap" 
@@ -38,9 +45,23 @@
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,129,0,0" TextWrapping="Wrap" 
             VerticalAlignment="Top" Width="170" Text="{Binding Mob.Armor}" x:Name ="Mob_Armor" PreviewTextInput="TextCompositionEventArgs"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,175,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Armor}" x:Name ="BossBar_Title" IsEnabled="False"/>
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.BossBar.Title}" x:Name ="BossBar_Title" IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,200,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Armor}" x:Name ="BossBar_Range" PreviewTextInput="TextCompositionEventArgs" IsEnabled="False"/>
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.BossBar.Range}" x:Name ="BossBar_Range" PreviewTextInput="TextCompositionEventArgs" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,296,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Faction}" x:Name ="Mob_Faction"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,321,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Mount}" x:Name ="Mob_Mount"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,346,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.AttackSpeed}" x:Name ="Options_AttackSpeed" PreviewTextInput="TextCompositionEventArgs"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,371,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.FollowRange}" x:Name ="Options_FollowRange" PreviewTextInput="TextCompositionEventArgs"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,395,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.KnockbackResistance}" x:Name ="Options_KnockbackResistance" PreviewTextInput="TextCompositionEventArgs"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,420,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.MaxCombatDistance}" x:Name ="Options_MaxCombatDistance" PreviewTextInput="TextCompositionEventArgs"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,445,0,0" TextWrapping="Wrap" 
+            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.MovementSpeed}" x:Name ="Options_MovementSpeed" PreviewTextInput="TextCompositionEventArgs"/>
 
         <CheckBox Content="BOSS血条" HorizontalAlignment="Left" Height="15" Margin="10,155,0,0" VerticalAlignment="Top" Width="100"
                   IsChecked="{Binding Mob.BossBar.Enabled}" Checked="CheckBox_Checked" x:Name="BossBar_Enabled"/>
@@ -50,42 +71,16 @@
             IsChecked="{Binding Mob.BossBar.DarkenSky}" x:Name="BossBar_DarkenSky" IsEnabled="False"/>
         <CheckBox Content="音乐播放" HorizontalAlignment="Left" Height="15" Margin="170,276,0,0" VerticalAlignment="Top" Width="70"
             IsChecked="{Binding Mob.BossBar.PlayMusic}" Name="BossBar_PlayMusic" IsEnabled="False"/>
-
-        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="245,225,0,0" VerticalAlignment="Top" Width="70"
-                Name="BossBar_Color_r" Click="BossBar_Color_r_Click" IsEnabled="False"/>
-        <Button Content="随机风格" HorizontalAlignment="Left" Height="20" Margin="245,251,0,0" VerticalAlignment="Top" Width="70"
-                x:Name="BossBar_Style_r" IsEnabled="False" Click="BossBar_Style_r_Click"/>
-        <Label Content="派系名称" HorizontalAlignment="Left" Height="25" Margin="5,292,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,296,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Faction}" x:Name ="Mob_Faction"/>
-        <Label Content="坐骑" HorizontalAlignment="Left" Height="25" Margin="5,317,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,321,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Mount}" x:Name ="Mob_Mount"/>
         <CheckBox Content="总是显示名称" HorizontalAlignment="Left" Height="15" Margin="10,470,0,0" VerticalAlignment="Top" Width="100"
             IsChecked="{Binding Mob.Options.AlwaysShowName}" x:Name="Options_AlwaysShowName"/>
-        <Label Content="攻击速度" HorizontalAlignment="Left" Height="25" Margin="5,342,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,346,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.AttackSpeed}" x:Name ="Options_AttackSpeed" PreviewTextInput="TextCompositionEventArgs"/>
         <CheckBox Content="是否可碰撞" HorizontalAlignment="Left" Height="15" Margin="110,470,0,0" VerticalAlignment="Top" Width="100"
             IsChecked="{Binding Mob.Options.Collidable}" x:Name="Options_Collidable"/>
         <CheckBox Content="没有玩家时会被删除" HorizontalAlignment="Left" Height="15" Margin="10,510,0,0" VerticalAlignment="Top" Width="155"
-            IsChecked="{Binding Mob.Options.AlwaysShowName}" x:Name="Options_AlwaysShowName_Copy1"/>
-        <Label Content="跟随距离" HorizontalAlignment="Left" Height="25" Margin="5,367,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,371,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.FollowRange}" x:Name ="Options_FollowRange" PreviewTextInput="TextCompositionEventArgs"/>
+            IsChecked="{Binding Mob.Options.Despawn}" x:Name="Options_Despawn"/>
         <CheckBox Content="是否发光" HorizontalAlignment="Left" Height="15" Margin="10,490,0,0" VerticalAlignment="Top" Width="75"
             IsChecked="{Binding Mob.Options.Glowing}" x:Name="Options_Glowing"/>
         <CheckBox Content="是否无敌" HorizontalAlignment="Left" Height="15" Margin="85,490,0,0" VerticalAlignment="Top" Width="75"
             IsChecked="{Binding Mob.Options.Invincible}" x:Name="Options_Invincible"/>
-        <Label Content="抗击退" HorizontalAlignment="Left" Height="25" Margin="5,390,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,395,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.KnockbackResistance}" x:Name ="Options_KnockbackResistance" PreviewTextInput="TextCompositionEventArgs"/>
-        <Label Content="受伤害半径" HorizontalAlignment="Left" Height="25" Margin="0,415,0,0" VerticalAlignment="Top" Width="70" HorizontalContentAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,420,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.MaxCombatDistance}" x:Name ="Options_MaxCombatDistance" PreviewTextInput="TextCompositionEventArgs"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,445,0,0" TextWrapping="Wrap" 
-            VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.MovementSpeed}" x:Name ="Options_MovementSpeed" PreviewTextInput="TextCompositionEventArgs"/>
-        <Label Content="移动速度" HorizontalAlignment="Left" Height="25" Margin="5,440,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center"/>
         <CheckBox Content="是否有AI" HorizontalAlignment="Left" Height="15" Margin="160,490,0,0" VerticalAlignment="Top" Width="75"
             IsChecked="{Binding Mob.Options.NoAI}" x:Name="Options_NoAI"/>
         <CheckBox Content="是否有重力" HorizontalAlignment="Left" Height="15" Margin="10,530,0,0" VerticalAlignment="Top" Width="85"
@@ -110,5 +105,14 @@
             IsChecked="{Binding Mob.Options.ShowHealth}" x:Name="Options_ShowHealth"/>
         <CheckBox Content="阻止生物发出原版音效" HorizontalAlignment="Left" Height="15" Margin="325,119,0,0" VerticalAlignment="Top" Width="165"
             IsChecked="{Binding Mob.Options.Silent}" x:Name="Options_Silent"/>
+
+        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="245,225,0,0" VerticalAlignment="Top" Width="70"
+                Name="BossBar_Color_r" Click="BossBar_Color_r_Click" IsEnabled="False"/>
+        <Button Content="随机风格" HorizontalAlignment="Left" Height="20" Margin="245,251,0,0" VerticalAlignment="Top" Width="70"
+                x:Name="BossBar_Style_r" IsEnabled="False" Click="BossBar_Style_r_Click"/>
+        
+        <StackPanel HorizontalAlignment="Left" Height="365" Margin="325,145,0,0" VerticalAlignment="Top" Width="290" Name="panel"/>
+        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="25" Margin="535,562,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
+
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MythicMobs_edit.Obj_save.Mob.Mob_type;
+using System;
 using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob
@@ -38,24 +39,17 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// </summary>
         public bool PlayMusic { get; set; }
 
-        public List<string> Color = new List<string>
-        {
-            "PINK","BLUE","RED","GREEN","YELLOW","PURPLE","WHITE"
-        };
-        public List<string> Style = new List<string>
-        {
-            "SOLID","SEGMENTED_6","SEGMENTED_10", "SEGMENTED_12", "SEGMENTED_20"
-        };
-
         public string get_color_r()
         {
+            List List = new List();
             Random b = new Random();
-            return Color[b.Next(Color.Count)];
+            return List.BossBarColor[b.Next(List.BossBarColor.Count)];
         }
         public string get_style_r()
         {
+            List List = new List();
             Random b = new Random();
-            return Style[b.Next(Style.Count)];
+            return List.BossBarStyle[b.Next(List.BossBarStyle.Count)];
         }
     }
 }

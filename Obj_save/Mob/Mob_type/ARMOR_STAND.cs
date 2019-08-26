@@ -1,19 +1,19 @@
 ﻿namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    class ARMOR_STAND
+    public class ARMOR_STAND
     {
         /// <summary>
         /// 盔甲架是否有手臂
         /// </summary>
-        public bool HasArms { get; set; }
+        public bool HasArms { get; set; } = false;
         /// <summary>
         /// 盔甲架是否被重力影响
         /// </summary>
-        public bool HasGravity { get; set; }
+        public bool HasGravity { get; set; } = true;
         /// <summary>
         /// 盔甲架是否隐形
         /// </summary>
-        public bool Invisible { get; set; }
+        public bool Invisible { get; set; } = false;
         /// <summary>
         /// 盔甲架佩戴在身体的物品
         /// </summary>
@@ -41,31 +41,19 @@
         /// <summary>
         /// 是否是小盔甲架
         /// </summary>
-        public bool Small { get; set; }
+        public bool Small { get; set; } = false;
         /// <summary>
         /// 盔甲架动作坐标
         /// </summary>
-        public Pose Pose_save { get; set; } = new Pose();
-        public class Pose
+        public Pose_ Pose { get; set; } = new Pose_();
+        public class Pose_
         {
-            public Pose_3D Head = new Pose_3D(0, 0, 0);
-            public Pose_3D Body = new Pose_3D(0, 0, 0);
-            public Pose_3D LeftArm = new Pose_3D(0, 0, 0);
-            public Pose_3D RightArm = new Pose_3D(0, 0, 0);
-            public Pose_3D LeftLeg = new Pose_3D(0, 0, 0);
-            public Pose_3D RightLeg = new Pose_3D(0, 0, 0);
-        }
-        public class Pose_3D
-        {
-            public Pose_3D(int x, int y, int z)
-            {
-                this.x = x;
-                this.y = y;
-                this.z = z;
-            }
-            public int x { get; set; }
-            public int y { get; set; }
-            public int z { get; set; }
+            public string Head { get; set; } = "0,0,0";
+            public string Body { get; set; } = "0,0,0";
+            public string LeftArm { get; set; } = "0,0,0";
+            public string RightArm { get; set; } = "0,0,0";
+            public string LeftLeg { get; set; } = "0,0,0";
+            public string RightLeg { get; set; } = "0,0,0";
         }
     }
 }

@@ -14,14 +14,11 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// </summary>
         public bool Baby { get; set; } = false;
 
-        public List<string> Type = new List<string>()
-        {
-            "BLACK","BLACK_AND_WHITE","BROWN","GOLD", "SALT_AND_PEPPER","THE_KILLER_BUNNY","WHITE"
-        };
         public string get_type_r()
         {
+            List List = new List();
             Random b = new Random();
-            return Type[b.Next(Type.Count)];
+            return List.RabbitType[b.Next(List.RabbitType.Count)];
         }
     }
 }

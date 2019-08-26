@@ -44,6 +44,8 @@
     <Reference Include="Costura, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>packages\Costura.Fody.4.1.0\lib\net40\Costura.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -71,13 +73,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Obj_save\Mob\BossBar.cs" />
-    <Compile Include="Obj_save\Mob\Mob.cs" />
+    <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\CHICKEN.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\CREEPER.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ENDERMAN.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\FALLING_BLOCKS.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\HORSE.cs" />
+    <Compile Include="Obj_save\Mob\List.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\OCELOT.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\PIG.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\PRIMED_TNT.cs" />
@@ -89,8 +92,53 @@
     <Compile Include="Obj_save\Mob\Mob_type\ZOMBIE_VILLAGER.cs" />
     <Compile Include="Obj_save\Mob\Obj_get.cs" />
     <Compile Include="Obj_save\Mob\Options.cs" />
-    <Compile Include="WPF\add_mob.xaml.cs">
+    <Compile Include="WPF\Mob\add_mob.xaml.cs">
       <DependentUpon>add_mob.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\CHICKEN.xaml.cs">
+      <DependentUpon>CHICKEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\CREEPER.xaml.cs">
+      <DependentUpon>CREEPER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\ENDERMAN.xaml.cs">
+      <DependentUpon>ENDERMAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\FALLING_BLOCKS.xaml.cs">
+      <DependentUpon>FALLING_BLOCKS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\HORSE.xaml.cs">
+      <DependentUpon>HORSE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\OCELOT.xaml.cs">
+      <DependentUpon>OCELOT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\RABBIT.xaml.cs">
+      <DependentUpon>RABBIT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\SNOWMAN.xaml.cs">
+      <DependentUpon>SNOWMAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\VILLAGER.xaml.cs">
+      <DependentUpon>VILLAGER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\ZOMBIE_VILLAGER.xaml.cs">
+      <DependentUpon>ZOMBIE_VILLAGER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\ZOMBIE.xaml.cs">
+      <DependentUpon>ZOMBIE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\SILVERFISH.xaml.cs">
+      <DependentUpon>SILVERFISH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\PIG.xaml.cs">
+      <DependentUpon>PIG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\PRIMED_TNT.xaml.cs">
+      <DependentUpon>PRIMED_TNT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\ARMOR_STAND.xaml.cs">
+      <DependentUpon>ARMOR_STAND.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -104,7 +152,67 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WPF\add_mob.xaml">
+    <Page Include="WPF\Mob\add_mob.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\CHICKEN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\CREEPER.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\ENDERMAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\FALLING_BLOCKS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\HORSE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\OCELOT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\RABBIT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\SNOWMAN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\VILLAGER.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\ZOMBIE_VILLAGER.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\ZOMBIE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\SILVERFISH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\PIG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\PRIMED_TNT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\ARMOR_STAND.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

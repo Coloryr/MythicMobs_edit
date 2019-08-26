@@ -10,14 +10,11 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// </summary>
         public string Profession { get; set; }
 
-        public List<string> Type = new List<string>()
-        {
-            "BLACKSMITH","BUTCHER","FARMER", "LIBRARIAN","PRIEST"
-        };
         public string get_type_r()
         {
+            List List = new List();
             Random b = new Random();
-            return Type[b.Next(Type.Count)];
+            return List.VillagerType[b.Next(List.VillagerType.Count)];
         }
     }
 }

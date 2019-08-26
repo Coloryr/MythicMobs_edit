@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="MythicMobs_edit.WPF.Mob.ARMOR_STAND"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
+             mc:Ignorable="d" Height="365" Width="290">
+    <Grid>
+        <Label Content="盔甲架设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
+        <Label Content="戴在身体的物品" HorizontalAlignment="Left" Height="25" Margin="5,40,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="戴在脚部的物品" HorizontalAlignment="Left" Height="25" Margin="5,65,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="戴在手上的物品" HorizontalAlignment="Left" Height="25" Margin="5,90,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="戴在头部的物品" HorizontalAlignment="Left" Height="25" Margin="5,115,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="戴在腿部的物品" HorizontalAlignment="Left" Height="25" Margin="5,140,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label Content="盔甲架动作，依次为X,Y,Z" HorizontalAlignment="Left" Height="25" Margin="5,190,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label Content="头" HorizontalAlignment="Left" Height="25" Margin="5,215,0,0" VerticalAlignment="Top" Width="35" HorizontalContentAlignment="Center"/>
+        <Label Content="左手" HorizontalAlignment="Left" Height="25" Margin="5,240,0,0" VerticalAlignment="Top" Width="35" HorizontalContentAlignment="Center"/>
+        <Label Content="左脚" HorizontalAlignment="Left" Height="25" Margin="5,265,0,0" VerticalAlignment="Top" Width="35" HorizontalContentAlignment="Center"/>
+        <Label Content="身体" HorizontalAlignment="Left" Height="25" Margin="125,215,0,0" VerticalAlignment="Top" Width="35" HorizontalContentAlignment="Center"/>
+        <Label Content="右手" HorizontalAlignment="Left" Height="25" Margin="125,240,0,0" VerticalAlignment="Top" Width="35" HorizontalContentAlignment="Center"/>
+        <Label Content="右脚" HorizontalAlignment="Left" Height="25" Margin="125,265,0,0" VerticalAlignment="Top" Width="35" HorizontalContentAlignment="Center"/>
+
+        <CheckBox Content="是否有手臂" HorizontalAlignment="Left" Height="15" Margin="5,25,0,0" VerticalAlignment="Top" Width="95"
+                  IsChecked="{Binding obj.HasArms}" Name="HasArms"/>
+        <CheckBox Content="重力影响" HorizontalAlignment="Left" Height="15" Margin="100,25,0,0" VerticalAlignment="Top" Width="95"
+            IsChecked="{Binding obj.HasGravity}" Name="HasGravity"/>
+        <CheckBox Content="是否隐形" HorizontalAlignment="Left" Height="15" Margin="185,25,0,0" VerticalAlignment="Top" Width="95"
+            IsChecked="{Binding obj.Invisible}" x:Name="Invisible"/>
+        <CheckBox Content="盔甲架是否为标记" HorizontalAlignment="Left" Height="15" Margin="5,170,0,0" VerticalAlignment="Top" Width="120"
+            IsChecked="{Binding obj.Marker}" x:Name="Marker" RenderTransformOrigin="0.368,0.667"/>
+        <CheckBox Content="是否是小盔甲架" HorizontalAlignment="Left" Height="15" Margin="130,170,0,0" VerticalAlignment="Top" Width="120"
+            IsChecked="{Binding obj.Small}" x:Name="Small" RenderTransformOrigin="0.368,0.667"/>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="100,45,0,0" TextWrapping="Wrap" 
+                 Text="{Binding obj.ItemBody}" VerticalAlignment="Top" Width="180" Name="ItemBody"/>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="100,70,0,0" TextWrapping="Wrap" 
+            Text="{Binding obj.ItemFeet}" VerticalAlignment="Top" Width="180" x:Name="ItemFeet"/>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="100,95,0,0" TextWrapping="Wrap" 
+            Text="{Binding obj.ItemHand}" VerticalAlignment="Top" Width="180" x:Name="ItemHand"/>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="100,120,0,0" TextWrapping="Wrap" 
+            Text="{Binding obj.ItemHead}" VerticalAlignment="Top" Width="180" x:Name="ItemHead"/>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="100,145,0,0" TextWrapping="Wrap" 
+            Text="{Binding obj.ItemLegs}" VerticalAlignment="Top" Width="180" x:Name="ItemLegs"/>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="40,220,0,0" TextWrapping="Wrap" Text="{Binding obj.Pose.Head}" VerticalAlignment="Top" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="40,245,0,0" TextWrapping="Wrap" Text="{Binding obj.Pose.LeftArm}" VerticalAlignment="Top" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="40,270,0,0" TextWrapping="Wrap" Text="{Binding obj.Pose.LeftLeg}" VerticalAlignment="Top" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="160,220,0,0" TextWrapping="Wrap" Text="{Binding obj.Pose.Body}" VerticalAlignment="Top" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="160,245,0,0" TextWrapping="Wrap" Text="{Binding obj.Pose.RightArm}" VerticalAlignment="Top" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="160,270,0,0" TextWrapping="Wrap" Text="{Binding obj.Pose.RightLeg}" VerticalAlignment="Top" Width="85"/>
+
+    </Grid>
+</UserControl>

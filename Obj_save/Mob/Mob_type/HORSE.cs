@@ -30,28 +30,17 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// </summary>
         public bool HorseTamed { get; set; } = false;
 
-        public List<string> HorseArmor = new List<string>()
-        {
-            "IRON","GOLD","DIAMOND"
-        };
-        public List<string> Color = new List<string>()
-        {
-            "BLACK","BROWN","CHESTNUT","CREAMY","DARK_BROWN","GRAY","WHITE"
-        };
-        public List<string> Style = new List<string>()
-        {
-            "BLACK_DOTS","WHITE","WHITE_DOTS","WHITEFIELD"
-        };
-
         public string get_style_r()
         {
+            List List = new List();
             Random b = new Random();
-            return Style[b.Next(Style.Count)];
+            return List.HorseStyle[b.Next(List.HorseStyle.Count)];
         }
         public string get_color_r()
         {
+            List List = new List();
             Random b = new Random();
-            return Color[b.Next(Color.Count)];
+            return List.HorseColor[b.Next(List.HorseColor.Count)];
         }
     }
 }
