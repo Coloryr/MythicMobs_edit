@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    public class ZOMBIE_VILLAGER
+    public class BABY_ZOMBIE_VILLAGER
     {
         /// <summary>
         /// 职业

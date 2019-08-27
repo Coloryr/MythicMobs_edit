@@ -1,11 +1,7 @@
 ﻿namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    public class PIG
+    public class MUSHROOM_COW
     {
-        /// <summary>
-        /// 是否带鞍
-        /// </summary>
-        public bool Saddled { get; set; }
         /// <summary>
         /// 年龄
         /// </summary>

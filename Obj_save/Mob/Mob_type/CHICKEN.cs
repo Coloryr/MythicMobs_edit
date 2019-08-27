@@ -6,5 +6,13 @@
         /// 是否为鸡骑士
         /// </summary>
         public bool Jockey { get; set; } = false;
+        /// <summary>
+        /// 年龄
+        /// </summary>
+        public double Age { get; set; } = 1;
+        /// <summary>
+        /// 是否锁住生物的年龄
+        /// </summary>
+        public bool AgeLock { get; set; } = false;
     }
 }

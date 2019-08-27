@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="MythicMobs_edit.WPF.Mob.BABY_PIG_ZOMBIE_VILLAGER"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
+             mc:Ignorable="d" Height="290" Width="290">
+    <Grid>
+        <Label Content="小僵尸猪人村民设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
+        <Label Content="加强伤害几率" HorizontalAlignment="Left" Height="25" Margin="5,20,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="是否为愤怒状态" HorizontalAlignment="Left" Margin="5,45,0,0" VerticalAlignment="Top"
+            IsChecked="{Binding obj.Angry}"/>
+        <Label Content="村民职业" HorizontalAlignment="Left" Height="25" Margin="5,60,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="65,65,0,0" VerticalAlignment="Top" Width="135"
+            x:Name="Type" Text="{Binding obj.Profession}"/>
+        <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="205,65,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Slider HorizontalAlignment="Left" Margin="92,25,0,0" VerticalAlignment="Top" Width="153" Maximum="1" LargeChange="0.1" TickFrequency="0.1"
+            Value="{Binding obj.ReinforcementsChance}"/>
+        <Label Content="{Binding obj.ReinforcementsChance}" HorizontalAlignment="Left" Height="25" Margin="250,20,0,0" VerticalAlignment="Top" Width="40"/>
+
+    </Grid>
+</UserControl>

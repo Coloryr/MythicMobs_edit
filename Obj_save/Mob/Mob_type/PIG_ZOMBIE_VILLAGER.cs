@@ -1,14 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    public class ZOMBIE_VILLAGER
+    public class PIG_ZOMBIE_VILLAGER
     {
         /// <summary>
         /// 职业
         /// </summary>
         public string Profession { get; set; }
+        /// <summary>
+        /// 是否愤怒
+        /// </summary>
+        public bool Angry { get; set; } = false;
         /// <summary>
         /// 生成僵尸几率为它们加强伤害
         /// </summary>

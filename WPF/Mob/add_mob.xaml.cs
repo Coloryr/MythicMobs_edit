@@ -18,7 +18,42 @@ namespace MythicMobs_edit.WPF
     public partial class add_mob : Window
     {
         public string MobName { get; set; } = "newMob";
-        public Mob_obj Mob { get; set; } = new Mob_obj();
+        public Mob_obj Mob { get; set; } = new Mob_obj()
+        {
+            Display = "Mob",
+            Health = 20,
+            Damage = 5,
+            Armor = 1,
+            BossBar = new BossBar()
+            {
+                Enabled = false,
+                Title = "BOSS",
+                Range = 40
+            },
+            Options = new Options()
+            {
+                AlwaysShowName = false,
+                AttackSpeed = 10,
+                FollowRange = 20,
+                Collidable = true,
+                Despawn = true,
+                Glowing = false,
+                Invincible = false,
+                KnockbackResistance = 0,
+                MovementSpeed = 0.2d,
+                NoDamageTicks = 10,
+                NoGravity = false,
+                Persistent = false,
+                PreventItemPickup = true,
+                PreventLeashing = true,
+                PreventMobKillDrops = false,
+                PreventOtherDrops = false,
+                PreventRandomEquipment = false,
+                PreventRenaming = true,
+                RepeatAllSkills = false,
+                ShowHealth = false
+            }
+        };
         private UserControl obj;
         public add_mob()
         {
@@ -87,8 +122,23 @@ namespace MythicMobs_edit.WPF
                 case "ARMOR_STAND":
                     panel.Children.Add(obj = new ARMOR_STAND());
                     break;
+                case "BABY_PIG_ZOMBIE":
+                    panel.Children.Add(obj = new BABY_PIG_ZOMBIE());
+                    break;
+                case "BABY_ZOMBIE":
+                    panel.Children.Add(obj = new BABY_ZOMBIE());
+                    break;
+                case "BABY_PIG_ZOMBIE_VILLAGER":
+                    panel.Children.Add(obj = new BABY_PIG_ZOMBIE_VILLAGER());
+                    break;
+                case "BABY_ZOMBIE_VILLAGER":
+                    panel.Children.Add(obj = new BABY_ZOMBIE_VILLAGER());
+                    break;
                 case "CHICKEN":
                     panel.Children.Add(obj = new CHICKEN());
+                    break;
+                case "COW":
+                    panel.Children.Add(obj = new COW());
                     break;
                 case "CREEPER":
                     panel.Children.Add(obj = new CREEPER());
@@ -102,11 +152,26 @@ namespace MythicMobs_edit.WPF
                 case "HORSE":
                     panel.Children.Add(obj = new HORSE());
                     break;
+                case "LLAMA":
+                    panel.Children.Add(obj = new LLAMA());
+                    break;
+                case "MAGMA_CUBE":
+                    panel.Children.Add(obj = new MAGMA_CUBE());
+                    break;
+                case "MUSHROOM_COW":
+                    panel.Children.Add(obj = new MUSHROOM_COW());
+                    break;
                 case "OCELOT":
                     panel.Children.Add(obj = new OCELOT());
                     break;
                 case "PIG":
                     panel.Children.Add(obj = new PIG());
+                    break;
+                case "PIG_ZOMBIE":
+                    panel.Children.Add(obj = new PIG_ZOMBIE());
+                    break;
+                case "PIG_ZOMBIE_VILLAGER":
+                    panel.Children.Add(obj = new PIG_ZOMBIE_VILLAGER());
                     break;
                 case "RABBIT":
                     panel.Children.Add(obj = new RABBIT());
@@ -127,9 +192,6 @@ namespace MythicMobs_edit.WPF
                     panel.Children.Add(obj = new ZOMBIE());
                     break;
                 case "ZOMBIE_VILLAGER":
-                    panel.Children.Add(obj = new ZOMBIE_VILLAGER());
-                    break;
-                case "PIG_ZOMBIE_VILLAGER":
                     panel.Children.Add(obj = new ZOMBIE_VILLAGER());
                     break;
                 case "SKELETON_HORSE":
@@ -153,9 +215,29 @@ namespace MythicMobs_edit.WPF
                     ARMOR_STAND ARMOR_STAND = (ARMOR_STAND)obj;
                     Mob.Options.Type = ARMOR_STAND.obj;
                     break;
+                case "BABY_PIG_ZOMBIE":
+                    BABY_PIG_ZOMBIE BABY_PIG_ZOMBIE = (BABY_PIG_ZOMBIE)obj;
+                    Mob.Options.Type = BABY_PIG_ZOMBIE.obj;
+                    break;
+                case "BABY_ZOMBIE":
+                    BABY_ZOMBIE BABY_ZOMBIE = (BABY_ZOMBIE)obj;
+                    Mob.Options.Type = BABY_ZOMBIE.obj;
+                    break;
+                case "BABY_PIG_ZOMBIE_VILLAGER":
+                    BABY_PIG_ZOMBIE_VILLAGER BABY_PIG_ZOMBIE_VILLAGER = (BABY_PIG_ZOMBIE_VILLAGER)obj;
+                    Mob.Options.Type = BABY_PIG_ZOMBIE_VILLAGER.obj;
+                    break;
+                case "BABY_ZOMBIE_VILLAGER":
+                    BABY_ZOMBIE_VILLAGER BABY_ZOMBIE_VILLAGER = (BABY_ZOMBIE_VILLAGER)obj;
+                    Mob.Options.Type = BABY_ZOMBIE_VILLAGER.obj;
+                    break;
                 case "CHICKEN":
                     CHICKEN CHICKEN = (CHICKEN)obj;
                     Mob.Options.Type = CHICKEN.obj;
+                    break;
+                case "COW":
+                    COW COW = (COW)obj;
+                    Mob.Options.Type = COW.obj;
                     break;
                 case "CREEPER":
                     CREEPER CREEPER = (CREEPER)obj;
@@ -173,6 +255,18 @@ namespace MythicMobs_edit.WPF
                     HORSE HORSE = (HORSE)obj;
                     Mob.Options.Type = HORSE.obj;
                     break;
+                case "LLAMA":
+                    LLAMA LLAMA = (LLAMA)obj;
+                    Mob.Options.Type = LLAMA.obj;
+                    break;
+                case "MAGMA_CUBE":
+                    MAGMA_CUBE MAGMA_CUBE = (MAGMA_CUBE)obj;
+                    Mob.Options.Type = MAGMA_CUBE.obj;
+                    break;
+                case "MUSHROOM_COW":
+                    MUSHROOM_COW MUSHROOM_COW = (MUSHROOM_COW)obj;
+                    Mob.Options.Type = MUSHROOM_COW.obj;
+                    break;
                 case "OCELOT":
                     OCELOT OCELOT = (OCELOT)obj;
                     Mob.Options.Type = OCELOT.obj;
@@ -180,6 +274,14 @@ namespace MythicMobs_edit.WPF
                 case "PIG":
                     PIG PIG = (PIG)obj;
                     Mob.Options.Type = PIG.obj;
+                    break;
+                case "PIG_ZOMBIE":
+                    PIG_ZOMBIE PIG_ZOMBIE = (PIG_ZOMBIE)obj;
+                    Mob.Options.Type = PIG_ZOMBIE.obj;
+                    break;
+                case "PIG_ZOMBIE_VILLAGER":
+                    PIG_ZOMBIE_VILLAGER PIG_ZOMBIE_VILLAGER = (PIG_ZOMBIE_VILLAGER)obj;
+                    Mob.Options.Type = PIG_ZOMBIE_VILLAGER.obj;
                     break;
                 case "RABBIT":
                     RABBIT RABBIT = (RABBIT)obj;
@@ -208,10 +310,6 @@ namespace MythicMobs_edit.WPF
                 case "ZOMBIE_VILLAGER":
                     ZOMBIE_VILLAGER ZOMBIE_VILLAGER = (ZOMBIE_VILLAGER)obj;
                     Mob.Options.Type = ZOMBIE_VILLAGER.obj;
-                    break;
-                case "PIG_ZOMBIE_VILLAGER":
-                    ZOMBIE_VILLAGER PIG_ZOMBIE_VILLAGER = (ZOMBIE_VILLAGER)obj;
-                    Mob.Options.Type = PIG_ZOMBIE_VILLAGER.obj;
                     break;
                 case "SKELETON_HORSE":
                     HORSE SKELETON_HORSE = (HORSE)obj;

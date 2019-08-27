@@ -12,23 +12,23 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// <summary>
         /// 显示名称
         /// </summary>
-        public string Display { get; set; } = "Mob";
+        public string Display { get; set; }
         /// <summary>
         /// 血量
         /// </summary>
-        public int Health { get; set; } = 20;
+        public int Health { get; set; }
         /// <summary>
         /// 攻击力
         /// </summary>
-        public int Damage { get; set; } = 5;
+        public int Damage { get; set; }
         /// <summary>
         /// 护甲
         /// </summary>
-        public int Armor { get; set; } = 1;
+        public int Armor { get; set; }
         /// <summary>
         /// BOSS血条
         /// </summary>
-        public BossBar BossBar { get; set; } = new BossBar();
+        public BossBar BossBar { get; set; }
         /// <summary>
         /// 派系名称
         /// </summary>
@@ -40,6 +40,6 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// <summary>
         /// 选项
         /// </summary>
-        public Options Options { get; set; } = new Options();
+        public Options Options { get; set; }
     }
 }

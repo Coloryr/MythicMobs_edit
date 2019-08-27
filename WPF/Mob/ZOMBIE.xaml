@@ -4,12 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="300" Width="290">
+             mc:Ignorable="d" Height="290" Width="290">
     <Grid>
-        <Label Content="僵尸设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
-        <Label Content="加强伤害几率" HorizontalAlignment="Left" Height="25" Margin="10,24,0,0" VerticalAlignment="Top" Width="90"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="90,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"
-                 Text="{Binding obj.ReinforcementsChance}" PreviewTextInput="TextCompositionEventArgs"/>
+        <Label Content="僵尸设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
+        <Label Content="加强伤害几率" HorizontalAlignment="Left" Height="25" Margin="10,20,0,0" VerticalAlignment="Top"/>
+        <Slider HorizontalAlignment="Left" Margin="92,25,0,0" VerticalAlignment="Top" Width="153" Maximum="1" LargeChange="0.1" TickFrequency="0.1"
+            Value="{Binding obj.ReinforcementsChance}"/>
+        <Label Content="{Binding obj.ReinforcementsChance}" HorizontalAlignment="Left" Height="25" Margin="250,20,0,0" VerticalAlignment="Top" Width="40"/>
 
     </Grid>
 </UserControl>

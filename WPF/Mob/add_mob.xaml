@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:userControl="clr-namespace:MythicMobs_edit.WPF.Mob"
         mc:Ignorable="d"
-        Title="添加生物" Height="626" Width="963" ResizeMode="CanMinimize">
+        Title="MythicMobs_edit 添加生物" Height="626" Width="963" ResizeMode="CanMinimize">
     <Grid>
         <TextBox Margin="620,0,0,0" TextWrapping="Wrap" Background="#AA898989" Name="Out"/>
 
@@ -111,7 +111,7 @@
         <Button Content="随机风格" HorizontalAlignment="Left" Height="20" Margin="245,251,0,0" VerticalAlignment="Top" Width="70"
                 x:Name="BossBar_Style_r" IsEnabled="False" Click="BossBar_Style_r_Click"/>
         
-        <StackPanel HorizontalAlignment="Left" Height="300" Margin="325,139,0,0" VerticalAlignment="Top" Width="290" Name="panel"/>
+        <StackPanel HorizontalAlignment="Left" Height="290" Margin="325,139,0,0" VerticalAlignment="Top" Width="290" Name="panel"/>
         <Button Content="就决定是你了" HorizontalAlignment="Left" Height="25" Margin="535,560,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
 
     </Grid>

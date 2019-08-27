@@ -17,6 +17,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,6 +54,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
@@ -75,14 +93,24 @@
     <Compile Include="Obj_save\Mob\BossBar.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE_VILLAGER.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\BABY_ZOMBIE.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\BABY_ZOMBIE_VILLAGER.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\CHICKEN.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\COW.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\CREEPER.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ENDERMAN.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\FALLING_BLOCKS.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\HORSE.cs" />
     <Compile Include="Obj_save\Mob\List.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\LLAMA.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\MAGMA_CUBE.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\MUSHROOM_COW.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\OCELOT.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\PIG.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\PIG_ZOMBIE.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\PIG_ZOMBIE_VILLAGER.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\PRIMED_TNT.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\RABBIT.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\SILVERFISH.cs" />
@@ -90,13 +118,27 @@
     <Compile Include="Obj_save\Mob\Mob_type\VILLAGER.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ZOMBIE.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ZOMBIE_VILLAGER.cs" />
-    <Compile Include="Obj_save\Mob\Obj_get.cs" />
     <Compile Include="Obj_save\Mob\Options.cs" />
     <Compile Include="WPF\Mob\add_mob.xaml.cs">
       <DependentUpon>add_mob.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\BABY_PIG_ZOMBIE.xaml.cs">
+      <DependentUpon>BABY_PIG_ZOMBIE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\BABY_PIG_ZOMBIE_VILLAGER.xaml.cs">
+      <DependentUpon>BABY_PIG_ZOMBIE_VILLAGER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\BABY_ZOMBIE.xaml.cs">
+      <DependentUpon>BABY_ZOMBIE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\BABY_ZOMBIE_VILLAGER.xaml.cs">
+      <DependentUpon>BABY_ZOMBIE_VILLAGER.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\CHICKEN.xaml.cs">
       <DependentUpon>CHICKEN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\COW.xaml.cs">
+      <DependentUpon>COW.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\CREEPER.xaml.cs">
       <DependentUpon>CREEPER.xaml</DependentUpon>
@@ -110,8 +152,23 @@
     <Compile Include="WPF\Mob\HORSE.xaml.cs">
       <DependentUpon>HORSE.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\LLAMA.xaml.cs">
+      <DependentUpon>LLAMA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\MAGMA_CUBE.xaml.cs">
+      <DependentUpon>MAGMA_CUBE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\MUSHROOM_COW.xaml.cs">
+      <DependentUpon>MUSHROOM_COW.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\OCELOT.xaml.cs">
       <DependentUpon>OCELOT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\PIG_ZOMBIE.xaml.cs">
+      <DependentUpon>PIG_ZOMBIE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\PIG_ZOMBIE_VILLAGER.xaml.cs">
+      <DependentUpon>PIG_ZOMBIE_VILLAGER.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\RABBIT.xaml.cs">
       <DependentUpon>RABBIT.xaml</DependentUpon>
@@ -156,9 +213,29 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\BABY_PIG_ZOMBIE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\BABY_PIG_ZOMBIE_VILLAGER.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\BABY_ZOMBIE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\BABY_ZOMBIE_VILLAGER.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\CHICKEN.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\COW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\CREEPER.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -176,9 +253,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="WPF\Mob\LLAMA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\MAGMA_CUBE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\MUSHROOM_COW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\OCELOT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\PIG_ZOMBIE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\PIG_ZOMBIE_VILLAGER.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\RABBIT.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -249,6 +346,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('packages\Fody.6.0.0\build\Fody.targets')" />
