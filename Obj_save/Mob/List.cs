@@ -102,5 +102,10 @@ namespace MythicMobs_edit.Obj_save.Mob
         {
             "SOLID","SEGMENTED_6","SEGMENTED_10", "SEGMENTED_12", "SEGMENTED_20"
         };
+        public List<string> WoolColor = new List<string>()
+        {
+            "WHILE", "ORANGE", "MAGENTA", "LIGHT_BLUE", "YELLOW", "LIME", "PINK", "GRAY",
+            "SILVER", "CYAN", "PURPLE", "BLUE", "BROWN", "GREEN", "RED", "BLACK"
+        };
     }
 }

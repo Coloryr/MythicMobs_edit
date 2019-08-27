@@ -9,7 +9,11 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class FALLING_BLOCKS : UserControl
     {
-        public Obj_save.Mob.Mob_type.FALLING_BLOCKS obj { get; set; } = new Obj_save.Mob.Mob_type.FALLING_BLOCKS();
+        public Obj_save.Mob.Mob_type.FALLING_BLOCKS obj { get; set; } = new Obj_save.Mob.Mob_type.FALLING_BLOCKS()
+        {
+            Block = "Minecraft:Stone",
+            BlockData = 1
+        };
         public FALLING_BLOCKS()
         {
             InitializeComponent();

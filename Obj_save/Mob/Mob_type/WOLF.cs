@@ -2,12 +2,8 @@
 
 namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    public class OCELOT
+    public class WOLF
     {
-        /// <summary>
-        /// 豹猫种类
-        /// </summary>
-        public string type { get; set; }
         /// <summary>
         /// 年龄
         /// </summary>
@@ -20,12 +16,19 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// 是否能被玩家驯服
         /// </summary>
         public bool Tameable { get; set; }
-
-        public string get_type_r()
+        /// <summary>
+        /// 是否愤怒
+        /// </summary>
+        public bool Angry { get; set; }
+        /// <summary>
+        /// 羊毛颜色
+        /// </summary>
+        public string Color { get; set; }
+        public string get_color_r()
         {
             List List = new List();
             Random b = new Random();
-            return List.OcelotType[b.Next(List.OcelotType.Count)];
+            return List.WoolColor[b.Next(List.WoolColor.Count)];
         }
     }
 }

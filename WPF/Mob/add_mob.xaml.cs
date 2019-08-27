@@ -18,6 +18,8 @@ namespace MythicMobs_edit.WPF
     public partial class add_mob : Window
     {
         public string MobName { get; set; } = "newMob";
+        public Dictionary<int,string> AIGoalSelectors { get; set; }
+        public Dictionary<int, string> AITargetSelectors { get; set; }
         public Mob_obj Mob { get; set; } = new Mob_obj()
         {
             Display = "Mob",
@@ -52,6 +54,11 @@ namespace MythicMobs_edit.WPF
                 PreventRenaming = true,
                 RepeatAllSkills = false,
                 ShowHealth = false
+            },
+            Modules = new Modules()
+            {
+                ThreatTable = false,
+                ImmunityTable = false
             }
         };
         private UserControl obj;
@@ -173,8 +180,14 @@ namespace MythicMobs_edit.WPF
                 case "PIG_ZOMBIE_VILLAGER":
                     panel.Children.Add(obj = new PIG_ZOMBIE_VILLAGER());
                     break;
+                case "POLAR_BEAR":
+                    panel.Children.Add(obj = new POLAR_BEAR());
+                    break;
                 case "RABBIT":
                     panel.Children.Add(obj = new RABBIT());
+                    break;
+                case "SHEEP":
+                    panel.Children.Add(obj = new SHEEP());
                     break;
                 case "SILVERFISH":
                     panel.Children.Add(obj = new SILVERFISH());
@@ -187,6 +200,9 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "VILLAGER":
                     panel.Children.Add(obj = new VILLAGER());
+                    break;
+                case "WOLF":
+                    panel.Children.Add(obj = new WOLF());
                     break;
                 case "ZOMBIE":
                     panel.Children.Add(obj = new ZOMBIE());
@@ -283,9 +299,17 @@ namespace MythicMobs_edit.WPF
                     PIG_ZOMBIE_VILLAGER PIG_ZOMBIE_VILLAGER = (PIG_ZOMBIE_VILLAGER)obj;
                     Mob.Options.Type = PIG_ZOMBIE_VILLAGER.obj;
                     break;
+                case "POLAR_BEAR":
+                    POLAR_BEAR POLAR_BEAR = (POLAR_BEAR)obj;
+                    Mob.Options.Type = POLAR_BEAR.obj;
+                    break;
                 case "RABBIT":
                     RABBIT RABBIT = (RABBIT)obj;
                     Mob.Options.Type = RABBIT.obj;
+                    break;
+                case "SHEEP":
+                    SHEEP SHEEP = (SHEEP)obj;
+                    Mob.Options.Type = SHEEP.obj;
                     break;
                 case "SILVERFISH":
                     SILVERFISH SILVERFISH = (SILVERFISH)obj;
@@ -302,6 +326,10 @@ namespace MythicMobs_edit.WPF
                 case "VILLAGER":
                     VILLAGER VILLAGER = (VILLAGER)obj;
                     Mob.Options.Type = VILLAGER.obj;
+                    break;
+                case "WOLF":
+                    WOLF WOLF = (WOLF)obj;
+                    Mob.Options.Type = WOLF.obj;
                     break;
                 case "ZOMBIE":
                     ZOMBIE ZOMBIE = (ZOMBIE)obj;

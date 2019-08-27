@@ -5,6 +5,6 @@
         /// <summary>
         /// 防止感染方块
         /// </summary>
-        public bool PreventBlockInfection { get; set; } = true;
+        public bool PreventBlockInfection { get; set; }
     }
 }

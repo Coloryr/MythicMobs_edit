@@ -9,7 +9,16 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class HORSE : UserControl
     {
-        public Obj_save.Mob.Mob_type.HORSE obj { get; set; } = new Obj_save.Mob.Mob_type.HORSE();
+        public Obj_save.Mob.Mob_type.HORSE obj { get; set; } = new Obj_save.Mob.Mob_type.HORSE()
+        {
+            HorseColor = "BLACK",
+            HorseSaddled = false,
+            HorseStyle = "BLACK_DOTS",
+            HorseTamed = false,
+            Age = 1,
+            AgeLock = false,
+            Tameable = false
+        };
         public HORSE()
         {
             InitializeComponent();

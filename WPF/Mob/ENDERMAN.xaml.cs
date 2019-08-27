@@ -7,7 +7,10 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class ENDERMAN : UserControl
     {
-        public Obj_save.Mob.Mob_type.ENDERMAN obj { get; set; } = new Obj_save.Mob.Mob_type.ENDERMAN();
+        public Obj_save.Mob.Mob_type.ENDERMAN obj { get; set; } = new Obj_save.Mob.Mob_type.ENDERMAN()
+        {
+            PreventTeleport = false
+        };
         public ENDERMAN()
         {
             InitializeComponent();

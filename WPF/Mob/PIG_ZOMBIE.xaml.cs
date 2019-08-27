@@ -7,7 +7,11 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class PIG_ZOMBIE : UserControl
     {
-        public Obj_save.Mob.Mob_type.PIG_ZOMBIE obj { get; set; } = new Obj_save.Mob.Mob_type.PIG_ZOMBIE();
+        public Obj_save.Mob.Mob_type.PIG_ZOMBIE obj { get; set; } = new Obj_save.Mob.Mob_type.PIG_ZOMBIE()
+        {
+            Angry = false,
+            ReinforcementsChance = 0
+        };
         public PIG_ZOMBIE()
         {
             InitializeComponent();

@@ -5,6 +5,6 @@
         /// <summary>
         /// 是否阻止传送
         /// </summary>
-        public bool PreventTeleport { get; set; } = false;
+        public bool PreventTeleport { get; set; }
     }
 }

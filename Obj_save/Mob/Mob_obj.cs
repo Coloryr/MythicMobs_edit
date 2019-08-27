@@ -41,5 +41,17 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// 选项
         /// </summary>
         public Options Options { get; set; }
+        /// <summary>
+        /// 模块
+        /// </summary>
+        public Modules Modules { get; set; }
+        /// <summary>
+        /// 怪物AI-攻击目标
+        /// </summary>
+        public List<string> AIGoalSelectors { get; set; }
+        /// <summary>
+        /// 怪物AI-锁定
+        /// </summary>
+        public List<string> AITargetSelectors { get; set; }
     }
 }

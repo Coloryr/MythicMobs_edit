@@ -9,7 +9,13 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class CREEPER : UserControl
     {
-        public Obj_save.Mob.Mob_type.CREEPER obj { get; set; } = new Obj_save.Mob.Mob_type.CREEPER();
+        public Obj_save.Mob.Mob_type.CREEPER obj { get; set; } = new Obj_save.Mob.Mob_type.CREEPER()
+        {
+            ExplosionRadius = 10,
+            FuseTicks = 5,
+            SuperCharged = false,
+            PreventSuicide = false
+        };
         public CREEPER()
         {
             InitializeComponent();

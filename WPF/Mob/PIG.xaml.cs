@@ -7,7 +7,12 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class PIG : UserControl
     {
-        public Obj_save.Mob.Mob_type.PIG obj { get; set; } = new Obj_save.Mob.Mob_type.PIG();
+        public Obj_save.Mob.Mob_type.PIG obj { get; set; } = new Obj_save.Mob.Mob_type.PIG()
+        {
+            Saddled = false,
+            Age = 1,
+            AgeLock = false
+        };
         public PIG()
         {
             InitializeComponent();

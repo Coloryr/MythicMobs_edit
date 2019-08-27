@@ -9,7 +9,13 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class RABBIT : UserControl
     {
-        public Obj_save.Mob.Mob_type.RABBIT obj { get; set; } = new Obj_save.Mob.Mob_type.RABBIT();
+        public Obj_save.Mob.Mob_type.RABBIT obj { get; set; } = new Obj_save.Mob.Mob_type.RABBIT()
+        {
+            RabbitType = "BLACK",
+            Baby = false,
+            Age = 1,
+            AgeLock = false
+        };
         public RABBIT()
         {
             InitializeComponent();

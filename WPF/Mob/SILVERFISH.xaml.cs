@@ -7,7 +7,10 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class SILVERFISH : UserControl
     {
-        public Obj_save.Mob.Mob_type.SILVERFISH obj { get; set; } = new Obj_save.Mob.Mob_type.SILVERFISH();
+        public Obj_save.Mob.Mob_type.SILVERFISH obj { get; set; } = new Obj_save.Mob.Mob_type.SILVERFISH()
+        {
+            PreventBlockInfection = true
+        };
         public SILVERFISH()
         {
             InitializeComponent();

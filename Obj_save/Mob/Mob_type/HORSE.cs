@@ -7,7 +7,7 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// <summary>
         /// 马的盔甲种类
         /// </summary>
-        public string HorseArmor { get; set; } = null;
+        public string HorseArmor { get; set; }
         /// <summary>
         /// 是否携带箱子
         /// </summary>
@@ -19,7 +19,7 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// <summary>
         /// 马是否带鞍
         /// </summary>
-        public bool HorseSaddled { get; set; } = false;
+        public bool HorseSaddled { get; set; }
         /// <summary>
         /// 马的斑点
         /// </summary>
@@ -27,15 +27,19 @@ namespace MythicMobs_edit.Obj_save.Mob.Mob_type
         /// <summary>
         /// 马的斑点
         /// </summary>
-        public bool HorseTamed { get; set; } = false;
+        public bool HorseTamed { get; set; }
         /// <summary>
         /// 年龄
         /// </summary>
-        public double Age { get; set; } = 1;
+        public double Age { get; set; }
         /// <summary>
         /// 是否锁住生物的年龄
         /// </summary>
-        public bool AgeLock { get; set; } = false;
+        public bool AgeLock { get; set; }
+        /// <summary>
+        /// 是否能被玩家驯服
+        /// </summary>
+        public bool Tameable { get; set; }
 
         public string get_style_r()
         {

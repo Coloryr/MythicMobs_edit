@@ -5,6 +5,6 @@
         /// <summary>
         /// 生成僵尸几率为它们加强伤害
         /// </summary>
-        public double ReinforcementsChance { get; set; } = 0;
+        public double ReinforcementsChance { get; set; }
     }
 }

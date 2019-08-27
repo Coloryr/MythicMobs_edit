@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MythicMobs_edit.WPF.Mob.WOLF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
+            mc:Ignorable="d" Height="300" Width="290">
+    <Grid>
+        <Label Content="狼设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
+        <Label Content="项圈颜色" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top" Width="60"/>
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,30,0,0" VerticalAlignment="Top" Width="135"
+                  Name="Color" Text="{Binding obj.Color}"/>
+        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="210,30,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Label Content="年龄" HorizontalAlignment="Left" Height="25" Margin="10,55,0,0" VerticalAlignment="Top"/>
+        <Slider HorizontalAlignment="Left" Height="25" Margin="50,59,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1"/>
+        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"
+            IsChecked="{Binding obj.AgeLock}"/>
+        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Height="25" Margin="250,55,0,0" VerticalAlignment="Top" Width="40"/>
+        <CheckBox Content="是否能被驯服" HorizontalAlignment="Left" Margin="90,89,0,0" VerticalAlignment="Top"
+            IsChecked="{Binding obj.Tameable}"/>
+
+    </Grid>
+</UserControl>

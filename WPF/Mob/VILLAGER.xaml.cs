@@ -8,7 +8,10 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class VILLAGER : UserControl
     {
-        public Obj_save.Mob.Mob_type.VILLAGER obj { get; set; } = new Obj_save.Mob.Mob_type.VILLAGER();
+        public Obj_save.Mob.Mob_type.VILLAGER obj { get; set; } = new Obj_save.Mob.Mob_type.VILLAGER()
+        {
+            VillagerType = "BLACKSMITH"
+        };
         public VILLAGER()
         {
             InitializeComponent();

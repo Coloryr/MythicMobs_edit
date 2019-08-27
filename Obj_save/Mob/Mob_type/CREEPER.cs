@@ -13,10 +13,10 @@
         /// <summary>
         /// 是否充能
         /// </summary>
-        public bool SuperCharged { get; set; } = false;
+        public bool SuperCharged { get; set; }
         /// <summary>
         /// 阻止爬行者被自己的爆炸炸死
         /// </summary>
-        public bool PreventSuicide { get; set; } = false;
+        public bool PreventSuicide { get; set; }
     }
 }

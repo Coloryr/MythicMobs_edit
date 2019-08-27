@@ -7,7 +7,11 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class MUSHROOM_COW : UserControl
     {
-        public Obj_save.Mob.Mob_type.MUSHROOM_COW obj { get; set; } = new Obj_save.Mob.Mob_type.MUSHROOM_COW();
+        public Obj_save.Mob.Mob_type.MUSHROOM_COW obj { get; set; } = new Obj_save.Mob.Mob_type.MUSHROOM_COW()
+        {
+            Age = 1,
+            AgeLock = false
+        };
         public MUSHROOM_COW()
         {
             InitializeComponent();

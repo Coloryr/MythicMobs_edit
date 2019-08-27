@@ -30,6 +30,8 @@
         <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top"
             IsChecked="{Binding obj.AgeLock}"/>
         <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Height="25" Margin="245,145,0,0" VerticalAlignment="Top" Width="40"/>
+        <CheckBox Content="是否允许驯服" HorizontalAlignment="Left" Height="20" Margin="135,125,0,0" VerticalAlignment="Top"
+            IsChecked="{Binding obj.Tameable}"/>
 
     </Grid>
 </UserControl>

@@ -3,16 +3,16 @@
 namespace MythicMobs_edit.WPF.Mob
 {
     /// <summary>
-    /// MAGMA_CUBE.xaml 的交互逻辑
+    /// SLIME.xaml 的交互逻辑
     /// </summary>
-    public partial class MAGMA_CUBE : UserControl
+    public partial class SLIME : UserControl
     {
-        public Obj_save.Mob.Mob_type.MAGMA_CUBE obj { get; set; } = new Obj_save.Mob.Mob_type.MAGMA_CUBE()
+        public Obj_save.Mob.Mob_type.SLIME obj { get; set; } = new Obj_save.Mob.Mob_type.SLIME()
         {
             PreventSlimeSplit = false,
             Size = 1
         };
-        public MAGMA_CUBE()
+        public SLIME()
         {
             InitializeComponent();
             DataContext = this;

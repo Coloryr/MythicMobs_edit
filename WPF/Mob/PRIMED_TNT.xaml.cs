@@ -9,7 +9,12 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class PRIMED_TNT : UserControl
     {
-        public Obj_save.Mob.Mob_type.PRIMED_TNT obj { get; set; } = new Obj_save.Mob.Mob_type.PRIMED_TNT();
+        public Obj_save.Mob.Mob_type.PRIMED_TNT obj { get; set; } = new Obj_save.Mob.Mob_type.PRIMED_TNT()
+        {
+            FuseTicks = 5,
+            ExplosionYield = 1,
+            Incendiary = false
+        };
         public PRIMED_TNT()
         {
             InitializeComponent();

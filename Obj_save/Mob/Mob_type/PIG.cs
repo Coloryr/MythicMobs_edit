@@ -9,10 +9,10 @@
         /// <summary>
         /// 年龄
         /// </summary>
-        public double Age { get; set; } = 1;
+        public double Age { get; set; }
         /// <summary>
         /// 是否锁住生物的年龄
         /// </summary>
-        public bool AgeLock { get; set; } = false;
+        public bool AgeLock { get; set; }
     }
 }

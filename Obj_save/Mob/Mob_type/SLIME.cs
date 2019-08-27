@@ -1,6 +1,6 @@
 ﻿namespace MythicMobs_edit.Obj_save.Mob.Mob_type
 {
-    public class MAGMA_CUBE
+    public class SLIME
     {
         /// <summary>
         /// 防止史莱姆分裂

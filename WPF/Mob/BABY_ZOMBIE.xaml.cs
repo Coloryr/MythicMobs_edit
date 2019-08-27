@@ -20,7 +20,10 @@ namespace MythicMobs_edit.WPF.Mob
     /// </summary>
     public partial class BABY_ZOMBIE : UserControl
     {
-        public Obj_save.Mob.Mob_type.BABY_ZOMBIE obj { get; set; } = new Obj_save.Mob.Mob_type.BABY_ZOMBIE();
+        public Obj_save.Mob.Mob_type.BABY_ZOMBIE obj { get; set; } = new Obj_save.Mob.Mob_type.BABY_ZOMBIE()
+        {
+            ReinforcementsChance = 0
+        };
         public BABY_ZOMBIE()
         {
             InitializeComponent();

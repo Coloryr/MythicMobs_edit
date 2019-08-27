@@ -111,13 +111,18 @@
     <Compile Include="Obj_save\Mob\Mob_type\PIG.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\PIG_ZOMBIE.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\PIG_ZOMBIE_VILLAGER.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\POLAR_BEAR.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\PRIMED_TNT.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\RABBIT.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\SHEEP.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\SILVERFISH.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\SLIME.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\SNOWMAN.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\VILLAGER.cs" />
+    <Compile Include="Obj_save\Mob\Mob_type\WOLF.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ZOMBIE.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ZOMBIE_VILLAGER.cs" />
+    <Compile Include="Obj_save\Mob\Modules.cs" />
     <Compile Include="Obj_save\Mob\Options.cs" />
     <Compile Include="WPF\Mob\add_mob.xaml.cs">
       <DependentUpon>add_mob.xaml</DependentUpon>
@@ -170,14 +175,26 @@
     <Compile Include="WPF\Mob\PIG_ZOMBIE_VILLAGER.xaml.cs">
       <DependentUpon>PIG_ZOMBIE_VILLAGER.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\POLAR_BEAR.xaml.cs">
+      <DependentUpon>POLAR_BEAR.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\RABBIT.xaml.cs">
       <DependentUpon>RABBIT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\SHEEP.xaml.cs">
+      <DependentUpon>SHEEP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\SLIME.xaml.cs">
+      <DependentUpon>SLIME.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\SNOWMAN.xaml.cs">
       <DependentUpon>SNOWMAN.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\VILLAGER.xaml.cs">
       <DependentUpon>VILLAGER.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\WOLF.xaml.cs">
+      <DependentUpon>WOLF.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\ZOMBIE_VILLAGER.xaml.cs">
       <DependentUpon>ZOMBIE_VILLAGER.xaml</DependentUpon>
@@ -277,9 +294,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\POLAR_BEAR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\RABBIT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\SHEEP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\SLIME.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\SNOWMAN.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -288,6 +317,10 @@
     <Page Include="WPF\Mob\VILLAGER.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\WOLF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\ZOMBIE_VILLAGER.xaml">
       <Generator>MSBuild:Compile</Generator>
