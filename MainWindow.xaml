@@ -5,13 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit"
         mc:Ignorable="d"
-        Title="MythicMobs_edit" Height="120" Width="160" WindowStartupLocation="Manual" ResizeMode="NoResize">
-    <Grid>
-        <Button Content="创建生物" Margin="0,0,80,57" Click="Button_Click"/>
-        <Button Content="创建技能" Margin="80,0,0,57"/>
-        <Button Content="创建物品" Margin="0,25,80,32"/>
-        <Button Content="创建掉落" Margin="80,25,0,32"/>
-        <Button Content="创建刷怪点" Margin="0,50,80,7"/>
+        Title="MythicMobs_edit" Height="376" Width="463" WindowStartupLocation="Manual" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Background" Value="#22FF0000"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border Padding="{TemplateBinding Padding}">
+                            <ContentPresenter RecognizesAccessKey="False"></ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Black">
+        <Image HorizontalAlignment="Left" Height="337" VerticalAlignment="Top" Width="337"
+               Source="icon.ico">
+        </Image>
+        <Button Content="添加生物" HorizontalAlignment="Left" Margin="337,0,0,0" VerticalAlignment="Top" Width="110"
+                Height="30" Click="Button_Click" Style="{StaticResource Button}"/>
+        <Label Content="Color_yr" HorizontalAlignment="Left" Margin="333,293,0,0" VerticalAlignment="Top" FontSize="26"/>
+
 
     </Grid>
 </Window>

@@ -134,6 +134,8 @@
                 Name="BossBar_Color_r" Click="BossBar_Color_r_Click" IsEnabled="False"/>
         <Button Content="随机风格" HorizontalAlignment="Left" Height="20" Margin="245,251,0,0" VerticalAlignment="Top" Width="70" Style="{StaticResource Button}"
                 x:Name="BossBar_Style_r" IsEnabled="False" Click="BossBar_Style_r_Click"/>
+        <Button Content="返回" HorizontalAlignment="Left" Height="41" Margin="839,640,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
+                Click="Return"/>
         <Button Content="就决定是你了" HorizontalAlignment="Left" Height="41" Margin="935,640,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Button_Click"/>
         <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="555,468,0,0" VerticalAlignment="Top" Width="60" 

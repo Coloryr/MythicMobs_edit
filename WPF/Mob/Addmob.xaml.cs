@@ -366,6 +366,11 @@ namespace MythicMobs_edit.WPF
             {
                 Mob.AIGoalSelectors.Add(a.Key + " " + a.Value);
             }
+            Mob.AITargetSelectors.Clear();
+            foreach (KeyValuePair<int, string> a in AITargetSelectors)
+            {
+                Mob.AITargetSelectors.Add(a.Key + " " + a.Value);
+            }
             Out.Text = string.Empty;
             var serializer = new SerializerBuilder().Build();
             var yaml = serializer.Serialize(Mob);
@@ -384,7 +389,11 @@ namespace MythicMobs_edit.WPF
             }
             reader.Close();
         }
-
+        private void Return(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Close();
+        }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (AIGoalSelectors_S.SelectedItem != null)
