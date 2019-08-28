@@ -2,6 +2,7 @@
 using MythicMobs_edit.WPF.Mob;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -13,16 +14,18 @@ using YamlDotNet.Serialization;
 namespace MythicMobs_edit.WPF
 {
     /// <summary>
-    /// Window1.xaml 的交互逻辑
+    /// Addmob.xaml 的交互逻辑
     /// </summary>
-    public partial class add_mob : Window
+    public partial class Addmob : Window
     {
         public string MobName { get; set; } = "newMob";
-        public Dictionary<int,string> AIGoalSelectors { get; set; }
-        public Dictionary<int, string> AITargetSelectors { get; set; }
+        public Dictionary<int, string> AIGoalSelectors { get; set; } = new Dictionary<int, string>();
+        public Dictionary<int, string> AITargetSelectors { get; set; } = new Dictionary<int, string>();
+        public string AI_Goal_S { get; set; } = "clear";
         public Mob_obj Mob { get; set; } = new Mob_obj()
         {
             Display = "Mob",
+            Type = "ARMOR_STAND",
             Health = 20,
             Damage = 5,
             Armor = 1,
@@ -59,21 +62,24 @@ namespace MythicMobs_edit.WPF
             {
                 ThreatTable = false,
                 ImmunityTable = false
-            }
+            },
+            AIGoalSelectors = new List<string>(),
+            AITargetSelectors = new List<string>()
         };
         private UserControl obj;
-        public add_mob()
+        public Addmob()
         {
             InitializeComponent();
             Startup();
+            DataContext = this;
         }
         private void Startup()
         {
-            DataContext = this;
             Obj_save.Mob.List List = new Obj_save.Mob.List();
             Mob_Type.ItemsSource = List.Type_list;
             BossBar_Color.ItemsSource = List.BossBarColor;
             BossBar_Style.ItemsSource = List.BossBarStyle;
+            AIGoalSelectors_S.ItemsSource = List.AI_Goal_All;
         }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
         {
@@ -82,7 +88,7 @@ namespace MythicMobs_edit.WPF
             e.Handled = re.IsMatch(e.Text);
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        private void CheckBox_Check(object sender, RoutedEventArgs e)
         {
             if (BossBar_Enabled.IsChecked == true)
             {
@@ -351,6 +357,11 @@ namespace MythicMobs_edit.WPF
                     Mob.Options.Type = null;
                     break;
             }
+            Mob.AIGoalSelectors.Clear();
+            foreach (KeyValuePair<int, string> a in AIGoalSelectors)
+            {
+                Mob.AIGoalSelectors.Add(a.Key + " " + a.Value);
+            }
             Out.Text = string.Empty;
             var serializer = new SerializerBuilder().Build();
             var yaml = serializer.Serialize(Mob);
@@ -368,6 +379,68 @@ namespace MythicMobs_edit.WPF
                 Out.Text += a + "\n";
             }
             reader.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (AIGoalSelectors_S.SelectedItem != null)
+            {
+                AIGoalSelectors.Add(AIGoalSelectors.Count, AI_Goal_S);
+                AI.Items.Add(new
+                {
+                    a = AIGoalSelectors.Count - 1,
+                    b = AI_Goal_S
+                });
+            }
+        }
+
+        private void DelectAIEvent(object sender, RoutedEventArgs e)
+        {
+            if (AI.SelectedItem == null)
+                return;
+            int num = AI.SelectedIndex; //选中的listview的行
+            AI.Items.Remove(AI.SelectedItem);
+            AIGoalSelectors.Remove(num);
+            foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
+            {
+                if (a.Key > num)
+                {
+                    AIGoalSelectors.Add(a.Key - 1, a.Value);
+                    AIGoalSelectors.Remove(a.Key);
+                }
+            }
+            AI.Items.Clear();
+            foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
+            {
+                AI.Items.Add(new
+                {
+                    a = a.Key,
+                    b = a.Value
+                });
+            }
+            foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
+            {
+                AI.Items.Add(new
+                {
+                    a = a.Key,
+                    b = a.Value
+                });
+            }
+        }
+        private void ChangeAIEvent(object sender, RoutedEventArgs e)
+        {
+            if (AI.SelectedItem == null)
+                return;
+            AIChange change = new AIChange(new AI()
+            {
+                a = AI.SelectedIndex,
+                b = AIGoalSelectors[AI.SelectedIndex]
+            });
+            AI a = change.return_AI();
+            if (AIGoalSelectors.ContainsKey(a.a))
+            {
+                
+            }
         }
     }
 }

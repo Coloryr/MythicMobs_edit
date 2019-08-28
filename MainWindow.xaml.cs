@@ -15,7 +15,7 @@ namespace MythicMobs_edit
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new add_mob().Show();
+            new Addmob().Show();
             this.Close();
         }
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MythicMobs_edit.Obj_save.Mob
 {
@@ -106,6 +102,15 @@ namespace MythicMobs_edit.Obj_save.Mob
         {
             "WHILE", "ORANGE", "MAGENTA", "LIGHT_BLUE", "YELLOW", "LIME", "PINK", "GRAY",
             "SILVER", "CYAN", "PURPLE", "BLUE", "BROWN", "GREEN", "RED", "BLACK"
+        };
+        public List<string> AI_Goal_All = new List<string>()
+        {
+            "clear", "breakdoors", "eatgrass", "float", "lookatplayers", "opendoors", "closedoors",
+            "randomlookaround", "avoidarrows", "avoidcreepers", "avoidskeletons", "avoidzombies",
+            "fleesun", "meleeattack", "movetowardstarget", "randomstroll", "restrictsun",
+            "fleeplayers", "fleegolems", "fleevillagers", "spiderattack", "leapattarget",
+            "moveindoors", "movethroughvillage", "movetowardsrestriction", "patrol",
+            "gotolocation", "gotoowner", "arrowattack", "skeletonbowattack"
         };
     }
 }

@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MythicMobs_edit.WPF.Style">
+    <Style x:Key="TextBox" TargetType="TextBox">
+        <Setter Property="BorderBrush" Value="#CCFF0000"/>
+        <Setter Property="Background" Value="#22FF0000"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+</ResourceDictionary>

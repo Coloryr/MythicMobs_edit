@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:MythicMobs_edit"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="WPF/Style/Button.xaml"/>
+                <ResourceDictionary Source="WPF/Style/ComboBox.xaml"/>
+                <ResourceDictionary Source="WPF/Style/ListView.xaml"/>
+                <ResourceDictionary Source="WPF/Style/CheckBox.xaml"/>
+                <ResourceDictionary Source="WPF/Style/TextBox.xaml"/>
+                <ResourceDictionary Source="WPF/Style/Label.xaml"/>
+                <ResourceDictionary Source="WPF/Style/Slider.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
+    
 </Application>
