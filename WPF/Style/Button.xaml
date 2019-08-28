@@ -18,12 +18,12 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="true">
-                            <Setter TargetName="gridborder" Property="Background" Value="#AAFF0000"/>
-                            <Setter TargetName="gridborder" Property="BorderBrush" Value="#FFFF0000"/>
+                            <Setter TargetName="gridborder" Property="Background" Value="#AA898989"/>
+                            <Setter TargetName="gridborder" Property="BorderBrush" Value="#FF5EBDD3"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="gridborder" Property="Background" Value="#44FF0000"/>
-                            <Setter TargetName="gridborder" Property="BorderBrush" Value="#44FF0000"/>
+                            <Setter TargetName="gridborder" Property="Background" Value="#44898989"/>
+                            <Setter TargetName="gridborder" Property="BorderBrush" Value="#445EBDD3"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

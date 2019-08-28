@@ -6,13 +6,13 @@
         mc:Ignorable="d"
         Title="MythicMobs_edit 添加生物" Height="720" Width="1280" ResizeMode="CanMinimize" Foreground="Black">
     <Window.Background>
-        <ImageBrush ImageSource="/MythicMobs_edit;component/image/MMD-work-B.jpg"/>
+        <ImageBrush ImageSource="/MythicMobs_edit;component/image/work-36.jpg"/>
     </Window.Background>
     <Grid>
         <StackPanel HorizontalAlignment="Left" Height="691" VerticalAlignment="Top" Width="1270" Visibility="Hidden"
                     Name="BG">
             <StackPanel.Background>
-                <ImageBrush ImageSource="/MythicMobs_edit;component/image/MMD-work-B.jpg"/>
+                <ImageBrush ImageSource="/MythicMobs_edit;component/image/work-36.jpg"/>
             </StackPanel.Background>
             <StackPanel.Effect>
                 <BlurEffect Radius="15"/>
@@ -39,9 +39,9 @@
         <Label Content="受伤害半径" HorizontalAlignment="Left" Height="25" Margin="0,415,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="移动速度" HorizontalAlignment="Left" Height="25" Margin="5,440,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="生物AI-行为" HorizontalAlignment="Left" Margin="325,305,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="324,465,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物AI-目标" HorizontalAlignment="Left" Margin="324,490,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="323,648,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="325,460,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="生物AI-目标" HorizontalAlignment="Left" Margin="325,490,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="325,645,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
         <ComboBox HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
                   Width="170" Height="20" Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged" Text="{Binding Mob.Type}"/>
@@ -49,9 +49,9 @@
                   Width="170" Height="20" x:Name="BossBar_Color" Text="{Binding Mob.BossBar.Color_save}" IsEnabled="False"/>
         <ComboBox HorizontalAlignment="Left" Margin="70,250,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
                   Width="170" Height="20" x:Name="BossBar_Style" Text="{Binding Mob.BossBar.Style_save}" IsEnabled="False"/>
-        <ComboBox HorizontalAlignment="Left" Margin="394,468,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+        <ComboBox HorizontalAlignment="Left" Margin="395,463,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
                   Width="156" Height="20" Name="AIGoalSelectors_S" Text="{Binding AI_Goal_S}"/>
-        <ComboBox HorizontalAlignment="Left" Margin="393,651,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+        <ComboBox HorizontalAlignment="Left" Margin="395,648,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
             Width="156" Height="20" x:Name="AITargetSelectors_S" Text="{Binding AI_Goal_T}"/>
 
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
@@ -138,9 +138,9 @@
                 Click="Return"/>
         <Button Content="就决定是你了" HorizontalAlignment="Left" Height="41" Margin="935,640,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Button_Click"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="555,468,0,0" VerticalAlignment="Top" Width="60" 
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="555,463,0,0" VerticalAlignment="Top" Width="60" 
                 Click="Button_Click_1" Style="{StaticResource Button}"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="554,651,0,0" VerticalAlignment="Top" Width="60" 
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="555,648,0,0" VerticalAlignment="Top" Width="60" 
                 Click="Button_Click_2" Style="{StaticResource Button}"/>
 
         <StackPanel HorizontalAlignment="Left" Height="290" Margin="325,10,0,0" VerticalAlignment="Top" Width="290" Name="panel"/>
@@ -161,7 +161,7 @@
             </ListView.ContextMenu>
         </ListView>
 
-        <ListView HorizontalAlignment="Left" Height="125" Margin="324,515,0,0" VerticalAlignment="Top" Width="290" x:Name="AI_T"
+        <ListView HorizontalAlignment="Left" Height="125" Margin="325,515,0,0" VerticalAlignment="Top" Width="290" x:Name="AI_T"
             Style="{StaticResource ListViewStyle1}">
             <ListView.View>
                 <GridView>

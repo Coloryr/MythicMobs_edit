@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MythicMobs_edit.WPF.Style">
     <Style x:Key="Label" TargetType="Label">
-        <Setter Property="Background" Value="#22FF0000"/>
+        <Setter Property="Background" Value="#44898989"/>
         <Setter Property="Foreground" Value="White"/>
     </Style>
 </ResourceDictionary>
