@@ -1,7 +1,7 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
 using System.Windows;
 
-namespace MythicMobs_edit.WPF.Mob
+namespace MythicMobs_edit.WPF.Other
 {
     /// <summary>
     /// AIChange.xaml 的交互逻辑

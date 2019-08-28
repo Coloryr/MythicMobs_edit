@@ -9,8 +9,8 @@
         <ImageBrush ImageSource="/MythicMobs_edit;component/image/MMD-work-B.jpg"/>
     </Window.Background>
     <Grid>
-        
-        <StackPanel HorizontalAlignment="Left" Height="691" VerticalAlignment="Top" Width="1270">
+        <StackPanel HorizontalAlignment="Left" Height="691" VerticalAlignment="Top" Width="1270" Visibility="Hidden"
+                    Name="BG">
             <StackPanel.Background>
                 <ImageBrush ImageSource="/MythicMobs_edit;component/image/MMD-work-B.jpg"/>
             </StackPanel.Background>
@@ -18,7 +18,7 @@
                 <BlurEffect Radius="15"/>
             </StackPanel.Effect>
         </StackPanel>
-        
+
         <TextBox Margin="1030,0,0,0" TextWrapping="Wrap" Background="#AA898989" Name="Out" Style="{StaticResource TextBox}"/>
 
         <Label Content="生物名字" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
@@ -38,8 +38,10 @@
         <Label Content="抗击退" HorizontalAlignment="Left" Height="25" Margin="5,390,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="受伤害半径" HorizontalAlignment="Left" Height="25" Margin="0,415,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="移动速度" HorizontalAlignment="Left" Height="25" Margin="5,440,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="生物AI列表" HorizontalAlignment="Left" Margin="325,305,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="324,480,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="生物AI-行为" HorizontalAlignment="Left" Margin="325,305,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="324,465,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="生物AI-目标" HorizontalAlignment="Left" Margin="324,490,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="323,648,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
         <ComboBox HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
                   Width="170" Height="20" Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged" Text="{Binding Mob.Type}"/>
@@ -47,8 +49,10 @@
                   Width="170" Height="20" x:Name="BossBar_Color" Text="{Binding Mob.BossBar.Color_save}" IsEnabled="False"/>
         <ComboBox HorizontalAlignment="Left" Margin="70,250,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
                   Width="170" Height="20" x:Name="BossBar_Style" Text="{Binding Mob.BossBar.Style_save}" IsEnabled="False"/>
-        <ComboBox HorizontalAlignment="Left" Margin="394,483,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+        <ComboBox HorizontalAlignment="Left" Margin="394,468,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
                   Width="156" Height="20" Name="AIGoalSelectors_S" Text="{Binding AI_Goal_S}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="393,651,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+            Width="156" Height="20" x:Name="AITargetSelectors_S" Text="{Binding AI_Goal_T}"/>
 
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
                  VerticalAlignment="Top" Width="170" Text="{Binding MobName}" Name ="Mob_Name"/>
@@ -132,11 +136,14 @@
                 x:Name="BossBar_Style_r" IsEnabled="False" Click="BossBar_Style_r_Click"/>
         <Button Content="就决定是你了" HorizontalAlignment="Left" Height="41" Margin="935,640,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Button_Click"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="555,483,0,0" VerticalAlignment="Top" Width="60" Click="Button_Click_1" Style="{StaticResource Button}"/>
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="555,468,0,0" VerticalAlignment="Top" Width="60" 
+                Click="Button_Click_1" Style="{StaticResource Button}"/>
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="554,651,0,0" VerticalAlignment="Top" Width="60" 
+                Click="Button_Click_2" Style="{StaticResource Button}"/>
 
         <StackPanel HorizontalAlignment="Left" Height="290" Margin="325,10,0,0" VerticalAlignment="Top" Width="290" Name="panel"/>
-        
-        <ListView HorizontalAlignment="Left" Height="145" Margin="325,330,0,0" VerticalAlignment="Top" Width="290" Name="AI"
+
+        <ListView HorizontalAlignment="Left" Height="125" Margin="325,330,0,0" VerticalAlignment="Top" Width="290" Name="AI_G"
                   Style="{StaticResource ListViewStyle1}">
             <ListView.View>
                 <GridView>
@@ -146,8 +153,24 @@
             </ListView.View>
             <ListView.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="删除" Click="DelectAIEvent"/>
-                    <MenuItem Header="修改" Click="ChangeAIEvent"/>
+                    <MenuItem Header="删除" Click="DelectAI_GEvent"/>
+                    <MenuItem Header="修改" Click="ChangeAI_GEvent"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+
+        <ListView HorizontalAlignment="Left" Height="125" Margin="324,515,0,0" VerticalAlignment="Top" Width="290" x:Name="AI_T"
+            Style="{StaticResource ListViewStyle1}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="序列" Width="40" DisplayMemberBinding="{Binding a}"/>
+                    <GridViewColumn Header="AI" Width="234" DisplayMemberBinding="{Binding b}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="删除" Click="DelectAI_TEvent"/>
+                    <MenuItem Header="修改" Click="ChangeAI_TEvent"/>
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>

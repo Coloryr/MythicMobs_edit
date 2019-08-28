@@ -137,7 +137,7 @@
     <Compile Include="WPF\Mob\Addmob.xaml.cs">
       <DependentUpon>Addmob.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\AIChange.xaml.cs">
+    <Compile Include="WPF\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\BABY_PIG_ZOMBIE.xaml.cs">
@@ -227,6 +227,9 @@
     <Compile Include="WPF\Mob\ARMOR_STAND.xaml.cs">
       <DependentUpon>ARMOR_STAND.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Other\Message.xaml.cs">
+      <DependentUpon>Message.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -247,7 +250,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\AIChange.xaml">
+    <Page Include="WPF\Other\AIChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -364,6 +367,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="WPF\Mob\ARMOR_STAND.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Other\Message.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

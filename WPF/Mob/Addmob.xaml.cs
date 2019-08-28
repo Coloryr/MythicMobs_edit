@@ -1,5 +1,6 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
 using MythicMobs_edit.WPF.Mob;
+using MythicMobs_edit.WPF.Other;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace MythicMobs_edit.WPF
         public Dictionary<int, string> AIGoalSelectors { get; set; } = new Dictionary<int, string>();
         public Dictionary<int, string> AITargetSelectors { get; set; } = new Dictionary<int, string>();
         public string AI_Goal_S { get; set; } = "clear";
+        public string AI_Goal_T { get; set; } = "clear";
         public Mob_obj Mob { get; set; } = new Mob_obj()
         {
             Display = "Mob",
@@ -72,6 +74,7 @@ namespace MythicMobs_edit.WPF
             InitializeComponent();
             Startup();
             DataContext = this;
+            BG.Visibility = Visibility.Visible;
         }
         private void Startup()
         {
@@ -80,6 +83,7 @@ namespace MythicMobs_edit.WPF
             BossBar_Color.ItemsSource = List.BossBarColor;
             BossBar_Style.ItemsSource = List.BossBarStyle;
             AIGoalSelectors_S.ItemsSource = List.AI_Goal_All;
+            AITargetSelectors_S.ItemsSource = List.AI_Target_All;
         }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
         {
@@ -386,20 +390,56 @@ namespace MythicMobs_edit.WPF
             if (AIGoalSelectors_S.SelectedItem != null)
             {
                 AIGoalSelectors.Add(AIGoalSelectors.Count, AI_Goal_S);
-                AI.Items.Add(new
+                AI_G.Items.Add(new
                 {
                     a = AIGoalSelectors.Count - 1,
                     b = AI_Goal_S
                 });
             }
         }
-
-        private void DelectAIEvent(object sender, RoutedEventArgs e)
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (AI.SelectedItem == null)
+            if (AITargetSelectors_S.SelectedItem != null)
+            {
+                AITargetSelectors.Add(AITargetSelectors.Count, AI_Goal_T);
+                AI_T.Items.Add(new
+                {
+                    a = AITargetSelectors.Count - 1,
+                    b = AI_Goal_T
+                });
+            }
+        }
+
+        private void refash_AI_G()
+        {
+            AI_G.Items.Clear();
+            foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
+            {
+                AI_G.Items.Add(new
+                {
+                    a = a.Key,
+                    b = a.Value
+                });
+            }
+        }
+        private void refash_AI_T()
+        {
+            AI_T.Items.Clear();
+            foreach (KeyValuePair<int, string> a in AITargetSelectors.ToArray())
+            {
+                AI_T.Items.Add(new
+                {
+                    a = a.Key,
+                    b = a.Value
+                });
+            }
+        }
+        private void DelectAI_GEvent(object sender, RoutedEventArgs e)
+        {
+            if (AI_G.SelectedItem == null)
                 return;
-            int num = AI.SelectedIndex; //选中的listview的行
-            AI.Items.Remove(AI.SelectedItem);
+            int num = AI_G.SelectedIndex; //选中的listview的行
+            AI_G.Items.Remove(AI_G.SelectedItem);
             AIGoalSelectors.Remove(num);
             foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
             {
@@ -409,37 +449,132 @@ namespace MythicMobs_edit.WPF
                     AIGoalSelectors.Remove(a.Key);
                 }
             }
-            AI.Items.Clear();
-            foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
-            {
-                AI.Items.Add(new
-                {
-                    a = a.Key,
-                    b = a.Value
-                });
-            }
-            foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
-            {
-                AI.Items.Add(new
-                {
-                    a = a.Key,
-                    b = a.Value
-                });
-            }
+            refash_AI_G();
         }
-        private void ChangeAIEvent(object sender, RoutedEventArgs e)
+        private void ChangeAI_GEvent(object sender, RoutedEventArgs e)
         {
-            if (AI.SelectedItem == null)
+            if (AI_G.SelectedItem == null)
                 return;
             AIChange change = new AIChange(new AI()
             {
-                a = AI.SelectedIndex,
-                b = AIGoalSelectors[AI.SelectedIndex]
+                a = AI_G.SelectedIndex,
+                b = AIGoalSelectors[AI_G.SelectedIndex]
             });
             AI a = change.return_AI();
-            if (AIGoalSelectors.ContainsKey(a.a))
+            if (a.b == AIGoalSelectors[AI_G.SelectedIndex] && a.a == AI_G.SelectedIndex)
+                return;
+            else if (AIGoalSelectors.ContainsKey(a.a))
             {
-                
+                Dictionary<int, string> temp = new Dictionary<int, string>();
+                foreach (KeyValuePair<int, string> i in AIGoalSelectors.ToArray())
+                {
+                    if (i.Key >= a.a && i.Value != a.b)
+                    {
+                        temp.Add(i.Key, i.Value);
+                        AIGoalSelectors.Remove(i.Key);
+                    }
+                }
+                AIGoalSelectors.Remove(AI_G.SelectedIndex);
+                AIGoalSelectors.Add(a.a, a.b);
+                foreach (KeyValuePair<int, string> i in temp)
+                {
+                    AIGoalSelectors.Add(AIGoalSelectors.Count, i.Value);
+                }
+                AIGoalSelectors = AIGoalSelectors.OrderBy(p => p.Key).ToDictionary(p => p.Key, o => o.Value);
+                refash_AI_G();
+                return;
+            }
+            AIGoalSelectors.Remove(AI_G.SelectedIndex);
+            AI_G.Items.Remove(AI_G.SelectedItem);
+            if (a.a >= AIGoalSelectors.Count)
+            {
+                AI_G.Items.Add(new
+                {
+                    a = AIGoalSelectors.Count,
+                    a.b
+                });
+                AIGoalSelectors.Add(AIGoalSelectors.Count, a.b);
+            }
+            else
+            {
+                AI_G.Items.Add(new
+                {
+                    a.a,
+                    a.b
+                });
+                AIGoalSelectors.Add(a.a, a.b);
+            }
+        }
+
+        private void DelectAI_TEvent(object sender, RoutedEventArgs e)
+        {
+            if (AI_T.SelectedItem == null)
+                return;
+            int num = AI_T.SelectedIndex; //选中的listview的行
+            AI_T.Items.Remove(AI_T.SelectedItem);
+            AITargetSelectors.Remove(num);
+            foreach (KeyValuePair<int, string> a in AITargetSelectors.ToArray())
+            {
+                if (a.Key > num)
+                {
+                    AITargetSelectors.Add(a.Key - 1, a.Value);
+                    AITargetSelectors.Remove(a.Key);
+                }
+            }
+            refash_AI_T();
+        }
+        private void ChangeAI_TEvent(object sender, RoutedEventArgs e)
+        {
+            if (AI_T.SelectedItem == null)
+                return;
+            AIChange change = new AIChange(new AI()
+            {
+                a = AI_T.SelectedIndex,
+                b = AITargetSelectors[AI_T.SelectedIndex]
+            });
+            AI a = change.return_AI();
+            if (a.b == AITargetSelectors[AI_T.SelectedIndex] && a.a == AI_T.SelectedIndex)
+                return;
+            else if (AITargetSelectors.ContainsKey(a.a))
+            {
+                Dictionary<int, string> temp = new Dictionary<int, string>();
+                foreach (KeyValuePair<int, string> i in AITargetSelectors.ToArray())
+                {
+                    if (i.Key >= a.a && i.Value != a.b)
+                    {
+                        temp.Add(i.Key, i.Value);
+                        AITargetSelectors.Remove(i.Key);
+                    }
+                }
+                AITargetSelectors.Remove(AI_T.SelectedIndex);
+                AITargetSelectors.Add(a.a, a.b);
+                foreach (KeyValuePair<int, string> i in temp)
+                {
+                    AITargetSelectors.Add(AITargetSelectors.Count, i.Value);
+                }
+                AITargetSelectors = AITargetSelectors.OrderBy(p => p.Key).ToDictionary(p => p.Key, o => o.Value);
+                refash_AI_G();
+                return;
+            }
+            AITargetSelectors.Remove(AI_T.SelectedIndex);
+            AI_T.Items.Remove(AI_T.SelectedItem);
+            if (a.a >= AITargetSelectors.Count)
+            {
+                AI_T.Items.Add(new
+                {
+                    a = AITargetSelectors.Count,
+                    a.b
+                });
+                AITargetSelectors.Add(AITargetSelectors.Count, a.b);
+            }
+            else
+            {
+                AI_T.Items.Add(new
+                {
+                    a.a,
+                    a.b
+                });
+                AITargetSelectors.Add(a.a, a.b);
             }
         }
     }

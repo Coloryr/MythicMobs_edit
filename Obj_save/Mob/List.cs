@@ -109,8 +109,14 @@ namespace MythicMobs_edit.Obj_save.Mob
             "randomlookaround", "avoidarrows", "avoidcreepers", "avoidskeletons", "avoidzombies",
             "fleesun", "meleeattack", "movetowardstarget", "randomstroll", "restrictsun",
             "fleeplayers", "fleegolems", "fleevillagers", "spiderattack", "leapattarget",
-            "moveindoors", "movethroughvillage", "movetowardsrestriction", "patrol",
-            "gotolocation", "gotoowner", "arrowattack", "skeletonbowattack"
+            "moveindoors", "movethroughvillage", "movetowardsrestriction", "patrol [x1,y1,z1;x2,y2,z2;x3,y3,z3]",
+            "gotolocation [x,y,z]", "gotoowner", "arrowattack", "skeletonbowattack"
+        };
+        public List<string> AI_Target_All = new List<string>()
+        {
+            "clear", "attacker", "monsters", "players", "villagers", "golems",
+            "OtherFaction", "OtherFactionMonsters", "OtherFactionVillagers",
+            "SpecificFaction [faction_name]", "SpecificFactionMonsters [faction_name]"
         };
     }
 }
