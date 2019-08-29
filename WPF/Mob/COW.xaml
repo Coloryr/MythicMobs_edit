@@ -6,11 +6,15 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="290" Width="290">
     <Grid>
-        <Label Content="牛设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
-        <Label Content="年龄" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Height="25" Margin="50,29,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1"/>
+        <Label Content="牛设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="年龄" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Margin="250,29,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        
+        <Slider HorizontalAlignment="Left" Height="25" Margin="50,29,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" 
+                LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1" Style="{StaticResource Slider}"/>
+        
         <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top"
-                  IsChecked="{Binding obj.AgeLock}"/>
-        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Height="25" Margin="250,25,0,0" VerticalAlignment="Top" Width="40"/>
+                  IsChecked="{Binding obj.AgeLock}" Style="{StaticResource Check}"/>
+       
     </Grid>
 </UserControl>

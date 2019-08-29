@@ -6,15 +6,21 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="290" Width="290">
     <Grid>
-        <Label Content="羊设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
-        <Label Content="年龄" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Height="25" Margin="50,29,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1"/>
-        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top"
-                  IsChecked="{Binding obj.AgeLock}"/>
-        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Height="25" Margin="250,25,0,0" VerticalAlignment="Top" Width="40"/>
-        <Label Content="羊毛颜色" HorizontalAlignment="Left" Height="25" Margin="5,75,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="羊设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="年龄" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Margin="250,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="羊毛颜色" HorizontalAlignment="Left" Margin="5,75,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        
+        <Slider HorizontalAlignment="Left" Height="25" Margin="50,29,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" 
+                LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1" Style="{StaticResource Slider}"/>
+        
+        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top"
+                  IsChecked="{Binding obj.AgeLock}" Style="{StaticResource Check}"/>
+        
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="65,80,0,0" VerticalAlignment="Top" Width="135"
-            x:Name="Color" Text="{Binding obj.Color}"/>
-        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="205,80,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+            x:Name="Color" Text="{Binding obj.Color}" Style="{StaticResource ComboBoxStyle}"/>
+        
+        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="205,80,0,0" VerticalAlignment="Top" Width="70"
+                Click="Button_Click" Style="{StaticResource Button}"/>
     </Grid>
 </UserControl>

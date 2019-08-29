@@ -6,11 +6,14 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="村民设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
-        <Label Content="村民职业" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top" Width="60"/>
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,30,0,0" VerticalAlignment="Top" Width="135"
+        <Label Content="村民设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="村民职业" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,27,0,0" VerticalAlignment="Top" Width="135" Style="{StaticResource ComboBoxStyle}"
                   Name="Type" Text="{Binding obj.VillagerType}"/>
-        <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="210,30,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        
+        <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="210,27,0,0" VerticalAlignment="Top" Width="70"
+                Click="Button_Click" Style="{StaticResource Button}"/>
 
     </Grid>
 </UserControl>

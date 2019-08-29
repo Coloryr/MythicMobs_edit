@@ -6,14 +6,16 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="猪设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
-        <CheckBox Content="是否带鞍" HorizontalAlignment="Left" Height="20" Margin="10,25,0,0" VerticalAlignment="Top" Width="100"
-                  IsChecked="{Binding obj.Saddled}"/>
-        <Label Content="年龄" HorizontalAlignment="Left" Height="25" Margin="10,40,0,0" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Height="25" Margin="50,44,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1"/>
-        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"
-            IsChecked="{Binding obj.AgeLock}"/>
-        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Height="25" Margin="250,40,0,0" VerticalAlignment="Top" Width="40"/>
+        <Label Content="猪设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="年龄" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Margin="250,45,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
+        <CheckBox Content="是否带鞍" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"
+                  IsChecked="{Binding obj.Saddled}" Style="{StaticResource Check}"/>
+        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"
+            IsChecked="{Binding obj.AgeLock}" Style="{StaticResource Check}"/>
+
+        <Slider HorizontalAlignment="Left" Height="25" Margin="50,49,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1"
+                LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1" Style="{StaticResource Slider}"/>
     </Grid>
 </UserControl>

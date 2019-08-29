@@ -6,32 +6,39 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="马设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
-        <Label Content="装甲类型" HorizontalAlignment="Left" Height="25" Margin="10,20,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,25,0,0" VerticalAlignment="Top" Width="135"
+        <Label Content="马设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="装甲类型" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="马的颜色" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="马的斑点" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="年龄" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Margin="245,150,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,30,0,0" VerticalAlignment="Top" Width="135" Style="{StaticResource ComboBoxStyle}"
                   Name="HorseArmor" Text="{Binding obj.HorseArmor}"/>
-        <Button Content="无装甲" HorizontalAlignment="Left" Height="20" Margin="210,25,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <CheckBox Content="是否携带箱子" HorizontalAlignment="Left" Height="20" Margin="10,50,0,0" VerticalAlignment="Top"
-                  IsChecked="{Binding obj.HorseCarryingChest}"/>
-        <Label Content="马的颜色" HorizontalAlignment="Left" Height="25" Margin="10,70,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,75,0,0" VerticalAlignment="Top" Width="135"
-            x:Name="HorseColor" Text="{Binding obj.HorseColor}"/>
-        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="210,75,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click_1"/>
-        <CheckBox Content="是否携带马鞍" HorizontalAlignment="Left" Height="20" Margin="110,50,0,0" VerticalAlignment="Top" Width="95"
-            IsChecked="{Binding obj.HorseSaddled}"/>
-        <Label Content="马的斑点" HorizontalAlignment="Left" Height="25" Margin="10,95,0,0" VerticalAlignment="Top" Width="60"/>
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,100,0,0" VerticalAlignment="Top" Width="135"
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,105,0,0" VerticalAlignment="Top" Width="135" Style="{StaticResource ComboBoxStyle}"
             x:Name="HorseStyle" Text="{Binding obj.HorseStyle}"/>
-        <Button Content="随机斑点" HorizontalAlignment="Left" Height="20" Margin="210,100,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click_2"/>
-        <CheckBox Content="是否为驯服状态" HorizontalAlignment="Left" Height="20" Margin="10,125,0,0" VerticalAlignment="Top"
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,80,0,0" VerticalAlignment="Top" Width="135" Style="{StaticResource ComboBoxStyle}"
+            x:Name="HorseColor" Text="{Binding obj.HorseColor}"/>
+
+        <CheckBox Content="是否携带箱子" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+                  IsChecked="{Binding obj.HorseCarryingChest}"/>
+        <CheckBox Content="是否携带马鞍" HorizontalAlignment="Left" Margin="110,55,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+            IsChecked="{Binding obj.HorseSaddled}"/>
+        <CheckBox Content="是否为驯服状态" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
             IsChecked="{Binding obj.HorseTamed}"/>
-        <Label Content="年龄" HorizontalAlignment="Left" Height="25" Margin="10,141,0,0" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Height="25" Margin="50,145,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1"/>
-        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top"
+        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
             IsChecked="{Binding obj.AgeLock}"/>
-        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Height="25" Margin="245,145,0,0" VerticalAlignment="Top" Width="40"/>
-        <CheckBox Content="是否允许驯服" HorizontalAlignment="Left" Height="20" Margin="135,125,0,0" VerticalAlignment="Top"
+        <CheckBox Content="是否允许驯服" HorizontalAlignment="Left" Margin="135,130,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
             IsChecked="{Binding obj.Tameable}"/>
 
+        <Button Content="无装甲" HorizontalAlignment="Left" Height="20" Margin="210,30,0,0" VerticalAlignment="Top" Width="70" 
+                Click="Button_Click" Style="{StaticResource Button}"/>
+        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="210,80,0,0" VerticalAlignment="Top" Width="70" 
+                Click="Button_Click_1" Style="{StaticResource Button}"/>
+        <Button Content="随机斑点" HorizontalAlignment="Left" Height="20" Margin="210,105,0,0" VerticalAlignment="Top" Width="70"
+                Click="Button_Click_2" Style="{StaticResource Button}"/>
+
+        <Slider HorizontalAlignment="Left" Height="25" Margin="50,150,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" 
+                LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1" Style="{StaticResource Slider}"/>
     </Grid>
 </UserControl>

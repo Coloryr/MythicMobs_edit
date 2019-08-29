@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="末影人设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
-        <CheckBox Content="是否阻止传送" HorizontalAlignment="Left" Height="15" Margin="10,25,0,0" VerticalAlignment="Top" Width="100"
-                  IsChecked="{Binding obj.PreventTeleport}"/>
+        <Label Content="末影人设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        
+        <CheckBox Content="是否阻止传送" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"
+                  IsChecked="{Binding obj.PreventTeleport}" Style="{StaticResource Check}"/>
 
     </Grid>
 </UserControl>

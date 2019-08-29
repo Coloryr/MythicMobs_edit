@@ -6,17 +6,18 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="苦力怕设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="90"/>
-        <Label Content="爆炸半径" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="75,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"
-                 Text="{Binding obj.ExplosionRadius}" PreviewTextInput="TextCompositionEventArgs"/>
-        <Label Content="爆炸时间" HorizontalAlignment="Left" Height="25" Margin="10,50,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="75,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"
-                 Text="{Binding obj.FuseTicks}" PreviewTextInput="TextCompositionEventArgs"/>
-        <CheckBox Content="是否充能" HorizontalAlignment="Left" Height="15" Margin="10,79,0,0" VerticalAlignment="Top" Width="70"
-                  IsChecked="{Binding obj.SuperCharged}"/>
-        <CheckBox Content="是否阻止被自己炸死" HorizontalAlignment="Left" Height="15" Margin="100,79,0,0" VerticalAlignment="Top" Width="145"
-                  IsChecked="{Binding obj.PreventSuicide}"/>
+        <Label Content="苦力怕设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="爆炸半径" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="爆炸时间" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="75,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"
+                 Text="{Binding obj.ExplosionRadius}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="75,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"
+                 Text="{Binding obj.FuseTicks}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
+        
+        <CheckBox Content="是否充能" HorizontalAlignment="Left" Height="15" Margin="10,79,0,0" VerticalAlignment="Top"
+                  IsChecked="{Binding obj.SuperCharged}" Style="{StaticResource Check}"/>
+        <CheckBox Content="是否阻止被自己炸死" HorizontalAlignment="Left" Height="15" Margin="100,79,0,0" VerticalAlignment="Top"
+                  IsChecked="{Binding obj.PreventSuicide}" Style="{StaticResource Check}"/>
     </Grid>
 </UserControl>

@@ -6,12 +6,14 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="290" Width="290">
     <Grid>
-        <Label Content="岩浆怪设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top"/>
+        <Label Content="岩浆怪设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="岩浆怪尺寸" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        
         <CheckBox Content="阻止分裂" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"
-                  IsChecked="{Binding obj.PreventSlimeSplit}"/>
-        <Label Content="岩浆怪尺寸" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="80,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"
-                 Text="{Binding obj.Size}"/>
+                  IsChecked="{Binding obj.PreventSlimeSplit}" Style="{StaticResource Check}"/>
+
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="80,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"
+                 Text="{Binding obj.Size}" Style="{StaticResource TextBox}"/>
 
     </Grid>
 </UserControl>

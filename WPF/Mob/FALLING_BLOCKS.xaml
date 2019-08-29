@@ -6,13 +6,14 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="掉落的方块设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100"/>
-        <Label Content="方块名字" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="掉落的方块设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="方块名字" HorizontalAlignment="Left" Height="25" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="方块数据" HorizontalAlignment="Left" Height="25" Margin="10,51,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"
-                 Text="{Binding obj.Block}"/>
-        <Label Content="方块数据" HorizontalAlignment="Left" Height="25" Margin="10,51,0,0" VerticalAlignment="Top" Width="60"/>
+                 Text="{Binding obj.Block}" Style="{StaticResource TextBox}"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"
-                 Text="{Binding obj.BlockData}" PreviewTextInput="TextCompositionEventArgs"/>
+                 Text="{Binding obj.BlockData}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
 
     </Grid>
 </UserControl>
