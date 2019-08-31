@@ -101,6 +101,8 @@
     </ApplicationDefinition>
     <Compile Include="Obj_save\Mob\AI.cs" />
     <Compile Include="Obj_save\Mob\BossBar.cs" />
+    <Compile Include="Obj_save\Mob\DamageModifiers.cs" />
+    <Compile Include="Obj_save\Mob\Drops.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
@@ -226,6 +228,12 @@
     </Compile>
     <Compile Include="WPF\Mob\ARMOR_STAND.xaml.cs">
       <DependentUpon>ARMOR_STAND.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Other\DamageModifiersChange.xaml.cs">
+      <DependentUpon>DamageModifiersChange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Other\DropsChange.xaml.cs">
+      <DependentUpon>DropsChange.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Other\Message.xaml.cs">
       <DependentUpon>Message.xaml</DependentUpon>
@@ -367,6 +375,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="WPF\Mob\ARMOR_STAND.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Other\DamageModifiersChange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Other\DropsChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

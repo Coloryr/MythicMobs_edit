@@ -17,7 +17,7 @@
         
         <CheckBox Content="是否充能" HorizontalAlignment="Left" Height="15" Margin="10,79,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.SuperCharged}" Style="{StaticResource Check}"/>
-        <CheckBox Content="是否阻止被自己炸死" HorizontalAlignment="Left" Height="15" Margin="100,79,0,0" VerticalAlignment="Top"
+        <CheckBox Content="是否阻止被自己炸死" HorizontalAlignment="Left" Height="15" Margin="97,79,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.PreventSuicide}" Style="{StaticResource Check}"/>
     </Grid>
 </UserControl>

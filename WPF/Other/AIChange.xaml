@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
         mc:Ignorable="d"
-        Title="AI修改" Height="70" Width="260" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+        Title="AI修改" Height="70" Width="260" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/icon.ico">
     <Grid Background="Black">
         <Label Content="AI" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Name="AI_list"
                 Style="{StaticResource Label}"/>

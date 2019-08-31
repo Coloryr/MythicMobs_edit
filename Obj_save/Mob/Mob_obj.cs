@@ -53,5 +53,21 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// 怪物AI-锁定
         /// </summary>
         public List<string> AITargetSelectors { get; set; }
+        /// <summary>
+        /// 怪物掉落
+        /// </summary>
+        public List<string> Drops { get; set; }
+        /// <summary>
+        /// 等级怪物掉落
+        /// </summary>
+        public List<string> DropsPerLevel { get; set; }
+        /// <summary>
+        /// 伤害修正
+        /// </summary>
+        public List<string> DamageModifiers { get; set; }
+        /// <summary>
+        /// 装备
+        /// </summary>
+        public List<string> Equipment { get; set; }
     }
 }

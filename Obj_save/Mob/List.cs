@@ -118,5 +118,18 @@ namespace MythicMobs_edit.Obj_save.Mob
             "OtherFaction", "OtherFactionMonsters", "OtherFactionVillagers",
             "SpecificFaction [faction_name]", "SpecificFactionMonsters [faction_name]"
         };
+        public List<string> Drops_Type = new List<string>()
+        {
+            "<item>", "exp", "<droptable>", "champions-exp", "skillapi-exp",
+            "heroesexp", "mcmmo-exp", "money", "mythicdrop <item>", "phatloot <item>"
+        };
+        public List<string> DamageModifiers_All = new List<string>()
+        {
+            "DROWNING", "BLOCK_EXPLOSION", "ENTITY_EXPLOSION", "VOID", "LIGHTNING",
+            "SUICIDE", "STARVATION", "POISON", "MAGIC", "DRAGON_BREATH", "WITHER",
+            "FALLING_BLOCK", "THORNS", "CUSTOM", "LAVA", "MELTING", "FIRE_TICK",
+            "FIRE", "HOT_FLOOR", "FALL", "SUFFOCATION", "PROJECTILE", "ENTITY_ATTACK",
+            "CONTACT"
+        };
     }
 }
