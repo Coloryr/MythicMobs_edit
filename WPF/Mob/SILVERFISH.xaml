@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="蠹虫设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        
-        <CheckBox Content="阻止感染方块" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <Label Content="蠹虫设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,0,0,0"/>
+
+        <CheckBox Content="阻止感染方块" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding obj.PreventBlockInfection}"/>
 
     </Grid>

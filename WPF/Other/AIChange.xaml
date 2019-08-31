@@ -10,9 +10,9 @@
         <Label Content="AI" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Name="AI_list"
                 Style="{StaticResource Label}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="55,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="60,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"
                  x:Name="AI" Text="{Binding b}" Style="{StaticResource TextBox}"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="22,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28"
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="27,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28"
                  x:Name="AI_L" Text="{Binding a}" Style="{StaticResource TextBox}"/>
 
     </Grid>

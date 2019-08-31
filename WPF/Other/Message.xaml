@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Other"
         mc:Ignorable="d"
-        Title="Message" Height="102" Width="214" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/MythicMobs_edit;component/icon.ico">
+        Title="" Height="102" Width="214" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/MythicMobs_edit;component/icon.ico">
     <Grid Background="Black">
         <Label Content="Label" HorizontalAlignment="Center" VerticalAlignment="Center"
                Name="show" Style="{StaticResource Label}"/>

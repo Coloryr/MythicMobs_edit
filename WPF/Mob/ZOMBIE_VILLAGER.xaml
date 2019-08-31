@@ -4,20 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="300" Width="290">
+             mc:Ignorable="d" Height="300" Width="319">
     <Grid>
-        <Label Content="僵尸村民设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="村民职业" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="加强伤害几率" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="{Binding obj.ReinforcementsChance}" HorizontalAlignment="Left" Margin="250,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="僵尸村民设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,0,0,0"/>
+        <Label Content="村民职业" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="加强伤害几率" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="{Binding obj.ReinforcementsChance}" Height="25" Width="35" HorizontalAlignment="Left" Margin="274,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,53,0,0" VerticalAlignment="Top" Width="135"
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,63,0,0" VerticalAlignment="Top" Width="161"
             Name="Type" Text="{Binding obj.Profession}" Style="{StaticResource ComboBoxStyle}"/>
 
-        <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="213,53,0,0" VerticalAlignment="Top" Width="70" 
+        <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="239,63,0,0" VerticalAlignment="Top" Width="70" 
                 Click="Button_Click" Style="{StaticResource Button}"/>
 
-        <Slider HorizontalAlignment="Left" Margin="92,28,0,0" VerticalAlignment="Top" Width="153" Maximum="1" LargeChange="0.1" TickFrequency="0.1"
+        <Slider HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top" Width="172" Maximum="1" LargeChange="0.1" TickFrequency="0.1"
             Value="{Binding obj.ReinforcementsChance}"  Style="{StaticResource Slider}"/>
 
 

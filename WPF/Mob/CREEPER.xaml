@@ -4,20 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="300" Width="290">
+             mc:Ignorable="d" Height="300" Width="319">
     <Grid>
-        <Label Content="苦力怕设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="爆炸半径" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="爆炸时间" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="苦力怕设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,0,0,0"/>
+        <Label Content="爆炸半径" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="爆炸时间" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="75,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236"
                  Text="{Binding obj.ExplosionRadius}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="75,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232"
                  Text="{Binding obj.FuseTicks}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
-        
-        <CheckBox Content="是否充能" HorizontalAlignment="Left" Height="15" Margin="10,79,0,0" VerticalAlignment="Top"
+
+        <CheckBox Content="是否充能" HorizontalAlignment="Left" Height="15" Margin="10,90,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.SuperCharged}" Style="{StaticResource Check}"/>
-        <CheckBox Content="是否阻止被自己炸死" HorizontalAlignment="Left" Height="15" Margin="97,79,0,0" VerticalAlignment="Top"
+        <CheckBox Content="是否阻止被自己炸死" HorizontalAlignment="Left" Height="15" Margin="97,90,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.PreventSuicide}" Style="{StaticResource Check}"/>
     </Grid>
 </UserControl>

@@ -103,6 +103,8 @@
     <Compile Include="Obj_save\Mob\BossBar.cs" />
     <Compile Include="Obj_save\Mob\DamageModifiers.cs" />
     <Compile Include="Obj_save\Mob\Drops.cs" />
+    <Compile Include="Obj_save\Mob\Equipment.cs" />
+    <Compile Include="Obj_save\Mob\LevelModifiers.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
@@ -234,6 +236,9 @@
     </Compile>
     <Compile Include="WPF\Other\DropsChange.xaml.cs">
       <DependentUpon>DropsChange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Other\KillMessages.xaml.cs">
+      <DependentUpon>KillMessages.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Other\Message.xaml.cs">
       <DependentUpon>Message.xaml</DependentUpon>
@@ -386,6 +391,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Other\KillMessages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Other\Message.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -463,6 +472,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\work-36.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\-1c6d7f231b328b94.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('packages\Fody.6.0.0\build\Fody.targets')" />

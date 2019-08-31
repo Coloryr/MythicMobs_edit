@@ -6,16 +6,16 @@
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
              mc:Ignorable="d" Height="300" Width="290">
     <Grid>
-        <Label Content="点燃的TNT设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="爆炸时间" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="爆炸强度" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="点燃的TNT设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,0,0,0"/>
+        <Label Content="爆炸时间" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="爆炸强度" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"
                  Text="{Binding obj.FuseTicks}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"
             Text="{Binding obj.ExplosionYield}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
-        
-        <CheckBox Content="爆炸是否产生火焰" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"
+
+        <CheckBox Content="爆炸是否产生火焰" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.Incendiary}" Style="{StaticResource Check}"/>
 
     </Grid>

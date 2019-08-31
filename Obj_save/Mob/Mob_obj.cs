@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace MythicMobs_edit.Obj_save.Mob
 {
@@ -69,5 +68,13 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// 装备
         /// </summary>
         public List<string> Equipment { get; set; }
+        /// <summary>
+        /// 自定义击杀信息
+        /// </summary>
+        public List<string> KillMessages { get; set; }
+        /// <summary>
+        /// 等级修正
+        /// </summary>
+        public LevelModifiers LevelModifiers { get; set; }
     }
 }

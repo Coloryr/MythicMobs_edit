@@ -4,141 +4,175 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MythicMobs_edit 添加生物" Height="720" Width="1280" ResizeMode="CanMinimize" Foreground="Black">
-    <Window.Background>
-        <ImageBrush ImageSource="/MythicMobs_edit;component/image/work-36.jpg"/>
-    </Window.Background>
+        Title="MythicMobs_edit 添加生物" Height="746" Width="1280" ResizeMode="CanMinimize" Foreground="Black">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="691" VerticalAlignment="Top" Width="1270" Visibility="Hidden"
-                    Name="BG">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0.5"/>
+                <GradientStop Color="#FF252525" Offset="1"/>
+                <GradientStop Color="#FF252525"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Visibility="Hidden"
+                    Name="BG" Grid.ColumnSpan="4" Margin="0,0,0,0">
             <StackPanel.Background>
-                <ImageBrush ImageSource="/MythicMobs_edit;component/image/work-36.jpg"/>
+                <ImageBrush ImageSource="/MythicMobs_edit;component/image/work-36.jpg" Stretch="Uniform"/>
             </StackPanel.Background>
             <StackPanel.Effect>
-                <BlurEffect Radius="15"/>
+                <BlurEffect Radius="0"/>
             </StackPanel.Effect>
         </StackPanel>
 
-        <TextBox Margin="835,0,0,0" TextWrapping="Wrap" Background="#AA898989" Name="Out" Style="{StaticResource TextBox}" Height="136" VerticalAlignment="Bottom"/>
+        <TextBox TextWrapping="Wrap" Background="#AA898989" Name="Out" Style="{StaticResource TextBox}" Height="136" 
+                 VerticalAlignment="Bottom" Grid.Column="3" RenderTransformOrigin="0.5,0.5" Margin="6,0,3,3"/>
 
         <Label Content="生物名字" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="生物类型" HorizontalAlignment="Left" Height="25" Margin="5,25,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="显示名称" HorizontalAlignment="Left" Height="25" Margin="5,50,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="血量" HorizontalAlignment="Left" Height="25" Margin="5,75,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="伤害" HorizontalAlignment="Left" Height="25" Margin="5,100,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="护甲" HorizontalAlignment="Left" Height="25" Margin="5,125,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="标题" HorizontalAlignment="Left" Height="25" Margin="5,171,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="显示范围" HorizontalAlignment="Left" Height="25" Margin="5,196,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="血条颜色" HorizontalAlignment="Left" Height="25" Margin="5,221,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="血条风格" HorizontalAlignment="Left" Height="25" Margin="5,246,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+        <Label Content="血量" HorizontalAlignment="Left" Height="25" Margin="17,75,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+        <Label Content="伤害" HorizontalAlignment="Left" Height="25" Margin="17,100,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+        <Label Content="护甲" HorizontalAlignment="Left" Height="25" Margin="17,125,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+        <Label Content="标题" HorizontalAlignment="Left" Height="25" Margin="10,172,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+        <Label Content="显示范围" HorizontalAlignment="Left" Height="25" Margin="10,197,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+        <Label Content="血条颜色" HorizontalAlignment="Left" Height="25" Margin="10,222,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+        <Label Content="血条风格" HorizontalAlignment="Left" Height="25" Margin="10,247,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="派系名称" HorizontalAlignment="Left" Height="25" Margin="5,292,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="坐骑" HorizontalAlignment="Left" Height="25" Margin="5,317,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+        <Label Content="坐骑" HorizontalAlignment="Left" Height="25" Margin="17,317,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="攻击速度" HorizontalAlignment="Left" Height="25" Margin="5,342,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="跟随距离" HorizontalAlignment="Left" Height="25" Margin="5,367,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="抗击退" HorizontalAlignment="Left" Height="25" Margin="5,390,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="受伤害半径" HorizontalAlignment="Left" Height="25" Margin="0,415,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
         <Label Content="移动速度" HorizontalAlignment="Left" Height="25" Margin="5,440,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
-        <Label Content="生物AI-行为" HorizontalAlignment="Left" Margin="245,295,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="245,455,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物AI-目标" HorizontalAlignment="Left" Margin="245,480,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="245,640,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物掉落表" HorizontalAlignment="Left" Margin="540,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="掉落类型选择" HorizontalAlignment="Left" Margin="540,160,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="掉落类型选择" HorizontalAlignment="Left" Margin="540,345,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="生物等级掉落表" HorizontalAlignment="Left" Margin="540,185,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="伤害来源" HorizontalAlignment="Left" Margin="540,530,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="伤害修正" HorizontalAlignment="Left" Margin="540,370,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="怪物装备" HorizontalAlignment="Left" Margin="540,555,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="头盔" HorizontalAlignment="Left" Margin="540,605,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="盔甲" HorizontalAlignment="Left" Margin="686,605,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="护腿" HorizontalAlignment="Left" Margin="540,630,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="副手" HorizontalAlignment="Left" Margin="686,580,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="主手" HorizontalAlignment="Left" Margin="540,580,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="靴子" HorizontalAlignment="Left" Margin="686,630,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        
+        <Label Content="生物AI-行为" HorizontalAlignment="Left" Margin="5,297,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="1"/>
+        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="5,467,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="1"/>
+        <Label Content="生物AI-目标" HorizontalAlignment="Left" Margin="5,497,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="1"/>
+        <Label Content="生物AI选择" HorizontalAlignment="Left" Margin="5,667,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="1"/>
+        <Label Content="生物掉落表" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2" Margin="5,0,0,0"/>
+        <Label Content="掉落类型选择" HorizontalAlignment="Left" Margin="5,170,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="掉落类型选择" HorizontalAlignment="Left" Margin="5,370,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="生物等级掉落表" HorizontalAlignment="Left" Margin="5,200,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="伤害来源" HorizontalAlignment="Left" Margin="5,565,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="伤害修正" HorizontalAlignment="Left" Margin="5,400,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="怪物装备" HorizontalAlignment="Left" Margin="5,595,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="头盔" HorizontalAlignment="Left" Margin="14,650,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="盔甲" HorizontalAlignment="Left" Margin="163,650,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="护腿" HorizontalAlignment="Left" Margin="14,675,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="副手" HorizontalAlignment="Left" Margin="163,625,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="主手" HorizontalAlignment="Left" Margin="14,625,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="靴子" HorizontalAlignment="Left" Margin="163,675,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="2"/>
+        <Label Content="自定义击杀信息" HorizontalAlignment="Left" Margin="5,-1,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+        <Label Content="生物等级" HorizontalAlignment="Left" Margin="5,169,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+        <Label Content="击倒" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+        <Label Content="力量" HorizontalAlignment="Left" Margin="159,224,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+        <Label Content="护甲" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+        <Label Content="伤害" HorizontalAlignment="Left" Margin="159,199,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+        <Label Content="血量" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+        <Label Content="攻速" HorizontalAlignment="Left" Margin="159,249,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+        <Label Content="移动速度" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
+
         <ComboBox HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                  Width="170" Height="20" Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged" Text="{Binding Mob.Type}"/>
-        <ComboBox HorizontalAlignment="Left" Margin="70,225,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                  Width="110" Height="20" x:Name="BossBar_Color" Text="{Binding Mob.BossBar.Color_save}" IsEnabled="False"/>
-        <ComboBox HorizontalAlignment="Left" Margin="70,250,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                  Width="110" Height="20" x:Name="BossBar_Style" Text="{Binding Mob.BossBar.Style_save}" IsEnabled="False"/>
-        <ComboBox HorizontalAlignment="Left" Margin="315,458,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                  Width="156" Height="20" Name="AIGoalSelectors_S" Text="{Binding AI_Goal_S}"/>
-        <ComboBox HorizontalAlignment="Left" Margin="315,643,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-            Width="156" Height="20" x:Name="AITargetSelectors_S" Text="{Binding AI_Goal_T}"/>
-        <ComboBox HorizontalAlignment="Left" Margin="622,163,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-            Width="144" Height="20" x:Name="Drops_S" Text="{Binding Drops_C}"/>
-        <ComboBox HorizontalAlignment="Left" Margin="622,348,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-            Width="144" Height="20" x:Name="DropsPerLevel_S" Text="{Binding DropsPerLevel_C}"/>
-        <ComboBox HorizontalAlignment="Left" Margin="598,533,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-            Width="168" Height="20" x:Name="DamageModifiers_S" Text="{Binding DamageModifiers_C}"/>
+                  Width="243" Height="20" Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged" Text="{Binding Mob.Type}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="70,226,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+                  Width="175" Height="20" x:Name="BossBar_Color" Text="{Binding Mob.BossBar.Color_save}" IsEnabled="False"/>
+        <ComboBox HorizontalAlignment="Left" Margin="70,251,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+                  Width="175" Height="20" x:Name="BossBar_Style" Text="{Binding Mob.BossBar.Style_save}" IsEnabled="False"/>
+        <ComboBox HorizontalAlignment="Left" Margin="80,469,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+                  Width="169" Height="20" Name="AIGoalSelectors_S" Text="{Binding AI_Goal_S}" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="80,670,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+            Width="169" Height="20" x:Name="AITargetSelectors_S" Text="{Binding AI_Goal_T}" Grid.Column="1"/>
+        <ComboBox HorizontalAlignment="Left" Margin="92,173,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+            Width="156" Height="20" x:Name="Drops_S" Text="{Binding Drops_C}" Grid.Column="2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="92,373,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+            Width="156" Height="20" x:Name="DropsPerLevel_S" Text="{Binding DropsPerLevel_C}" Grid.Column="2"/>
+        <ComboBox HorizontalAlignment="Left" Margin="68,567,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+            Width="180" Height="20" x:Name="DamageModifiers_S" Text="{Binding DamageModifiers_C}" Grid.Column="2"/>
 
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding MobName}" Name ="Mob_Name"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding MobName}" Name ="Mob_Name"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,54,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Path=Mob.Display}" Name ="Mob_Display"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Display}" Name ="Mob_Display"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,79,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Health}" x:Name ="Mob_Health" PreviewTextInput="TextCompositionEventArgs"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Health}" x:Name ="Mob_Health" PreviewTextInput="TextCompositionEventArgs"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,104,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Damage}" x:Name ="Mob_Damage" PreviewTextInput="TextCompositionEventArgs"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Damage}" x:Name ="Mob_Damage" PreviewTextInput="TextCompositionEventArgs"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,129,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Armor}" x:Name ="Mob_Armor" PreviewTextInput="TextCompositionEventArgs"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,175,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.BossBar.Title}" x:Name ="BossBar_Title" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,200,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.BossBar.Range}" x:Name ="BossBar_Range" PreviewTextInput="TextCompositionEventArgs" IsEnabled="False"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Armor}" x:Name ="Mob_Armor" PreviewTextInput="TextCompositionEventArgs"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,176,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.BossBar.Title}" x:Name ="BossBar_Title" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="70,201,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.BossBar.Range}" x:Name ="BossBar_Range" PreviewTextInput="TextCompositionEventArgs" IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,296,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Faction}" x:Name ="Mob_Faction"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Faction}" x:Name ="Mob_Faction"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,321,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Mount}" x:Name ="Mob_Mount"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Mount}" x:Name ="Mob_Mount"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,346,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.AttackSpeed}" x:Name ="Options_AttackSpeed" PreviewTextInput="TextCompositionEventArgs"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Options.AttackSpeed}" x:Name ="Options_AttackSpeed" PreviewTextInput="TextCompositionEventArgs"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,371,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.FollowRange}" x:Name ="Options_FollowRange" PreviewTextInput="TextCompositionEventArgs"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Options.FollowRange}" x:Name ="Options_FollowRange" PreviewTextInput="TextCompositionEventArgs"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,395,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.KnockbackResistance}" x:Name ="Options_KnockbackResistance" PreviewTextInput="TextCompositionEventArgs"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Options.KnockbackResistance}" x:Name ="Options_KnockbackResistance" PreviewTextInput="TextCompositionEventArgs"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,420,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.MaxCombatDistance}" x:Name ="Options_MaxCombatDistance" PreviewTextInput="TextCompositionEventArgs"/>
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Options.MaxCombatDistance}" x:Name ="Options_MaxCombatDistance" PreviewTextInput="TextCompositionEventArgs"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,445,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="170" Text="{Binding Mob.Options.MovementSpeed}" x:Name ="Options_MovementSpeed" PreviewTextInput="TextCompositionEventArgs"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="574,607,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Helmet}" x:Name ="Equipment_4" PreviewTextInput="TextCompositionEventArgs"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="720,607,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Chestplate}" x:Name ="Equipment_3" PreviewTextInput="TextCompositionEventArgs"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="574,632,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Leggings}" x:Name ="Equipment_2" PreviewTextInput="TextCompositionEventArgs"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="720,583,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Assistant}" x:Name ="Equipment_5" PreviewTextInput="TextCompositionEventArgs"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="720,632,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Boots}" x:Name ="Equipment_1" PreviewTextInput="TextCompositionEventArgs"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="574,583,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Hand}" x:Name ="Equipment_0" PreviewTextInput="TextCompositionEventArgs"/>
-        
-        <CheckBox Content="BOSS血条" HorizontalAlignment="Left" Height="15" Margin="10,155,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+                 VerticalAlignment="Top" Width="243" Text="{Binding Mob.Options.MovementSpeed}" x:Name ="Options_MovementSpeed" PreviewTextInput="TextCompositionEventArgs"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="53,654,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="105" Text="{Binding Equipment.Helmet}" x:Name ="Equipment_4" PreviewTextInput="TextCompositionEventArgs" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="202,653,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Chestplate}" x:Name ="Equipment_3" PreviewTextInput="TextCompositionEventArgs" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="53,679,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="105" Text="{Binding Equipment.Leggings}" x:Name ="Equipment_2" PreviewTextInput="TextCompositionEventArgs" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="202,628,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Assistant}" x:Name ="Equipment_5" PreviewTextInput="TextCompositionEventArgs" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="202,678,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="110" Text="{Binding Equipment.Boots}" x:Name ="Equipment_1" PreviewTextInput="TextCompositionEventArgs" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="53,629,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="105" Text="{Binding Equipment.Hand}" x:Name ="Equipment_0" PreviewTextInput="TextCompositionEventArgs" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="49,227,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="105" Text="{Binding Mob.LevelModifiers.KnockbackResistance}" x:Name ="Equipment_4_Copy" PreviewTextInput="TextCompositionEventArgs" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="198,227,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="110" Text="{Binding Mob.LevelModifiers.Power}" x:Name ="Equipment_3_Copy" PreviewTextInput="TextCompositionEventArgs" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="49,251,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="105" Text="{Binding Mob.LevelModifiers.Armor}" x:Name ="Equipment_2_Copy" PreviewTextInput="TextCompositionEventArgs" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="198,202,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="110" Text="{Binding Mob.LevelModifiers.Damage}" x:Name ="Equipment_5_Copy" PreviewTextInput="TextCompositionEventArgs" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="198,251,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="110" Text="{Binding Mob.LevelModifiers.AttackSpeed}" x:Name ="Equipment_1_Copy" PreviewTextInput="TextCompositionEventArgs" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="49,202,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="105" Text="{Binding Mob.LevelModifiers.Health}" x:Name ="Equipment_0_Copy" PreviewTextInput="TextCompositionEventArgs" Grid.Column="3"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,275,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
+                 VerticalAlignment="Top" Width="105" Text="{Binding Mob.LevelModifiers.MovementSpeed}" x:Name ="Equipment_2_Copy1" PreviewTextInput="TextCompositionEventArgs" Grid.Column="3"/>
+
+        <CheckBox Content="BOSS血条" HorizontalAlignment="Left" Height="15" Margin="5,154,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.BossBar.Enabled}" x:Name="BossBar_Enabled" Click="CheckBox_Check"/>
-        <CheckBox Content="雾" HorizontalAlignment="Left" Height="15" Margin="10,276,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="雾" HorizontalAlignment="Left" Height="15" Margin="10,275,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.BossBar.CreateFog}" x:Name="BossBar_CreateFog" IsEnabled="False"/>
-        <CheckBox Content="黑色天空" HorizontalAlignment="Left" Height="15" Margin="70,276,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="黑色天空" HorizontalAlignment="Left" Height="15" Margin="70,275,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.BossBar.DarkenSky}" x:Name="BossBar_DarkenSky" IsEnabled="False"/>
-        <CheckBox Content="音乐播放" HorizontalAlignment="Left" Height="15" Margin="170,276,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="音乐播放" HorizontalAlignment="Left" Height="15" Margin="170,275,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.BossBar.PlayMusic}" Name="BossBar_PlayMusic" IsEnabled="False"/>
         <CheckBox Content="总是显示名称" HorizontalAlignment="Left" Height="15" Margin="10,470,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.AlwaysShowName}" x:Name="Options_AlwaysShowName"/>
-        <CheckBox Content="可碰撞" HorizontalAlignment="Left" Height="15" Margin="100,470,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="可碰撞" HorizontalAlignment="Left" Height="15" Margin="126,470,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.Collidable}" x:Name="Options_Collidable"/>
         <CheckBox Content="没有玩家时会被删除" HorizontalAlignment="Left" Height="15" Margin="54,489,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.Despawn}" x:Name="Options_Despawn"/>
-        <CheckBox Content="发光" HorizontalAlignment="Left" Height="15" Margin="200,470,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="发光" HorizontalAlignment="Left" Height="15" Margin="274,470,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.Glowing}" x:Name="Options_Glowing"/>
         <CheckBox Content="无敌" HorizontalAlignment="Left" Height="15" Margin="10,490,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.Invincible}" x:Name="Options_Invincible"/>
-        <CheckBox Content="无AI" HorizontalAlignment="Left" Height="15" Margin="156,470,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="无AI" HorizontalAlignment="Left" Height="15" Margin="206,470,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.NoAI}" x:Name="Options_NoAI"/>
-        <CheckBox Content="重力" HorizontalAlignment="Left" Height="15" Margin="182,489,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="重力" HorizontalAlignment="Left" Height="15" Margin="206,489,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.NoGravity}" x:Name="Options_NoGravity"/>
         <CheckBox Content="击杀命令下无敌" HorizontalAlignment="Left" Height="15" Margin="10,509,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.Persistent}" x:Name="Options_Persistent"/>
-        <CheckBox Content="防止生物捡起物品" HorizontalAlignment="Left" Height="15" Margin="114,509,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="防止生物捡起物品" HorizontalAlignment="Left" Height="15" Margin="134,509,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.PreventItemPickup}" x:Name="Options_PreventItemPickup"/>
         <CheckBox Content="防止被栓绳拉住" HorizontalAlignment="Left" Height="15" Margin="10,529,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.PreventLeashing}" x:Name="Options_PreventLeashing"/>
@@ -152,38 +186,40 @@
                   IsChecked="{Binding Mob.Options.PreventRenaming}" x:Name="Options_PreventRenaming"/>
         <CheckBox Content="如果生物的血量恢复到技能设置的血量&#xD;&#xA;阈值以上，是否可以重新使用此技能" HorizontalAlignment="Left" Height="28" Margin="5,630,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.RepeatAllSkills}" x:Name="Options_RepeatAllSkills" Width="235"/>
-        <CheckBox Content="显示生命信息" HorizontalAlignment="Left" Height="15" Margin="114,529,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="显示生命信息" HorizontalAlignment="Left" Height="15" Margin="134,529,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.ShowHealth}" x:Name="Options_ShowHealth"/>
         <CheckBox Content="阻止生物发出原版音效" HorizontalAlignment="Left" Height="15" Margin="10,664,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Options.Silent}" x:Name="Options_Silent"/>
-        <CheckBox Content="启用威胁表" HorizontalAlignment="Left" Height="15" Margin="150,610,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="启用威胁表" HorizontalAlignment="Left" Height="15" Margin="206,610,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Modules.ThreatTable}" x:Name="Modules_ThreatTable"/>
-        <CheckBox Content="启用免疫表" HorizontalAlignment="Left" Height="15" Margin="150,590,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="启用免疫表" HorizontalAlignment="Left" Height="15" Margin="206,590,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Mob.Modules.ImmunityTable}" x:Name="Modules_ImmunityTable"/>
 
-        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="185,225,0,0" VerticalAlignment="Top" Width="55" Style="{StaticResource Button}"
+        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="250,226,0,0" VerticalAlignment="Top" Width="63" Style="{StaticResource Button}"
                 Name="BossBar_Color_r" Click="BossBar_Color_r_Click" IsEnabled="False"/>
-        <Button Content="随机风格" HorizontalAlignment="Left" Height="20" Margin="185,250,0,0" VerticalAlignment="Top" Width="55" Style="{StaticResource Button}"
+        <Button Content="随机风格" HorizontalAlignment="Left" Height="20" Margin="250,251,0,0" VerticalAlignment="Top" Width="63" Style="{StaticResource Button}"
                 x:Name="BossBar_Style_r" IsEnabled="False" Click="BossBar_Style_r_Click"/>
-        <Button Content="返回" HorizontalAlignment="Left" Height="41" Margin="879,490,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
-                Click="Return"/>
-        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="41" Margin="975,490,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
-                Click="Button_Click"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="475,458,0,0" VerticalAlignment="Top" Width="60" 
-                Click="Button_Click_1" Style="{StaticResource Button}"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="475,643,0,0" VerticalAlignment="Top" Width="60" 
-                Click="Button_Click_2" Style="{StaticResource Button}"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="770,163,0,0" VerticalAlignment="Top" Width="60" 
-                Click="Button_Click_3" Style="{StaticResource Button}"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="770,348,0,0" VerticalAlignment="Top" Width="60" 
-                Click="Button_Click_4" Style="{StaticResource Button}"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="770,533,0,0" VerticalAlignment="Top" Width="60" 
-                Click="Button_Click_5" Style="{StaticResource Button}"/>
+        <Button Content="返回" HorizontalAlignment="Left" Height="24" Margin="106,549,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
+                Click="Return" Grid.Column="3"/>
+        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="24" Margin="6,549,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
+                Click="Button_Click" Grid.Column="3"/>
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="254,469,0,0" VerticalAlignment="Top" Width="60" 
+                Click="Button_Click_1" Style="{StaticResource Button}" Grid.Column="1"/>
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="254,670,0,0" VerticalAlignment="Top" Width="60" 
+                Click="Button_Click_2" Style="{StaticResource Button}" Grid.Column="1"/>
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="253,173,0,0" VerticalAlignment="Top" Width="60" 
+                Click="Button_Click_3" Style="{StaticResource Button}" Grid.Column="2"/>
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="253,368,0,0" VerticalAlignment="Top" Width="60" 
+                Click="Button_Click_4" Style="{StaticResource Button}" Grid.Column="2"/>
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="253,562,0,0" VerticalAlignment="Top" Width="60" 
+                Click="Button_Click_5" Style="{StaticResource Button}" Grid.Column="2"/>
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="255,2,0,0" VerticalAlignment="Top" Width="60" 
+                Click="Button_Click_6" Style="{StaticResource Button}" Grid.Column="3"/>
 
-        <StackPanel HorizontalAlignment="Left" Height="290" Margin="245,0,0,0" VerticalAlignment="Top" Width="290" Name="panel"/>
+        <StackPanel HorizontalAlignment="Left" Height="290" Margin="0,2,0,0" VerticalAlignment="Top" Width="319" Name="panel" Grid.Column="1"/>
 
-        <ListView HorizontalAlignment="Left" Height="135" Margin="245,320,0,0" VerticalAlignment="Top" Width="290" Name="AI_G"
-                  Style="{StaticResource ListViewStyle1}">
+        <ListView HorizontalAlignment="Left" Height="135" Margin="5,327,0,0" VerticalAlignment="Top" Width="309" Name="AI_G"
+                  Style="{StaticResource ListViewStyle1}" Grid.Column="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="序列" Width="40" DisplayMemberBinding="{Binding a}"/>
@@ -197,8 +233,8 @@
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="135" Margin="245,505,0,0" VerticalAlignment="Top" Width="290" x:Name="AI_T"
-            Style="{StaticResource ListViewStyle1}">
+        <ListView HorizontalAlignment="Left" Height="135" Margin="5,527,0,0" VerticalAlignment="Top" Width="309" x:Name="AI_T"
+            Style="{StaticResource ListViewStyle1}" Grid.Column="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="序列" Width="40" DisplayMemberBinding="{Binding a}"/>
@@ -212,8 +248,8 @@
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="135" Margin="540,25,0,0" VerticalAlignment="Top" Width="290" x:Name="Drops_T"
-            Style="{StaticResource ListViewStyle1}">
+        <ListView HorizontalAlignment="Left" Height="135" Margin="5,30,0,0" VerticalAlignment="Top" Width="308" x:Name="Drops_T"
+            Style="{StaticResource ListViewStyle1}" Grid.Column="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="掉落物" Width="154" DisplayMemberBinding="{Binding Type}"/>
@@ -228,8 +264,8 @@
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="135" Margin="540,210,0,0" VerticalAlignment="Top" Width="290" x:Name="DropsPerLevel_T"
-            Style="{StaticResource ListViewStyle1}">
+        <ListView HorizontalAlignment="Left" Height="135" Margin="5,230,0,0" VerticalAlignment="Top" Width="308" x:Name="DropsPerLevel_T"
+            Style="{StaticResource ListViewStyle1}" Grid.Column="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="掉落物" Width="154" DisplayMemberBinding="{Binding Type}"/>
@@ -244,8 +280,8 @@
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="135" Margin="540,395,0,0" VerticalAlignment="Top" Width="290" x:Name="DamageModifiers_T"
-            Style="{StaticResource ListViewStyle1}">
+        <ListView HorizontalAlignment="Left" Height="135" Margin="5,425,0,0" VerticalAlignment="Top" Width="308" x:Name="DamageModifiers_T"
+            Style="{StaticResource ListViewStyle1}" Grid.Column="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="伤害来源" Width="216" DisplayMemberBinding="{Binding Type}"/>
@@ -256,6 +292,20 @@
                 <ContextMenu>
                     <MenuItem Header="删除" Click="DelectDamageModifiersEvent"/>
                     <MenuItem Header="修改" Click="ChangeDamageModifiersEvent"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+        <ListView HorizontalAlignment="Left" Height="135" Margin="5,29,0,0" VerticalAlignment="Top" Width="310" x:Name="KillMessages_T"
+            Style="{StaticResource ListViewStyle1}" Grid.Column="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="消息" Width="294" DisplayMemberBinding="{Binding StringFormat=string}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="删除" Click="DelectKillMessagesEvent"/>
+                    <MenuItem Header="修改" Click="ChangeKillMessagesEvent"/>
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>

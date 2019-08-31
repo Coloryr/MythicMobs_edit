@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media.Effects;
 using YamlDotNet.Serialization;
 
 namespace MythicMobs_edit.WPF
@@ -21,12 +22,14 @@ namespace MythicMobs_edit.WPF
     public partial class Addmob : Window
     {
         public string MobName { get; set; } = "newMob";
+        public string Display { get; set; } = "Mob";
         public Dictionary<int, string> AIGoalSelectors { get; set; } = new Dictionary<int, string>();
         public Dictionary<int, string> AITargetSelectors { get; set; } = new Dictionary<int, string>();
         public List<Drops> Drops_L { get; set; } = new List<Drops>();
         public List<Drops> DropsPerLevel_L { get; set; } = new List<Drops>();
         public List<DamageModifiers> DamageModifiers_L { get; set; } = new List<DamageModifiers>();
         public Equipment Equipment { get; set; } = new Equipment();
+        public List<string> KillMessages_L { get; set; } = new List<string>();
         public string AI_Goal_S { get; set; } = "clear";
         public string AI_Goal_T { get; set; } = "clear";
         public string Drops_C { get; set; } = "exp";
@@ -34,7 +37,6 @@ namespace MythicMobs_edit.WPF
         public string DamageModifiers_C { get; set; } = "DROWNING";
         public Mob_obj Mob { get; set; } = new Mob_obj()
         {
-            Display = "Mob",
             Type = "ARMOR_STAND",
             Health = 20,
             Damage = 5,
@@ -78,14 +80,19 @@ namespace MythicMobs_edit.WPF
             Drops = new List<string>(),
             DropsPerLevel = new List<string>(),
             DamageModifiers = new List<string>(),
-            Equipment = new List<string>()
+            Equipment = new List<string>(),
+            KillMessages = new List<string>(),
+            LevelModifiers = new LevelModifiers()
         };
         private UserControl obj;
-        public Addmob()
+        public Addmob(bool gs)
         {
             InitializeComponent();
             Startup();
             DataContext = this;
+            BlurEffect BlurEffect = new BlurEffect();
+            BlurEffect.Radius = gs == true ? 15 : 0;
+            BG.Effect = BlurEffect;
             BG.Visibility = Visibility.Visible;
         }
         private void Startup()
@@ -250,6 +257,7 @@ namespace MythicMobs_edit.WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Mob.Display = Encoding.Default.GetString(Encoding.UTF8.GetBytes(Display));
             switch (Mob.Type)
             {
                 case "ARMOR_STAND":
@@ -379,27 +387,32 @@ namespace MythicMobs_edit.WPF
             Mob.AIGoalSelectors.Clear();
             foreach (KeyValuePair<int, string> a in AIGoalSelectors)
             {
-                Mob.AIGoalSelectors.Add(a.Key + " " + a.Value);
+                Mob.AIGoalSelectors.Add(a.Key + " " + Encoding.Default.GetString(Encoding.UTF8.GetBytes(a.Value)));
             }
             Mob.AITargetSelectors.Clear();
             foreach (KeyValuePair<int, string> a in AITargetSelectors)
             {
-                Mob.AITargetSelectors.Add(a.Key + " " + a.Value);
+                Mob.AITargetSelectors.Add(a.Key + " " + Encoding.Default.GetString(Encoding.UTF8.GetBytes(a.Value)));
             }
             Mob.Drops.Clear();
             foreach (Drops a in Drops_L)
             {
-                Mob.Drops.Add(a.Type + " " + a.amount + " " + string.Format("{0:F}", a.chance));
+                Mob.Drops.Add(Encoding.Default.GetString(Encoding.UTF8.GetBytes(a.Type)) + " " + a.amount + " " + string.Format("{0:F}", a.chance));
             }
             Mob.DropsPerLevel.Clear();
             foreach (Drops a in DropsPerLevel_L)
             {
-                Mob.DropsPerLevel.Add(a.Type + " " + a.amount + " " + string.Format("{0:F}", a.chance));
+                Mob.DropsPerLevel.Add(Encoding.Default.GetString(Encoding.UTF8.GetBytes(a.Type)) + " " + a.amount + " " + string.Format("{0:F}", a.chance));
             }
             Mob.DamageModifiers.Clear();
             foreach (DamageModifiers a in DamageModifiers_L)
             {
                 Mob.DamageModifiers.Add(a.Type + " " + string.Format("{0:F}", a.set));
+            }
+            Mob.KillMessages.Clear();
+            foreach (string a in KillMessages_L)
+            {
+                Mob.KillMessages.Add("'" + Encoding.Default.GetString(Encoding.UTF8.GetBytes(a)) + "'");
             }
             if (string.IsNullOrWhiteSpace(Equipment.Hand) == false)
                 Mob.Equipment.Add(Equipment.Hand + ":0");
@@ -487,6 +500,12 @@ namespace MythicMobs_edit.WPF
                 DamageModifiers_T.Items.Add(DamageModifiers);
             }
         }
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            string KillMessages = new KillMessages("击杀").KillMessages_set();
+            KillMessages_L.Add(KillMessages);
+            KillMessages_T.Items.Add(KillMessages);
+        }
 
         private void refash_AI_G()
         {
@@ -536,11 +555,19 @@ namespace MythicMobs_edit.WPF
                 DamageModifiers_T.Items.Add(a);
             }
         }
+        private void refash_KillMessages()
+        {
+            KillMessages_T.Items.Clear();
+            foreach (string a in KillMessages_L)
+            {
+                KillMessages_T.Items.Add(a);
+            }
+        }
         private void DelectAI_GEvent(object sender, RoutedEventArgs e)
         {
             if (AI_G.SelectedItem == null)
                 return;
-            int num = AI_G.SelectedIndex; //选中的listview的行
+            int num = AI_G.SelectedIndex;
             AI_G.Items.Remove(AI_G.SelectedItem);
             AIGoalSelectors.Remove(num);
             foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
@@ -731,6 +758,24 @@ namespace MythicMobs_edit.WPF
                 Drops Drops = new DropsChange((Drops)DropsPerLevel_T.SelectedItem).Drops_set();
                 DropsPerLevel_L.Add(Drops);
                 refash_DamageModifiers();
+            }
+        }
+        private void DelectKillMessagesEvent(object sender, RoutedEventArgs e)
+        {
+            if (KillMessages_T.SelectedItem == null)
+                return;
+            string a = (string)KillMessages_T.SelectedItem;
+            KillMessages_L.Remove(a);
+            refash_KillMessages();
+        }
+        private void ChangeKillMessagesEvent(object sender, RoutedEventArgs e)
+        {
+            if (KillMessages_T.SelectedItem != null)
+            {
+                KillMessages_L.Remove((string)KillMessages_T.SelectedItem);
+                string KillMessages = new KillMessages((string)KillMessages_T.SelectedItem).KillMessages_set();
+                KillMessages_L.Add(KillMessages);
+                refash_KillMessages();
             }
         }
     }

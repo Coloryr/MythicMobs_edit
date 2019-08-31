@@ -8,12 +8,12 @@
         Title="伤害来源修改" Height="88" Width="196" Icon="/MythicMobs_edit;component/icon.ico" ResizeMode="NoResize">
     <Grid Background="Black">
         <Label Content="伤害来源" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="伤害值" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="0,25,0,0"/>
+        <Label Content="伤害值" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="0,30,0,0"/>
 
-        <ComboBox HorizontalAlignment="Left" Margin="58,5,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource ComboBoxStyle}"
-                  Text="{Binding DamageModifiers.Type}" Name="Type"/>
+        <ComboBox HorizontalAlignment="Left" Margin="63,3,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource ComboBoxStyle}"
+                  Text="{Binding DamageModifiers.Type}" Name="Type" Height="20"/>
 
-        <TextBox HorizontalAlignment="Left" Margin="46,30,0,0" TextWrapping="Wrap" Text="{Binding DamageModifiers.set}" VerticalAlignment="Top"
-                   Style="{StaticResource TextBox}" Width="132"/>
+        <TextBox HorizontalAlignment="Left" Margin="51,33,0,0" TextWrapping="Wrap" Text="{Binding DamageModifiers.set}" VerticalAlignment="Top"
+                   Style="{StaticResource TextBox}" Width="132" Height="20"/>
     </Grid>
 </Window>

@@ -4,15 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="290" Width="290">
+             mc:Ignorable="d" Height="290" Width="319">
     <Grid>
-        <Label Content="史莱姆设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="史莱姆尺寸" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="史莱姆设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,0,0,0"/>
+        <Label Content="史莱姆尺寸" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <CheckBox Content="阻止分裂" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"
+        <CheckBox Content="阻止分裂" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.PreventSlimeSplit}" Style="{StaticResource Check}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="80,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="85,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224"
                  Text="{Binding obj.Size}" Style="{StaticResource TextBox}"/>
 
     </Grid>

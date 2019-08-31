@@ -4,15 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="290" Width="290">
+             mc:Ignorable="d" Height="290" Width="319">
     <Grid>
-        <Label Content="小僵尸猪人设置" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="加强伤害几率" HorizontalAlignment="Left" Height="25" Margin="13,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="{Binding obj.ReinforcementsChance}" HorizontalAlignment="Left" Margin="253,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="小僵尸猪人设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,0,0,0"/>
+        <Label Content="加强伤害几率" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="{Binding obj.ReinforcementsChance}" Height="26" Width="35" HorizontalAlignment="Left" Margin="274,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <CheckBox Content="是否为愤怒状态" HorizontalAlignment="Left" Margin="13,50,0,0" VerticalAlignment="Top"
+        <CheckBox Content="是否为愤怒状态" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.Angry}" Style="{StaticResource Check}"/>
-        <Slider HorizontalAlignment="Left" Margin="95,30,0,0" VerticalAlignment="Top" Width="153" Maximum="1" LargeChange="0.1" TickFrequency="0.1"
+        <Slider HorizontalAlignment="Left" Margin="97,34,0,0" VerticalAlignment="Top" Width="172" Maximum="1" LargeChange="0.1" TickFrequency="0.1"
                 Value="{Binding obj.ReinforcementsChance}"  Style="{StaticResource Slider}"/>
 
     </Grid>

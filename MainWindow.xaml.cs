@@ -15,7 +15,7 @@ namespace MythicMobs_edit
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new Addmob().Show();
+            new Addmob(gs.IsChecked == true ? true : false).Show();
             this.Close();
         }
     }

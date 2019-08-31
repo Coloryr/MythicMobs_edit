@@ -4,41 +4,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="300" Width="290">
+             mc:Ignorable="d" Height="300" Width="319">
     <Grid>
-        <Label Content="马设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="装甲类型" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="马的颜色" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="马的斑点" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="年龄" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Margin="245,150,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="马设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,0,0,0"/>
+        <Label Content="装甲类型" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="马的颜色" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="马的斑点" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="年龄" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="{Binding obj.Age}" Height="25" Width="35" HorizontalAlignment="Left" Margin="274,155,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,30,0,0" VerticalAlignment="Top" Width="135" Style="{StaticResource ComboBoxStyle}"
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,32,0,0" VerticalAlignment="Top" Width="161" Style="{StaticResource ComboBoxStyle}"
                   Name="HorseArmor" Text="{Binding obj.HorseArmor}"/>
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,105,0,0" VerticalAlignment="Top" Width="135" Style="{StaticResource ComboBoxStyle}"
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,108,0,0" VerticalAlignment="Top" Width="161" Style="{StaticResource ComboBoxStyle}"
             x:Name="HorseStyle" Text="{Binding obj.HorseStyle}"/>
-        <ComboBox HorizontalAlignment="Left" Height="20" Margin="70,80,0,0" VerticalAlignment="Top" Width="135" Style="{StaticResource ComboBoxStyle}"
+        <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,83,0,0" VerticalAlignment="Top" Width="161" Style="{StaticResource ComboBoxStyle}"
             x:Name="HorseColor" Text="{Binding obj.HorseColor}"/>
 
-        <CheckBox Content="是否携带箱子" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="是否携带箱子" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding obj.HorseCarryingChest}"/>
-        <CheckBox Content="是否携带马鞍" HorizontalAlignment="Left" Margin="110,55,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="是否携带马鞍" HorizontalAlignment="Left" Margin="135,60,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
             IsChecked="{Binding obj.HorseSaddled}"/>
-        <CheckBox Content="是否为驯服状态" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="是否为驯服状态" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
             IsChecked="{Binding obj.HorseTamed}"/>
-        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
             IsChecked="{Binding obj.AgeLock}"/>
-        <CheckBox Content="是否允许驯服" HorizontalAlignment="Left" Margin="135,130,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+        <CheckBox Content="是否允许驯服" HorizontalAlignment="Left" Margin="135,135,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
             IsChecked="{Binding obj.Tameable}"/>
 
-        <Button Content="无装甲" HorizontalAlignment="Left" Height="20" Margin="210,30,0,0" VerticalAlignment="Top" Width="70" 
+        <Button Content="无装甲" HorizontalAlignment="Left" Height="20" Margin="239,32,0,0" VerticalAlignment="Top" Width="70" 
                 Click="Button_Click" Style="{StaticResource Button}"/>
-        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="210,80,0,0" VerticalAlignment="Top" Width="70" 
+        <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="239,83,0,0" VerticalAlignment="Top" Width="70" 
                 Click="Button_Click_1" Style="{StaticResource Button}"/>
-        <Button Content="随机斑点" HorizontalAlignment="Left" Height="20" Margin="210,105,0,0" VerticalAlignment="Top" Width="70"
+        <Button Content="随机斑点" HorizontalAlignment="Left" Height="20" Margin="239,110,0,0" VerticalAlignment="Top" Width="70"
                 Click="Button_Click_2" Style="{StaticResource Button}"/>
 
-        <Slider HorizontalAlignment="Left" Height="25" Margin="50,150,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1" 
+        <Slider HorizontalAlignment="Left" Height="25" Margin="49,155,0,0" VerticalAlignment="Top" Width="220" Minimum="-1" Maximum="1" 
                 LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1" Style="{StaticResource Slider}"/>
     </Grid>
 </UserControl>

@@ -4,18 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
-             mc:Ignorable="d" Height="300" Width="290">
+             mc:Ignorable="d" Height="300" Width="319">
     <Grid>
-        <Label Content="猪设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="年龄" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <Label Content="{Binding obj.Age}" HorizontalAlignment="Left" Margin="250,45,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="猪设置" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,0,0,0"/>
+        <Label Content="年龄" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="{Binding obj.Age}" Height="25" Width="35" HorizontalAlignment="Left" Margin="274,50,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <CheckBox Content="是否带鞍" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"
+        <CheckBox Content="是否带鞍" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.Saddled}" Style="{StaticResource Check}"/>
-        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"
+        <CheckBox Content="锁住年龄" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top"
             IsChecked="{Binding obj.AgeLock}" Style="{StaticResource Check}"/>
 
-        <Slider HorizontalAlignment="Left" Height="25" Margin="50,49,0,0" VerticalAlignment="Top" Width="195" Minimum="-1" Maximum="1"
+        <Slider HorizontalAlignment="Left" Height="25" Margin="49,50,0,0" VerticalAlignment="Top" Width="220" Minimum="-1" Maximum="1"
                 LargeChange="0.1" Value="{Binding obj.Age}" TickFrequency="0.1" Style="{StaticResource Slider}"/>
     </Grid>
 </UserControl>
