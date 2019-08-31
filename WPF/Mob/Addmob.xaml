@@ -77,21 +77,21 @@
         <Label Content="移动速度" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Grid.Column="3"/>
 
         <ComboBox HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                  Width="243" Height="20" Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged" Text="{Binding Mob.Type}"/>
+                  Width="243" Height="20" Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged" Text="{Binding Mob.Type}" IsReadOnly="True"/>
         <ComboBox HorizontalAlignment="Left" Margin="70,226,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                  Width="175" Height="20" x:Name="BossBar_Color" Text="{Binding Mob.BossBar.Color_save}" IsEnabled="False"/>
+                  Width="175" Height="20" x:Name="BossBar_Color" Text="{Binding Mob.BossBar.Color_save}" IsEnabled="False" IsReadOnly="True"/>
         <ComboBox HorizontalAlignment="Left" Margin="70,251,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                  Width="175" Height="20" x:Name="BossBar_Style" Text="{Binding Mob.BossBar.Style_save}" IsEnabled="False"/>
+                  Width="175" Height="20" x:Name="BossBar_Style" Text="{Binding Mob.BossBar.Style_save}" IsEnabled="False" IsReadOnly="True"/>
         <ComboBox HorizontalAlignment="Left" Margin="80,469,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
                   Width="169" Height="20" Name="AIGoalSelectors_S" Text="{Binding AI_Goal_S}" Grid.Column="1"/>
         <ComboBox HorizontalAlignment="Left" Margin="80,670,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
             Width="169" Height="20" x:Name="AITargetSelectors_S" Text="{Binding AI_Goal_T}" Grid.Column="1"/>
         <ComboBox HorizontalAlignment="Left" Margin="92,173,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-            Width="156" Height="20" x:Name="Drops_S" Text="{Binding Drops_C}" Grid.Column="2"/>
+            Width="156" Height="20" x:Name="Drops_S" Text="{Binding Drops_C}" Grid.Column="2" IsReadOnly="True"/>
         <ComboBox HorizontalAlignment="Left" Margin="92,373,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-            Width="156" Height="20" x:Name="DropsPerLevel_S" Text="{Binding DropsPerLevel_C}" Grid.Column="2"/>
+            Width="156" Height="20" x:Name="DropsPerLevel_S" Text="{Binding DropsPerLevel_C}" Grid.Column="2" IsReadOnly="True"/>
         <ComboBox HorizontalAlignment="Left" Margin="68,567,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-            Width="180" Height="20" x:Name="DamageModifiers_S" Text="{Binding DamageModifiers_C}" Grid.Column="2"/>
+            Width="180" Height="20" x:Name="DamageModifiers_S" Text="{Binding DamageModifiers_C}" Grid.Column="2" IsReadOnly="True"/>
 
         <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
                  VerticalAlignment="Top" Width="243" Text="{Binding MobName}" Name ="Mob_Name"/>
@@ -199,9 +199,9 @@
                 Name="BossBar_Color_r" Click="BossBar_Color_r_Click" IsEnabled="False"/>
         <Button Content="随机风格" HorizontalAlignment="Left" Height="20" Margin="250,251,0,0" VerticalAlignment="Top" Width="63" Style="{StaticResource Button}"
                 x:Name="BossBar_Style_r" IsEnabled="False" Click="BossBar_Style_r_Click"/>
-        <Button Content="返回" HorizontalAlignment="Left" Height="24" Margin="106,549,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
+        <Button Content="返回" HorizontalAlignment="Left" Height="24" Margin="106,540,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Return" Grid.Column="3"/>
-        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="24" Margin="6,549,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
+        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="24" Margin="6,540,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Button_Click" Grid.Column="3"/>
         <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="254,469,0,0" VerticalAlignment="Top" Width="60" 
                 Click="Button_Click_1" Style="{StaticResource Button}" Grid.Column="1"/>
@@ -211,7 +211,7 @@
                 Click="Button_Click_3" Style="{StaticResource Button}" Grid.Column="2"/>
         <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="253,368,0,0" VerticalAlignment="Top" Width="60" 
                 Click="Button_Click_4" Style="{StaticResource Button}" Grid.Column="2"/>
-        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="253,562,0,0" VerticalAlignment="Top" Width="60" 
+        <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="253,567,0,0" VerticalAlignment="Top" Width="60" 
                 Click="Button_Click_5" Style="{StaticResource Button}" Grid.Column="2"/>
         <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="255,2,0,0" VerticalAlignment="Top" Width="60" 
                 Click="Button_Click_6" Style="{StaticResource Button}" Grid.Column="3"/>

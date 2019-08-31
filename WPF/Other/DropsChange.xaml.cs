@@ -1,5 +1,7 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Input;
 
 namespace MythicMobs_edit.WPF.Other
 {
@@ -19,6 +21,17 @@ namespace MythicMobs_edit.WPF.Other
         {
             ShowDialog();
             return Drops;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
+        {
+            Regex re = new Regex("[^0-9.-]+");
+
+            e.Handled = re.IsMatch(e.Text);
         }
     }
 }

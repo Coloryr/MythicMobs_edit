@@ -26,5 +26,10 @@ namespace MythicMobs_edit.WPF.Other
                 b = this.b
             };
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

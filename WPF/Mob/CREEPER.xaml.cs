@@ -27,5 +27,6 @@ namespace MythicMobs_edit.WPF.Mob
 
             e.Handled = re.IsMatch(e.Text);
         }
+
     }
 }

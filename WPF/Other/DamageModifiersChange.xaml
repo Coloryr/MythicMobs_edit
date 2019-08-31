@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Other"
         mc:Ignorable="d"
-        Title="伤害来源修改" Height="88" Width="196" Icon="/MythicMobs_edit;component/icon.ico" ResizeMode="NoResize">
-    <Grid Background="Black">
+        Title="伤害来源修改" Height="116" Width="200" Icon="/MythicMobs_edit;component/icon.ico" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid Background="Black" Margin="0,0,0,0">
         <Label Content="伤害来源" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="伤害值" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="0,30,0,0"/>
 
         <ComboBox HorizontalAlignment="Left" Margin="63,3,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource ComboBoxStyle}"
-                  Text="{Binding DamageModifiers.Type}" Name="Type" Height="20"/>
+                  Text="{Binding DamageModifiers.Type}" Name="Type" Height="20" IsReadOnly="True"/>
 
         <TextBox HorizontalAlignment="Left" Margin="51,33,0,0" TextWrapping="Wrap" Text="{Binding DamageModifiers.set}" VerticalAlignment="Top"
-                   Style="{StaticResource TextBox}" Width="132" Height="20"/>
+                   Style="{StaticResource TextBox}" Width="132" Height="20" PreviewTextInput="TextCompositionEventArgs"/>
+
+        <Button Content="OK" HorizontalAlignment="Left" Margin="109,58,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource Button}" IsDefault="True" Click="Button_Click"/>
     </Grid>
 </Window>

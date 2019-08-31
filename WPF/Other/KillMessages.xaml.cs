@@ -136,5 +136,10 @@ namespace MythicMobs_edit.WPF.Other
         {
             Message.Text = KillMessages_ += "<target.name>";
         }
+
+        private void Button_Click_23(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

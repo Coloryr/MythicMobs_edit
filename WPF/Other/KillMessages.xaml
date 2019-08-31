@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Other"
         mc:Ignorable="d"
-        Title="击杀消息编辑" Height="140" Width="350" Background="Black" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/icon.ico">
+        Title="击杀消息编辑" Height="140" Width="350" Background="Black" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/icon.ico" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="5,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325"
                  Style="{StaticResource TextBox}" x:Name="Message"/>
@@ -34,6 +34,6 @@
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="1" Margin="249,69,0,0" Stroke="White" VerticalAlignment="Top" Width="18"/>
         <Rectangle Fill="White" HorizontalAlignment="Left" Height="1" Margin="277,64,0,0" Stroke="White" VerticalAlignment="Top" Width="21"/>
         <Button Content="玩家名字" HorizontalAlignment="Left" Margin="5,77,0,0" VerticalAlignment="Top" Width="85" Style="{StaticResource Button}" Foreground="#FFFFFFFF" Click="Button_Click_22"/>
-
+        <Button Content="OK" HorizontalAlignment="Left" Margin="255,77,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource Button}" IsDefault="True" Click="Button_Click_23" />
     </Grid>
 </Window>

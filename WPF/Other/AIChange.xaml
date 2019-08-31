@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob"
         mc:Ignorable="d"
-        Title="AI修改" Height="70" Width="260" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/icon.ico">
-    <Grid Background="Black">
+        Title="AI修改" Height="90" Width="262" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/icon.ico">
+    <Grid Background="Black" Margin="0,0,0,0">
         <Label Content="AI" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Name="AI_list"
                 Style="{StaticResource Label}"/>
 
@@ -14,6 +14,7 @@
                  x:Name="AI" Text="{Binding b}" Style="{StaticResource TextBox}"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="27,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28"
                  x:Name="AI_L" Text="{Binding a}" Style="{StaticResource TextBox}"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="170,29,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource Button}" IsDefault="True" Click="Button_Click"/>
 
     </Grid>
 </Window>
