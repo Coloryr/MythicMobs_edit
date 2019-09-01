@@ -279,8 +279,8 @@ namespace MythicMobs_edit.WPF
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Mob.Display = Encoding.Default.GetString(Encoding.UTF8.GetBytes(Display));
-            switch (Mob.Type)
+            Mob.Display = "'" + Encoding.Default.GetString(Encoding.UTF8.GetBytes(Display)) + "'";
+            switch (Mob.Type) 
             {
                 case "ARMOR_STAND":
                     ARMOR_STAND ARMOR_STAND = (ARMOR_STAND)obj;
@@ -449,55 +449,62 @@ namespace MythicMobs_edit.WPF
                     b = "sound:";
                 }
                 switch (a.Type)
-                    {
-                        case "blockmask":
-                            string c = "{";
-                            Obj_save.Mob.Effects_type.BlockMask blockMask = (Obj_save.Mob.Effects_type.BlockMask)a.Option;
-                            if (string.IsNullOrWhiteSpace(blockMask.material) == false)
-                                c += "m:" + blockMask.material + ";";
-                            if (blockMask.data != 0)
-                                c += "dv:" + blockMask.data + ";";
-                            if (blockMask.radius != 0)
-                                c += "r:" + blockMask.radius + ";";
-                            if (blockMask.noise != 0)
-                                c += "n:" + blockMask.noise + ";";
-                            if (blockMask.duration != 0)
-                                c += "d:" + blockMask.duration + ";";
-                            if (string.IsNullOrWhiteSpace(blockMask.shape) == false)
-                                c += "s:" + blockMask.shape + ";";
-                            c += "na:" + blockMask.noair + ";";
-                            c += "s:" + blockMask.onlyair + ";";
-                            c = c.Substring(0, c.Length - 1);
-                            c += "}";
-                            b += c + " ";
-                            break;
-                    }
+                {
+                    case "blockmask":
+                        string c = "{";
+                        Obj_save.Mob.Effects_type.BlockMask blockMask = (Obj_save.Mob.Effects_type.BlockMask)a.Option;
+                        if (string.IsNullOrWhiteSpace(blockMask.material) == false)
+                            c += "m:" + blockMask.material + ";";
+                        if (blockMask.data != 0)
+                            c += "dv:" + blockMask.data + ";";
+                        if (blockMask.radius != 0)
+                            c += "r:" + blockMask.radius + ";";
+                        if (blockMask.noise != 0)
+                            c += "n:" + blockMask.noise + ";";
+                        if (blockMask.duration != 0)
+                            c += "d:" + blockMask.duration + ";";
+                        if (string.IsNullOrWhiteSpace(blockMask.shape) == false)
+                            c += "s:" + blockMask.shape + ";";
+                        c += "na:" + blockMask.noair + ";";
+                        c += "s:" + blockMask.onlyair + ";";
+                        c = c.Substring(0, c.Length - 1);
+                        c += "}";
+                        b += c + " ";
+                        break;
+                }
+                if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false || a.Skill_Tag.Tag_Filters.Count != 0)
+                {
+                    b += "{";
+                }
+                if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
+                {
+                    string c = a.Skill_Tag.Tag_Type;
                     if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
                     {
-                        string c = a.Skill_Tag.Tag_Type;
-                        if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
-                        {
-                            c += "{" + a.Skill_Tag.Tag_Option;
-                            b += c;
-                        }
+                        c += a.Skill_Tag.Tag_Option;
+                        b += c;
                     }
-                    if (a.Skill_Tag.Tag_Filters.Count != 0)
+                }
+                if (a.Skill_Tag.Tag_Filters.Count != 0)
+                {
+                    string d = "ignore=";
+                    foreach (string f in a.Skill_Tag.Tag_Filters)
                     {
-                        string d = "ignore=";
-                        foreach (string f in a.Skill_Tag.Tag_Filters)
+                        if (string.IsNullOrWhiteSpace(f) == false)
                         {
-                            if (string.IsNullOrWhiteSpace(f) == false)
-                            {
-                                d += f + ",";
-                            }
-                        }
-                        d = d.Substring(0, d.Length - 1);
-                        if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
-                        {
-                            b += ";" + d;
+                            d += f + ",";
                         }
                     }
+                    d = d.Substring(0, d.Length - 1);
+                    if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
+                    {
+                        b += ";" + d;
+                    }
+                }
+                if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false || a.Skill_Tag.Tag_Filters.Count != 0)
+                {
                     b += "}";
+                }
                 if (string.IsNullOrWhiteSpace(a.Triggers.Type) == false)
                 {
                     string c = " ~" + a.Triggers.Type;
@@ -549,9 +556,14 @@ namespace MythicMobs_edit.WPF
             listLines.Add(MobName + ":");
             StreamReader reader = new StreamReader(new MemoryStream(Encoding.Default.GetBytes(yaml)));
             string line = reader.ReadLine();
+            bool isskill = false;
             while (string.IsNullOrWhiteSpace(line) != true)
             {
-                listLines.Add("  " + line);
+                if (line.IndexOf("Skills:") != -1)
+                {
+                    isskill = true;
+                }
+                listLines.Add(("  " + line).Replace("'", ""));
                 line = reader.ReadLine();
             }
             foreach (string a in listLines)
