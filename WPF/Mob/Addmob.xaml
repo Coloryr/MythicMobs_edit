@@ -52,14 +52,14 @@
                     <Label Content="移动速度" HorizontalAlignment="Left" Height="25" Margin="5,303,0,-159" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
 
                     <ComboBox HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                        Width="243" Height="20" x:Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged" Text="{Binding Mob.Type}" IsReadOnly="True"/>
+                              Width="243" Height="20" x:Name="Mob_Type" SelectionChanged="Mob_Type_SelectionChanged" Text="{Binding Mob.Type}" IsReadOnly="True"/>
 
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                        VerticalAlignment="Top" Width="243" Text="{Binding MobName}" x:Name ="Mob_Name"/>
+                             VerticalAlignment="Top" Width="243" Text="{Binding MobName}" x:Name ="Mob_Name"/>
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,54,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                        VerticalAlignment="Top" Width="243" Text="{Binding Display}" x:Name ="Mob_Display"/>
+                             VerticalAlignment="Top" Width="243" Text="{Binding Display}" x:Name ="Mob_Display"/>
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,79,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
-                        VerticalAlignment="Top" Width="243" Text="{Binding Mob.Health}" x:Name ="Mob_Health" PreviewTextInput="TextCompositionEventArgs"/>
+                             VerticalAlignment="Top" Width="243" Text="{Binding Mob.Health}" x:Name ="Mob_Health" PreviewTextInput="TextCompositionEventArgs"/>
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,104,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
                         VerticalAlignment="Top" Width="243" Text="{Binding Mob.Damage}" x:Name ="Mob_Damage" PreviewTextInput="TextCompositionEventArgs"/>
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,129,0,0" TextWrapping="Wrap" Style="{StaticResource TextBox}"
@@ -328,7 +328,6 @@
                             </ContextMenu>
                         </ListView.ContextMenu>
                     </ListView>
-
                 </Grid>
             </Expander>
             <Expander Header="生物等级设置" Foreground="#FFFFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319">
@@ -389,6 +388,38 @@
                     <Button Content="无类型" HorizontalAlignment="Left" Height="20" Margin="251,37,0,0" VerticalAlignment="Top" Width="60" 
                         Click="Disguise_Type_n_Click" Style="{StaticResource Button}"/>
 
+                </Grid>
+            </Expander>
+        </StackPanel>
+        <StackPanel Grid.Column="2" HorizontalAlignment="Left" Height="678" VerticalAlignment="Top" Width="318">
+            <Expander Header="技能-添加" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Foreground="White">
+                <Grid>
+
+                </Grid>
+            </Expander>
+            <Expander Header="技能-特效" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Foreground="White">
+                <Grid Height="345">
+                    <Label Content="特效类型" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="63,3,0,0" VerticalAlignment="Top" Height="20" Width="178" Style="{StaticResource ComboBoxStyle}"
+                              Name="Skill_Effect_Type" IsReadOnly="True"/>
+                    <Button Content="随机类型" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="60" 
+                            Click="Skill_Effect_Type_r_Click" Style="{StaticResource Button}" Margin="246,3,0,0"/>
+                    <Button Content="添加" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="60" 
+                            Click="Button_Click_7" Style="{StaticResource Button}" Margin="246,28,0,0"/>
+                    <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="313" x:Name="SkillEffect_T"
+                              Style="{StaticResource ListViewStyle1}" Margin="0,53,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="特效" Width="294" DisplayMemberBinding="{Binding Type}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="删除" Click="DelectSkillEffectEvent"/>
+                                <MenuItem Header="修改" Click="ChangeSkillEffectEvent"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
                 </Grid>
             </Expander>
         </StackPanel>

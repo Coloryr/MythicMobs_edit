@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MythicMobs_edit.WPF.Other
+namespace MythicMobs_edit.WPF.Mob.Other
 {
     /// <summary>
     /// Message.xaml 的交互逻辑

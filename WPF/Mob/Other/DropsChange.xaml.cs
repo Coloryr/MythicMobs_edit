@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 
-namespace MythicMobs_edit.WPF.Other
+namespace MythicMobs_edit.WPF.Mob.Other
 {
     /// <summary>
     /// DropsChange.xaml 的交互逻辑

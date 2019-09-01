@@ -145,5 +145,27 @@ namespace MythicMobs_edit.Obj_save.Mob
             "squid", "thrown_exp_bottle", "undead_horse", "villager", "witch", "wither",
             "wither_skeleton", "wither_skull", "wolf", "zombie", "zombievillager"
         };
+        public List<string> Skills_effect = new List<string>()
+        {
+            "blockmask", "ender", "enderbeam", "explosion", "firework", "flames", "geyser",
+            "itemspray", "lightning", "particles", "particlebox", "particleline", "particlering",
+            "particlesphere", "particletornado", "smoke", "smokeswirl", "sound", "spin",
+            "atom"
+        };
+        public List<string> Skill_Tag = new List<string>()
+        {
+            "@Self", "@Target", "@Trigger", "@NearestPlayer", "@WolfOwner", "@Owner", "@Mount",
+            "@LivingEntitiesInRadius", "@PlayersInRadius", "@MobsInRadius", "@EntitiesInRadius",
+            "@PlayersInWorld", "@PlayersOnServer", "@PlayersInRing", "@PlayersNearOrigin",
+            "@MobsNearOrigin", "@EntitiesNearOrigin", "@RandomThreatTarget", "@ThreatTable",
+            "@ThreatTablePlayers", "@SelfLocation", "@TargetLocation", "@TriggerLocation",
+            "@Location", "@Origin", "@Spawner", "@RLNTE", "@PlayerLocationsInRadius",
+            "@Ring", "@Cone", "@EntitiesInCone", "@Line", "@EntitiesInLine", "@p", "@a", "@r", "@e"
+        };
+        public List<string> Skill_Tag_no = new List<string>()
+        {
+            "animals", "creative", "creatures", "flyingmobs", "monsters", "NPCs", "players",
+            "samefaction", "spectators", "watermobs"
+        };
     }
 }

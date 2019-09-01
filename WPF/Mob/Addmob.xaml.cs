@@ -1,6 +1,7 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
 using MythicMobs_edit.WPF.Mob;
-using MythicMobs_edit.WPF.Other;
+using MythicMobs_edit.WPF.Mob.Effects_type;
+using MythicMobs_edit.WPF.Mob.Other;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,6 +36,7 @@ namespace MythicMobs_edit.WPF
         public string Drops_C { get; set; } = "exp";
         public string DropsPerLevel_C { get; set; } = "exp";
         public string DamageModifiers_C { get; set; } = "DROWNING";
+        public List<Effects> Skills_effect { get; set; } = new List<Effects>();
         public Mob_obj Mob { get; set; } = new Mob_obj()
         {
             Type = "ARMOR_STAND",
@@ -83,7 +85,8 @@ namespace MythicMobs_edit.WPF
             Equipment = new List<string>(),
             KillMessages = new List<string>(),
             LevelModifiers = new LevelModifiers(),
-            Disguise = new Disguise()
+            Disguise = new Disguise(),
+            Skills = new List<string>()
         };
         private UserControl obj;
         public Addmob(bool gs)
@@ -108,6 +111,7 @@ namespace MythicMobs_edit.WPF
             DropsPerLevel_S.ItemsSource = List.Drops_Type;
             DamageModifiers_S.ItemsSource = List.DamageModifiers_All;
             Disguise_Type.ItemsSource = List.Disguise_Type;
+            Skill_Effect_Type.ItemsSource = List.Skills_effect;
         }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
         {
@@ -160,6 +164,12 @@ namespace MythicMobs_edit.WPF
         private void Disguise_Type_n_Click(object sender, RoutedEventArgs e)
         {
             Disguise_Type.SelectedItem = null;
+        }
+        private void Skill_Effect_Type_r_Click(object sender, RoutedEventArgs e)
+        {
+            Obj_save.Mob.List list = new Obj_save.Mob.List();
+            Random random = new Random();
+            Skill_Effect_Type.SelectedItem = list.Skills_effect[random.Next(list.Skills_effect.Count)];
         }
 
         private void Mob_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -518,6 +528,34 @@ namespace MythicMobs_edit.WPF
             KillMessages_L.Add(KillMessages);
             KillMessages_T.Items.Add(KillMessages);
         }
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            if (Skill_Effect_Type.SelectedItem == null)
+                return;
+            Effects Effects = new Effects()
+            {
+                Type = (string)Skill_Effect_Type.SelectedItem,
+                Skill_Tag = new Obj_save.Mob.Skill_Tag()
+                {
+                    Tag_Type = "@Self",
+                    Tag_Filters = new List<string>()
+                }
+            };
+            switch (Skill_Effect_Type.SelectedItem)
+            {
+                case "blockmask":
+                    Effects = new BlockMask(Effects).get_Effects_();
+                    break;
+                default:
+
+                    break;
+            }
+            if (Effects != null)
+            {
+                Skills_effect.Add(Effects);
+                SkillEffect_T.Items.Add(Effects);
+            }
+        }
 
         private void refash_AI_G()
         {
@@ -575,6 +613,15 @@ namespace MythicMobs_edit.WPF
                 KillMessages_T.Items.Add(a);
             }
         }
+        private void refash_SkillEffect()
+        {
+            SkillEffect_T.Items.Clear();
+            foreach (Effects a in Skills_effect)
+            {
+                SkillEffect_T.Items.Add(a);
+            }
+        }
+
         private void DelectAI_GEvent(object sender, RoutedEventArgs e)
         {
             if (AI_G.SelectedItem == null)
@@ -759,6 +806,31 @@ namespace MythicMobs_edit.WPF
                 KillMessages_L.Add(KillMessages);
                 refash_KillMessages();
             }
+        }
+        private void DelectSkillEffectEvent(object sender, RoutedEventArgs e)
+        {
+            if (SkillEffect_T.SelectedItem == null)
+                return;
+            Skills_effect.Remove((Effects)SkillEffect_T.SelectedItem);
+            refash_SkillEffect();
+        }
+        private void ChangeSkillEffectEvent(object sender, RoutedEventArgs e)
+        {
+            if (SkillEffect_T.SelectedItem == null)
+                return;
+            Effects effects = (Effects)SkillEffect_T.SelectedItem;
+            Skills_effect.Remove(effects);
+            switch (effects.Type)
+            {
+                case "blockmask":
+                    effects = new BlockMask(effects).get_Effects_();
+                    break;
+                default:
+
+                    break;
+            }
+            Skills_effect.Add(effects);
+            refash_SkillEffect();
         }
     }
 }

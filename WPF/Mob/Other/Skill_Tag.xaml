@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="MythicMobs_edit.WPF.Mob.Other.Skill_Tag"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Other"
+             mc:Ignorable="d" Height="220" Width="381">
+    <Grid>
+        <Label Content="目标" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="目标类型" HorizontalAlignment="Left" Margin="15,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="目标参数" HorizontalAlignment="Left" Margin="15,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+
+        <ComboBox HorizontalAlignment="Left" Margin="78,34,0,0" VerticalAlignment="Top" Width="207" Style="{StaticResource ComboBoxStyle}"
+                  x:Name="Type" Height="20" SelectionChanged="Type_SelectionChanged" IsReadOnly="True"/>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="78,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"
+                 Style="{StaticResource TextBox}" Name="Option"/>
+        <Label Content="目标过滤" HorizontalAlignment="Left" Margin="15,90,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <ListView HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="270" x:Name="SkillTag_T"
+                  Style="{StaticResource ListViewStyle1}" Margin="15,120,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="目标过滤" Width="237" DisplayMemberBinding="{Binding StringFormat=string}"/>
+                </GridView>
+            </ListView.View>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="删除" Click="DelectSkillTagEvent"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+        <ComboBox HorizontalAlignment="Left" Margin="78,93,0,0" VerticalAlignment="Top" Width="153" Style="{StaticResource ComboBoxStyle}"
+            x:Name="Filters" Height="20" SelectionChanged="Type_SelectionChanged" IsReadOnly="True"/>
+        <Button Content="添加" HorizontalAlignment="Left" Margin="236,93,0,0" VerticalAlignment="Top" Width="49" Style="{StaticResource Button}" Height="20" Click="Button_Click"/>
+
+    </Grid>
+</UserControl>

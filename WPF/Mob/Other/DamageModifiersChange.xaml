@@ -1,9 +1,9 @@
-﻿<Window x:Class="MythicMobs_edit.WPF.Other.DamageModifiersChange"
+﻿<Window x:Class="MythicMobs_edit.WPF.Mob.Other.DamageModifiersChange"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MythicMobs_edit.WPF.Other"
+        xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Other"
         mc:Ignorable="d"
         Title="伤害来源修改" Height="116" Width="200" Icon="/MythicMobs_edit;component/icon.ico" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid Background="Black" Margin="0,0,0,0">

@@ -104,6 +104,8 @@
     <Compile Include="Obj_save\Mob\DamageModifiers.cs" />
     <Compile Include="Obj_save\Mob\Disguise.cs" />
     <Compile Include="Obj_save\Mob\Drops.cs" />
+    <Compile Include="Obj_save\Mob\Effects.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\BlockMask.cs" />
     <Compile Include="Obj_save\Mob\Equipment.cs" />
     <Compile Include="Obj_save\Mob\LevelModifiers.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
@@ -139,10 +141,14 @@
     <Compile Include="Obj_save\Mob\Mob_type\ZOMBIE_VILLAGER.cs" />
     <Compile Include="Obj_save\Mob\Modules.cs" />
     <Compile Include="Obj_save\Mob\Options.cs" />
+    <Compile Include="Obj_save\Mob\Skill_Tag.cs" />
     <Compile Include="WPF\Mob\Addmob.xaml.cs">
       <DependentUpon>Addmob.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Other\AIChange.xaml.cs">
+    <Compile Include="WPF\Mob\Effects_type\BlockMask.xaml.cs">
+      <DependentUpon>BlockMask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\BABY_PIG_ZOMBIE.xaml.cs">
@@ -186,6 +192,9 @@
     </Compile>
     <Compile Include="WPF\Mob\OCELOT.xaml.cs">
       <DependentUpon>OCELOT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Other\Skill_Tag.xaml.cs">
+      <DependentUpon>Skill_Tag.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\PIG_ZOMBIE.xaml.cs">
       <DependentUpon>PIG_ZOMBIE.xaml</DependentUpon>
@@ -232,16 +241,16 @@
     <Compile Include="WPF\Mob\ARMOR_STAND.xaml.cs">
       <DependentUpon>ARMOR_STAND.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Other\DamageModifiersChange.xaml.cs">
+    <Compile Include="WPF\Mob\Other\DamageModifiersChange.xaml.cs">
       <DependentUpon>DamageModifiersChange.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Other\DropsChange.xaml.cs">
+    <Compile Include="WPF\Mob\Other\DropsChange.xaml.cs">
       <DependentUpon>DropsChange.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Other\KillMessages.xaml.cs">
+    <Compile Include="WPF\Mob\Other\KillMessages.xaml.cs">
       <DependentUpon>KillMessages.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Other\Message.xaml.cs">
+    <Compile Include="WPF\Mob\Other\Message.xaml.cs">
       <DependentUpon>Message.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -264,7 +273,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Other\AIChange.xaml">
+    <Page Include="WPF\Mob\Effects_type\BlockMask.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Other\AIChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -323,6 +336,10 @@
     <Page Include="WPF\Mob\OCELOT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\Other\Skill_Tag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\PIG_ZOMBIE.xaml">
       <SubType>Designer</SubType>
@@ -384,19 +401,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Other\DamageModifiersChange.xaml">
+    <Page Include="WPF\Mob\Other\DamageModifiersChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Other\DropsChange.xaml">
+    <Page Include="WPF\Mob\Other\DropsChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Other\KillMessages.xaml">
+    <Page Include="WPF\Mob\Other\KillMessages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Other\Message.xaml">
+    <Page Include="WPF\Mob\Other\Message.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -477,6 +494,7 @@
   <ItemGroup>
     <Resource Include="image\-1c6d7f231b328b94.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('packages\Fody.6.0.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

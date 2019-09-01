@@ -80,5 +80,9 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// 伪装
         /// </summary>
         public Disguise Disguise { get; set; }
+        /// <summary>
+        /// 技能
+        /// </summary>
+        public List<string> Skills { get; set; }
     }
 }
