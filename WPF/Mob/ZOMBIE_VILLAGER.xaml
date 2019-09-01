@@ -12,7 +12,7 @@
         <Label Content="{Binding obj.ReinforcementsChance}" Height="25" Width="35" HorizontalAlignment="Left" Margin="274,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,63,0,0" VerticalAlignment="Top" Width="161"
-            Name="Type" Text="{Binding obj.Profession}" Style="{StaticResource ComboBoxStyle}"/>
+            Name="Type" Text="{Binding obj.Profession}" Style="{StaticResource ComboBoxStyle}" IsReadOnly="True"/>
 
         <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="239,63,0,0" VerticalAlignment="Top" Width="70" 
                 Click="Button_Click" Style="{StaticResource Button}"/>

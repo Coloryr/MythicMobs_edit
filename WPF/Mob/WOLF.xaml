@@ -12,7 +12,7 @@
         <Label Content="{Binding obj.Age}" Height="25" Width="35" HorizontalAlignment="Left" Margin="274,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,32,0,0" VerticalAlignment="Top" Width="161"
-                  Name="Color" Text="{Binding obj.Color}" Style="{StaticResource ComboBoxStyle}"/>
+                  Name="Color" Text="{Binding obj.Color}" Style="{StaticResource ComboBoxStyle}" IsReadOnly="True"/>
 
         <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="239,32,0,0" VerticalAlignment="Top" Width="70" 
                 Click="Button_Click" Style="{StaticResource Button}"/>

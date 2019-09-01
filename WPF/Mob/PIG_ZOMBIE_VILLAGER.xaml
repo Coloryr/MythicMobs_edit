@@ -15,7 +15,7 @@
             IsChecked="{Binding obj.Angry}" Style="{StaticResource Check}"/>
 
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,83,0,0" VerticalAlignment="Top" Width="161"
-            x:Name="Type" Text="{Binding obj.Profession}" Style="{StaticResource ComboBoxStyle}"/>
+            x:Name="Type" Text="{Binding obj.Profession}" Style="{StaticResource ComboBoxStyle}" IsReadOnly="True"/>
 
         <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="239,83,0,0" VerticalAlignment="Top" Width="70" 
                 Click="Button_Click" Style="{StaticResource Button}"/>

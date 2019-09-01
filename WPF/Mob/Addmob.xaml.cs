@@ -82,7 +82,8 @@ namespace MythicMobs_edit.WPF
             DamageModifiers = new List<string>(),
             Equipment = new List<string>(),
             KillMessages = new List<string>(),
-            LevelModifiers = new LevelModifiers()
+            LevelModifiers = new LevelModifiers(),
+            Disguise = new Disguise()
         };
         private UserControl obj;
         public Addmob(bool gs)
@@ -106,6 +107,7 @@ namespace MythicMobs_edit.WPF
             Drops_S.ItemsSource = List.Drops_Type;
             DropsPerLevel_S.ItemsSource = List.Drops_Type;
             DamageModifiers_S.ItemsSource = List.DamageModifiers_All;
+            Disguise_Type.ItemsSource = List.Disguise_Type;
         }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
         {
@@ -150,6 +152,14 @@ namespace MythicMobs_edit.WPF
         private void BossBar_Style_r_Click(object sender, RoutedEventArgs e)
         {
             BossBar_Style.SelectedItem = Mob.BossBar.get_style_r();
+        }
+        private void Disguise_Type_r_Click(object sender, RoutedEventArgs e)
+        {
+            Disguise_Type.SelectedItem = Mob.Disguise.Type_r();
+        }
+        private void Disguise_Type_n_Click(object sender, RoutedEventArgs e)
+        {
+            Disguise_Type.SelectedItem = null;
         }
 
         private void Mob_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -412,7 +422,7 @@ namespace MythicMobs_edit.WPF
             Mob.KillMessages.Clear();
             foreach (string a in KillMessages_L)
             {
-                Mob.KillMessages.Add("'" + Encoding.Default.GetString(Encoding.UTF8.GetBytes(a)) + "'");
+                Mob.KillMessages.Add(Encoding.Default.GetString(Encoding.UTF8.GetBytes(a)));
             }
             if (string.IsNullOrWhiteSpace(Equipment.Hand) == false)
                 Mob.Equipment.Add(Equipment.Hand + ":0");
@@ -447,30 +457,32 @@ namespace MythicMobs_edit.WPF
         private void Return(object sender, RoutedEventArgs e)
         {
             new MainWindow().Show();
-            this.Close();
+            Close();
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (AIGoalSelectors_S.SelectedItem != null)
             {
-                AIGoalSelectors.Add(AIGoalSelectors.Count, AI_Goal_S);
-                AI_G.Items.Add(new
+                AI AI = new AIChange(new AI
                 {
-                    a = AIGoalSelectors.Count - 1,
-                    b = AI_Goal_S
-                });
+                    Number = AIGoalSelectors.Count,
+                    Type = AI_Goal_S
+                }).return_AI();
+                AIGoalSelectors.Add(AI.Number, AI.Type);
+                AI_G.Items.Add(AI);
             }
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             if (AITargetSelectors_S.SelectedItem != null)
             {
-                AITargetSelectors.Add(AITargetSelectors.Count, AI_Goal_T);
-                AI_T.Items.Add(new
+                AI AI = new AIChange(new AI
                 {
-                    a = AITargetSelectors.Count - 1,
-                    b = AI_Goal_T
-                });
+                    Number = AITargetSelectors.Count - 1,
+                    Type = AI_Goal_T
+                }).return_AI();
+                AITargetSelectors.Add(AI.Number, AI.Type);
+                AI_T.Items.Add(AI);
             }
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -512,10 +524,10 @@ namespace MythicMobs_edit.WPF
             AI_G.Items.Clear();
             foreach (KeyValuePair<int, string> a in AIGoalSelectors.ToArray())
             {
-                AI_G.Items.Add(new
+                AI_G.Items.Add(new AI
                 {
-                    a = a.Key,
-                    b = a.Value
+                    Number = a.Key,
+                    Type = a.Value
                 });
             }
         }
@@ -524,10 +536,10 @@ namespace MythicMobs_edit.WPF
             AI_T.Items.Clear();
             foreach (KeyValuePair<int, string> a in AITargetSelectors.ToArray())
             {
-                AI_T.Items.Add(new
+                AI_T.Items.Add(new AI
                 {
-                    a = a.Key,
-                    b = a.Value
+                    Number = a.Key,
+                    Type = a.Value
                 });
             }
         }
@@ -584,27 +596,26 @@ namespace MythicMobs_edit.WPF
         {
             if (AI_G.SelectedItem == null)
                 return;
-            AIChange change = new AIChange(new AI()
+            AI AI = new AIChange(new AI
             {
-                a = AI_G.SelectedIndex,
-                b = AIGoalSelectors[AI_G.SelectedIndex]
-            });
-            AI a = change.return_AI();
-            if (a.b == AIGoalSelectors[AI_G.SelectedIndex] && a.a == AI_G.SelectedIndex)
+                Number = AI_G.SelectedIndex,
+                Type = AIGoalSelectors[AI_G.SelectedIndex]
+            }).return_AI();
+            if (AI.Type == AIGoalSelectors[AI_G.SelectedIndex] && AI.Number == AI_G.SelectedIndex)
                 return;
-            else if (AIGoalSelectors.ContainsKey(a.a))
+            else if (AIGoalSelectors.ContainsKey(AI.Number))
             {
                 Dictionary<int, string> temp = new Dictionary<int, string>();
                 foreach (KeyValuePair<int, string> i in AIGoalSelectors.ToArray())
                 {
-                    if (i.Key >= a.a && i.Value != a.b)
+                    if (i.Key >= AI.Number && i.Value != AI.Type)
                     {
                         temp.Add(i.Key, i.Value);
                         AIGoalSelectors.Remove(i.Key);
                     }
                 }
                 AIGoalSelectors.Remove(AI_G.SelectedIndex);
-                AIGoalSelectors.Add(a.a, a.b);
+                AIGoalSelectors.Add(AI.Number, AI.Type);
                 foreach (KeyValuePair<int, string> i in temp)
                 {
                     AIGoalSelectors.Add(AIGoalSelectors.Count, i.Value);
@@ -614,25 +625,11 @@ namespace MythicMobs_edit.WPF
                 return;
             }
             AIGoalSelectors.Remove(AI_G.SelectedIndex);
-            AI_G.Items.Remove(AI_G.SelectedItem);
-            if (a.a >= AIGoalSelectors.Count)
-            {
-                AI_G.Items.Add(new
-                {
-                    a = AIGoalSelectors.Count,
-                    a.b
-                });
-                AIGoalSelectors.Add(AIGoalSelectors.Count, a.b);
-            }
+            if (AI.Number >= AIGoalSelectors.Count)
+                AIGoalSelectors.Add(AIGoalSelectors.Count, AI.Type);
             else
-            {
-                AI_G.Items.Add(new
-                {
-                    a.a,
-                    a.b
-                });
-                AIGoalSelectors.Add(a.a, a.b);
-            }
+                AIGoalSelectors.Add(AI.Number, AI.Type);
+            refash_AI_G();
         }
 
         private void DelectAI_TEvent(object sender, RoutedEventArgs e)
@@ -656,27 +653,26 @@ namespace MythicMobs_edit.WPF
         {
             if (AI_T.SelectedItem == null)
                 return;
-            AIChange change = new AIChange(new AI()
+            AI AI = new AIChange(new AI()
             {
-                a = AI_T.SelectedIndex,
-                b = AITargetSelectors[AI_T.SelectedIndex]
-            });
-            AI a = change.return_AI();
-            if (a.b == AITargetSelectors[AI_T.SelectedIndex] && a.a == AI_T.SelectedIndex)
+                Number = AI_T.SelectedIndex,
+                Type = AITargetSelectors[AI_T.SelectedIndex]
+            }).return_AI();
+            if (AI.Type == AITargetSelectors[AI_T.SelectedIndex] && AI.Number == AI_T.SelectedIndex)
                 return;
-            else if (AITargetSelectors.ContainsKey(a.a))
+            else if (AITargetSelectors.ContainsKey(AI.Number))
             {
                 Dictionary<int, string> temp = new Dictionary<int, string>();
                 foreach (KeyValuePair<int, string> i in AITargetSelectors.ToArray())
                 {
-                    if (i.Key >= a.a && i.Value != a.b)
+                    if (i.Key >= AI.Number && i.Value != AI.Type)
                     {
                         temp.Add(i.Key, i.Value);
                         AITargetSelectors.Remove(i.Key);
                     }
                 }
                 AITargetSelectors.Remove(AI_T.SelectedIndex);
-                AITargetSelectors.Add(a.a, a.b);
+                AITargetSelectors.Add(AI.Number, AI.Type);
                 foreach (KeyValuePair<int, string> i in temp)
                 {
                     AITargetSelectors.Add(AITargetSelectors.Count, i.Value);
@@ -687,24 +683,10 @@ namespace MythicMobs_edit.WPF
             }
             AITargetSelectors.Remove(AI_T.SelectedIndex);
             AI_T.Items.Remove(AI_T.SelectedItem);
-            if (a.a >= AITargetSelectors.Count)
-            {
-                AI_T.Items.Add(new
-                {
-                    a = AITargetSelectors.Count,
-                    a.b
-                });
-                AITargetSelectors.Add(AITargetSelectors.Count, a.b);
-            }
+            if (AI.Number >= AITargetSelectors.Count)
+                AITargetSelectors.Add(AITargetSelectors.Count, AI.Type);
             else
-            {
-                AI_T.Items.Add(new
-                {
-                    a.a,
-                    a.b
-                });
-                AITargetSelectors.Add(a.a, a.b);
-            }
+                AITargetSelectors.Add(AI.Number, AI.Type);
         }
         private void DelectDropsEvent(object sender, RoutedEventArgs e)
         {

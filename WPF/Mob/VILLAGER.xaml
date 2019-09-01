@@ -10,7 +10,7 @@
         <Label Content="村民职业" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,32,0,0" VerticalAlignment="Top" Width="161" Style="{StaticResource ComboBoxStyle}"
-                  Name="Type" Text="{Binding obj.VillagerType}"/>
+                  Name="Type" Text="{Binding obj.VillagerType}" IsReadOnly="True"/>
 
         <Button Content="随机职业" HorizontalAlignment="Left" Height="20" Margin="239,32,0,0" VerticalAlignment="Top" Width="70"
                 Click="Button_Click" Style="{StaticResource Button}"/>

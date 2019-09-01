@@ -131,5 +131,19 @@ namespace MythicMobs_edit.Obj_save.Mob
             "FIRE", "HOT_FLOOR", "FALL", "SUFFOCATION", "PROJECTILE", "ENTITY_ATTACK",
             "CONTACT"
         };
+        public List<string> Disguise_Type = new List<string>()
+        {
+            "arrow", "babyzombievillager", "bat", "blaze", "block", "boat", "cave_spider",
+            "chicken", "cow", "creeper", "donkey", "dropped_item", "egg", "ender_crystal",
+            "ender_dragon", "ender_pearl", "ender_signal", "enderman", "experience_orb",
+            "fireball", "firework", "fishing_hook", "ghast", "giant", "horse", "iron_golem",
+            "item_frame", "leash_hitch", "magma_cube", "minecart", "minecart_chest",
+            "minecart_furnace", "minecart_hopper", "minecart_mob_spawner", "minecart_tnt",
+            "mule", "mushroom_cow", "ocelot", "painting", "pig", "pig_zombie", "player",
+            "polar_bear", "primed_tnt", "sheep", "silverfish", "skeleton", "skeleton_horse",
+            "slime", "small_fireball", "snowball", "snowman", "spider", "splash_potion",
+            "squid", "thrown_exp_bottle", "undead_horse", "villager", "witch", "wither",
+            "wither_skeleton", "wither_skull", "wolf", "zombie", "zombievillager"
+        };
     }
 }

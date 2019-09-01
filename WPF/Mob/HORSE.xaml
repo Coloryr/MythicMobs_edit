@@ -14,11 +14,11 @@
         <Label Content="{Binding obj.Age}" Height="25" Width="35" HorizontalAlignment="Left" Margin="274,155,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,32,0,0" VerticalAlignment="Top" Width="161" Style="{StaticResource ComboBoxStyle}"
-                  Name="HorseArmor" Text="{Binding obj.HorseArmor}"/>
+                  Name="HorseArmor" Text="{Binding obj.HorseArmor}" IsReadOnly="True"/>
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,108,0,0" VerticalAlignment="Top" Width="161" Style="{StaticResource ComboBoxStyle}"
-            x:Name="HorseStyle" Text="{Binding obj.HorseStyle}"/>
+            x:Name="HorseStyle" Text="{Binding obj.HorseStyle}" IsReadOnly="True"/>
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,83,0,0" VerticalAlignment="Top" Width="161" Style="{StaticResource ComboBoxStyle}"
-            x:Name="HorseColor" Text="{Binding obj.HorseColor}"/>
+            x:Name="HorseColor" Text="{Binding obj.HorseColor}" IsReadOnly="True"/>
 
         <CheckBox Content="是否携带箱子" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding obj.HorseCarryingChest}"/>

@@ -11,9 +11,9 @@
                 Style="{StaticResource Label}"/>
 
         <TextBox HorizontalAlignment="Left" Height="23" Margin="60,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"
-                 x:Name="AI" Text="{Binding b}" Style="{StaticResource TextBox}"/>
+                 x:Name="AI" Text="{Binding AI_.Type}" Style="{StaticResource TextBox}"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="27,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28"
-                 x:Name="AI_L" Text="{Binding a}" Style="{StaticResource TextBox}"/>
+                 x:Name="AI_L" Text="{Binding AI_.Number}" Style="{StaticResource TextBox}"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="170,29,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource Button}" IsDefault="True" Click="Button_Click"/>
 
     </Grid>

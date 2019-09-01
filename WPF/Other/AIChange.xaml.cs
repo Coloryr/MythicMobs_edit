@@ -8,23 +8,17 @@ namespace MythicMobs_edit.WPF.Other
     /// </summary>
     public partial class AIChange : Window
     {
-        public int a { get; set; }
-        public string b { get; set; }
-        public AIChange(AI a)
+        public AI AI_ { get; set; } = new AI();
+        public AIChange(AI AI)
         {
             InitializeComponent();
-            this.a = a.a;
-            b = a.b;
             DataContext = this;
+            AI_ = AI;
         }
         public AI return_AI()
         {
             ShowDialog();
-            return new AI()
-            {
-                a = this.a,
-                b = this.b
-            };
+            return AI_;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

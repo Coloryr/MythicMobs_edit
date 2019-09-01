@@ -12,7 +12,7 @@
         <Label Content="{Binding obj.Age}" Height="25" Width="35" HorizontalAlignment="Left" Margin="274,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,33,0,0" VerticalAlignment="Top" Width="161"
-                  Name="Type" Text="{Binding obj.Ocelot}" Style="{StaticResource ComboBoxStyle}"/>
+                  Name="Type" Text="{Binding obj.Ocelot}" Style="{StaticResource ComboBoxStyle}" IsReadOnly="True"/>
 
         <Button Content="随机种类" HorizontalAlignment="Left" Height="20" Margin="239,33,0,0" VerticalAlignment="Top" Width="70" 
                 Click="Button_Click" Style="{StaticResource Button}"/>

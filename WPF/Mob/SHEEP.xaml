@@ -18,7 +18,7 @@
                   IsChecked="{Binding obj.AgeLock}" Style="{StaticResource Check}"/>
 
         <ComboBox HorizontalAlignment="Left" Height="20" Margin="73,83,0,0" VerticalAlignment="Top" Width="161"
-            x:Name="Color" Text="{Binding obj.Color}" Style="{StaticResource ComboBoxStyle}"/>
+            x:Name="Color" Text="{Binding obj.Color}" Style="{StaticResource ComboBoxStyle}" IsReadOnly="True"/>
 
         <Button Content="随机颜色" HorizontalAlignment="Left" Height="20" Margin="239,83,0,0" VerticalAlignment="Top" Width="70"
                 Click="Button_Click" Style="{StaticResource Button}"/>

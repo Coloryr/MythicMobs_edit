@@ -76,5 +76,9 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// 等级修正
         /// </summary>
         public LevelModifiers LevelModifiers { get; set; }
+        /// <summary>
+        /// 伪装
+        /// </summary>
+        public Disguise Disguise { get; set; }
     }
 }
