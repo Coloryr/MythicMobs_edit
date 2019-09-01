@@ -22,6 +22,8 @@ namespace MythicMobs_edit.WPF.Mob.Effects_type
             Type.Type.SelectedItem = this.Effects.Skill_Tag.Tag_Type;
             Type.Option.Text = this.Effects.Skill_Tag.Tag_Option;
             Type.Skill_Tag_ = Effects.Skill_Tag.Tag_Filters;
+            Triggers.Option.Text = Effects.Triggers.Option;
+            Triggers.Type.SelectedItem = Effects.Triggers.Type;
             DataContext = this;
             Type.refash_SkillTag();
         }
@@ -37,6 +39,8 @@ namespace MythicMobs_edit.WPF.Mob.Effects_type
             Effects.Skill_Tag.Tag_Type = (string)Type.Type.SelectedItem;
             Effects.Skill_Tag.Tag_Option = Type.Option.Text;
             Effects.Skill_Tag.Tag_Filters = Type.Skill_Tag_;
+            Effects.Triggers.Type = (string)Triggers.Type.SelectedItem;
+            Effects.Triggers.Option = Triggers.Option.Text;
             return Effects;
         }
 

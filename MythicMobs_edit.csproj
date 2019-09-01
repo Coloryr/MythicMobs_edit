@@ -142,6 +142,7 @@
     <Compile Include="Obj_save\Mob\Modules.cs" />
     <Compile Include="Obj_save\Mob\Options.cs" />
     <Compile Include="Obj_save\Mob\Skill_Tag.cs" />
+    <Compile Include="Obj_save\Mob\Triggers.cs" />
     <Compile Include="WPF\Mob\Addmob.xaml.cs">
       <DependentUpon>Addmob.xaml</DependentUpon>
     </Compile>
@@ -195,6 +196,9 @@
     </Compile>
     <Compile Include="WPF\Mob\Other\Skill_Tag.xaml.cs">
       <DependentUpon>Skill_Tag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Other\Triggers.xaml.cs">
+      <DependentUpon>Triggers.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\PIG_ZOMBIE.xaml.cs">
       <DependentUpon>PIG_ZOMBIE.xaml</DependentUpon>
@@ -338,6 +342,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="WPF\Mob\Other\Skill_Tag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Other\Triggers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

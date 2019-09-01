@@ -167,5 +167,11 @@ namespace MythicMobs_edit.Obj_save.Mob
             "animals", "creative", "creatures", "flyingmobs", "monsters", "NPCs", "players",
             "samefaction", "spectators", "watermobs"
         };
+        public List<string> Skill_Triggers = new List<string>()
+        {
+            "onCombat", "onAttack", "onDamaged", "onSpawn", "onFirstSpawn", "onDeath", "onTimer",
+            "onInteract", "onKillPlayer", "onPlayerDeath", "onEnterCombat", "onDropCombat",
+            "onChangeTarget", "onExplode", "onTeleport", "onSignal", "onShoot"
+        };
     }
 }

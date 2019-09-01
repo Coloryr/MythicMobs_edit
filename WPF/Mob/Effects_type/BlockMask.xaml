@@ -7,32 +7,34 @@
         xmlns:Other="clr-namespace:MythicMobs_edit.WPF.Mob.Other" 
         x:Class="MythicMobs_edit.WPF.Mob.Effects_type.BlockMask"
         mc:Ignorable="d"
-        Title="修改粒子效果：BlockMask" Height="380" Width="399" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="修改粒子效果：BlockMask" Height="285" Width="582" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="方块名字" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,4,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.BlockMask_Attributes_material}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,4,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.material}" VerticalAlignment="Top" Width="120"
                  Style="{StaticResource TextBox}"/>
-        <Label Content="方块数据" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.BlockMask_Attributes_data}" VerticalAlignment="Top" Width="120"
+        <Label Content="方块数据" HorizontalAlignment="Left" Margin="193,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,2,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.data}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
-        <Label Content="效果半径" HorizontalAlignment="Left" Margin="193,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,3,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.BlockMask_Attributes_radius}" VerticalAlignment="Top" Width="120"
+        <Label Content="效果半径" HorizontalAlignment="Left" Margin="381,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="444,3,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.radius}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="持续时间" HorizontalAlignment="Left" Margin="193,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.BlockMask_Attributes_duration}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.duration}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
-        <Label Content="形状" HorizontalAlignment="Left" Margin="15,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,63,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.BlockMask_Attributes_shape}" VerticalAlignment="Top" Width="120"
+        <Label Content="形状" HorizontalAlignment="Left" Margin="391,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="444,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.shape}" VerticalAlignment="Top" Width="120"
                  Style="{StaticResource TextBox}"/>
-        <CheckBox Content="非空气" HorizontalAlignment="Left" Margin="200,65,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
-                  IsChecked="{Binding Effects.Option.BlockMask_Attributes_noair}"/>
-        <CheckBox Content="只有非空气方块掩护" HorizontalAlignment="Left" Margin="5,92,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
-            IsChecked="{Binding Effects.Option.BlockMask_Attributes_noair}"/>
-        <CheckBox Content="只有空气方块掩护" HorizontalAlignment="Left" Margin="145,92,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
-            IsChecked="{Binding Effects.Option.BlockMask_Attributes_onlyair}"/>
-        <Button Content="OK" HorizontalAlignment="Left" Margin="306,318,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
+        <CheckBox Content="只有非空气方块掩护" HorizontalAlignment="Left" Margin="306,90,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+                  IsChecked="{Binding Effects.Option.noair}"/>
+        <CheckBox Content="只有空气方块掩护" HorizontalAlignment="Left" Margin="444,90,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
+                  IsChecked="{Binding Effects.Option.onlyair}"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="489,222,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
 
-        <Other:Skill_Tag HorizontalAlignment="Left" Height="220" Margin="0,112,0,0" VerticalAlignment="Top" Width="381" x:Name="Type"/>
+        <Other:Skill_Tag HorizontalAlignment="Left" Height="220" Margin="0,30,0,0" VerticalAlignment="Top" Width="381" x:Name="Type"/>
+        <Other:Triggers HorizontalAlignment="Left" Height="68" Margin="292,115,0,0" VerticalAlignment="Top" Width="280" x:Name="Triggers"/>
+        <Label Content="噪点" HorizontalAlignment="Left" Margin="391,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="444,63,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.noise}" VerticalAlignment="Top" Width="120"
+                 PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
 
     </Grid>
 </Window>

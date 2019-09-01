@@ -25,55 +25,55 @@ namespace MythicMobs_edit.WPF.Mob.Other
             switch (Type.SelectedItem)
             {
                 case "@LivingEntitiesInRadius":
-                    Option.Text = "{r=#}";
+                    Option.Text = "r=#";
                     break;
                 case "@PlayersInRadius":
-                    Option.Text = "{r=#}";
+                    Option.Text = "r=#";
                     break;
                 case "@MobsInRadius":
-                    Option.Text = "{r=#;types=X,X,X}";
+                    Option.Text = "r=#;types=X,X,X";
                     break;
                 case "@EntitiesInRadius":
-                    Option.Text = "{r=#;types=X,X,X}";
+                    Option.Text = "r=#;types=X,X,X";
                     break;
                 case "@PlayersInRing":
-                    Option.Text = "{min=#;max=#}";
+                    Option.Text = "min=#;max=#";
                     break;
                 case "@PlayersNearOrigin":
-                    Option.Text = "{r=#}";
+                    Option.Text = "r=#";
                     break;
                 case "@MobsNearOrigin":
-                    Option.Text = "{r=R;t=T}";
+                    Option.Text = "r=R;t=T";
                     break;
                 case "@EntitiesNearOrigin":
-                    Option.Text = "{r=#}";
+                    Option.Text = "r=#";
                     break;
                 case "@Location":
-                    Option.Text = "{c=x,y,z}";
+                    Option.Text = "c=x,y,z";
                     break;
                 case "@Spawner":
-                    Option.Text = "{s=[string]}";
+                    Option.Text = "s=[string]";
                     break;
                 case "@RLNTE":
-                    Option.Text = "{amount=#;radius=#;spacing=#;minradius=#;}";
+                    Option.Text = "amount=#;radius=#;spacing=#;minradius=#;";
                     break;
                 case "@PlayerLocationsInRadius":
-                    Option.Text = "{r=#}";
+                    Option.Text = "r=#";
                     break;
                 case "@Ring":
-                    Option.Text = "{radius=#;points=#}";
+                    Option.Text = "radius=#;points=#";
                     break;
                 case "@Cone":
-                    Option.Text = "{angle=#;points=#;range=#;rotation=#;}";
+                    Option.Text = "angle=#;points=#;range=#;rotation=#;";
                     break;
                 case "@EntitiesInCone":
-                    Option.Text = "{angle=#;range=#;rotation=#;}";
+                    Option.Text = "angle=#;range=#;rotation=#;";
                     break;
                 case "@Line":
-                    Option.Text = "{radius=#;fromorigin=true/false}";
+                    Option.Text = "radius=#;fromorigin=true/false";
                     break;
                 case "@EntitiesInLine":
-                    Option.Text = "{radius=#;fromorigin=true/false}";
+                    Option.Text = "radius=#;fromorigin=true/false";
                     break;
                 default:
                     Option.Text = "";

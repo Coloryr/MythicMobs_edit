@@ -14,5 +14,9 @@
         /// 目标
         /// </summary>
         public Skill_Tag Skill_Tag { get; set; } = new Skill_Tag();
+        /// <summary>
+        /// 触发
+        /// </summary>
+        public Triggers Triggers { get; set; } = new Triggers();
     }
 }
