@@ -4,16 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Other"
-             mc:Ignorable="d" Height="65" Width="280">
+             mc:Ignorable="d" Height="95" Width="285">
     <Grid Background="Black">
-        <Label Content="触发类型" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <ComboBox HorizontalAlignment="Left" Margin="68,3,0,0" VerticalAlignment="Top" Width="137" Style="{StaticResource ComboBoxStyle}"
+        <Label Content="触发类型" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="73,33,0,0" VerticalAlignment="Top" Width="137" Style="{StaticResource ComboBoxStyle}"
                   Height="20" Name="Type" SelectionChanged="Type_SelectionChanged"/>
-        <Button Content="随机类型" HorizontalAlignment="Left" Margin="210,3,0,0" VerticalAlignment="Top" Width="60" Style="{StaticResource Button}"
+        <Button Content="随机类型" HorizontalAlignment="Left" Margin="215,33,0,0" VerticalAlignment="Top" Width="60" Style="{StaticResource Button}"
                 Height="20" Click="Button_Click"/>
-        <Label Content="触发参数" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"
+        <Label Content="触发参数" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"
                  Name="Option" Style="{StaticResource TextBox}"/>
+        <Label Content="触发" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
     </Grid>
 </UserControl>

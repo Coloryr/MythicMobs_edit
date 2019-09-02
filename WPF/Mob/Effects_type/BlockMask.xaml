@@ -30,8 +30,8 @@
                   IsChecked="{Binding Effects.Option.onlyair}"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="489,222,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
 
-        <Other:Skill_Tag HorizontalAlignment="Left" Height="220" Margin="0,30,0,0" VerticalAlignment="Top" Width="381" x:Name="Type"/>
-        <Other:Triggers HorizontalAlignment="Left" Height="68" Margin="292,115,0,0" VerticalAlignment="Top" Width="280" x:Name="Triggers"/>
+        <Other:Skill_Tag HorizontalAlignment="Left" Height="220" Margin="0,30,0,0" VerticalAlignment="Top" Width="292" x:Name="Type"/>
+        <Other:Triggers HorizontalAlignment="Left" Height="93" Margin="292,115,0,0" VerticalAlignment="Top" Width="280" x:Name="Triggers_"/>
         <Label Content="噪点" HorizontalAlignment="Left" Margin="391,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="444,63,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.noise}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>

@@ -6,19 +6,15 @@ using System.Windows.Input;
 namespace MythicMobs_edit.WPF.Mob.Effects_type
 {
     /// <summary>
-    /// BlockMask.xaml 的交互逻辑
+    /// Ender.xaml 的交互逻辑
     /// </summary>
-    public partial class BlockMask : Window
+    public partial class Ender : Window
     {
         public Effects Effects { get; set; }
-        public BlockMask(Effects Effects)
+        public Ender(Effects Effects)
         {
             InitializeComponent();
             this.Effects = Effects;
-            if (!(this.Effects.Option is Obj_save.Mob.Effects_type.BlockMask))
-            {
-                this.Effects.Option = new Obj_save.Mob.Effects_type.BlockMask();
-            }
             Type.Type.SelectedItem = this.Effects.Skill_Tag.Tag_Type;
             Type.Option.Text = this.Effects.Skill_Tag.Tag_Option;
             Type.Skill_Tag_ = Effects.Skill_Tag.Tag_Filters;

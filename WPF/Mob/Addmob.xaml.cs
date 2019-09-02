@@ -1,5 +1,5 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
-using MythicMobs_edit.WPF.Mob;
+using MythicMobs_edit.WPF.Mob.Mob_type;
 using MythicMobs_edit.WPF.Mob.Effects_type;
 using MythicMobs_edit.WPF.Mob.Other;
 using System;
@@ -280,7 +280,7 @@ namespace MythicMobs_edit.WPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Mob.Display = "'" + Encoding.Default.GetString(Encoding.UTF8.GetBytes(Display)) + "'";
-            switch (Mob.Type) 
+            switch (Mob.Type)
             {
                 case "ARMOR_STAND":
                     ARMOR_STAND ARMOR_STAND = (ARMOR_STAND)obj;
@@ -451,26 +451,42 @@ namespace MythicMobs_edit.WPF
                 switch (a.Type)
                 {
                     case "blockmask":
-                        string c = "{";
+                        string blockmask = "{";
                         Obj_save.Mob.Effects_type.BlockMask blockMask = (Obj_save.Mob.Effects_type.BlockMask)a.Option;
                         if (string.IsNullOrWhiteSpace(blockMask.material) == false)
-                            c += "m:" + blockMask.material + ";";
+                            blockmask += "m:" + blockMask.material + ";";
                         if (blockMask.data != 0)
-                            c += "dv:" + blockMask.data + ";";
+                            blockmask += "dv:" + blockMask.data + ";";
                         if (blockMask.radius != 0)
-                            c += "r:" + blockMask.radius + ";";
+                            blockmask += "r:" + blockMask.radius + ";";
                         if (blockMask.noise != 0)
-                            c += "n:" + blockMask.noise + ";";
+                            blockmask += "n:" + blockMask.noise + ";";
                         if (blockMask.duration != 0)
-                            c += "d:" + blockMask.duration + ";";
+                            blockmask += "d:" + blockMask.duration + ";";
                         if (string.IsNullOrWhiteSpace(blockMask.shape) == false)
-                            c += "s:" + blockMask.shape + ";";
-                        c += "na:" + blockMask.noair + ";";
-                        c += "s:" + blockMask.onlyair + ";";
-                        c = c.Substring(0, c.Length - 1);
-                        c += "}";
-                        b += c + " ";
+                            blockmask += "s:" + blockMask.shape + ";";
+                        blockmask += "na:" + blockMask.noair + ";";
+                        blockmask += "s:" + blockMask.onlyair + ";";
+                        blockmask += "}";
+                        b += blockmask + " ";
                         break;
+                    case "enderbeam":
+                        string enderbeam = "{";
+                        Obj_save.Mob.Effects_type.EnderBeam EnderBeam = (Obj_save.Mob.Effects_type.EnderBeam)a.Option;
+                        enderbeam += "d:" + EnderBeam.duration + ";";
+                        enderbeam += "y:" + EnderBeam.yoffset + ";";
+                        enderbeam += "}";
+                        b += enderbeam + " ";
+                        break;
+                    default:
+                        b += " ";
+                        break;
+                }
+                
+                if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Type) == false)
+                {
+                    string c = a.Skill_Tag.Tag_Type;
+                    b += c;
                 }
                 if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false || a.Skill_Tag.Tag_Filters.Count != 0)
                 {
@@ -478,12 +494,7 @@ namespace MythicMobs_edit.WPF
                 }
                 if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
                 {
-                    string c = a.Skill_Tag.Tag_Type;
-                    if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
-                    {
-                        c += a.Skill_Tag.Tag_Option;
-                        b += c;
-                    }
+                    b += a.Skill_Tag.Tag_Option;
                 }
                 if (a.Skill_Tag.Tag_Filters.Count != 0)
                 {
@@ -500,6 +511,8 @@ namespace MythicMobs_edit.WPF
                     {
                         b += ";" + d;
                     }
+                    else
+                        b += d;
                 }
                 if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false || a.Skill_Tag.Tag_Filters.Count != 0)
                 {
@@ -563,7 +576,10 @@ namespace MythicMobs_edit.WPF
                 {
                     isskill = true;
                 }
-                listLines.Add(("  " + line).Replace("'", ""));
+                if (isskill == true)
+                    listLines.Add(("  " + line).Replace("'", ""));
+                else
+                    listLines.Add(("  " + line));
                 line = reader.ReadLine();
             }
             foreach (string a in listLines)
@@ -653,6 +669,15 @@ namespace MythicMobs_edit.WPF
             {
                 case "blockmask":
                     Effects = new BlockMask(Effects).get_Effects_();
+                    break;
+                case "ender":
+                    Effects = new Ender(Effects).get_Effects_();
+                    break;
+                case "enderbeam":
+                    Effects = new EnderBeam(Effects).get_Effects_();
+                    break;
+                case "explosion":
+                    Effects = new Explosion(Effects).get_Effects_();
                     break;
                 default:
 
@@ -926,18 +951,27 @@ namespace MythicMobs_edit.WPF
         {
             if (SkillEffect_T.SelectedItem == null)
                 return;
-            Effects effects = (Effects)SkillEffect_T.SelectedItem;
-            Skills_effect.Remove(effects);
-            switch (effects.Type)
+            Effects Effects = (Effects)SkillEffect_T.SelectedItem;
+            Skills_effect.Remove(Effects);
+            switch (Effects.Type)
             {
                 case "blockmask":
-                    effects = new BlockMask(effects).get_Effects_();
+                    Effects = new BlockMask(Effects).get_Effects_();
+                    break;
+                case "ender":
+                    Effects = new Ender(Effects).get_Effects_();
+                    break;
+                case "enderbeam":
+                    Effects = new EnderBeam(Effects).get_Effects_();
+                    break;
+                case "explosion":
+                    Effects = new Explosion(Effects).get_Effects_();
                     break;
                 default:
 
                     break;
             }
-            Skills_effect.Add(effects);
+            Skills_effect.Add(Effects);
             refash_SkillEffect();
         }
     }

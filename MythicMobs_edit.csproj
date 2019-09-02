@@ -106,6 +106,7 @@
     <Compile Include="Obj_save\Mob\Drops.cs" />
     <Compile Include="Obj_save\Mob\Effects.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\BlockMask.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\EnderBeam.cs" />
     <Compile Include="Obj_save\Mob\Equipment.cs" />
     <Compile Include="Obj_save\Mob\LevelModifiers.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
@@ -149,49 +150,58 @@
     <Compile Include="WPF\Mob\Effects_type\BlockMask.xaml.cs">
       <DependentUpon>BlockMask.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Ender.xaml.cs">
+      <DependentUpon>Ender.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\EnderBeam.xaml.cs">
+      <DependentUpon>EnderBeam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Explosion.xaml.cs">
+      <DependentUpon>Explosion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\BABY_PIG_ZOMBIE.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\BABY_PIG_ZOMBIE.xaml.cs">
       <DependentUpon>BABY_PIG_ZOMBIE.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\BABY_PIG_ZOMBIE_VILLAGER.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\BABY_PIG_ZOMBIE_VILLAGER.xaml.cs">
       <DependentUpon>BABY_PIG_ZOMBIE_VILLAGER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\BABY_ZOMBIE.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\BABY_ZOMBIE.xaml.cs">
       <DependentUpon>BABY_ZOMBIE.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\BABY_ZOMBIE_VILLAGER.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\BABY_ZOMBIE_VILLAGER.xaml.cs">
       <DependentUpon>BABY_ZOMBIE_VILLAGER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\CHICKEN.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\CHICKEN.xaml.cs">
       <DependentUpon>CHICKEN.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\COW.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\COW.xaml.cs">
       <DependentUpon>COW.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\CREEPER.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\CREEPER.xaml.cs">
       <DependentUpon>CREEPER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\ENDERMAN.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\ENDERMAN.xaml.cs">
       <DependentUpon>ENDERMAN.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\FALLING_BLOCKS.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\FALLING_BLOCKS.xaml.cs">
       <DependentUpon>FALLING_BLOCKS.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\HORSE.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\HORSE.xaml.cs">
       <DependentUpon>HORSE.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\LLAMA.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\LLAMA.xaml.cs">
       <DependentUpon>LLAMA.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\MAGMA_CUBE.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\MAGMA_CUBE.xaml.cs">
       <DependentUpon>MAGMA_CUBE.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\MUSHROOM_COW.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\MUSHROOM_COW.xaml.cs">
       <DependentUpon>MUSHROOM_COW.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\OCELOT.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\OCELOT.xaml.cs">
       <DependentUpon>OCELOT.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Other\Skill_Tag.xaml.cs">
@@ -200,49 +210,49 @@
     <Compile Include="WPF\Mob\Other\Triggers.xaml.cs">
       <DependentUpon>Triggers.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\PIG_ZOMBIE.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\PIG_ZOMBIE.xaml.cs">
       <DependentUpon>PIG_ZOMBIE.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\PIG_ZOMBIE_VILLAGER.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\PIG_ZOMBIE_VILLAGER.xaml.cs">
       <DependentUpon>PIG_ZOMBIE_VILLAGER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\POLAR_BEAR.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\POLAR_BEAR.xaml.cs">
       <DependentUpon>POLAR_BEAR.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\RABBIT.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\RABBIT.xaml.cs">
       <DependentUpon>RABBIT.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\SHEEP.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\SHEEP.xaml.cs">
       <DependentUpon>SHEEP.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\SLIME.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\SLIME.xaml.cs">
       <DependentUpon>SLIME.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\SNOWMAN.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\SNOWMAN.xaml.cs">
       <DependentUpon>SNOWMAN.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\VILLAGER.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\VILLAGER.xaml.cs">
       <DependentUpon>VILLAGER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\WOLF.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\WOLF.xaml.cs">
       <DependentUpon>WOLF.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\ZOMBIE_VILLAGER.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\ZOMBIE_VILLAGER.xaml.cs">
       <DependentUpon>ZOMBIE_VILLAGER.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\ZOMBIE.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\ZOMBIE.xaml.cs">
       <DependentUpon>ZOMBIE.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\SILVERFISH.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\SILVERFISH.xaml.cs">
       <DependentUpon>SILVERFISH.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\PIG.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\PIG.xaml.cs">
       <DependentUpon>PIG.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\PRIMED_TNT.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\PRIMED_TNT.xaml.cs">
       <DependentUpon>PRIMED_TNT.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\ARMOR_STAND.xaml.cs">
+    <Compile Include="WPF\Mob\Mob_type\ARMOR_STAND.xaml.cs">
       <DependentUpon>ARMOR_STAND.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Other\DamageModifiersChange.xaml.cs">
@@ -281,63 +291,75 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\Effects_type\Ender.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\EnderBeam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Explosion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\Other\AIChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\BABY_PIG_ZOMBIE.xaml">
+    <Page Include="WPF\Mob\Mob_type\BABY_PIG_ZOMBIE.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\BABY_PIG_ZOMBIE_VILLAGER.xaml">
+    <Page Include="WPF\Mob\Mob_type\BABY_PIG_ZOMBIE_VILLAGER.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\BABY_ZOMBIE.xaml">
+    <Page Include="WPF\Mob\Mob_type\BABY_ZOMBIE.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\BABY_ZOMBIE_VILLAGER.xaml">
+    <Page Include="WPF\Mob\Mob_type\BABY_ZOMBIE_VILLAGER.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\CHICKEN.xaml">
+    <Page Include="WPF\Mob\Mob_type\CHICKEN.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\COW.xaml">
+    <Page Include="WPF\Mob\Mob_type\COW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\CREEPER.xaml">
+    <Page Include="WPF\Mob\Mob_type\CREEPER.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\ENDERMAN.xaml">
+    <Page Include="WPF\Mob\Mob_type\ENDERMAN.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\FALLING_BLOCKS.xaml">
+    <Page Include="WPF\Mob\Mob_type\FALLING_BLOCKS.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\HORSE.xaml">
+    <Page Include="WPF\Mob\Mob_type\HORSE.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\LLAMA.xaml">
+    <Page Include="WPF\Mob\Mob_type\LLAMA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\MAGMA_CUBE.xaml">
+    <Page Include="WPF\Mob\Mob_type\MAGMA_CUBE.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\MUSHROOM_COW.xaml">
+    <Page Include="WPF\Mob\Mob_type\MUSHROOM_COW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\OCELOT.xaml">
+    <Page Include="WPF\Mob\Mob_type\OCELOT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -349,63 +371,63 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\PIG_ZOMBIE.xaml">
+    <Page Include="WPF\Mob\Mob_type\PIG_ZOMBIE.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\PIG_ZOMBIE_VILLAGER.xaml">
+    <Page Include="WPF\Mob\Mob_type\PIG_ZOMBIE_VILLAGER.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\POLAR_BEAR.xaml">
+    <Page Include="WPF\Mob\Mob_type\POLAR_BEAR.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\RABBIT.xaml">
+    <Page Include="WPF\Mob\Mob_type\RABBIT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\SHEEP.xaml">
+    <Page Include="WPF\Mob\Mob_type\SHEEP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\SLIME.xaml">
+    <Page Include="WPF\Mob\Mob_type\SLIME.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\SNOWMAN.xaml">
+    <Page Include="WPF\Mob\Mob_type\SNOWMAN.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\VILLAGER.xaml">
+    <Page Include="WPF\Mob\Mob_type\VILLAGER.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\WOLF.xaml">
+    <Page Include="WPF\Mob\Mob_type\WOLF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\ZOMBIE_VILLAGER.xaml">
+    <Page Include="WPF\Mob\Mob_type\ZOMBIE_VILLAGER.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\ZOMBIE.xaml">
+    <Page Include="WPF\Mob\Mob_type\ZOMBIE.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\SILVERFISH.xaml">
+    <Page Include="WPF\Mob\Mob_type\SILVERFISH.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\PIG.xaml">
+    <Page Include="WPF\Mob\Mob_type\PIG.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\PRIMED_TNT.xaml">
+    <Page Include="WPF\Mob\Mob_type\PRIMED_TNT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="WPF\Mob\ARMOR_STAND.xaml">
+    <Page Include="WPF\Mob\Mob_type\ARMOR_STAND.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

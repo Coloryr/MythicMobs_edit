@@ -398,7 +398,7 @@
                 </Grid>
             </Expander>
             <Expander Header="技能-特效" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Foreground="White">
-                <Grid Height="345">
+                <Grid Height="195">
                     <Label Content="特效类型" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
                     <ComboBox HorizontalAlignment="Left" Margin="63,3,0,0" VerticalAlignment="Top" Height="20" Width="178" Style="{StaticResource ComboBoxStyle}"
                               Name="Skill_Effect_Type" IsReadOnly="True"/>

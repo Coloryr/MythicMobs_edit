@@ -1,0 +1,17 @@
+﻿<Window x:Class="MythicMobs_edit.WPF.Mob.Effects_type.Ender"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Effects_type"
+        xmlns:Other="clr-namespace:MythicMobs_edit.WPF.Mob.Other" 
+        mc:Ignorable="d"
+        Title="修改粒子效果：Ender" Height="246" Width="573" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="480,185,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
+
+        <Other:Skill_Tag HorizontalAlignment="Left" Height="220" Margin="-5,0,0,0" VerticalAlignment="Top" Width="292" x:Name="Type"/>
+        <Other:Triggers HorizontalAlignment="Left" Height="93" Margin="280,0,0,0" VerticalAlignment="Top" Width="280" x:Name="Triggers_"/>
+
+    </Grid>
+</Window>
