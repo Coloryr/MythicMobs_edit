@@ -107,6 +107,19 @@
     <Compile Include="Obj_save\Mob\Effects.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\BlockMask.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\EnderBeam.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\Firework.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\Geyser.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\ItemSpraycs.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\Lightning.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\ParticleSphere.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\ParticleBox.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\ParticleLine.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\ParticleRing.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\Particles.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\ParticleTornado.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\Smoke.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\SmokeSwirl.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\Sound.cs" />
     <Compile Include="Obj_save\Mob\Equipment.cs" />
     <Compile Include="Obj_save\Mob\LevelModifiers.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
@@ -158,6 +171,48 @@
     </Compile>
     <Compile Include="WPF\Mob\Effects_type\Explosion.xaml.cs">
       <DependentUpon>Explosion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Firework.xaml.cs">
+      <DependentUpon>Firework.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Flames.xaml.cs">
+      <DependentUpon>Flames.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Geyser.xaml.cs">
+      <DependentUpon>Geyser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\ItemSpraycs.xaml.cs">
+      <DependentUpon>ItemSpraycs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Lightning.xaml.cs">
+      <DependentUpon>Lightning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\ParticleBox.xaml.cs">
+      <DependentUpon>ParticleBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\ParticleLine.xaml.cs">
+      <DependentUpon>ParticleLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\ParticleRing.xaml.cs">
+      <DependentUpon>ParticleRing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Particles.xaml.cs">
+      <DependentUpon>Particles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\ParticleSphere.xaml.cs">
+      <DependentUpon>ParticleSphere.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\ParticleTornado.xaml.cs">
+      <DependentUpon>ParticleTornado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Smoke.xaml.cs">
+      <DependentUpon>Smoke.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\SmokeSwirl.xaml.cs">
+      <DependentUpon>SmokeSwirl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Sound.xaml.cs">
+      <DependentUpon>Sound.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
@@ -300,6 +355,62 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\Effects_type\Explosion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Firework.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Flames.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Geyser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\ItemSpraycs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Lightning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\ParticleBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\ParticleLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\ParticleRing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Particles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\ParticleSphere.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\ParticleTornado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Smoke.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\SmokeSwirl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Sound.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

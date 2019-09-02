@@ -478,6 +478,195 @@ namespace MythicMobs_edit.WPF
                         enderbeam += "}";
                         b += enderbeam + " ";
                         break;
+                    case "firework":
+                        string firework = "{";
+                        Obj_save.Mob.Effects_type.Firework Firework = (Obj_save.Mob.Effects_type.Firework)a.Option;
+                        firework += "t:" + Firework.type + ";";
+                        firework += "d:" + Firework.duration + ";";
+                        firework += "f:" + Firework.flicker + ";";
+                        firework += "tr:" + Firework.trail + ";";
+                        if (string.IsNullOrWhiteSpace(Firework.colors) == false)
+                            firework += "c:" + Firework.colors + ";";
+                        if (string.IsNullOrWhiteSpace(Firework.fadecolors) == false)
+                            firework += "fc:" + Firework.fadecolors + ";";
+                        firework += "}";
+                        b += firework + " ";
+                        break;
+                    case "geyser":
+                        string geyser = "{";
+                        Obj_save.Mob.Effects_type.Geyser Geyser = (Obj_save.Mob.Effects_type.Geyser)a.Option;
+                        geyser += "t:" + Geyser.Type + ";";
+                        geyser += "h:" + Geyser.height + ";";
+                        geyser += "s:" + Geyser.speed + ";";
+                        geyser += "}";
+                        b += geyser + " ";
+                        break;
+                    case "itemspray":
+                        string itemspray = "{";
+                        Obj_save.Mob.Effects_type.ItemSpraycs ItemSpraycs = (Obj_save.Mob.Effects_type.ItemSpraycs)a.Option;
+                        itemspray += "i:" + ItemSpraycs.item + ";";
+                        itemspray += "a:" + ItemSpraycs.amount + ";";
+                        itemspray += "d:" + ItemSpraycs.duration + ";";
+                        itemspray += "r:" + ItemSpraycs.radius + ";";
+                        itemspray += "v:" + ItemSpraycs.velocity + ";";
+                        itemspray += "vv:" + ItemSpraycs.yVelocity + ";";
+                        itemspray += "yo:" + ItemSpraycs.yOffset + ";";
+                        itemspray += "ap:" + ItemSpraycs.allowpickup + ";";
+                        itemspray += "}";
+                        b += itemspray + " ";
+                        break;
+                    case "lightning":
+                        string lightning = "{";
+                        Obj_save.Mob.Effects_type.Lightning Lightning = (Obj_save.Mob.Effects_type.Lightning)a.Option;
+                        lightning += "l:" + Lightning.localized + ";";
+                        lightning += "r:" + Lightning.localizedradius + ";";
+                        lightning += "}";
+                        b += lightning + " ";
+                        break;
+                    case "particles":
+                        string particles = "{";
+                        Obj_save.Mob.Effects_type.Particles Particles = (Obj_save.Mob.Effects_type.Particles)a.Option;
+                        particles += "p:" + Particles.particle + ";";
+                        if (string.IsNullOrWhiteSpace(Particles.material) == false)
+                            particles += "m:" + Particles.material + ";";
+                        particles += "a:" + Particles.amount + ";";
+                        particles += "hs:" + Particles.hSpread + ";";
+                        particles += "vs:" + Particles.vSpread + ";";
+                        particles += "s:" + Particles.speed + ";";
+                        particles += "y:" + Particles.yOffset + ";";
+                        particles += "vd:" + Particles.viewDistance + ";";
+                        particles += "c:" + Particles.color + ";";
+                        particles += "fo:" + Particles.fromorigin + ";";
+                        particles += "}";
+                        b += particles + " ";
+                        break;
+                    case "particlebox":
+                        string particlebox = "{";
+                        Obj_save.Mob.Effects_type.ParticleBox ParticleBox = (Obj_save.Mob.Effects_type.ParticleBox)a.Option;
+                        particlebox += "p:" + ParticleBox.particle + ";";
+                        if (string.IsNullOrWhiteSpace(ParticleBox.material) == false)
+                            particlebox += "m:" + ParticleBox.material + ";";
+                        particlebox += "a:" + ParticleBox.amount + ";";
+                        particlebox += "hs:" + ParticleBox.hSpread + ";";
+                        particlebox += "vs:" + ParticleBox.vSpread + ";";
+                        particlebox += "s:" + ParticleBox.speed + ";";
+                        particlebox += "y:" + ParticleBox.yOffset + ";";
+                        particlebox += "vd:" + ParticleBox.viewDistance + ";";
+                        particlebox += "c:" + ParticleBox.color + ";";
+                        particlebox += "fo:" + ParticleBox.fromorigin + ";";
+                        particlebox += "r:" + ParticleBox.radius + ";";
+                        particlebox += "}";
+                        b += particlebox + " ";
+                        break;
+                    case "particleline":
+                        string particleline = "{";
+                        Obj_save.Mob.Effects_type.ParticleLine ParticleLine = (Obj_save.Mob.Effects_type.ParticleLine)a.Option;
+                        particleline += "p:" + ParticleLine.particle + ";";
+                        if (string.IsNullOrWhiteSpace(ParticleLine.material) == false)
+                            particleline += "m:" + ParticleLine.material + ";";
+                        particleline += "a:" + ParticleLine.amount + ";";
+                        particleline += "hs:" + ParticleLine.hSpread + ";";
+                        particleline += "vs:" + ParticleLine.vSpread + ";";
+                        particleline += "s:" + ParticleLine.speed + ";";
+                        particleline += "y:" + ParticleLine.yOffset + ";";
+                        particleline += "vd:" + ParticleLine.viewDistance + ";";
+                        particleline += "c:" + ParticleLine.color + ";";
+                        particleline += "fo:" + ParticleLine.fromorigin + ";";
+                        particleline += "db:" + ParticleLine.distanceBetween + ";";
+                        particleline += "ys:" + ParticleLine.yStartOffset + ";";
+                        particleline += "}";
+                        b += particleline + " ";
+                        break;
+                    case "particlering":
+                        string particlering = "{";
+                        Obj_save.Mob.Effects_type.ParticleRing ParticleRing = (Obj_save.Mob.Effects_type.ParticleRing)a.Option;
+                        particlering += "p:" + ParticleRing.particle + ";";
+                        if (string.IsNullOrWhiteSpace(ParticleRing.material) == false)
+                            particlering += "m:" + ParticleRing.material + ";";
+                        particlering += "a:" + ParticleRing.amount + ";";
+                        particlering += "hs:" + ParticleRing.hSpread + ";";
+                        particlering += "vs:" + ParticleRing.vSpread + ";";
+                        particlering += "s:" + ParticleRing.speed + ";";
+                        particlering += "y:" + ParticleRing.yOffset + ";";
+                        particlering += "vd:" + ParticleRing.viewDistance + ";";
+                        particlering += "c:" + ParticleRing.color + ";";
+                        particlering += "fo:" + ParticleRing.fromorigin + ";";
+                        particlering += "}";
+                        b += particlering + " ";
+                        break;
+                    case "particlesphere":
+                        string particlesphere = "{";
+                        Obj_save.Mob.Effects_type.ParticleSphere ParticleSphere = (Obj_save.Mob.Effects_type.ParticleSphere)a.Option;
+                        particlesphere += "p:" + ParticleSphere.particle + ";";
+                        if (string.IsNullOrWhiteSpace(ParticleSphere.material) == false)
+                            particlesphere += "m:" + ParticleSphere.material + ";";
+                        particlesphere += "a:" + ParticleSphere.amount + ";";
+                        particlesphere += "hs:" + ParticleSphere.hSpread + ";";
+                        particlesphere += "vs:" + ParticleSphere.vSpread + ";";
+                        particlesphere += "s:" + ParticleSphere.speed + ";";
+                        particlesphere += "y:" + ParticleSphere.yOffset + ";";
+                        particlesphere += "vd:" + ParticleSphere.viewDistance + ";";
+                        particlesphere += "c:" + ParticleSphere.color + ";";
+                        particlesphere += "fo:" + ParticleSphere.fromorigin + ";";
+                        particlesphere += "r:" + ParticleSphere.radius + ";";
+                        particlesphere += "}";
+                        b += particlesphere + " ";
+                        break;
+                    case "particletornado":
+                        string particletornado = "{";
+                        Obj_save.Mob.Effects_type.ParticleTornado ParticleTornado = (Obj_save.Mob.Effects_type.ParticleTornado)a.Option;
+                        particletornado += "p:" + ParticleTornado.particle + ";";
+                        if (string.IsNullOrWhiteSpace(ParticleTornado.material) == false)
+                            particletornado += "m:" + ParticleTornado.material + ";";
+                        particletornado += "a:" + ParticleTornado.amount + ";";
+                        particletornado += "hs:" + ParticleTornado.hSpread + ";";
+                        particletornado += "vs:" + ParticleTornado.vSpread + ";";
+                        particletornado += "s:" + ParticleTornado.speed + ";";
+                        particletornado += "y:" + ParticleTornado.yOffset + ";";
+                        particletornado += "vd:" + ParticleTornado.viewDistance + ";";
+                        particletornado += "c:" + ParticleTornado.color + ";";
+                        particletornado += "fo:" + ParticleTornado.fromorigin + ";";
+                        particletornado += "mr:" + ParticleTornado.maxradius + ";";
+                        particletornado += "yo:" + ParticleTornado.yoffset + ";";
+                        particletornado += "h:" + ParticleTornado.height + ";";
+                        particletornado += "i:" + ParticleTornado.interval + ";";
+                        particletornado += "d:" + ParticleTornado.duration + ";";
+                        particletornado += "rs:" + ParticleTornado.rotationspeed + ";";
+                        particletornado += "sh:" + ParticleTornado.sliceheight + ";";
+                        particletornado += "cp:" + ParticleTornado.cloudparticle + ";";
+                        particletornado += "cs:" + ParticleTornado.cloudsize + ";";
+                        particletornado += "ca:" + ParticleTornado.cloudamount + ";";
+                        particletornado += "chs:" + ParticleTornado.cloudhspread + ";";
+                        particletornado += "cvs:" + ParticleTornado.cloudvspread + ";";
+                        particletornado += "cps:" + ParticleTornado.cloudpspeed + ";";
+                        particletornado += "cyo:" + ParticleTornado.cloudyoffset + ";";
+                        particletornado += "}";
+                        b += particletornado + " ";
+                        break;
+                    case "smoke":
+                        string smoke = "{";
+                        Obj_save.Mob.Effects_type.Smoke Smoke = (Obj_save.Mob.Effects_type.Smoke)a.Option;
+                        smoke += "d:" + Smoke.direction + ";";
+                        smoke += "}";
+                        b += smoke + " ";
+                        break;
+                    case "smokeswirl":
+                        string smokeswirl = "{";
+                        Obj_save.Mob.Effects_type.SmokeSwirl SmokeSwirl = (Obj_save.Mob.Effects_type.SmokeSwirl)a.Option;
+                        smokeswirl += "d:" + SmokeSwirl.duration + ";";
+                        smokeswirl += "i:" + SmokeSwirl.interval + ";";
+                        smokeswirl += "}";
+                        b += smokeswirl + " ";
+                        break;
+                    case "sound":
+                        string sound = "{";
+                        Obj_save.Mob.Effects_type.Sound Sound = (Obj_save.Mob.Effects_type.Sound)a.Option;
+                        sound += "s:" + Sound.sound + ";";
+                        sound += "p:" + Sound.pitch + ";";
+                        sound += "v:" + Sound.volume + ";";
+                        sound += "}";
+                        b += sound + " ";
+                        break;
                     default:
                         b += " ";
                         break;
@@ -678,6 +867,48 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "explosion":
                     Effects = new Explosion(Effects).get_Effects_();
+                    break;
+                case "firework":
+                    Effects = new Firework(Effects).get_Effects_();
+                    break;
+                case "flames":
+                    Effects = new Flames(Effects).get_Effects_();
+                    break;
+                case "geyser":
+                    Effects = new Geyser(Effects).get_Effects_();
+                    break;
+                case "itemspray":
+                    Effects = new ItemSpraycs(Effects).get_Effects_();
+                    break;
+                case "lightning":
+                    Effects = new Lightning(Effects).get_Effects_();
+                    break;
+                case "particles":
+                    Effects = new Particles(Effects).get_Effects_();
+                    break;
+                case "particlebox":
+                    Effects = new ParticleBox(Effects).get_Effects_();
+                    break;
+                case "particleline":
+                    Effects = new ParticleLine(Effects).get_Effects_();
+                    break;
+                case "particlering":
+                    Effects = new ParticleRing(Effects).get_Effects_();
+                    break;
+                case "particlesphere":
+                    Effects = new ParticleSphere(Effects).get_Effects_();
+                    break;
+                case "particletornado":
+                    Effects = new ParticleTornado(Effects).get_Effects_();
+                    break;
+                case "smoke":
+                    Effects = new Smoke(Effects).get_Effects_();
+                    break;
+                case "smokeswirl":
+                    Effects = new SmokeSwirl(Effects).get_Effects_();
+                    break;
+                case "sound":
+                    Effects = new Sound(Effects).get_Effects_();
                     break;
                 default:
 
@@ -966,6 +1197,48 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "explosion":
                     Effects = new Explosion(Effects).get_Effects_();
+                    break;
+                case "firework":
+                    Effects = new Firework(Effects).get_Effects_();
+                    break;
+                case "flames":
+                    Effects = new Flames(Effects).get_Effects_();
+                    break;
+                case "geyser":
+                    Effects = new Geyser(Effects).get_Effects_();
+                    break;
+                case "itemspray":
+                    Effects = new ItemSpraycs(Effects).get_Effects_();
+                    break;
+                case "lightning":
+                    Effects = new Lightning(Effects).get_Effects_();
+                    break;
+                case "particles":
+                    Effects = new Particles(Effects).get_Effects_();
+                    break;
+                case "particlebox":
+                    Effects = new ParticleBox(Effects).get_Effects_();
+                    break;
+                case "particleline":
+                    Effects = new ParticleLine(Effects).get_Effects_();
+                    break;
+                case "particlering":
+                    Effects = new ParticleRing(Effects).get_Effects_();
+                    break;
+                case "particlesphere":
+                    Effects = new ParticleSphere(Effects).get_Effects_();
+                    break;
+                case "particletornado":
+                    Effects = new ParticleTornado(Effects).get_Effects_();
+                    break;
+                case "smoke":
+                    Effects = new Smoke(Effects).get_Effects_();
+                    break;
+                case "smokeswirl":
+                    Effects = new SmokeSwirl(Effects).get_Effects_();
+                    break;
+                case "sound":
+                    Effects = new Sound(Effects).get_Effects_();
                     break;
                 default:
 
