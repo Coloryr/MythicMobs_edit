@@ -120,8 +120,11 @@
     <Compile Include="Obj_save\Mob\Effects_type\Smoke.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\SmokeSwirl.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\Sound.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\Spin.cs" />
     <Compile Include="Obj_save\Mob\Equipment.cs" />
     <Compile Include="Obj_save\Mob\LevelModifiers.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ActivateSpawner.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
@@ -213,6 +216,9 @@
     </Compile>
     <Compile Include="WPF\Mob\Effects_type\Sound.xaml.cs">
       <DependentUpon>Sound.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Spin.xaml.cs">
+      <DependentUpon>Spin.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
@@ -411,6 +417,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\Effects_type\Sound.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Effects_type\Spin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -392,13 +392,34 @@
             </Expander>
         </StackPanel>
         <StackPanel Grid.Column="2" HorizontalAlignment="Left" Height="678" VerticalAlignment="Top" Width="318">
-            <Expander Header="技能-添加" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Foreground="White">
-                <Grid>
+            <Expander Header="技能-机制" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Foreground="White">
+                <Grid Height="190">
+                    <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="313" x:Name="SkillMechanics_T"
+                        Style="{StaticResource ListViewStyle1}" Margin="0,53,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="机制" Width="294" DisplayMemberBinding="{Binding Type}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="删除" Click="DelectSkillMechanicEvent"/>
+                                <MenuItem Header="修改" Click="ChangeSkillMechanicEvent"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                    <Label Content="机制类型" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="63,3,0,0" VerticalAlignment="Top" Height="20" Width="178" Style="{StaticResource ComboBoxStyle}"
+                        x:Name="Skill_Mechanic_Type" IsReadOnly="True"/>
+                    <Button Content="随机类型" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="60" 
+                        Click="Skill_Mechanic_Type_r" Style="{StaticResource Button}" Margin="246,3,0,0"/>
+                    <Button Content="添加" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="60" 
+                        Click="Button_Click_8" Style="{StaticResource Button}" Margin="246,28,0,0"/>
 
                 </Grid>
             </Expander>
             <Expander Header="技能-特效" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Foreground="White">
-                <Grid Height="195">
+                <Grid Height="192">
                     <Label Content="特效类型" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}"/>
                     <ComboBox HorizontalAlignment="Left" Margin="63,3,0,0" VerticalAlignment="Top" Height="20" Width="178" Style="{StaticResource ComboBoxStyle}"
                               Name="Skill_Effect_Type" IsReadOnly="True"/>

@@ -37,6 +37,7 @@ namespace MythicMobs_edit.WPF
         public string DropsPerLevel_C { get; set; } = "exp";
         public string DamageModifiers_C { get; set; } = "DROWNING";
         public List<Effects> Skills_effect { get; set; } = new List<Effects>();
+        public List<Mechanic> Skills_mechanic { get; set; } = new List<Mechanic>();
         public Mob_obj Mob { get; set; } = new Mob_obj()
         {
             Type = "ARMOR_STAND",
@@ -112,6 +113,7 @@ namespace MythicMobs_edit.WPF
             DamageModifiers_S.ItemsSource = List.DamageModifiers_All;
             Disguise_Type.ItemsSource = List.Disguise_Type;
             Skill_Effect_Type.ItemsSource = List.Skills_effect;
+            Skill_Mechanic_Type.ItemsSource = List.Skill_Mechanic;
         }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
         {
@@ -173,6 +175,12 @@ namespace MythicMobs_edit.WPF
             Obj_save.Mob.List list = new Obj_save.Mob.List();
             Random random = new Random();
             Skill_Effect_Type.SelectedItem = list.Skills_effect[random.Next(list.Skills_effect.Count)];
+        }
+        private void Skill_Mechanic_Type_r(object sender, RoutedEventArgs e)
+        {
+            Obj_save.Mob.List list = new Obj_save.Mob.List();
+            Random random = new Random();
+            Skill_Mechanic_Type.SelectedItem = list.Skills_effect[random.Next(list.Skill_Mechanic.Count)];
         }
 
         private void Mob_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -667,6 +675,14 @@ namespace MythicMobs_edit.WPF
                         sound += "}";
                         b += sound + " ";
                         break;
+                    case "spin":
+                        string spin = "{";
+                        Obj_save.Mob.Effects_type.Spin Spin = (Obj_save.Mob.Effects_type.Spin)a.Option;
+                        spin += "d:" + Spin.duration + ";";
+                        spin += "v:" + Spin.velocity + ";";
+                        spin += "}";
+                        b += spin + " ";
+                        break;
                     default:
                         b += " ";
                         break;
@@ -910,6 +926,9 @@ namespace MythicMobs_edit.WPF
                 case "sound":
                     Effects = new Sound(Effects).get_Effects_();
                     break;
+                case "spin":
+                    Effects = new Spin(Effects).get_Effects_();
+                    break;
                 default:
 
                     break;
@@ -918,6 +937,32 @@ namespace MythicMobs_edit.WPF
             {
                 Skills_effect.Add(Effects);
                 SkillEffect_T.Items.Add(Effects);
+            }
+        }
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            if (Skill_Mechanic_Type.SelectedItem == null)
+                return;
+            Mechanic Mechanic = new Mechanic()
+            {
+                Type = (string)Skill_Mechanic_Type.SelectedItem,
+                Skill_Tag = new Obj_save.Mob.Skill_Tag()
+                {
+                    Tag_Type = "@Self",
+                    Tag_Filters = new List<string>()
+                }
+            };
+            switch (Skill_Mechanic_Type.SelectedItem)
+            {
+                
+                default:
+
+                    break;
+            }
+            if (Mechanic != null)
+            {
+                Skills_mechanic.Add(Mechanic);
+                SkillMechanics_T.Items.Add(Mechanic);
             }
         }
 
@@ -983,6 +1028,14 @@ namespace MythicMobs_edit.WPF
             foreach (Effects a in Skills_effect)
             {
                 SkillEffect_T.Items.Add(a);
+            }
+        }
+        private void refash_SkillMechanic()
+        {
+            SkillMechanics_T.Items.Clear();
+            foreach (Mechanic a in Skills_mechanic)
+            {
+                SkillMechanics_T.Items.Add(a);
             }
         }
 
@@ -1240,12 +1293,38 @@ namespace MythicMobs_edit.WPF
                 case "sound":
                     Effects = new Sound(Effects).get_Effects_();
                     break;
+                case "spin":
+                    Effects = new Spin(Effects).get_Effects_();
+                    break;
                 default:
 
                     break;
             }
             Skills_effect.Add(Effects);
             refash_SkillEffect();
+        }
+        private void DelectSkillMechanicEvent(object sender, RoutedEventArgs e)
+        {
+            if (SkillMechanics_T.SelectedItem == null)
+                return;
+            Skills_mechanic.Remove((Mechanic)SkillMechanics_T.SelectedItem);
+            refash_SkillMechanic();
+        }
+        private void ChangeSkillMechanicEvent(object sender, RoutedEventArgs e)
+        {
+            if (SkillMechanics_T.SelectedItem == null)
+                return;
+            Mechanic Mechanic = (Mechanic)SkillMechanics_T.SelectedItem;
+            Skills_mechanic.Remove(Mechanic);
+            switch (Mechanic.Type)
+            {
+                
+                default:
+
+                    break;
+            }
+            Skills_mechanic.Add(Mechanic);
+            refash_SkillMechanic();
         }
     }
 }

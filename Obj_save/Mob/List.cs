@@ -149,8 +149,7 @@ namespace MythicMobs_edit.Obj_save.Mob
         {
             "blockmask", "ender", "enderbeam", "explosion", "firework", "flames", "geyser",
             "itemspray", "lightning", "particles", "particlebox", "particleline", "particlering",
-            "particlesphere", "particletornado", "smoke", "smokeswirl", "sound", "spin",
-            "atom"
+            "particlesphere", "particletornado", "smoke", "smokeswirl", "sound", "spin"
         };
         public List<string> Skill_Tag = new List<string>()
         {
@@ -172,6 +171,10 @@ namespace MythicMobs_edit.Obj_save.Mob
             "onCombat", "onAttack", "onDamaged", "onSpawn", "onFirstSpawn", "onDeath", "onTimer",
             "onInteract", "onKillPlayer", "onPlayerDeath", "onEnterCombat", "onDropCombat",
             "onChangeTarget", "onExplode", "onTeleport", "onSignal", "onShoot"
+        };
+        public List<string> Skill_Mechanic = new List<string>()
+        {
+            "activatespawner", 
         };
     }
 }
