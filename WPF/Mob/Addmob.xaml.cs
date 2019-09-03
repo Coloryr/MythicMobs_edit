@@ -14,6 +14,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media.Effects;
 using YamlDotNet.Serialization;
+using MythicMobs_edit.WPF.Mob.Mechanic_type;
 
 namespace MythicMobs_edit.WPF
 {
@@ -38,6 +39,7 @@ namespace MythicMobs_edit.WPF
         public string DamageModifiers_C { get; set; } = "DROWNING";
         public List<Effects> Skills_effect { get; set; } = new List<Effects>();
         public List<Mechanic> Skills_mechanic { get; set; } = new List<Mechanic>();
+        public List<Conditions> Conditions { get; set; } = new List<Conditions>();
         public Mob_obj Mob { get; set; } = new Mob_obj()
         {
             Type = "ARMOR_STAND",
@@ -87,7 +89,8 @@ namespace MythicMobs_edit.WPF
             KillMessages = new List<string>(),
             LevelModifiers = new LevelModifiers(),
             Disguise = new Disguise(),
-            Skills = new List<string>()
+            Skills = new List<string>(),
+            Conditions = new List<string>()
         };
         private UserControl obj;
         public Addmob(bool gs)
@@ -181,6 +184,10 @@ namespace MythicMobs_edit.WPF
             Obj_save.Mob.List list = new Obj_save.Mob.List();
             Random random = new Random();
             Skill_Mechanic_Type.SelectedItem = list.Skills_effect[random.Next(list.Skill_Mechanic.Count)];
+        }
+        private void Conditions_Type_r_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Mob_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -754,6 +761,91 @@ namespace MythicMobs_edit.WPF
                     Mob.Skills.Add(b);
                 }
             }
+            foreach (Mechanic a in Skills_mechanic)
+            {
+                string b = a.Type;
+                switch (a.Type)
+                {
+                    case "activatespawner":
+                        string activatespawner = "{";
+                        Obj_save.Mob.Mechanic_type.ActivateSpawner ActivateSpawner = (Obj_save.Mob.Mechanic_type.ActivateSpawner)a.Option;
+                        activatespawner += "spawner=" + ActivateSpawner.spawners;
+                        activatespawner += "}";
+                        b += activatespawner + " ";
+                        break;
+                    default:
+                        b += " ";
+                        break;
+                }
+
+                if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Type) == false)
+                {
+                    string c = a.Skill_Tag.Tag_Type;
+                    b += c;
+                }
+                if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false || a.Skill_Tag.Tag_Filters.Count != 0)
+                {
+                    b += "{";
+                }
+                if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
+                {
+                    b += a.Skill_Tag.Tag_Option;
+                }
+                if (a.Skill_Tag.Tag_Filters.Count != 0)
+                {
+                    string d = "ignore=";
+                    foreach (string f in a.Skill_Tag.Tag_Filters)
+                    {
+                        if (string.IsNullOrWhiteSpace(f) == false)
+                        {
+                            d += f + ",";
+                        }
+                    }
+                    d = d.Substring(0, d.Length - 1);
+                    if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false)
+                    {
+                        b += ";" + d;
+                    }
+                    else
+                        b += d;
+                }
+                if (string.IsNullOrWhiteSpace(a.Skill_Tag.Tag_Option) == false || a.Skill_Tag.Tag_Filters.Count != 0)
+                {
+                    b += "}";
+                }
+                if (string.IsNullOrWhiteSpace(a.Triggers.Type) == false)
+                {
+                    string c = " ~" + a.Triggers.Type;
+                    switch (a.Triggers.Type)
+                    {
+                        case "onDamaged":
+                            if (string.IsNullOrWhiteSpace(a.Triggers.Option) == false && IsNumeric(a.Triggers.Option))
+                            {
+                                c += " " + a.Triggers.Option;
+                            }
+                            break;
+                        case "onTimer":
+                            if (string.IsNullOrWhiteSpace(a.Triggers.Option) == false && IsNumeric(a.Triggers.Option))
+                            {
+                                c += ":" + a.Triggers.Option;
+                            }
+                            break;
+                        case "onSignal":
+                            if (string.IsNullOrWhiteSpace(a.Triggers.Option) == false)
+                            {
+                                c += ":" + a.Triggers.Option;
+                            }
+                            break;
+                    }
+                    b += c;
+                }
+                if (string.IsNullOrWhiteSpace(b) == false)
+                {
+                    Mob.Skills.Add(b);
+                }
+            }
+            Mob.Conditions.Clear();
+            foreach()
 
             if (string.IsNullOrWhiteSpace(Equipment.Hand) == false)
                 Mob.Equipment.Add(Equipment.Hand + ":0");
@@ -948,13 +1040,14 @@ namespace MythicMobs_edit.WPF
                 Type = (string)Skill_Mechanic_Type.SelectedItem,
                 Skill_Tag = new Obj_save.Mob.Skill_Tag()
                 {
-                    Tag_Type = "@Self",
                     Tag_Filters = new List<string>()
                 }
             };
             switch (Skill_Mechanic_Type.SelectedItem)
             {
-                
+                case "activatespawner":
+                    Mechanic = new ActivateSpawner(Mechanic).get_Mechanic_();
+                    break;
                 default:
 
                     break;
@@ -964,6 +1057,10 @@ namespace MythicMobs_edit.WPF
                 Skills_mechanic.Add(Mechanic);
                 SkillMechanics_T.Items.Add(Mechanic);
             }
+        }
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void refash_AI_G()
@@ -1318,13 +1415,15 @@ namespace MythicMobs_edit.WPF
             Skills_mechanic.Remove(Mechanic);
             switch (Mechanic.Type)
             {
-                
+                case "activatespawner":
+                    Mechanic = new ActivateSpawner(Mechanic).get_Mechanic_();
+                    break;
                 default:
 
                     break;
             }
             Skills_mechanic.Add(Mechanic);
             refash_SkillMechanic();
-        }
+        }       
     }
 }

@@ -84,5 +84,9 @@ namespace MythicMobs_edit.Obj_save.Mob
         /// 技能
         /// </summary>
         public List<string> Skills { get; set; }
+        /// <summary>
+        /// 条件
+        /// </summary>
+        public List<string> Conditions { get; set; }
     }
 }

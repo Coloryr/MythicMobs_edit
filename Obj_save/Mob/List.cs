@@ -176,5 +176,9 @@ namespace MythicMobs_edit.Obj_save.Mob
         {
             "activatespawner", 
         };
+        public List<string> Conditions = new List<string>()
+        {
+
+        };
     }
 }

@@ -220,6 +220,9 @@
     <Compile Include="WPF\Mob\Effects_type\Spin.xaml.cs">
       <DependentUpon>Spin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ActivateSpawner.xaml.cs">
+      <DependentUpon>ActivateSpawner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
     </Compile>
@@ -421,6 +424,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\Effects_type\Spin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ActivateSpawner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
