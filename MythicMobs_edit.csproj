@@ -101,6 +101,7 @@
     </ApplicationDefinition>
     <Compile Include="Obj_save\Mob\AI.cs" />
     <Compile Include="Obj_save\Mob\BossBar.cs" />
+    <Compile Include="Obj_save\Mob\Conditions.cs" />
     <Compile Include="Obj_save\Mob\DamageModifiers.cs" />
     <Compile Include="Obj_save\Mob\Disguise.cs" />
     <Compile Include="Obj_save\Mob\Drops.cs" />
