@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Other"
-             mc:Ignorable="d" Height="220" Width="381">
-    <Grid>
+             mc:Ignorable="d" Height="220" Width="300">
+    <Grid Background="Black">
         <Label Content="目标" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="目标类型" HorizontalAlignment="Left" Margin="15,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="目标参数" HorizontalAlignment="Left" Margin="15,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
@@ -13,7 +13,7 @@
         <ComboBox HorizontalAlignment="Left" Margin="78,34,0,0" VerticalAlignment="Top" Width="207" Style="{StaticResource ComboBoxStyle}"
                   x:Name="Type" Height="20" SelectionChanged="Type_SelectionChanged" IsReadOnly="True"/>
 
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="78,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="78,63,0,0" VerticalAlignment="Top" Width="207"
                  Style="{StaticResource TextBox}" Name="Option"/>
         <Label Content="目标过滤" HorizontalAlignment="Left" Margin="15,90,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <ListView HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="270" x:Name="SkillTag_T"

@@ -9,7 +9,7 @@
         Title="修改粒子效果：Lightning" Height="406" Width="303" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="局部范围半径" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="162,2,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.localizedradius}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="162,2,0,0" Text="{Binding Effects.Option.localizedradius}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="210,343,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
 

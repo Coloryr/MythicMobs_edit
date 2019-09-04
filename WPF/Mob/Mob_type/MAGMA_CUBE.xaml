@@ -12,7 +12,7 @@
         <CheckBox Content="阻止分裂" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"
                   IsChecked="{Binding obj.PreventSlimeSplit}" Style="{StaticResource Check}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="85,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="85,52,0,0" VerticalAlignment="Top" Width="224"
                  Text="{Binding obj.Size}" Style="{StaticResource TextBox}"/>
 
     </Grid>

@@ -10,9 +10,9 @@
         <Label Content="方块名字" HorizontalAlignment="Left" Height="25" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="方块数据" HorizontalAlignment="Left" Height="25" Margin="10,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,33,0,0" VerticalAlignment="Top" Width="236"
                  Text="{Binding obj.Block}" Style="{StaticResource TextBox}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,63,0,0" VerticalAlignment="Top" Width="236"
                  Text="{Binding obj.BlockData}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
 
     </Grid>

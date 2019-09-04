@@ -9,10 +9,10 @@
         Title="修改粒子效果：Ender Beam" Height="436" Width="303" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="粒子活动时间" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="92,2,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.duration}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="92,2,0,0" Text="{Binding Effects.Option.duration}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="粒子活动垂直距离" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="116,32,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.yoffset}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="116,32,0,0" Text="{Binding Effects.Option.yoffset}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="205,368,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
 

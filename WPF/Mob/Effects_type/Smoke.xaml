@@ -9,7 +9,7 @@
         Title="修改粒子效果：Ender Beam" Height="411" Width="298" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="方向" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="44,2,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.direction}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="44,2,0,0" Text="{Binding Effects.Option.direction}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="205,343,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
 

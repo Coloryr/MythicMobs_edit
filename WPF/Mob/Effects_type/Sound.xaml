@@ -10,7 +10,7 @@
     <Grid>
         <Label Content="音乐类型" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="音高" HorizontalAlignment="Left" Margin="16,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.pitch}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,33,0,0" Text="{Binding Effects.Option.pitch}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="205,398,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
 
@@ -19,7 +19,7 @@
         <ComboBox HorizontalAlignment="Left" Margin="68,3,0,0" VerticalAlignment="Top" Width="219" Style="{StaticResource ComboBoxStyle}" Height="20"
                   Name="Type_F" Text="{Binding Effects.Option.sound}" IsReadOnly="True"/>
         <Label Content="音量大小" HorizontalAlignment="Left" Margin="5,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,62,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.volume}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,62,0,0" Text="{Binding Effects.Option.volume}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Button Content="随机类型" HorizontalAlignment="Left" Margin="212,28,0,0" VerticalAlignment="Top" Width="75" Height="20"
                 Style="{StaticResource Button}" Click="Button_Click_1"/>

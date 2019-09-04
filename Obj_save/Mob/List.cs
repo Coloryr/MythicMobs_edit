@@ -174,11 +174,23 @@ namespace MythicMobs_edit.Obj_save.Mob
         };
         public List<string> Skill_Mechanic = new List<string>()
         {
-            "activatespawner", 
+            "activatespawner", "arrowvolley", "command", "consume",
         };
         public List<string> Conditions = new List<string>()
         {
-
+            "altitude", "biome", "blocktype", "blocking", "crouching", "cuboid","dawn",
+            "day", "distance", "distancefromspawn", "dusk", "entitytype", "fallspeed",
+            "fieldofview", "gliding", "globalscore", "hasaura", "hascurrency",
+            "hasinventoryspace", "hasowner", "hasparent", "hastag", "haspermission",
+            "height", "heightabove", "heightbelow", "holding", "inblock", "incombat",
+            "inside", "itemrecharging", "lastdamagecause", "lastsignal", "level","lightlevel",
+            "lineofsight", "lunarphase", "mobsinchunk", "mobsinworld", "mounted", "moving",
+            "mythicmobtype", "night", "notinregion", "offgcd", "onblock", "onground",
+            "outside", "owner", "ownerisonline", "pitch", "playerkills", "playernotwithin",
+            "playerwithin", "raining", "region", "score", "stance", "stringequals",
+            "sunny", "targetinlineofsight", "targetnotinlineofsight", "targetwithin",
+            "targetnotwithin", "targets", "thundering", "variableInRange", "variableisset",
+            "varEquals", "wearing", "world", "worldtime", "yaw"
         };
     }
 }

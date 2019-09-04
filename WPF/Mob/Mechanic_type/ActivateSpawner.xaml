@@ -9,7 +9,7 @@
         Title="修改机制：Activate Spawner" Height="402" Width="305" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="名字" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="44,3,0,0" TextWrapping="Wrap" Text="{Binding Mechanic.Option.spawners}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="44,3,0,0" Text="{Binding Mechanic.Option.spawners}" VerticalAlignment="Top" Width="120"
                  Style="{StaticResource TextBox}"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="205,340,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
 

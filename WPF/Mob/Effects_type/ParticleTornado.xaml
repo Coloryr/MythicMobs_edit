@@ -10,13 +10,13 @@
     <Grid>
         <Label Content="粒子类型" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="粒子材料" HorizontalAlignment="Left" Margin="193,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,2,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.material}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,2,0,0" Text="{Binding Effects.Option.material}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="粒子数量" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.amount}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,33,0,0" Text="{Binding Effects.Option.amount}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="水平距离" HorizontalAlignment="Left" Margin="193,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.hSpread}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,33,0,0" Text="{Binding Effects.Option.hSpread}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <CheckBox Content="跟随源" HorizontalAlignment="Left" Margin="314,155,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Effects.Option.fromorigin}"/>
@@ -27,62 +27,62 @@
         <ComboBox HorizontalAlignment="Left" Margin="68,3,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource ComboBoxStyle}" Height="20"
                   Name="Type_F" Text="{Binding Effects.Option.particle}" IsReadOnly="True"/>
         <Label Content="垂直距离" HorizontalAlignment="Left" Margin="5,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,63,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.vSpread}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,63,0,0" Text="{Binding Effects.Option.vSpread}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="粒子速度" HorizontalAlignment="Left" Margin="193,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,63,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.speed}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,63,0,0" Text="{Binding Effects.Option.speed}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="Y轴偏移" HorizontalAlignment="Left" Margin="5,90,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,93,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.yOffset}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,93,0,0" Text="{Binding Effects.Option.yOffset}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="可见距离" HorizontalAlignment="Left" Margin="193,90,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,93,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.viewDistance}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,93,0,0" Text="{Binding Effects.Option.viewDistance}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="粒子颜色" HorizontalAlignment="Left" Margin="193,120,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,123,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.color}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,123,0,0" Text="{Binding Effects.Option.color}" VerticalAlignment="Top" Width="120"
                  Style="{StaticResource TextBox}"/>
         <Label Content="最大半径" HorizontalAlignment="Left" Margin="393,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,32,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.maxradius}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,32,0,0" Text="{Binding Effects.Option.maxradius}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="Y轴偏移" HorizontalAlignment="Left" Margin="393,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,62,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.yoffset}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,62,0,0" Text="{Binding Effects.Option.yoffset}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="高度" HorizontalAlignment="Left" Margin="405,90,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,92,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.height}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,92,0,0" Text="{Binding Effects.Option.height}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="间歇" HorizontalAlignment="Left" Margin="405,120,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,122,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.interval}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,122,0,0" Text="{Binding Effects.Option.interval}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="持续时间" HorizontalAlignment="Left" Margin="393,150,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,152,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.duration}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,152,0,0" Text="{Binding Effects.Option.duration}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="旋转速度" HorizontalAlignment="Left" Margin="393,180,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,182,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.rotationspeed}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,182,0,0" Text="{Binding Effects.Option.rotationspeed}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="龙卷风设置" HorizontalAlignment="Left" Margin="381,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="层高度" HorizontalAlignment="Left" Margin="399,210,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,212,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.sliceheight}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,212,0,0" Text="{Binding Effects.Option.sliceheight}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="烟雾粒子" HorizontalAlignment="Left" Margin="393,240,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,242,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.cloudparticle}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,242,0,0" Text="{Binding Effects.Option.cloudparticle}" VerticalAlignment="Top" Width="120"
                  Style="{StaticResource TextBox}"/>
         <Label Content="烟雾尺寸" HorizontalAlignment="Left" Margin="393,270,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,272,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.cloudsize}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,272,0,0" Text="{Binding Effects.Option.cloudsize}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="烟雾数量" HorizontalAlignment="Left" Margin="393,300,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,302,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.cloudamount}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,302,0,0" Text="{Binding Effects.Option.cloudamount}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="水平大小" HorizontalAlignment="Left" Margin="393,330,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,332,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.cloudhspread}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,332,0,0" Text="{Binding Effects.Option.cloudhspread}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="垂直大小" HorizontalAlignment="Left" Margin="393,360,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,362,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.cloudvspread}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,362,0,0" Text="{Binding Effects.Option.cloudvspread}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="烟雾速度" HorizontalAlignment="Left" Margin="393,390,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,392,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.cloudpspeed}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,392,0,0" Text="{Binding Effects.Option.cloudpspeed}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="烟雾Y轴偏移" HorizontalAlignment="Left" Margin="374,420,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,422,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.cloudyoffset}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="456,422,0,0" Text="{Binding Effects.Option.cloudyoffset}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
 
     </Grid>

@@ -10,13 +10,13 @@
     <Grid>
         <Label Content="烟花类型" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="爆炸时间" HorizontalAlignment="Left" Margin="193,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,2,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.duration}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,2,0,0" Text="{Binding Effects.Option.duration}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
         <Label Content="烟花颜色" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.colors}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,33,0,0" Text="{Binding Effects.Option.colors}" VerticalAlignment="Top" Width="120"
                  Style="{StaticResource TextBox}"/>
         <Label Content="痕迹颜色" HorizontalAlignment="Left" Margin="193,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,33,0,0" TextWrapping="Wrap" Text="{Binding Effects.Option.fadecolors}" VerticalAlignment="Top" Width="120"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="256,33,0,0" Text="{Binding Effects.Option.fadecolors}" VerticalAlignment="Top" Width="120"
                  Style="{StaticResource TextBox}"/>
         <CheckBox Content="闪烁" HorizontalAlignment="Left" Margin="7,58,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"
                   IsChecked="{Binding Effects.Option.flicker}"/>

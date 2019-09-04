@@ -10,9 +10,9 @@
         <Label Content="爆炸半径" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="爆炸时间" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,33,0,0" VerticalAlignment="Top" Width="236"
                  Text="{Binding obj.ExplosionRadius}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,63,0,0" VerticalAlignment="Top" Width="232"
                  Text="{Binding obj.FuseTicks}" PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
 
         <CheckBox Content="是否充能" HorizontalAlignment="Left" Height="15" Margin="10,90,0,0" VerticalAlignment="Top"

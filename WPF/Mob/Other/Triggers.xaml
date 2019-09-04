@@ -12,7 +12,7 @@
         <Button Content="随机类型" HorizontalAlignment="Left" Margin="215,33,0,0" VerticalAlignment="Top" Width="60" Style="{StaticResource Button}"
                 Height="20" Click="Button_Click"/>
         <Label Content="触发参数" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="73,62,0,0" VerticalAlignment="Top" Width="202"
                  Name="Option" Style="{StaticResource TextBox}"/>
         <Label Content="触发" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
 

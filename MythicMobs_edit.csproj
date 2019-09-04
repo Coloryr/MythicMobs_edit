@@ -53,10 +53,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>image\方的7.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MythicMobs_edit.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
@@ -126,6 +129,8 @@
     <Compile Include="Obj_save\Mob\LevelModifiers.cs" />
     <Compile Include="Obj_save\Mob\Mechanic.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ActivateSpawner.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ArrowVolley.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Command.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
@@ -224,6 +229,12 @@
     <Compile Include="WPF\Mob\Mechanic_type\ActivateSpawner.xaml.cs">
       <DependentUpon>ActivateSpawner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ArrowVolley.xaml.cs">
+      <DependentUpon>ArrowVolley.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Command.xaml.cs">
+      <DependentUpon>Command.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
     </Compile>
@@ -268,6 +279,9 @@
     </Compile>
     <Compile Include="WPF\Mob\Mob_type\OCELOT.xaml.cs">
       <DependentUpon>OCELOT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Other\ConditionsChange.xaml.cs">
+      <DependentUpon>ConditionsChange.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Other\Skill_Tag.xaml.cs">
       <DependentUpon>Skill_Tag.xaml</DependentUpon>
@@ -432,6 +446,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ArrowVolley.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Command.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\Other\AIChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -491,6 +513,10 @@
     <Page Include="WPF\Mob\Mob_type\OCELOT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Mob\Other\ConditionsChange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\Other\Skill_Tag.xaml">
       <SubType>Designer</SubType>
@@ -633,9 +659,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
@@ -651,9 +674,11 @@
     <Resource Include="image\work-36.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image\-1c6d7f231b328b94.jpg" />
+    <Resource Include="image\方的7.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="image\方的7.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('packages\Fody.6.0.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

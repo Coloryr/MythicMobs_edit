@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Other"
         mc:Ignorable="d"
-        Title="击杀消息编辑" Height="140" Width="350" Background="Black" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/icon.ico" WindowStartupLocation="CenterScreen">
+        Title="击杀消息编辑" Height="140" Width="350" Background="Black" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/image/方的7.jpg" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="5,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325"
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="5,5,0,0" VerticalAlignment="Top" Width="325"
                  Style="{StaticResource TextBox}" x:Name="Message"/>
         <Button Content="&amp;1" HorizontalAlignment="Left" Margin="5,33,0,0" VerticalAlignment="Top" Width="25" Style="{StaticResource Button}" Foreground="#FF0000AA" Click="Button_Click"/>
         <Button Content="&amp;2" HorizontalAlignment="Left" Margin="35,33,0,0" VerticalAlignment="Top" Width="25" Style="{StaticResource Button}" Foreground="#FF00AA00" Click="Button_Click_1"/>

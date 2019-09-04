@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Other"
         mc:Ignorable="d"
-        Title="AI修改" Height="90" Width="262" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/icon.ico">
+        Title="AI修改" Height="90" Width="262" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/image/方的7.ico">
     <Grid Background="Black" Margin="0,0,0,0">
         <Label Content="AI" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Name="AI_list"
                 Style="{StaticResource Label}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="60,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="60,1,0,0" VerticalAlignment="Top" Width="185"
                  x:Name="AI" Text="{Binding AI_.Type}" Style="{StaticResource TextBox}"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="27,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28"
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="27,1,0,0" VerticalAlignment="Top" Width="28"
                  x:Name="AI_L" Text="{Binding AI_.Number}" Style="{StaticResource TextBox}"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="170,29,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource Button}" IsDefault="True" Click="Button_Click"/>
 

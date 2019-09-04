@@ -39,7 +39,7 @@ namespace MythicMobs_edit.WPF
         public string DamageModifiers_C { get; set; } = "DROWNING";
         public List<Effects> Skills_effect { get; set; } = new List<Effects>();
         public List<Mechanic> Skills_mechanic { get; set; } = new List<Mechanic>();
-        public List<Conditions> Conditions { get; set; } = new List<Conditions>();
+        public List<Conditions> Conditions_L { get; set; } = new List<Conditions>();
         public Mob_obj Mob { get; set; } = new Mob_obj()
         {
             Type = "ARMOR_STAND",
@@ -183,11 +183,7 @@ namespace MythicMobs_edit.WPF
         {
             Obj_save.Mob.List list = new Obj_save.Mob.List();
             Random random = new Random();
-            Skill_Mechanic_Type.SelectedItem = list.Skills_effect[random.Next(list.Skill_Mechanic.Count)];
-        }
-        private void Conditions_Type_r_Click(object sender, RoutedEventArgs e)
-        {
-
+            Skill_Mechanic_Type.SelectedItem = list.Skill_Mechanic[random.Next(list.Skill_Mechanic.Count)];
         }
 
         private void Mob_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -773,6 +769,37 @@ namespace MythicMobs_edit.WPF
                         activatespawner += "}";
                         b += activatespawner + " ";
                         break;
+                    case "arrowvolley":
+                        string arrowvolley = "{";
+                        Obj_save.Mob.Mechanic_type.ArrowVolley ArrowVolley = (Obj_save.Mob.Mechanic_type.ArrowVolley)a.Option;
+                        arrowvolley += "a=" + ArrowVolley.amount + ";";
+                        arrowvolley += "s=" + ArrowVolley.spread + ";";
+                        arrowvolley += "v=" + ArrowVolley.velocity + ";";
+                        arrowvolley += "f=" + ArrowVolley.fireTicks + ";";
+                        arrowvolley += "rd=" + ArrowVolley.removeDelay;
+                        arrowvolley += "}";
+                        b += arrowvolley + " ";
+                        break;
+                    case "command":
+                        string command = "{";
+                        Obj_save.Mob.Mechanic_type.Command Command = (Obj_save.Mob.Mechanic_type.Command)a.Option;
+                        command += "c=\"" + Command.command + "\";";
+                        command += "ac=" + Command.asCaster + ";";
+                        command += "op=" + Command.asOp;
+                        command += "}";
+                        b += command + " ";
+                        break;
+                    case "consume":
+                        string consume = "{";
+                        Obj_save.Mob.Mechanic_type.Consume Consume = (Obj_save.Mob.Mechanic_type.Consume)a.Option;
+                        consume += "d=" + Consume.damage + ";";
+                        consume += "h=" + Consume.heal + ";";
+                        consume += "pk=" + Consume.preventknockback + ";";
+                        consume += "pi=" + Consume.preventimmunity + ";";
+                        consume += "i=" + Consume.ignorearmor;
+                        consume += "}";
+                        b += consume + " ";
+                        break;
                     default:
                         b += " ";
                         break;
@@ -845,7 +872,16 @@ namespace MythicMobs_edit.WPF
                 }
             }
             Mob.Conditions.Clear();
-            foreach()
+            foreach (Conditions a in Conditions_L)
+            {
+                if (string.IsNullOrWhiteSpace(a.Type) == false)
+                {
+                    string b = a.Type;
+                    if (string.IsNullOrWhiteSpace(a.Option) == false)
+                        b += a.Option;
+                    Mob.Conditions.Add(b);
+                }
+            }
 
             if (string.IsNullOrWhiteSpace(Equipment.Hand) == false)
                 Mob.Equipment.Add(Equipment.Hand + ":0");
@@ -1048,6 +1084,15 @@ namespace MythicMobs_edit.WPF
                 case "activatespawner":
                     Mechanic = new ActivateSpawner(Mechanic).get_Mechanic_();
                     break;
+                case "arrowvolley":
+                    Mechanic = new ArrowVolley(Mechanic).get_Mechanic_();
+                    break;
+                case "command":
+                    Mechanic = new Command(Mechanic).get_Mechanic_();
+                    break;
+                case "consume":
+                    Mechanic = new Consume(Mechanic).get_Mechanic_();
+                    break;
                 default:
 
                     break;
@@ -1060,7 +1105,14 @@ namespace MythicMobs_edit.WPF
         }
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
-
+            Conditions Conditions = new Conditions()
+            {
+                Type = "altitude",
+                Option = "{h=0} true"
+            };
+            Conditions = new ConditionsChange(Conditions).get_Conditions_();
+            Conditions_T.Items.Add(Conditions);
+            Conditions_L.Add(Conditions);
         }
 
         private void refash_AI_G()
@@ -1133,6 +1185,14 @@ namespace MythicMobs_edit.WPF
             foreach (Mechanic a in Skills_mechanic)
             {
                 SkillMechanics_T.Items.Add(a);
+            }
+        }
+        private void refash_Conditions()
+        {
+            Conditions_T.Items.Clear();
+            foreach (Conditions a in Conditions_L)
+            {
+                Conditions_T.Items.Add(a);
             }
         }
 
@@ -1418,12 +1478,38 @@ namespace MythicMobs_edit.WPF
                 case "activatespawner":
                     Mechanic = new ActivateSpawner(Mechanic).get_Mechanic_();
                     break;
+                case "arrowvolley":
+                    Mechanic = new ArrowVolley(Mechanic).get_Mechanic_();
+                    break;
+                case "command":
+                    Mechanic = new Command(Mechanic).get_Mechanic_();
+                    break;
+                case "consume":
+                    Mechanic = new Consume(Mechanic).get_Mechanic_();
+                    break;
                 default:
 
                     break;
             }
             Skills_mechanic.Add(Mechanic);
             refash_SkillMechanic();
-        }       
+        }
+        private void DelectConditionsEvent(object sender, RoutedEventArgs e)
+        {
+            if (Conditions_T.SelectedItem == null)
+                return;
+            Conditions_L.Remove((Conditions)Conditions_T.SelectedItem);
+            refash_Conditions();
+        }
+        private void ChangeConditionsEvent(object sender, RoutedEventArgs e)
+        {
+            if (Conditions_T.SelectedItem == null)
+                return;
+            Conditions Conditions = (Conditions)Conditions_T.SelectedItem;
+            Conditions_L.Remove(Conditions);
+            Conditions = new ConditionsChange(Conditions).get_Conditions_();
+            Conditions_L.Add(Conditions);
+            refash_Conditions();
+        }
     }
 }
