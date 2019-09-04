@@ -1,5 +1,4 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
@@ -26,18 +25,7 @@ namespace MythicMobs_edit.WPF.Mob.Effects_type
             Triggers_.Option.Text = Effects.Triggers.Option;
             Triggers_.Type.SelectedItem = Effects.Triggers.Type;
             DataContext = this;
-            Type_F.ItemsSource = new List<string>()
-            {
-                "barrier", "block_crack", "bubble", "bubble_column","bubble_pop","cloud",
-                "crit", "crit_magic", "current_down", "damage_indicator", "dolphin", "dragon_breath",
-                "drip_lava", "drip_water", "enchantment_table", "end_rod", "explosion_normal",
-                "explosion_huge", "explosion_large", "falling_dust", "fireworks_spark", "flame",
-                "footstep", "heart", "item_crack", "lava", "mob_appearance", "nautilus", "note",
-                "portal", "redstone", "slime", "smoke_large", "smoke_normal", "snowball", "snow_shovel",
-                "spell", "spell_instant", "spell_mob", "spell_mob_ambient", "spell_witch", "splash",
-                "squid_ink", "suspended", "suspended_depth", "sweep_attack", "town_aura", "villager_angry",
-                "villager_happy", "wake"
-            };
+            Type_F.ItemsSource = new List().Particle;
             Type.refash_SkillTag();
         }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)

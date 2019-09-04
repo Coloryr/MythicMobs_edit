@@ -17,6 +17,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -29,7 +30,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -129,6 +129,7 @@
     <Compile Include="Obj_save\Mob\Equipment.cs" />
     <Compile Include="Obj_save\Mob\LevelModifiers.cs" />
     <Compile Include="Obj_save\Mob\Mechanic.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ActionMessage.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ActivateSpawner.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ArrowVolley.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\BaseDamage.cs" />
@@ -151,7 +152,27 @@
     <Compile Include="Obj_save\Mob\Mechanic_type\Lightning.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Look.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Message.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ModifyGlobalScore.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ModifyScore.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ModifyTargetScore.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Mount.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\PercentDamage.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Potion.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Prison.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Pull.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\PushButton.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Rally.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\RandomMessage.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Remove.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\RunAIGoalSelector.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\RunAITargetSelector.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\SendTitle.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\SetBlockType.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\SetGliding.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\SetGlobalScore.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\SetLevel.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\SetScore.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\SetTargetScore.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
@@ -250,6 +271,9 @@
     <Compile Include="WPF\Mob\Effects_type\Spin.xaml.cs">
       <DependentUpon>Spin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ActionMessage.xaml.cs">
+      <DependentUpon>ActionMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\ActivateSpawner.xaml.cs">
       <DependentUpon>ActivateSpawner.xaml</DependentUpon>
     </Compile>
@@ -328,8 +352,81 @@
     <Compile Include="WPF\Mob\Mechanic_type\Message.xaml.cs">
       <DependentUpon>Message.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ModifyGlobalScore.xaml.cs">
+      <DependentUpon>ModifyGlobalScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ModifyScore.xaml.cs">
+      <DependentUpon>ModifyScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ModifyTargetScore.xaml.cs">
+      <DependentUpon>ModifyTargetScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Mount.xaml.cs">
+      <DependentUpon>Mount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\MountTarget.xaml.cs">
+      <DependentUpon>MountTarget.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\PercentDamage.xaml.cs">
       <DependentUpon>PercentDamage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Potion.xaml.cs">
+      <DependentUpon>Potion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Prison.xaml.cs">
+      <DependentUpon>Prison.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Pull.xaml.cs">
+      <DependentUpon>Pull.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\PushButton.xaml.cs">
+      <DependentUpon>PushButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Rally.xaml.cs">
+      <DependentUpon>Rally.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\RandomMessage.xaml.cs">
+      <DependentUpon>RandomMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Remount.xaml.cs">
+      <DependentUpon>Remount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Remove.xaml.cs">
+      <DependentUpon>Remove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\RunAIGoalSelector.xaml.cs">
+      <DependentUpon>RunAIGoalSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\RunAITargetSelector.xaml.cs">
+      <DependentUpon>RunAITargetSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SendTitle.xaml.cs">
+      <DependentUpon>SendTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SetBlockType.xaml.cs">
+      <DependentUpon>SetBlockType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SetGliding.xaml.cs">
+      <DependentUpon>SetGliding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SetGlobalScore.xaml.cs">
+      <DependentUpon>SetGlobalScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SetLevel.xaml.cs">
+      <DependentUpon>SetLevel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Obj_save\Mob\Mechanic_type\SetMobScore.cs" />
+    <Compile Include="WPF\Mob\Mechanic_type\SetMobScore.xaml.cs">
+      <DependentUpon>SetMobScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SetOwner.xaml.cs">
+      <DependentUpon>SetOwner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SetScore.xaml.cs">
+      <DependentUpon>SetScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SetTargetScore.xaml.cs">
+      <DependentUpon>SetTargetScore.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\Undisguise.xaml.cs">
       <DependentUpon>Undisguise.xaml</DependentUpon>
@@ -545,6 +642,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ActionMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\Mechanic_type\ActivateSpawner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -649,7 +750,103 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ModifyGlobalScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ModifyScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ModifyTargetScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Mount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\MountTarget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\Mechanic_type\PercentDamage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Potion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Prison.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Pull.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\PushButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Rally.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\RandomMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Remount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Remove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\RunAIGoalSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\RunAITargetSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SendTitle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetBlockType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetGliding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetGlobalScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetLevel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetMobScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetOwner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetTargetScore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

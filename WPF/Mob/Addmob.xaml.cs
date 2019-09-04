@@ -297,7 +297,7 @@ namespace MythicMobs_edit.WPF
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Mob.Display = "'" + Encoding.Default.GetString(Encoding.UTF8.GetBytes(Display)) + "'";
+            Mob.Display = Encoding.Default.GetString(Encoding.UTF8.GetBytes(Display));
             switch (Mob.Type)
             {
                 case "ARMOR_STAND":
@@ -972,6 +972,198 @@ namespace MythicMobs_edit.WPF
                         message += "}";
                         b += message + " ";
                         break;
+                    case "modifyglobalscore":
+                        string modifyglobalscore = "{";
+                        Obj_save.Mob.Mechanic_type.ModifyGlobalScore ModifyGlobalScore = (Obj_save.Mob.Mechanic_type.ModifyGlobalScore)a.Option;
+                        modifyglobalscore += "o=" + ModifyGlobalScore.objective + ";";
+                        modifyglobalscore += "a=" + ModifyGlobalScore.action + ";";
+                        modifyglobalscore += "v=" + ModifyGlobalScore.value;
+                        modifyglobalscore += "}";
+                        b += modifyglobalscore + " ";
+                        break;
+                    case "modifytargetscore":
+                        string modifytargetscore = "{";
+                        Obj_save.Mob.Mechanic_type.ModifyTargetScore ModifyTargetScore = (Obj_save.Mob.Mechanic_type.ModifyTargetScore)a.Option;
+                        modifytargetscore += "o=" + ModifyTargetScore.objective + ";";
+                        modifytargetscore += "a=" + ModifyTargetScore.action + ";";
+                        modifytargetscore += "v=" + ModifyTargetScore.value;
+                        modifytargetscore += "}";
+                        b += modifytargetscore + " ";
+                        break;
+                    case "modifyscore":
+                        string modifyscore = "{";
+                        Obj_save.Mob.Mechanic_type.ModifyScore ModifyScore = (Obj_save.Mob.Mechanic_type.ModifyScore)a.Option;
+                        modifyscore += "o=" + ModifyScore.objective + ";";
+                        modifyscore += "a=" + ModifyScore.action + ";";
+                        modifyscore += "v=" + ModifyScore.value + ";";
+                        modifyscore += "n=" + ModifyScore.name;
+                        modifyscore += "}";
+                        b += modifyscore + " ";
+                        break;
+                    case "mount":
+                        string mount = "{";
+                        Obj_save.Mob.Mechanic_type.Mount Mount = (Obj_save.Mob.Mechanic_type.Mount)a.Option;
+                        mount += "t=" + Mount.type;
+                        mount += "}";
+                        b += mount + " ";
+                        break;
+                    case "potion":
+                        string potion = "{";
+                        Obj_save.Mob.Mechanic_type.Potion Potion = (Obj_save.Mob.Mechanic_type.Potion)a.Option;
+                        potion += "t=" + Potion.type + ";";
+                        potion += "d=" + Potion.duration + ";";
+                        potion += "l=" + Potion.level + ";";
+                        potion += "force=" + Potion.force + ";";
+                        potion += "hasParticles=" + Potion.hasParticles + ";";
+                        potion += "hasIcon=" + Potion.hasIcon;
+                        potion += "}";
+                        b += potion + " ";
+                        break;
+                    case "prison":
+                        string prison = "{";
+                        Obj_save.Mob.Mechanic_type.Prison Prison = (Obj_save.Mob.Mechanic_type.Prison)a.Option;
+                        prison += "m=" + Prison.material + ";";
+                        prison += "d=" + Prison.duration + ";";
+                        prison += "b=" + Prison.breakable;
+                        prison += "}";
+                        b += prison + " ";
+                        break;
+                    case "pull":
+                        string pull = "{";
+                        Obj_save.Mob.Mechanic_type.Pull Pull = (Obj_save.Mob.Mechanic_type.Pull)a.Option;
+                        pull += "v=" + Pull.velocity + ";";
+                        pull += "to=" + Pull.toOrigin;
+                        pull += "}";
+                        b += pull + " ";
+                        break;
+                    case "pushbutton":
+                        string pushbutton = "{";
+                        Obj_save.Mob.Mechanic_type.PushButton PushButton = (Obj_save.Mob.Mechanic_type.PushButton)a.Option;
+                        pushbutton += "x=" + PushButton.x + ";";
+                        pushbutton += "y=" + PushButton.y + ";";
+                        pushbutton += "z=" + PushButton.z;
+                        pushbutton += "}";
+                        b += pushbutton + " ";
+                        break;
+                    case "rally":
+                        string rally = "{";
+                        Obj_save.Mob.Mechanic_type.Rally Rally = (Obj_save.Mob.Mechanic_type.Rally)a.Option;
+                        rally += "t=" + Rally.types + ";";
+                        rally += "r=" + Rally.radius + ";";
+                        rally += "vr=" + Rally.vradius + ";";
+                        rally += "hr=" + Rally.hradius + ";";
+                        rally += "ot=" + Rally.overwritetarget;
+                        rally += "}";
+                        b += rally + " ";
+                        break;
+                    case "randommessage":
+                        string randommessage = "{m=";
+                        Obj_save.Mob.Mechanic_type.RandomMessage RandomMessage = (Obj_save.Mob.Mechanic_type.RandomMessage)a.Option;
+                        foreach (string f in RandomMessage.message)
+                        {
+                            if (string.IsNullOrWhiteSpace(f) == false)
+                            {
+                                randommessage += f + ",";
+                            }
+                        }
+                        randommessage = randommessage.Substring(0, randommessage.Length - 1);
+                        randommessage += "}";
+                        b += randommessage + " ";
+                        break;
+                    case "remove":
+                        string remove = "{";
+                        Obj_save.Mob.Mechanic_type.Remove Remove = (Obj_save.Mob.Mechanic_type.Remove)a.Option;
+                        remove += "delay=" + Remove.delay;
+                        remove += "}";
+                        b += remove + " ";
+                        break;
+                    case "runaigoalselector":
+                        string runaigoalselector = "{";
+                        Obj_save.Mob.Mechanic_type.RunAIGoalSelector RunAIGoalSelector = (Obj_save.Mob.Mechanic_type.RunAIGoalSelector)a.Option;
+                        runaigoalselector += "goal=" + RunAIGoalSelector.goal;
+                        runaigoalselector += "}";
+                        b += runaigoalselector + " ";
+                        break;
+                    case "runaitargetselector":
+                        string runaitargetselector = "{";
+                        Obj_save.Mob.Mechanic_type.RunAITargetSelector RunAITargetSelector = (Obj_save.Mob.Mechanic_type.RunAITargetSelector)a.Option;
+                        runaitargetselector += "goal=" + RunAITargetSelector.goal;
+                        runaitargetselector += "}";
+                        b += runaitargetselector + " ";
+                        break;
+                    case "actionmessage":
+                        string actionmessage = "{";
+                        Obj_save.Mob.Mechanic_type.ActionMessage ActionMessage = (Obj_save.Mob.Mechanic_type.ActionMessage)a.Option;
+                        actionmessage += "m=" + ActionMessage.message;
+                        actionmessage += "}";
+                        b += actionmessage + " ";
+                        break;
+                    case "sendtitle":
+                        string sendtitle = "{";
+                        Obj_save.Mob.Mechanic_type.SendTitle SendTitle = (Obj_save.Mob.Mechanic_type.SendTitle)a.Option;
+                        sendtitle += "t=" + SendTitle.title + ";";
+                        sendtitle += "st=" + SendTitle.subtitle + ";";
+                        sendtitle += "d=" + SendTitle.duration + ";";
+                        sendtitle += "fi=" + SendTitle.fadeIn + ";";
+                        sendtitle += "fo=" + SendTitle.fadeOut;
+                        sendtitle += "}";
+                        b += sendtitle + " ";
+                        break;
+                    case "setblock":
+                        string setblock = "{";
+                        Obj_save.Mob.Mechanic_type.SetBlockType SetBlockType = (Obj_save.Mob.Mechanic_type.SetBlockType)a.Option;
+                        setblock += "m=" + SetBlockType.material + ";";
+                        setblock += "md=" + SetBlockType.data;
+                        setblock += "}";
+                        b += setblock + " ";
+                        break;
+                    case "setgliding":
+                        string setgliding = "{";
+                        Obj_save.Mob.Mechanic_type.SetGliding SetGliding = (Obj_save.Mob.Mechanic_type.SetGliding)a.Option;
+                        setgliding += "g=" + SetGliding.gliding;
+                        setgliding += "}";
+                        b += setgliding + " ";
+                        break;
+                    case "setglobalscore":
+                        string setglobalscore = "{";
+                        Obj_save.Mob.Mechanic_type.SetGlobalScore SetGlobalScore = (Obj_save.Mob.Mechanic_type.SetGlobalScore)a.Option;
+                        setglobalscore += "o=" + SetGlobalScore.objective + ";";
+                        setglobalscore += "v=" + SetGlobalScore.value;
+                        setglobalscore += "}";
+                        b += setglobalscore + " ";
+                        break;
+                    case "setlevel":
+                        string setlevel = "{";
+                        Obj_save.Mob.Mechanic_type.SetLevel SetLevel = (Obj_save.Mob.Mechanic_type.SetLevel)a.Option;
+                        setlevel += "a=" + SetLevel.action + ";";
+                        setlevel += "l=" + SetLevel.level;
+                        setlevel += "}";
+                        b += setlevel + " ";
+                        break;
+                    case "setmobscore":
+                        string setmobscore = "{";
+                        Obj_save.Mob.Mechanic_type.SetMobScore SetMobScore = (Obj_save.Mob.Mechanic_type.SetMobScore)a.Option;
+                        setmobscore += "o=" + SetMobScore.objective + ";";
+                        setmobscore += "v=" + SetMobScore.value;
+                        setmobscore += "}";
+                        b += setmobscore + " ";
+                        break;
+                    case "settargetscore":
+                        string settargetscore = "{";
+                        Obj_save.Mob.Mechanic_type.SetTargetScore SetTargetScore = (Obj_save.Mob.Mechanic_type.SetTargetScore)a.Option;
+                        settargetscore += "o=" + SetTargetScore.objective + ";";
+                        settargetscore += "v=" + SetTargetScore.value;
+                        settargetscore += "}";
+                        b += settargetscore + " ";
+                        break;
+                    case "setscore":
+                        string setscore = "{";
+                        Obj_save.Mob.Mechanic_type.SetScore SetScore = (Obj_save.Mob.Mechanic_type.SetScore)a.Option;
+                        setscore += "o=" + SetScore.objective + ";";
+                        setscore += "v=" + SetScore.value;
+                        setscore += "}";
+                        b += setscore + " ";
+                        break;
                     default:
                         b += " ";
                         break;
@@ -1339,6 +1531,81 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "message":
                     Mechanic = new Mob.Mechanic_type.Message(Mechanic).get_Mechanic_();
+                    break;
+                case "modifyglobalscore":
+                    Mechanic = new ModifyGlobalScore(Mechanic).get_Mechanic_();
+                    break;
+                case "modifytargetscore":
+                    Mechanic = new ModifyTargetScore(Mechanic).get_Mechanic_();
+                    break;
+                case "modifyscore":
+                    Mechanic = new ModifyScore(Mechanic).get_Mechanic_();
+                    break;
+                case "mount":
+                    Mechanic = new Mount(Mechanic).get_Mechanic_();
+                    break;
+                case "mounttarget":
+                    Mechanic = new MountTarget(Mechanic).get_Mechanic_();
+                    break;
+                case "potion":
+                    Mechanic = new Potion(Mechanic).get_Mechanic_();
+                    break;
+                case "prison":
+                    Mechanic = new Prison(Mechanic).get_Mechanic_();
+                    break;
+                case "pull":
+                    Mechanic = new Pull(Mechanic).get_Mechanic_();
+                    break;
+                case "pushbutton":
+                    Mechanic = new PushButton(Mechanic).get_Mechanic_();
+                    break;
+                case "rally":
+                    Mechanic = new Rally(Mechanic).get_Mechanic_();
+                    break;
+                case "randommessage":
+                    Mechanic = new RandomMessage(Mechanic).get_Mechanic_();
+                    break;
+                case "remount":
+                    Mechanic = new Remount(Mechanic).get_Mechanic_();
+                    break;
+                case "remove":
+                    Mechanic = new Remove(Mechanic).get_Mechanic_();
+                    break;
+                case "runaigoalselector":
+                    Mechanic = new RunAIGoalSelector(Mechanic).get_Mechanic_();
+                    break;
+                case "runaitargetselector":
+                    Mechanic = new RunAITargetSelector(Mechanic).get_Mechanic_();
+                    break;
+                case "actionmessage":
+                    Mechanic = new ActionMessage(Mechanic).get_Mechanic_();
+                    break;
+                case "sendtitle":
+                    Mechanic = new SendTitle(Mechanic).get_Mechanic_();
+                    break;
+                case "setblock":
+                    Mechanic = new SetBlockType(Mechanic).get_Mechanic_();
+                    break;
+                case "setgliding":
+                    Mechanic = new SetGliding(Mechanic).get_Mechanic_();
+                    break;
+                case "setglobalscore":
+                    Mechanic = new SetGlobalScore(Mechanic).get_Mechanic_();
+                    break;
+                case "setlevel":
+                    Mechanic = new SetLevel(Mechanic).get_Mechanic_();
+                    break;
+                case "setmobscore":
+                    Mechanic = new SetMobScore(Mechanic).get_Mechanic_();
+                    break;
+                case "setowner":
+                    Mechanic = new SetOwner(Mechanic).get_Mechanic_();
+                    break;
+                case "settargetscore":
+                    Mechanic = new SetOwner(Mechanic).get_Mechanic_();
+                    break;
+                case "setscore":
+                    Mechanic = new SetScore(Mechanic).get_Mechanic_();
                     break;
                 default:
 
@@ -1808,6 +2075,81 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "message":
                     Mechanic = new Mob.Mechanic_type.Message(Mechanic).get_Mechanic_();
+                    break;
+                case "modifyglobalscore":
+                    Mechanic = new ModifyGlobalScore(Mechanic).get_Mechanic_();
+                    break;
+                case "modifytargetscore":
+                    Mechanic = new ModifyTargetScore(Mechanic).get_Mechanic_();
+                    break;
+                case "modifyscore":
+                    Mechanic = new ModifyScore(Mechanic).get_Mechanic_();
+                    break;
+                case "mount":
+                    Mechanic = new Mount(Mechanic).get_Mechanic_();
+                    break;
+                case "mounttarget":
+                    Mechanic = new MountTarget(Mechanic).get_Mechanic_();
+                    break;
+                case "potion":
+                    Mechanic = new Potion(Mechanic).get_Mechanic_();
+                    break;
+                case "prison":
+                    Mechanic = new Prison(Mechanic).get_Mechanic_();
+                    break;
+                case "pull":
+                    Mechanic = new Pull(Mechanic).get_Mechanic_();
+                    break;
+                case "pushbutton":
+                    Mechanic = new PushButton(Mechanic).get_Mechanic_();
+                    break;
+                case "rally":
+                    Mechanic = new Rally(Mechanic).get_Mechanic_();
+                    break;
+                case "randommessage":
+                    Mechanic = new RandomMessage(Mechanic).get_Mechanic_();
+                    break;
+                case "remount":
+                    Mechanic = new Remount(Mechanic).get_Mechanic_();
+                    break;
+                case "remove":
+                    Mechanic = new Remove(Mechanic).get_Mechanic_();
+                    break;
+                case "runaigoalselector":
+                    Mechanic = new RunAIGoalSelector(Mechanic).get_Mechanic_();
+                    break;
+                case "runaitargetselector":
+                    Mechanic = new RunAITargetSelector(Mechanic).get_Mechanic_();
+                    break;
+                case "actionmessage":
+                    Mechanic = new ActionMessage(Mechanic).get_Mechanic_();
+                    break;
+                case "sendtitle":
+                    Mechanic = new SendTitle(Mechanic).get_Mechanic_();
+                    break;
+                case "setblock":
+                    Mechanic = new SetBlockType(Mechanic).get_Mechanic_();
+                    break;
+                case "setgliding":
+                    Mechanic = new SetGliding(Mechanic).get_Mechanic_();
+                    break;
+                case "setglobalscore":
+                    Mechanic = new SetGlobalScore(Mechanic).get_Mechanic_();
+                    break;
+                case "setlevel":
+                    Mechanic = new SetLevel(Mechanic).get_Mechanic_();
+                    break;
+                case "setmobscore":
+                    Mechanic = new SetMobScore(Mechanic).get_Mechanic_();
+                    break;
+                case "setowner":
+                    Mechanic = new SetOwner(Mechanic).get_Mechanic_();
+                    break;
+                case "settargetscore":
+                    Mechanic = new SetOwner(Mechanic).get_Mechanic_();
+                    break;
+                case "setscore":
+                    Mechanic = new SetScore(Mechanic).get_Mechanic_();
                     break;
                 default:
 

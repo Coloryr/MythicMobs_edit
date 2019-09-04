@@ -1,0 +1,23 @@
+﻿<Window x:Class="MythicMobs_edit.WPF.Mob.Mechanic_type.SetLevel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Mechanic_type"
+        xmlns:Other="clr-namespace:MythicMobs_edit.WPF.Mob.Other" 
+        mc:Ignorable="d"
+        Title="机制修改：Set Level" Height="426" Width="305"  Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="行为" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="205,368,0,0" VerticalAlignment="Top" Width="75" Height="20" Style="{StaticResource Button}" Click="Button_Click" IsDefault="True"/>
+
+        <Other:Skill_Tag HorizontalAlignment="Left" Height="220" Margin="0,60,0,0" VerticalAlignment="Top" Width="292" x:Name="Type"/>
+        <Other:Triggers HorizontalAlignment="Left" Height="93" Margin="0,275,0,0" VerticalAlignment="Top" Width="280" x:Name="Triggers_"/>
+        <Label Content="数值" HorizontalAlignment="Left" Margin="5,30,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="44,33,0,0" Text="{Binding Mechanic.Option.level}" VerticalAlignment="Top" Width="120"
+                 PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="44,4,0,0" VerticalAlignment="Top" Width="120" Height="20" Style="{StaticResource ComboBoxStyle}"
+                  Text="{Binding Mechanic.Option.action}" Name="Type_"/>
+
+    </Grid>
+</Window>
