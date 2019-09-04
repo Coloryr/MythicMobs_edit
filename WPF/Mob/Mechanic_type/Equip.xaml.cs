@@ -1,23 +1,21 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
-using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Input;
 
 namespace MythicMobs_edit.WPF.Mob.Mechanic_type
 {
     /// <summary>
-    /// Command.xaml 的交互逻辑
+    /// Equip.xaml 的交互逻辑
     /// </summary>
-    public partial class Command : Window
+    public partial class Equip : Window
     {
         public Mechanic Mechanic { get; set; }
-        public Command(Mechanic Mechanic)
+        public Equip(Mechanic Mechanic)
         {
             InitializeComponent();
             this.Mechanic = Mechanic;
-            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Command))
+            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Equip))
             {
-                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Command();
+                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Equip();
             }
             Type.Type.SelectedItem = this.Mechanic.Skill_Tag.Tag_Type;
             Type.Option.Text = this.Mechanic.Skill_Tag.Tag_Option;
@@ -26,12 +24,6 @@ namespace MythicMobs_edit.WPF.Mob.Mechanic_type
             Triggers_.Type.SelectedItem = Mechanic.Triggers.Type;
             DataContext = this;
             Type.refash_SkillTag();
-        }
-        private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
-        {
-            Regex re = new Regex("[^0-9.-]+");
-
-            e.Handled = re.IsMatch(e.Text);
         }
         public Mechanic get_Mechanic_()
         {

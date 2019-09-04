@@ -1,4 +1,5 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
+using MythicMobs_edit.WPF.Mob.Other;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
@@ -6,18 +7,18 @@ using System.Windows.Input;
 namespace MythicMobs_edit.WPF.Mob.Mechanic_type
 {
     /// <summary>
-    /// Command.xaml 的交互逻辑
+    /// Message.xaml 的交互逻辑
     /// </summary>
-    public partial class Command : Window
+    public partial class Message : Window
     {
         public Mechanic Mechanic { get; set; }
-        public Command(Mechanic Mechanic)
+        public Message(Mechanic Mechanic)
         {
             InitializeComponent();
             this.Mechanic = Mechanic;
-            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Command))
+            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Message))
             {
-                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Command();
+                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Message();
             }
             Type.Type.SelectedItem = this.Mechanic.Skill_Tag.Tag_Type;
             Type.Option.Text = this.Mechanic.Skill_Tag.Tag_Option;
@@ -47,6 +48,13 @@ namespace MythicMobs_edit.WPF.Mob.Mechanic_type
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            Obj_save.Mob.Mechanic_type.Message Message = (Obj_save.Mob.Mechanic_type.Message)Mechanic.Option;
+            Message.message = new KillMessages(Message.message, false).KillMessages_set();
+            Text_.Text = Message.message;
         }
     }
 }

@@ -8,12 +8,13 @@ namespace MythicMobs_edit.WPF.Mob.Other
     public partial class KillMessages : Window
     {
         public string KillMessages_ { get; set; } = "";
-        public KillMessages(string KillMessages)
+        public KillMessages(string KillMessages, bool show)
         {
             InitializeComponent();
             DataContext = this;
             KillMessages_ = KillMessages;
             Message.Text = KillMessages;
+            Show_.Visibility = show == true ? Visibility.Visible : Visibility.Hidden;
         }
         public string KillMessages_set()
         {

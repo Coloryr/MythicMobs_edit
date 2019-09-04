@@ -29,10 +29,10 @@
             </StackPanel.Effect>
         </StackPanel>
 
-        <TextBox Background="#AA898989" Name="Out" Style="{StaticResource TextBox}" Grid.Column="3" RenderTransformOrigin="0.0,0.0"/>
-        <Button Content="返回" HorizontalAlignment="Left" Height="24" Margin="213,683,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
+        <TextBox Background="#AA898989" Name="Out" Style="{StaticResource TextBox}" Grid.Column="3" RenderTransformOrigin="0.0,0.0" TextWrapping="Wrap"/>
+        <Button Content="返回" HorizontalAlignment="Left" Height="24" Margin="213,681,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Return" Grid.Column="2"/>
-        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="24" Margin="113,683,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
+        <Button Content="就决定是你了" HorizontalAlignment="Left" Height="24" Margin="113,681,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Button_Click" Grid.Column="2"/>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Height="717">
             <Expander Header="基础设置" Foreground="#FFFFFFFF"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" IsExpanded="True">
@@ -355,12 +355,12 @@
                 <Grid Height="134" Width="319">
                     <Label Content="伪装类型" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
                     <ComboBox HorizontalAlignment="Left" Margin="65,7,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                              Width="181" Height="20" x:Name="Disguise_Type" Text="{Binding Mob.Disguise.Type}" IsReadOnly="True"/>
+                              Width="181" Height="20" x:Name="Disguise_Type" Text="{Binding Mob.Disguise.Type}" IsReadOnly="True" SelectionChanged="Disguise_Type_SelectionChanged"/>
                     <Button Content="随机类型" HorizontalAlignment="Left" Height="20" Margin="251,7,0,0" VerticalAlignment="Top" Width="60" 
                             Click="Disguise_Type_r_Click" Style="{StaticResource Button}"/>
                     <Label Content="皮肤名字" HorizontalAlignment="Left" Margin="2,34,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
-                    <TextBox HorizontalAlignment="Left" Height="20" Margin="65,37,0,0" Style="{StaticResource TextBox}"
-                             VerticalAlignment="Top" Width="181" Text="{Binding Mob.Disguise.Skin}"/>
+                    <TextBox HorizontalAlignment="Left" Height="20" Margin="65,37,0,0" Style="{StaticResource TextBox}" Name="skin"
+                             VerticalAlignment="Top" Width="181" Text="{Binding Mob.Disguise.Skin}" IsEnabled="False"/>
                     <CheckBox Content="生物燃烧" HorizontalAlignment="Left" Height="15" Margin="2,68,0,-6" VerticalAlignment="Top" Style="{StaticResource Check}"
                               IsChecked="{Binding Mob.Disguise.Burning}" x:Name="Options_Glowing_Copy"/>
                     <CheckBox Content="保持阻挡动作" HorizontalAlignment="Left" Height="15" Margin="76,68,0,0" VerticalAlignment="Top" Style="{StaticResource Check}"

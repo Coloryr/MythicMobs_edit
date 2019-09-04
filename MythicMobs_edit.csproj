@@ -113,6 +113,7 @@
     <Compile Include="Obj_save\Mob\Effects_type\EnderBeam.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\Firework.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\Geyser.cs" />
+    <Compile Include="Obj_save\Mob\Effects_type\Glow.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\ItemSpraycs.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\Lightning.cs" />
     <Compile Include="Obj_save\Mob\Effects_type\ParticleSphere.cs" />
@@ -130,7 +131,27 @@
     <Compile Include="Obj_save\Mob\Mechanic.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ActivateSpawner.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ArrowVolley.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\BaseDamage.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Command.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Consume.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\CurrencyGive.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\CurrencyTake.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Damage.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Disguise.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Equip.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Explosion.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Feed.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ForcePull.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Heal.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\HealPercent.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Ignite.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\JSONMessage.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Jump.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Leap.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Lightning.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Look.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Message.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\PercentDamage.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
@@ -190,6 +211,9 @@
     <Compile Include="WPF\Mob\Effects_type\Geyser.xaml.cs">
       <DependentUpon>Geyser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Effects_type\Glow.xaml.cs">
+      <DependentUpon>Glow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Effects_type\ItemSpraycs.xaml.cs">
       <DependentUpon>ItemSpraycs.xaml</DependentUpon>
     </Compile>
@@ -232,8 +256,83 @@
     <Compile Include="WPF\Mob\Mechanic_type\ArrowVolley.xaml.cs">
       <DependentUpon>ArrowVolley.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\BaseDamage.xaml.cs">
+      <DependentUpon>BaseDamage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\Command.xaml.cs">
       <DependentUpon>Command.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Consume.xaml.cs">
+      <DependentUpon>Consume.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\CurrencyGive.xaml.cs">
+      <DependentUpon>CurrencyGive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\CurrencyTake.xaml.cs">
+      <DependentUpon>CurrencyTake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Damage.xaml.cs">
+      <DependentUpon>Damage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Decapitate.xaml.cs">
+      <DependentUpon>Decapitate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Disguise.xaml.cs">
+      <DependentUpon>Disguise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Dismount.xaml.cs">
+      <DependentUpon>Dismount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Doppleganger.xaml.cs">
+      <DependentUpon>Doppleganger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\EjectPassenger.xaml.cs">
+      <DependentUpon>EjectPassenger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Equip.xaml.cs">
+      <DependentUpon>Equip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Explosion.xaml.cs">
+      <DependentUpon>Explosion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Feed.xaml.cs">
+      <DependentUpon>Feed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ForcePull.xaml.cs">
+      <DependentUpon>ForcePull.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Heal.xaml.cs">
+      <DependentUpon>Heal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\HealPercent.xaml.cs">
+      <DependentUpon>HealPercent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Ignite.xaml.cs">
+      <DependentUpon>Ignite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\JSONMessage.xaml.cs">
+      <DependentUpon>JSONMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Jump.xaml.cs">
+      <DependentUpon>Jump.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Leap.xaml.cs">
+      <DependentUpon>Leap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Lightning.xaml.cs">
+      <DependentUpon>Lightning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Look.xaml.cs">
+      <DependentUpon>Look.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Message.xaml.cs">
+      <DependentUpon>Message.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\PercentDamage.xaml.cs">
+      <DependentUpon>PercentDamage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Undisguise.xaml.cs">
+      <DependentUpon>Undisguise.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
@@ -394,6 +493,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\Effects_type\Glow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\Effects_type\ItemSpraycs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -450,7 +553,107 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\Mechanic_type\BaseDamage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\Mechanic_type\Command.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Consume.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\CurrencyGive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\CurrencyTake.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Damage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Decapitate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Disguise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Dismount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Doppleganger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\EjectPassenger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Equip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Explosion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Feed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ForcePull.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Heal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\HealPercent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Ignite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\JSONMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Jump.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Leap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Lightning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Look.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Message.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\PercentDamage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Undisguise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

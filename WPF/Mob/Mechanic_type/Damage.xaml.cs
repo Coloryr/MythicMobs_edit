@@ -1,23 +1,34 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace MythicMobs_edit.WPF.Mob.Mechanic_type
 {
     /// <summary>
-    /// Command.xaml 的交互逻辑
+    /// Damage.xaml 的交互逻辑
     /// </summary>
-    public partial class Command : Window
+    public partial class Damage : Window
     {
         public Mechanic Mechanic { get; set; }
-        public Command(Mechanic Mechanic)
+        public Damage(Mechanic Mechanic)
         {
             InitializeComponent();
             this.Mechanic = Mechanic;
-            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Command))
+            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Damage))
             {
-                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Command();
+                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Damage();
             }
             Type.Type.SelectedItem = this.Mechanic.Skill_Tag.Tag_Type;
             Type.Option.Text = this.Mechanic.Skill_Tag.Tag_Option;

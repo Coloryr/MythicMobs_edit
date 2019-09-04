@@ -1,4 +1,5 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
+using MythicMobs_edit.WPF.Mob.Other;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
@@ -6,18 +7,18 @@ using System.Windows.Input;
 namespace MythicMobs_edit.WPF.Mob.Mechanic_type
 {
     /// <summary>
-    /// Command.xaml 的交互逻辑
+    /// JSONMessage.xaml 的交互逻辑
     /// </summary>
-    public partial class Command : Window
+    public partial class JSONMessage : Window
     {
         public Mechanic Mechanic { get; set; }
-        public Command(Mechanic Mechanic)
+        public JSONMessage(Mechanic Mechanic)
         {
             InitializeComponent();
             this.Mechanic = Mechanic;
-            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Command))
+            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.JSONMessage))
             {
-                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Command();
+                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.JSONMessage();
             }
             Type.Type.SelectedItem = this.Mechanic.Skill_Tag.Tag_Type;
             Type.Option.Text = this.Mechanic.Skill_Tag.Tag_Option;
@@ -47,6 +48,13 @@ namespace MythicMobs_edit.WPF.Mob.Mechanic_type
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            Obj_save.Mob.Mechanic_type.JSONMessage JSONMessage = (Obj_save.Mob.Mechanic_type.JSONMessage)Mechanic.Option;
+            JSONMessage.message = new KillMessages(JSONMessage.message, false).KillMessages_set();
+            Text_.Text = JSONMessage.message;
         }
     }
 }

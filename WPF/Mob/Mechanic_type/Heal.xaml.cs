@@ -6,18 +6,18 @@ using System.Windows.Input;
 namespace MythicMobs_edit.WPF.Mob.Mechanic_type
 {
     /// <summary>
-    /// Command.xaml 的交互逻辑
+    /// Heal.xaml 的交互逻辑
     /// </summary>
-    public partial class Command : Window
+    public partial class Heal : Window
     {
         public Mechanic Mechanic { get; set; }
-        public Command(Mechanic Mechanic)
+        public Heal(Mechanic Mechanic)
         {
             InitializeComponent();
             this.Mechanic = Mechanic;
-            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Command))
+            if (!(this.Mechanic.Option is Obj_save.Mob.Mechanic_type.Heal))
             {
-                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Command();
+                this.Mechanic.Option = new Obj_save.Mob.Mechanic_type.Heal();
             }
             Type.Type.SelectedItem = this.Mechanic.Skill_Tag.Tag_Type;
             Type.Option.Text = this.Mechanic.Skill_Tag.Tag_Option;

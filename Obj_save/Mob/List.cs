@@ -149,7 +149,7 @@ namespace MythicMobs_edit.Obj_save.Mob
         {
             "blockmask", "ender", "enderbeam", "explosion", "firework", "flames", "geyser",
             "itemspray", "lightning", "particles", "particlebox", "particleline", "particlering",
-            "particlesphere", "particletornado", "smoke", "smokeswirl", "sound", "spin"
+            "particlesphere", "particletornado", "smoke", "smokeswirl", "sound", "spin", "glow"
         };
         public List<string> Skill_Tag = new List<string>()
         {
@@ -174,7 +174,11 @@ namespace MythicMobs_edit.Obj_save.Mob
         };
         public List<string> Skill_Mechanic = new List<string>()
         {
-            "activatespawner", "arrowvolley", "command", "consume",
+            "activatespawner", "arrowvolley", "command", "consume", "disguise", "undisguise",
+            "dismount", "currencygive", "currencytake", "damage", "basedamage", "percentDamage",
+            "decapitate", "doppleganger", "ejectpassenger", "equip", "explosion", "feed",
+            "forcepull", "heal", "healpercent", "ignite", "jsonmessage", "jump", "leap",
+            "lightning", "look", "message", 
         };
         public List<string> Conditions = new List<string>()
         {

@@ -88,7 +88,7 @@ namespace MythicMobs_edit.WPF
             Equipment = new List<string>(),
             KillMessages = new List<string>(),
             LevelModifiers = new LevelModifiers(),
-            Disguise = new Disguise(),
+            Disguise = new Obj_save.Mob.Disguise(),
             Skills = new List<string>(),
             Conditions = new List<string>()
         };
@@ -287,6 +287,13 @@ namespace MythicMobs_edit.WPF
                     Mob.Options.Type = null;
                     break;
             }
+        }
+        private void Disguise_Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((string)Disguise_Type.SelectedItem == "player")
+                skin.IsEnabled = true;
+            else
+                skin.IsEnabled = false;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -686,6 +693,14 @@ namespace MythicMobs_edit.WPF
                         spin += "}";
                         b += spin + " ";
                         break;
+                    case "glow":
+                        string glow = "{";
+                        Obj_save.Mob.Effects_type.Glow Glow = (Obj_save.Mob.Effects_type.Glow)a.Option;
+                        glow += "c:" + Glow.color + ";";
+                        glow += "d:" + Glow.duration + ";";
+                        glow += "}";
+                        b += glow + " ";
+                        break;
                     default:
                         b += " ";
                         break;
@@ -799,6 +814,163 @@ namespace MythicMobs_edit.WPF
                         consume += "i=" + Consume.ignorearmor;
                         consume += "}";
                         b += consume + " ";
+                        break;
+                    case "disguise":
+                        string disguise = "{";
+                        Obj_save.Mob.Mechanic_type.Disguise Disguise = (Obj_save.Mob.Mechanic_type.Disguise)a.Option;
+                        disguise += "type=" + Disguise.Type;
+                        if (string.IsNullOrWhiteSpace(Disguise.player) == false)
+                        {
+                            disguise += ";player=" + Disguise.player;
+                        }
+                        if (string.IsNullOrWhiteSpace(Disguise.skin) == false)
+                        {
+                            disguise += ";skin=" + Disguise.skin;
+                        }
+                        disguise += "}";
+                        b += disguise + " ";
+                        break;
+                    case "currencygive":
+                        string currencygive = "{";
+                        Obj_save.Mob.Mechanic_type.CurrencyGive CurrencyGive = (Obj_save.Mob.Mechanic_type.CurrencyGive)a.Option;
+                        currencygive += "amount=" + CurrencyGive.amount;
+                        currencygive += "}";
+                        b += currencygive + " ";
+                        break;
+                    case "currencytake":
+                        string currencytake = "{";
+                        Obj_save.Mob.Mechanic_type.CurrencyTake CurrencyTake = (Obj_save.Mob.Mechanic_type.CurrencyTake)a.Option;
+                        currencytake += "amount=" + CurrencyTake.amount;
+                        currencytake += "}";
+                        b += currencytake + " ";
+                        break;
+                    case "damage":
+                        string damage = "{";
+                        Obj_save.Mob.Mechanic_type.Damage Damage = (Obj_save.Mob.Mechanic_type.Damage)a.Option;
+                        damage += "amount=" + Damage.amount + ";";
+                        damage += "ia=" + Damage.ignoreArmor + ";";
+                        damage += "pk=" + Damage.preventknockback + ";";
+                        damage += "pi=" + Damage.preventimmunity;
+                        damage += "}";
+                        b += damage + " ";
+                        break;
+                    case "basedamage":
+                        string basedamage = "{";
+                        Obj_save.Mob.Mechanic_type.BaseDamage BaseDamage = (Obj_save.Mob.Mechanic_type.BaseDamage)a.Option;
+                        basedamage += "m=" + BaseDamage.multiplier + ";";
+                        basedamage += "ia=" + BaseDamage.ignoreArmor + ";";
+                        basedamage += "pk=" + BaseDamage.preventknockback + ";";
+                        basedamage += "pi=" + BaseDamage.preventimmunity;
+                        basedamage += "}";
+                        b += basedamage + " ";
+                        break;
+                    case "percentDamage":
+                        string percentDamage = "{";
+                        Obj_save.Mob.Mechanic_type.PercentDamage PercentDamage = (Obj_save.Mob.Mechanic_type.PercentDamage)a.Option;
+                        percentDamage += "p=" + PercentDamage.percent + ";";
+                        percentDamage += "c=" + PercentDamage.current;
+                        percentDamage += "}";
+                        b += percentDamage + " ";
+                        break;
+                    case "equip":
+                        string equip = "{";
+                        Obj_save.Mob.Mechanic_type.Equip Equip = (Obj_save.Mob.Mechanic_type.Equip)a.Option;
+                        equip += "i=" + Equip.item;
+                        equip += "}";
+                        b += equip + " ";
+                        break;
+                    case "explosion":
+                        string explosion = "{";
+                        Obj_save.Mob.Mechanic_type.Explosion Explosion = (Obj_save.Mob.Mechanic_type.Explosion)a.Option;
+                        explosion += "y=" + Explosion.yield + ";";
+                        explosion += "bd=" + Explosion.blockdamage + ";";
+                        explosion += "f=" + Explosion.fire;
+                        explosion += "}";
+                        b += explosion + " ";
+                        break;
+                    case "feed":
+                        string feed = "{";
+                        Obj_save.Mob.Mechanic_type.Feed Feed = (Obj_save.Mob.Mechanic_type.Feed)a.Option;
+                        feed += "a=" + Feed.amount + ";";
+                        feed += "s=" + Feed.saturation + ";";
+                        feed += "o=" + Feed.overfeed;
+                        feed += "}";
+                        b += feed + " ";
+                        break;
+                    case "forcepull":
+                        string forcepull = "{";
+                        Obj_save.Mob.Mechanic_type.ForcePull ForcePull = (Obj_save.Mob.Mechanic_type.ForcePull)a.Option;
+                        forcepull += "s=" + ForcePull.spread + ";";
+                        forcepull += "vs=" + ForcePull.vspread;
+                        forcepull += "}";
+                        b += forcepull + " ";
+                        break;
+                    case "heal":
+                        string heal = "{";
+                        Obj_save.Mob.Mechanic_type.Heal Heal = (Obj_save.Mob.Mechanic_type.Heal)a.Option;
+                        heal += "a=" + Heal.amount + ";";
+                        heal += "oh=" + Heal.overheal;
+                        heal += "}";
+                        b += heal + " ";
+                        break;
+                    case "healpercent":
+                        string healpercent = "{";
+                        Obj_save.Mob.Mechanic_type.HealPercent HealPercent = (Obj_save.Mob.Mechanic_type.HealPercent)a.Option;
+                        healpercent += "m=" + HealPercent.multiplier + ";";
+                        healpercent += "overheal=" + HealPercent.overheal;
+                        healpercent += "}";
+                        b += healpercent + " ";
+                        break;
+                    case "ignite":
+                        string ignite = "{";
+                        Obj_save.Mob.Mechanic_type.Ignite Ignite = (Obj_save.Mob.Mechanic_type.Ignite)a.Option;
+                        ignite += "ticks=" + Ignite.ticks;
+                        ignite += "}";
+                        b += ignite + " ";
+                        break;
+                    case "jsonmessage":
+                        string jsonmessage = "{";
+                        Obj_save.Mob.Mechanic_type.JSONMessage JSONMessage = (Obj_save.Mob.Mechanic_type.JSONMessage)a.Option;
+                        jsonmessage += "m=" + JSONMessage.message;
+                        jsonmessage += "}";
+                        b += jsonmessage + " ";
+                        break;
+                    case "jump":
+                        string jump = "{";
+                        Obj_save.Mob.Mechanic_type.Jump Jump = (Obj_save.Mob.Mechanic_type.Jump)a.Option;
+                        jump += "v=" + Jump.velocity;
+                        jump += "}";
+                        b += jump + " ";
+                        break;
+                    case "leap":
+                        string leap = "{";
+                        Obj_save.Mob.Mechanic_type.Leap Leap = (Obj_save.Mob.Mechanic_type.Leap)a.Option;
+                        leap += "v=" + Leap.velocity + ";";
+                        leap += "noise=" + Leap.noise;
+                        leap += "}";
+                        b += leap + " ";
+                        break;
+                    case "lightning":
+                        string lightning = "{";
+                        Obj_save.Mob.Mechanic_type.Lightning Lightning = (Obj_save.Mob.Mechanic_type.Lightning)a.Option;
+                        lightning += "d=" + Lightning.damage;
+                        lightning += "}";
+                        b += lightning + " ";
+                        break;
+                    case "look":
+                        string look = "{";
+                        Obj_save.Mob.Mechanic_type.Look Look = (Obj_save.Mob.Mechanic_type.Look)a.Option;
+                        look += "headOnly=" + Look.headOnly + ";";
+                        look += "immediately=" + Look.immediately;
+                        look += "}";
+                        b += look + " ";
+                        break;
+                    case "message":
+                        string message = "{";
+                        Obj_save.Mob.Mechanic_type.Message Message = (Obj_save.Mob.Mechanic_type.Message)a.Option;
+                        message += "m=" + Message.message;
+                        message += "}";
+                        b += message + " ";
                         break;
                     default:
                         b += " ";
@@ -981,7 +1153,7 @@ namespace MythicMobs_edit.WPF
         }
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            string KillMessages = new KillMessages("击杀").KillMessages_set();
+            string KillMessages = new KillMessages("击杀", true).KillMessages_set();
             KillMessages_L.Add(KillMessages);
             KillMessages_T.Items.Add(KillMessages);
         }
@@ -1010,7 +1182,7 @@ namespace MythicMobs_edit.WPF
                     Effects = new EnderBeam(Effects).get_Effects_();
                     break;
                 case "explosion":
-                    Effects = new Explosion(Effects).get_Effects_();
+                    Effects = new Mob.Effects_type.Explosion(Effects).get_Effects_();
                     break;
                 case "firework":
                     Effects = new Firework(Effects).get_Effects_();
@@ -1025,7 +1197,7 @@ namespace MythicMobs_edit.WPF
                     Effects = new ItemSpraycs(Effects).get_Effects_();
                     break;
                 case "lightning":
-                    Effects = new Lightning(Effects).get_Effects_();
+                    Effects = new Mob.Effects_type.Lightning(Effects).get_Effects_();
                     break;
                 case "particles":
                     Effects = new Particles(Effects).get_Effects_();
@@ -1056,6 +1228,9 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "spin":
                     Effects = new Spin(Effects).get_Effects_();
+                    break;
+                case "glow":
+                    Effects = new Glow(Effects).get_Effects_();
                     break;
                 default:
 
@@ -1092,6 +1267,78 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "consume":
                     Mechanic = new Consume(Mechanic).get_Mechanic_();
+                    break;
+                case "disguise":
+                    Mechanic = new Mob.Mechanic_type.Disguise(Mechanic).get_Mechanic_();
+                    break;
+                case "undisguise":
+                    Mechanic = new Undisguise(Mechanic).get_Mechanic_();
+                    break;
+                case "dismount":
+                    Mechanic = new Dismount(Mechanic).get_Mechanic_();
+                    break;
+                case "currencygive":
+                    Mechanic = new CurrencyGive(Mechanic).get_Mechanic_();
+                    break;
+                case "currencytake":
+                    Mechanic = new CurrencyTake(Mechanic).get_Mechanic_();
+                    break;
+                case "damage":
+                    Mechanic = new Damage(Mechanic).get_Mechanic_();
+                    break;
+                case "basedamage":
+                    Mechanic = new BaseDamage(Mechanic).get_Mechanic_();
+                    break;
+                case "percentDamage":
+                    Mechanic = new PercentDamage(Mechanic).get_Mechanic_();
+                    break;
+                case "decapitate":
+                    Mechanic = new Decapitate(Mechanic).get_Mechanic_();
+                    break;
+                case "doppleganger":
+                    Mechanic = new Doppleganger(Mechanic).get_Mechanic_();
+                    break;
+                case "ejectpassenger":
+                    Mechanic = new EjectPassenger(Mechanic).get_Mechanic_();
+                    break;
+                case "equip":
+                    Mechanic = new Equip(Mechanic).get_Mechanic_();
+                    break;
+                case "explosion":
+                    Mechanic = new Mob.Mechanic_type.Explosion(Mechanic).get_Mechanic_();
+                    break;
+                case "feed":
+                    Mechanic = new Feed(Mechanic).get_Mechanic_();
+                    break;
+                case "forcepull":
+                    Mechanic = new ForcePull(Mechanic).get_Mechanic_();
+                    break;
+                case "heal":
+                    Mechanic = new Heal(Mechanic).get_Mechanic_();
+                    break;
+                case "healpercent":
+                    Mechanic = new HealPercent(Mechanic).get_Mechanic_();
+                    break;
+                case "ignite":
+                    Mechanic = new Ignite(Mechanic).get_Mechanic_();
+                    break;
+                case "jsonmessage":
+                    Mechanic = new JSONMessage(Mechanic).get_Mechanic_();
+                    break;
+                case "jump":
+                    Mechanic = new JSONMessage(Mechanic).get_Mechanic_();
+                    break;
+                case "leap":
+                    Mechanic = new Leap(Mechanic).get_Mechanic_();
+                    break;
+                case "lightning":
+                    Mechanic = new Mob.Mechanic_type.Lightning(Mechanic).get_Mechanic_();
+                    break;
+                case "look":
+                    Mechanic = new Look(Mechanic).get_Mechanic_();
+                    break;
+                case "message":
+                    Mechanic = new Mob.Mechanic_type.Message(Mechanic).get_Mechanic_();
                     break;
                 default:
 
@@ -1376,7 +1623,7 @@ namespace MythicMobs_edit.WPF
             if (KillMessages_T.SelectedItem != null)
             {
                 KillMessages_L.Remove((string)KillMessages_T.SelectedItem);
-                string KillMessages = new KillMessages((string)KillMessages_T.SelectedItem).KillMessages_set();
+                string KillMessages = new KillMessages((string)KillMessages_T.SelectedItem, true).KillMessages_set();
                 KillMessages_L.Add(KillMessages);
                 refash_KillMessages();
             }
@@ -1406,7 +1653,7 @@ namespace MythicMobs_edit.WPF
                     Effects = new EnderBeam(Effects).get_Effects_();
                     break;
                 case "explosion":
-                    Effects = new Explosion(Effects).get_Effects_();
+                    Effects = new Mob.Effects_type.Explosion(Effects).get_Effects_();
                     break;
                 case "firework":
                     Effects = new Firework(Effects).get_Effects_();
@@ -1421,7 +1668,7 @@ namespace MythicMobs_edit.WPF
                     Effects = new ItemSpraycs(Effects).get_Effects_();
                     break;
                 case "lightning":
-                    Effects = new Lightning(Effects).get_Effects_();
+                    Effects = new Mob.Effects_type.Lightning(Effects).get_Effects_();
                     break;
                 case "particles":
                     Effects = new Particles(Effects).get_Effects_();
@@ -1452,6 +1699,9 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "spin":
                     Effects = new Spin(Effects).get_Effects_();
+                    break;
+                case "glow":
+                    Effects = new Glow(Effects).get_Effects_();
                     break;
                 default:
 
@@ -1486,6 +1736,78 @@ namespace MythicMobs_edit.WPF
                     break;
                 case "consume":
                     Mechanic = new Consume(Mechanic).get_Mechanic_();
+                    break;
+                case "disguise":
+                    Mechanic = new Mob.Mechanic_type.Disguise(Mechanic).get_Mechanic_();
+                    break;
+                case "undisguise":
+                    Mechanic = new Undisguise(Mechanic).get_Mechanic_();
+                    break;
+                case "dismount":
+                    Mechanic = new Dismount(Mechanic).get_Mechanic_();
+                    break;
+                case "currencygive":
+                    Mechanic = new CurrencyGive(Mechanic).get_Mechanic_();
+                    break;
+                case "currencytake":
+                    Mechanic = new CurrencyTake(Mechanic).get_Mechanic_();
+                    break;
+                case "damage":
+                    Mechanic = new Damage(Mechanic).get_Mechanic_();
+                    break;
+                case "basedamage":
+                    Mechanic = new BaseDamage(Mechanic).get_Mechanic_();
+                    break;
+                case "percentDamage":
+                    Mechanic = new PercentDamage(Mechanic).get_Mechanic_();
+                    break;
+                case "decapitate":
+                    Mechanic = new Decapitate(Mechanic).get_Mechanic_();
+                    break;
+                case "doppleganger":
+                    Mechanic = new Doppleganger(Mechanic).get_Mechanic_();
+                    break;
+                case "ejectpassenger":
+                    Mechanic = new EjectPassenger(Mechanic).get_Mechanic_();
+                    break;
+                case "equip":
+                    Mechanic = new Equip(Mechanic).get_Mechanic_();
+                    break;
+                case "explosion":
+                    Mechanic = new Mob.Mechanic_type.Explosion(Mechanic).get_Mechanic_();
+                    break;
+                case "feed":
+                    Mechanic = new Feed(Mechanic).get_Mechanic_();
+                    break;
+                case "forcepull":
+                    Mechanic = new ForcePull(Mechanic).get_Mechanic_();
+                    break;
+                case "heal":
+                    Mechanic = new Heal(Mechanic).get_Mechanic_();
+                    break;
+                case "healpercent":
+                    Mechanic = new HealPercent(Mechanic).get_Mechanic_();
+                    break;
+                case "ignite":
+                    Mechanic = new Ignite(Mechanic).get_Mechanic_();
+                    break;
+                case "jsonmessage":
+                    Mechanic = new JSONMessage(Mechanic).get_Mechanic_();
+                    break;
+                case "jump":
+                    Mechanic = new JSONMessage(Mechanic).get_Mechanic_();
+                    break;
+                case "leap":
+                    Mechanic = new Leap(Mechanic).get_Mechanic_();
+                    break;
+                case "lightning":
+                    Mechanic = new Mob.Mechanic_type.Lightning(Mechanic).get_Mechanic_();
+                    break;
+                case "look":
+                    Mechanic = new Look(Mechanic).get_Mechanic_();
+                    break;
+                case "message":
+                    Mechanic = new Mob.Mechanic_type.Message(Mechanic).get_Mechanic_();
                     break;
                 default:
 
