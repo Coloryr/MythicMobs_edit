@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MythicMobs_edit.Obj_save.Mob.Mechanic_type
+﻿namespace MythicMobs_edit.Obj_save.Mob.Mechanic_type
 {
     public class Aura
     {
@@ -25,7 +19,7 @@ namespace MythicMobs_edit.Obj_save.Mob.Mechanic_type
         /// </summary>
         public string onEnd { get; set; }
         /// <summary>
-        /// 几率
+        /// 机率
         /// </summary>
         public int Charges { get; set; } = 0;
         /// <summary>
@@ -44,6 +38,10 @@ namespace MythicMobs_edit.Obj_save.Mob.Mechanic_type
         /// 刷新持续时间
         /// </summary>
         public bool refreshDuration { get; set; }
+        /// <summary>
+        /// 合并相同的情况
+        /// </summary>
+        public bool mergeSameCaster { get; set; }
         /// <summary>
         /// 合并所有
         /// </summary>

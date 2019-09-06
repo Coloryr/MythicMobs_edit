@@ -133,7 +133,9 @@
     <Compile Include="Obj_save\Mob\Mechanic_type\ActivateSpawner.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\AddTag.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ArrowVolley.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Aura.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\BaseDamage.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\CancelEvent.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Command.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Consume.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\CurrencyGive.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="Obj_save\Mob\Mechanic_type\Explosion.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Feed.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ForcePull.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\GlobalCooldown.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Heal.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\HealPercent.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Ignite.cs" />
@@ -180,11 +183,16 @@
     <Compile Include="Obj_save\Mob\Mechanic_type\ShootPotion.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ShootSkull.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Signal.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Skill.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Spring.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Summon.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Teleport.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\TeleportTo.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Threat.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Throw.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ToggleLever.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Velocity.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Weather.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
@@ -273,6 +281,12 @@
     </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\AddTag.xaml.cs">
       <DependentUpon>AddTag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Aura.xaml.cs">
+      <DependentUpon>Aura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\CancelEvent.xaml.cs">
+      <DependentUpon>CancelEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\RemoveTag.xaml.cs">
       <DependentUpon>RemoveTag.xaml</DependentUpon>
@@ -461,6 +475,9 @@
     <Compile Include="WPF\Mob\Mechanic_type\Signal.xaml.cs">
       <DependentUpon>Signal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Skill.xaml.cs">
+      <DependentUpon>Skill.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\Spring.xaml.cs">
       <DependentUpon>Spring.xaml</DependentUpon>
     </Compile>
@@ -479,8 +496,20 @@
     <Compile Include="WPF\Mob\Mechanic_type\Threat.xaml.cs">
       <DependentUpon>Threat.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Throw.xaml.cs">
+      <DependentUpon>Throw.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ToggleLever.xaml.cs">
+      <DependentUpon>ToggleLever.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\Undisguise.xaml.cs">
       <DependentUpon>Undisguise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Velocity.xaml.cs">
+      <DependentUpon>Velocity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Weather.xaml.cs">
+      <DependentUpon>Weather.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Other\AIChange.xaml.cs">
       <DependentUpon>AIChange.xaml</DependentUpon>
@@ -678,6 +707,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\Mechanic_type\AddTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Aura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\CancelEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -929,6 +966,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Skill.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\Mechanic_type\Spring.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -953,7 +994,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Throw.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ToggleLever.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Mob\Mechanic_type\Undisguise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Velocity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Weather.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -268,7 +268,7 @@ namespace MythicMobs_edit.Obj_save.Mob
             "sendtitle", "setblock", "setgliding", "setglobalscore", "setlevel", "setmobscore",
             "setowner", "settargetscore", "setscore", "setstance", "shootfireball", "shootpotion",
             "shootskull", "signal", "spring", "suicide", "summon", "addtag", "removetag",
-            "teleport", "threat", "togglelever", "velocity", "weather",
+            "teleport", "threat", "togglelever", "velocity", "weather", "Aura", "CancelEvent",
 
         };
         public List<string> Conditions = new List<string>()

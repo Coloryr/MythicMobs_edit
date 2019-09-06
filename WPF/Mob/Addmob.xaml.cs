@@ -1319,6 +1319,38 @@ namespace MythicMobs_edit.WPF
                         skill += "}";
                         b += skill + " ";
                         break;
+                    case "Aura":
+                        string Aura_ = "{";
+                        Obj_save.Mob.Mechanic_type.Aura Aura = (Obj_save.Mob.Mechanic_type.Aura)a.Option;
+                        Aura_ += "auraName=" + Aura.auraName + ";";
+                        Aura_ += "oS=" + Aura.onStart + ";";
+                        Aura_ += "oT=" + Aura.onTick + ";";
+                        Aura_ += "oE=" + Aura.onEnd + ";";
+                        Aura_ += "c=" + Aura.Charges + ";";
+                        Aura_ += "d=" + Aura.Duration + ";";
+                        Aura_ += "i=" + Aura.Interval + ";";
+                        Aura_ += "maxStacks=" + Aura.maxStacks + ";";
+                        Aura_ += "refreshDuration=" + Aura.refreshDuration + ";";
+                        Aura_ += "mergeSameCaster=" + Aura.mergeSameCaster + ";";
+                        Aura_ += "mergeAll=" + Aura.mergeAll + ";";
+                        Aura_ += "cogd=" + Aura.CancelOnGiveDamage + ";";
+                        Aura_ += "cotd=" + Aura.CancelOnTakeDamage + ";";
+                        Aura_ += "cod=" + Aura.CancelOnDeath + ";";
+                        Aura_ += "cot=" + Aura.CancelOnTeleport + ";";
+                        Aura_ += "cocw=" + Aura.CancelOnChangeWorld + ";";
+                        Aura_ += "cosu=" + Aura.CancelOnSkillUse + ";";
+                        Aura_ += "coq=" + Aura.CancelOnQuit;
+                        Aura_ += "}";
+                        b += Aura_ + " ";
+                        break;
+                    case "CancelEvent":
+                        string CancelEvent_ = "{";
+                        Obj_save.Mob.Mechanic_type.CancelEvent CancelEvent = (Obj_save.Mob.Mechanic_type.CancelEvent)a.Option;
+                        CancelEvent_ += "s=" + CancelEvent.s + ";";
+                        CancelEvent_ += "sync=" + CancelEvent.sync;
+                        CancelEvent_ += "}";
+                        b += CancelEvent_ + " ";
+                        break;
                     default:
                         b += " ";
                         break;
@@ -2018,6 +2050,10 @@ namespace MythicMobs_edit.WPF
                     return new Weather(Mechanic).get_Mechanic_();
                 case "skill":
                     return new Skill(Mechanic).get_Mechanic_();
+                case "Aura":
+                    return new Aura(Mechanic).get_Mechanic_();
+                case "CancelEvent":
+                    return new CancelEvent(Mechanic).get_Mechanic_();
                 default:
                     return Mechanic;
             }
