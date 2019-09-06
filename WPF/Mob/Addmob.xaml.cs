@@ -1164,6 +1164,161 @@ namespace MythicMobs_edit.WPF
                         setscore += "}";
                         b += setscore + " ";
                         break;
+                    case "setstance":
+                        Obj_save.Mob.Mechanic_type.SetStance SetStance = (Obj_save.Mob.Mechanic_type.SetStance)a.Option;
+                        if (string.IsNullOrWhiteSpace(SetStance.stance) == false)
+                        {
+                            string setstance = "{";
+                            setstance += "stance=" + SetStance.stance;
+                            setstance += "}";
+                            b += setstance + " ";
+                        }
+                        break;
+                    case "shootfireball":
+                        string shootfireball = "{";
+                        Obj_save.Mob.Mechanic_type.ShootFireball ShootFireball = (Obj_save.Mob.Mechanic_type.ShootFireball)a.Option;
+                        shootfireball += "y=" + ShootFireball.yield + ";";
+                        shootfireball += "v=" + ShootFireball.velocity + ";";
+                        shootfireball += "i=" + ShootFireball.incendiary + ";";
+                        shootfireball += "ft=" + ShootFireball.fireTicks + ";";
+                        shootfireball += "small=" + ShootFireball.smallfireball + ";";
+                        shootfireball += "ps=" + ShootFireball.playsound;
+                        shootfireball += "}";
+                        b += shootfireball + " ";
+                        break;
+                    case "shootpotion":
+                        string shootpotion = "{";
+                        Obj_save.Mob.Mechanic_type.ShootPotion ShootPotion = (Obj_save.Mob.Mechanic_type.ShootPotion)a.Option;
+                        shootpotion += "t=" + ShootPotion.type + ";";
+                        shootpotion += "d=" + ShootPotion.duration + ";";
+                        shootpotion += "l=" + ShootPotion.level + ";";
+                        shootpotion += "v=" + ShootPotion.velocity + ";";
+                        shootpotion += "p=" + ShootPotion.hasParticles + ";";
+                        shootpotion += "i=" + ShootPotion.hasIcon; 
+                        shootpotion += "}";
+                        b += shootpotion + " ";
+                        break;
+                    case "shootskull":
+                        string shootskull = "{";
+                        Obj_save.Mob.Mechanic_type.ShootSkull ShootSkull = (Obj_save.Mob.Mechanic_type.ShootSkull)a.Option;
+                        shootskull += "y=" + ShootSkull.yield + ";";
+                        shootskull += "v=" + ShootSkull.v + ";";
+                        shootskull += "ps=" + ShootSkull.playsound;
+                        shootskull += "}";
+                        b += shootskull + " ";
+                        break;
+                    case "signal":
+                        string signal = "{";
+                        Obj_save.Mob.Mechanic_type.Signal Signal = (Obj_save.Mob.Mechanic_type.Signal)a.Option;
+                        signal += "s=" + Signal.signal;
+                        signal += "}";
+                        b += signal + " ";
+                        break;
+                    case "spring":
+                        string spring = "{";
+                        Obj_save.Mob.Mechanic_type.Spring Spring = (Obj_save.Mob.Mechanic_type.Spring)a.Option;
+                        spring += "t=" + Spring.type + ";";
+                        spring += "d=" + Spring.duration;
+                        spring += "}";
+                        b += spring + " ";
+                        break;
+                    case "summon":
+                        string summon = "{";
+                        Obj_save.Mob.Mechanic_type.Summon Summon = (Obj_save.Mob.Mechanic_type.Summon)a.Option;
+                        summon += "t=" + Summon.type + ";";
+                        summon += "a=" + Summon.amount + ";";
+                        summon += "r=" + Summon.radius + ";";
+                        summon += "yr=" + Summon.yRadius + ";";
+                        summon += "yu=" + Summon.yRadiusUpOnly + ";";
+                        summon += "os=" + Summon.onSurface + ";";
+                        summon += "ctt=" + Summon.copyThreatTable + ";";
+                        summon += "itt=" + Summon.inheritThreatTable;
+                        summon += "}";
+                        b += summon + " ";
+                        break;
+                    case "addtag":
+                        string addtag = "{";
+                        Obj_save.Mob.Mechanic_type.AddTag AddTag = (Obj_save.Mob.Mechanic_type.AddTag)a.Option;
+                        addtag += "t=" + AddTag.tag;
+                        addtag += "}";
+                        b += addtag + " ";
+                        break;
+                    case "removetag":
+                        string removetag = "{";
+                        Obj_save.Mob.Mechanic_type.RemoveTag RemoveTag = (Obj_save.Mob.Mechanic_type.RemoveTag)a.Option;
+                        removetag += "t=" + RemoveTag.tag;
+                        removetag += "}";
+                        b += removetag + " ";
+                        break;
+                    case "teleport":
+                        string teleport = "{";
+                        Obj_save.Mob.Mechanic_type.Teleport Teleport = (Obj_save.Mob.Mechanic_type.Teleport)a.Option;
+                        teleport += "sh=" + Teleport.spreadh + ";";
+                        teleport += "sv=" + Teleport.spreadv;
+                        teleport += "}";
+                        b += teleport + " ";
+                        break;
+                    case "teleportto":
+                        string teleportto = "{";
+                        Obj_save.Mob.Mechanic_type.TeleportTo TeleportTo = (Obj_save.Mob.Mechanic_type.TeleportTo)a.Option;
+                        teleportto += "l=" + TeleportTo.location + ";";
+                        teleportto += "w=" + TeleportTo.world + ";";
+                        teleportto += "y=" + TeleportTo.yaw + ";";
+                        teleportto += "p=" + TeleportTo.pitch;
+                        teleportto += "}";
+                        b += teleportto + " ";
+                        break;
+                    case "threat":
+                        string threat = "{";
+                        Obj_save.Mob.Mechanic_type.Threat Threat = (Obj_save.Mob.Mechanic_type.Threat)a.Option;
+                        threat += "a=" + Threat.amount;
+                        threat += "}";
+                        b += threat + " ";
+                        break;
+                    case "throw":
+                        string throw_ = "{";
+                        Obj_save.Mob.Mechanic_type.Throw Throw = (Obj_save.Mob.Mechanic_type.Throw)a.Option;
+                        throw_ += "y=" + Throw.velocity + ";";
+                        throw_ += "a=" + Throw.velocityY;
+                        throw_ += "}";
+                        b += throw_ + " ";
+                        break;
+                    case "togglelever":
+                        string togglelever = "{";
+                        Obj_save.Mob.Mechanic_type.ToggleLever ToggleLever = (Obj_save.Mob.Mechanic_type.ToggleLever)a.Option;
+                        togglelever += "d=" + ToggleLever.duration + ";";
+                        togglelever += "x=" + ToggleLever.x + ";";
+                        togglelever += "y=" + ToggleLever.y + ";";
+                        togglelever += "z=" + ToggleLever.z;
+                        togglelever += "}";
+                        b += togglelever + " ";
+                        break;
+                    case "velocity":
+                        string velocity = "{";
+                        Obj_save.Mob.Mechanic_type.Velocity Velocity = (Obj_save.Mob.Mechanic_type.Velocity)a.Option;
+                        velocity += "m=" + Velocity.mode + ";";
+                        velocity += "x=" + Velocity.velocityx + ";";
+                        velocity += "y=" + Velocity.velocityy + ";";
+                        velocity += "z=" + Velocity.velocityz;
+                        velocity += "}";
+                        b += velocity + " ";
+                        break;
+                    case "weather":
+                        string weather = "{";
+                        Obj_save.Mob.Mechanic_type.Weather Weather = (Obj_save.Mob.Mechanic_type.Weather)a.Option;
+                        weather += "type=" + Weather.type + ";";
+                        weather += "duration=" + Weather.duration;
+                        weather += "}";
+                        b += weather + " ";
+                        break;
+                    case "skill":
+                        string skill = "{";
+                        Obj_save.Mob.Mechanic_type.Skill Skill = (Obj_save.Mob.Mechanic_type.Skill)a.Option;
+                        skill += "s=" + Skill.skill + ";";
+                        skill += "sync=" + Skill.forcesync;
+                        skill += "}";
+                        b += skill + " ";
+                        break;
                     default:
                         b += " ";
                         break;
@@ -1362,72 +1517,7 @@ namespace MythicMobs_edit.WPF
                     Tag_Filters = new List<string>()
                 }
             };
-            switch (Skill_Effect_Type.SelectedItem)
-            {
-                case "blockmask":
-                    Effects = new BlockMask(Effects).get_Effects_();
-                    break;
-                case "ender":
-                    Effects = new Ender(Effects).get_Effects_();
-                    break;
-                case "enderbeam":
-                    Effects = new EnderBeam(Effects).get_Effects_();
-                    break;
-                case "explosion":
-                    Effects = new Mob.Effects_type.Explosion(Effects).get_Effects_();
-                    break;
-                case "firework":
-                    Effects = new Firework(Effects).get_Effects_();
-                    break;
-                case "flames":
-                    Effects = new Flames(Effects).get_Effects_();
-                    break;
-                case "geyser":
-                    Effects = new Geyser(Effects).get_Effects_();
-                    break;
-                case "itemspray":
-                    Effects = new ItemSpraycs(Effects).get_Effects_();
-                    break;
-                case "lightning":
-                    Effects = new Mob.Effects_type.Lightning(Effects).get_Effects_();
-                    break;
-                case "particles":
-                    Effects = new Particles(Effects).get_Effects_();
-                    break;
-                case "particlebox":
-                    Effects = new ParticleBox(Effects).get_Effects_();
-                    break;
-                case "particleline":
-                    Effects = new ParticleLine(Effects).get_Effects_();
-                    break;
-                case "particlering":
-                    Effects = new ParticleRing(Effects).get_Effects_();
-                    break;
-                case "particlesphere":
-                    Effects = new ParticleSphere(Effects).get_Effects_();
-                    break;
-                case "particletornado":
-                    Effects = new ParticleTornado(Effects).get_Effects_();
-                    break;
-                case "smoke":
-                    Effects = new Smoke(Effects).get_Effects_();
-                    break;
-                case "smokeswirl":
-                    Effects = new SmokeSwirl(Effects).get_Effects_();
-                    break;
-                case "sound":
-                    Effects = new Sound(Effects).get_Effects_();
-                    break;
-                case "spin":
-                    Effects = new Spin(Effects).get_Effects_();
-                    break;
-                case "glow":
-                    Effects = new Glow(Effects).get_Effects_();
-                    break;
-                default:
-
-                    break;
-            }
+            Effects = Chose_Effects((string)Skill_Effect_Type.SelectedItem, Effects);
             if (Effects != null)
             {
                 Skills_effect.Add(Effects);
@@ -1446,171 +1536,7 @@ namespace MythicMobs_edit.WPF
                     Tag_Filters = new List<string>()
                 }
             };
-            switch (Skill_Mechanic_Type.SelectedItem)
-            {
-                case "activatespawner":
-                    Mechanic = new ActivateSpawner(Mechanic).get_Mechanic_();
-                    break;
-                case "arrowvolley":
-                    Mechanic = new ArrowVolley(Mechanic).get_Mechanic_();
-                    break;
-                case "command":
-                    Mechanic = new Command(Mechanic).get_Mechanic_();
-                    break;
-                case "consume":
-                    Mechanic = new Consume(Mechanic).get_Mechanic_();
-                    break;
-                case "disguise":
-                    Mechanic = new Mob.Mechanic_type.Disguise(Mechanic).get_Mechanic_();
-                    break;
-                case "undisguise":
-                    Mechanic = new Undisguise(Mechanic).get_Mechanic_();
-                    break;
-                case "dismount":
-                    Mechanic = new Dismount(Mechanic).get_Mechanic_();
-                    break;
-                case "currencygive":
-                    Mechanic = new CurrencyGive(Mechanic).get_Mechanic_();
-                    break;
-                case "currencytake":
-                    Mechanic = new CurrencyTake(Mechanic).get_Mechanic_();
-                    break;
-                case "damage":
-                    Mechanic = new Damage(Mechanic).get_Mechanic_();
-                    break;
-                case "basedamage":
-                    Mechanic = new BaseDamage(Mechanic).get_Mechanic_();
-                    break;
-                case "percentDamage":
-                    Mechanic = new PercentDamage(Mechanic).get_Mechanic_();
-                    break;
-                case "decapitate":
-                    Mechanic = new Decapitate(Mechanic).get_Mechanic_();
-                    break;
-                case "doppleganger":
-                    Mechanic = new Doppleganger(Mechanic).get_Mechanic_();
-                    break;
-                case "ejectpassenger":
-                    Mechanic = new EjectPassenger(Mechanic).get_Mechanic_();
-                    break;
-                case "equip":
-                    Mechanic = new Equip(Mechanic).get_Mechanic_();
-                    break;
-                case "explosion":
-                    Mechanic = new Mob.Mechanic_type.Explosion(Mechanic).get_Mechanic_();
-                    break;
-                case "feed":
-                    Mechanic = new Feed(Mechanic).get_Mechanic_();
-                    break;
-                case "forcepull":
-                    Mechanic = new ForcePull(Mechanic).get_Mechanic_();
-                    break;
-                case "heal":
-                    Mechanic = new Heal(Mechanic).get_Mechanic_();
-                    break;
-                case "healpercent":
-                    Mechanic = new HealPercent(Mechanic).get_Mechanic_();
-                    break;
-                case "ignite":
-                    Mechanic = new Ignite(Mechanic).get_Mechanic_();
-                    break;
-                case "jsonmessage":
-                    Mechanic = new JSONMessage(Mechanic).get_Mechanic_();
-                    break;
-                case "jump":
-                    Mechanic = new JSONMessage(Mechanic).get_Mechanic_();
-                    break;
-                case "leap":
-                    Mechanic = new Leap(Mechanic).get_Mechanic_();
-                    break;
-                case "lightning":
-                    Mechanic = new Mob.Mechanic_type.Lightning(Mechanic).get_Mechanic_();
-                    break;
-                case "look":
-                    Mechanic = new Look(Mechanic).get_Mechanic_();
-                    break;
-                case "message":
-                    Mechanic = new Mob.Mechanic_type.Message(Mechanic).get_Mechanic_();
-                    break;
-                case "modifyglobalscore":
-                    Mechanic = new ModifyGlobalScore(Mechanic).get_Mechanic_();
-                    break;
-                case "modifytargetscore":
-                    Mechanic = new ModifyTargetScore(Mechanic).get_Mechanic_();
-                    break;
-                case "modifyscore":
-                    Mechanic = new ModifyScore(Mechanic).get_Mechanic_();
-                    break;
-                case "mount":
-                    Mechanic = new Mount(Mechanic).get_Mechanic_();
-                    break;
-                case "mounttarget":
-                    Mechanic = new MountTarget(Mechanic).get_Mechanic_();
-                    break;
-                case "potion":
-                    Mechanic = new Potion(Mechanic).get_Mechanic_();
-                    break;
-                case "prison":
-                    Mechanic = new Prison(Mechanic).get_Mechanic_();
-                    break;
-                case "pull":
-                    Mechanic = new Pull(Mechanic).get_Mechanic_();
-                    break;
-                case "pushbutton":
-                    Mechanic = new PushButton(Mechanic).get_Mechanic_();
-                    break;
-                case "rally":
-                    Mechanic = new Rally(Mechanic).get_Mechanic_();
-                    break;
-                case "randommessage":
-                    Mechanic = new RandomMessage(Mechanic).get_Mechanic_();
-                    break;
-                case "remount":
-                    Mechanic = new Remount(Mechanic).get_Mechanic_();
-                    break;
-                case "remove":
-                    Mechanic = new Remove(Mechanic).get_Mechanic_();
-                    break;
-                case "runaigoalselector":
-                    Mechanic = new RunAIGoalSelector(Mechanic).get_Mechanic_();
-                    break;
-                case "runaitargetselector":
-                    Mechanic = new RunAITargetSelector(Mechanic).get_Mechanic_();
-                    break;
-                case "actionmessage":
-                    Mechanic = new ActionMessage(Mechanic).get_Mechanic_();
-                    break;
-                case "sendtitle":
-                    Mechanic = new SendTitle(Mechanic).get_Mechanic_();
-                    break;
-                case "setblock":
-                    Mechanic = new SetBlockType(Mechanic).get_Mechanic_();
-                    break;
-                case "setgliding":
-                    Mechanic = new SetGliding(Mechanic).get_Mechanic_();
-                    break;
-                case "setglobalscore":
-                    Mechanic = new SetGlobalScore(Mechanic).get_Mechanic_();
-                    break;
-                case "setlevel":
-                    Mechanic = new SetLevel(Mechanic).get_Mechanic_();
-                    break;
-                case "setmobscore":
-                    Mechanic = new SetMobScore(Mechanic).get_Mechanic_();
-                    break;
-                case "setowner":
-                    Mechanic = new SetOwner(Mechanic).get_Mechanic_();
-                    break;
-                case "settargetscore":
-                    Mechanic = new SetOwner(Mechanic).get_Mechanic_();
-                    break;
-                case "setscore":
-                    Mechanic = new SetScore(Mechanic).get_Mechanic_();
-                    break;
-                default:
-
-                    break;
-            }
+            Mechanic = Chose_Mechanic((string)Skill_Mechanic_Type.SelectedItem, Mechanic);
             if (Mechanic != null)
             {
                 Skills_mechanic.Add(Mechanic);
@@ -1908,72 +1834,7 @@ namespace MythicMobs_edit.WPF
                 return;
             Effects Effects = (Effects)SkillEffect_T.SelectedItem;
             Skills_effect.Remove(Effects);
-            switch (Effects.Type)
-            {
-                case "blockmask":
-                    Effects = new BlockMask(Effects).get_Effects_();
-                    break;
-                case "ender":
-                    Effects = new Ender(Effects).get_Effects_();
-                    break;
-                case "enderbeam":
-                    Effects = new EnderBeam(Effects).get_Effects_();
-                    break;
-                case "explosion":
-                    Effects = new Mob.Effects_type.Explosion(Effects).get_Effects_();
-                    break;
-                case "firework":
-                    Effects = new Firework(Effects).get_Effects_();
-                    break;
-                case "flames":
-                    Effects = new Flames(Effects).get_Effects_();
-                    break;
-                case "geyser":
-                    Effects = new Geyser(Effects).get_Effects_();
-                    break;
-                case "itemspray":
-                    Effects = new ItemSpraycs(Effects).get_Effects_();
-                    break;
-                case "lightning":
-                    Effects = new Mob.Effects_type.Lightning(Effects).get_Effects_();
-                    break;
-                case "particles":
-                    Effects = new Particles(Effects).get_Effects_();
-                    break;
-                case "particlebox":
-                    Effects = new ParticleBox(Effects).get_Effects_();
-                    break;
-                case "particleline":
-                    Effects = new ParticleLine(Effects).get_Effects_();
-                    break;
-                case "particlering":
-                    Effects = new ParticleRing(Effects).get_Effects_();
-                    break;
-                case "particlesphere":
-                    Effects = new ParticleSphere(Effects).get_Effects_();
-                    break;
-                case "particletornado":
-                    Effects = new ParticleTornado(Effects).get_Effects_();
-                    break;
-                case "smoke":
-                    Effects = new Smoke(Effects).get_Effects_();
-                    break;
-                case "smokeswirl":
-                    Effects = new SmokeSwirl(Effects).get_Effects_();
-                    break;
-                case "sound":
-                    Effects = new Sound(Effects).get_Effects_();
-                    break;
-                case "spin":
-                    Effects = new Spin(Effects).get_Effects_();
-                    break;
-                case "glow":
-                    Effects = new Glow(Effects).get_Effects_();
-                    break;
-                default:
-
-                    break;
-            }
+            Effects = Chose_Effects(Effects.Type, Effects);
             Skills_effect.Add(Effects);
             refash_SkillEffect();
         }
@@ -1990,171 +1851,7 @@ namespace MythicMobs_edit.WPF
                 return;
             Mechanic Mechanic = (Mechanic)SkillMechanics_T.SelectedItem;
             Skills_mechanic.Remove(Mechanic);
-            switch (Mechanic.Type)
-            {
-                case "activatespawner":
-                    Mechanic = new ActivateSpawner(Mechanic).get_Mechanic_();
-                    break;
-                case "arrowvolley":
-                    Mechanic = new ArrowVolley(Mechanic).get_Mechanic_();
-                    break;
-                case "command":
-                    Mechanic = new Command(Mechanic).get_Mechanic_();
-                    break;
-                case "consume":
-                    Mechanic = new Consume(Mechanic).get_Mechanic_();
-                    break;
-                case "disguise":
-                    Mechanic = new Mob.Mechanic_type.Disguise(Mechanic).get_Mechanic_();
-                    break;
-                case "undisguise":
-                    Mechanic = new Undisguise(Mechanic).get_Mechanic_();
-                    break;
-                case "dismount":
-                    Mechanic = new Dismount(Mechanic).get_Mechanic_();
-                    break;
-                case "currencygive":
-                    Mechanic = new CurrencyGive(Mechanic).get_Mechanic_();
-                    break;
-                case "currencytake":
-                    Mechanic = new CurrencyTake(Mechanic).get_Mechanic_();
-                    break;
-                case "damage":
-                    Mechanic = new Damage(Mechanic).get_Mechanic_();
-                    break;
-                case "basedamage":
-                    Mechanic = new BaseDamage(Mechanic).get_Mechanic_();
-                    break;
-                case "percentDamage":
-                    Mechanic = new PercentDamage(Mechanic).get_Mechanic_();
-                    break;
-                case "decapitate":
-                    Mechanic = new Decapitate(Mechanic).get_Mechanic_();
-                    break;
-                case "doppleganger":
-                    Mechanic = new Doppleganger(Mechanic).get_Mechanic_();
-                    break;
-                case "ejectpassenger":
-                    Mechanic = new EjectPassenger(Mechanic).get_Mechanic_();
-                    break;
-                case "equip":
-                    Mechanic = new Equip(Mechanic).get_Mechanic_();
-                    break;
-                case "explosion":
-                    Mechanic = new Mob.Mechanic_type.Explosion(Mechanic).get_Mechanic_();
-                    break;
-                case "feed":
-                    Mechanic = new Feed(Mechanic).get_Mechanic_();
-                    break;
-                case "forcepull":
-                    Mechanic = new ForcePull(Mechanic).get_Mechanic_();
-                    break;
-                case "heal":
-                    Mechanic = new Heal(Mechanic).get_Mechanic_();
-                    break;
-                case "healpercent":
-                    Mechanic = new HealPercent(Mechanic).get_Mechanic_();
-                    break;
-                case "ignite":
-                    Mechanic = new Ignite(Mechanic).get_Mechanic_();
-                    break;
-                case "jsonmessage":
-                    Mechanic = new JSONMessage(Mechanic).get_Mechanic_();
-                    break;
-                case "jump":
-                    Mechanic = new JSONMessage(Mechanic).get_Mechanic_();
-                    break;
-                case "leap":
-                    Mechanic = new Leap(Mechanic).get_Mechanic_();
-                    break;
-                case "lightning":
-                    Mechanic = new Mob.Mechanic_type.Lightning(Mechanic).get_Mechanic_();
-                    break;
-                case "look":
-                    Mechanic = new Look(Mechanic).get_Mechanic_();
-                    break;
-                case "message":
-                    Mechanic = new Mob.Mechanic_type.Message(Mechanic).get_Mechanic_();
-                    break;
-                case "modifyglobalscore":
-                    Mechanic = new ModifyGlobalScore(Mechanic).get_Mechanic_();
-                    break;
-                case "modifytargetscore":
-                    Mechanic = new ModifyTargetScore(Mechanic).get_Mechanic_();
-                    break;
-                case "modifyscore":
-                    Mechanic = new ModifyScore(Mechanic).get_Mechanic_();
-                    break;
-                case "mount":
-                    Mechanic = new Mount(Mechanic).get_Mechanic_();
-                    break;
-                case "mounttarget":
-                    Mechanic = new MountTarget(Mechanic).get_Mechanic_();
-                    break;
-                case "potion":
-                    Mechanic = new Potion(Mechanic).get_Mechanic_();
-                    break;
-                case "prison":
-                    Mechanic = new Prison(Mechanic).get_Mechanic_();
-                    break;
-                case "pull":
-                    Mechanic = new Pull(Mechanic).get_Mechanic_();
-                    break;
-                case "pushbutton":
-                    Mechanic = new PushButton(Mechanic).get_Mechanic_();
-                    break;
-                case "rally":
-                    Mechanic = new Rally(Mechanic).get_Mechanic_();
-                    break;
-                case "randommessage":
-                    Mechanic = new RandomMessage(Mechanic).get_Mechanic_();
-                    break;
-                case "remount":
-                    Mechanic = new Remount(Mechanic).get_Mechanic_();
-                    break;
-                case "remove":
-                    Mechanic = new Remove(Mechanic).get_Mechanic_();
-                    break;
-                case "runaigoalselector":
-                    Mechanic = new RunAIGoalSelector(Mechanic).get_Mechanic_();
-                    break;
-                case "runaitargetselector":
-                    Mechanic = new RunAITargetSelector(Mechanic).get_Mechanic_();
-                    break;
-                case "actionmessage":
-                    Mechanic = new ActionMessage(Mechanic).get_Mechanic_();
-                    break;
-                case "sendtitle":
-                    Mechanic = new SendTitle(Mechanic).get_Mechanic_();
-                    break;
-                case "setblock":
-                    Mechanic = new SetBlockType(Mechanic).get_Mechanic_();
-                    break;
-                case "setgliding":
-                    Mechanic = new SetGliding(Mechanic).get_Mechanic_();
-                    break;
-                case "setglobalscore":
-                    Mechanic = new SetGlobalScore(Mechanic).get_Mechanic_();
-                    break;
-                case "setlevel":
-                    Mechanic = new SetLevel(Mechanic).get_Mechanic_();
-                    break;
-                case "setmobscore":
-                    Mechanic = new SetMobScore(Mechanic).get_Mechanic_();
-                    break;
-                case "setowner":
-                    Mechanic = new SetOwner(Mechanic).get_Mechanic_();
-                    break;
-                case "settargetscore":
-                    Mechanic = new SetOwner(Mechanic).get_Mechanic_();
-                    break;
-                case "setscore":
-                    Mechanic = new SetScore(Mechanic).get_Mechanic_();
-                    break;
-                default:
-
-                    break;
-            }
+            Mechanic = Chose_Mechanic(Mechanic.Type, Mechanic);
             Skills_mechanic.Add(Mechanic);
             refash_SkillMechanic();
         }
@@ -2174,6 +1871,204 @@ namespace MythicMobs_edit.WPF
             Conditions = new ConditionsChange(Conditions).get_Conditions_();
             Conditions_L.Add(Conditions);
             refash_Conditions();
+        }
+        private Mechanic Chose_Mechanic(string type, Mechanic Mechanic)
+        {
+            switch (type)
+            {
+                case "activatespawner":
+                    return new ActivateSpawner(Mechanic).get_Mechanic_();
+                case "arrowvolley":
+                    return new ArrowVolley(Mechanic).get_Mechanic_();
+                case "command":
+                    return new Command(Mechanic).get_Mechanic_();
+                case "consume":
+                    return new Consume(Mechanic).get_Mechanic_();
+                case "disguise":
+                    return new Mob.Mechanic_type.Disguise(Mechanic).get_Mechanic_();
+                case "undisguise":
+                    return new Undisguise(Mechanic).get_Mechanic_();
+                case "dismount":
+                    return new Dismount(Mechanic).get_Mechanic_();
+                case "currencygive":
+                    return new CurrencyGive(Mechanic).get_Mechanic_();
+                case "currencytake":
+                    return new CurrencyTake(Mechanic).get_Mechanic_();
+                case "damage":
+                    return new Damage(Mechanic).get_Mechanic_();
+                case "basedamage":
+                    return new BaseDamage(Mechanic).get_Mechanic_();
+                case "percentDamage":
+                    return new PercentDamage(Mechanic).get_Mechanic_();
+                case "decapitate":
+                    return new Decapitate(Mechanic).get_Mechanic_();
+                case "doppleganger":
+                    return new Doppleganger(Mechanic).get_Mechanic_();
+                case "ejectpassenger":
+                    return new EjectPassenger(Mechanic).get_Mechanic_();
+                case "equip":
+                    return new Equip(Mechanic).get_Mechanic_();
+                case "explosion":
+                    return new Mob.Mechanic_type.Explosion(Mechanic).get_Mechanic_();
+                case "feed":
+                    return new Feed(Mechanic).get_Mechanic_();
+                case "forcepull":
+                    return new ForcePull(Mechanic).get_Mechanic_();
+                case "heal":
+                    return new Heal(Mechanic).get_Mechanic_();
+                case "healpercent":
+                    return new HealPercent(Mechanic).get_Mechanic_();
+                case "ignite":
+                    return new Ignite(Mechanic).get_Mechanic_();
+                case "jsonmessage":
+                    return new JSONMessage(Mechanic).get_Mechanic_();
+                case "jump":
+                    return new JSONMessage(Mechanic).get_Mechanic_();
+                case "leap":
+                    return new Leap(Mechanic).get_Mechanic_();
+                case "lightning":
+                    return new Mob.Mechanic_type.Lightning(Mechanic).get_Mechanic_();
+                case "look":
+                    return new Look(Mechanic).get_Mechanic_();
+                case "message":
+                    return new Mob.Mechanic_type.Message(Mechanic).get_Mechanic_();
+                case "modifyglobalscore":
+                    return new ModifyGlobalScore(Mechanic).get_Mechanic_();
+                case "modifytargetscore":
+                    return new ModifyTargetScore(Mechanic).get_Mechanic_();
+                case "modifyscore":
+                    return new ModifyScore(Mechanic).get_Mechanic_();
+                case "mount":
+                    return new Mount(Mechanic).get_Mechanic_();
+                case "mounttarget":
+                    return new MountTarget(Mechanic).get_Mechanic_();
+                case "potion":
+                    return new Potion(Mechanic).get_Mechanic_();
+                case "prison":
+                    return new Prison(Mechanic).get_Mechanic_();
+                case "pull":
+                    return new Pull(Mechanic).get_Mechanic_();
+                case "pushbutton":
+                    return new PushButton(Mechanic).get_Mechanic_();
+                case "rally":
+                    return new Rally(Mechanic).get_Mechanic_();
+                case "randommessage":
+                    return new RandomMessage(Mechanic).get_Mechanic_();
+                case "remount":
+                    return new Remount(Mechanic).get_Mechanic_();
+                case "remove":
+                    return new Remove(Mechanic).get_Mechanic_();
+                case "runaigoalselector":
+                    return new RunAIGoalSelector(Mechanic).get_Mechanic_();
+                case "runaitargetselector":
+                    return new RunAITargetSelector(Mechanic).get_Mechanic_();
+                case "actionmessage":
+                    return new ActionMessage(Mechanic).get_Mechanic_();
+                case "sendtitle":
+                    return new SendTitle(Mechanic).get_Mechanic_();
+                case "setblock":
+                    return new SetBlockType(Mechanic).get_Mechanic_();
+                case "setgliding":
+                    return new SetGliding(Mechanic).get_Mechanic_();
+                case "setglobalscore":
+                    return new SetGlobalScore(Mechanic).get_Mechanic_();
+                case "setlevel":
+                    return new SetLevel(Mechanic).get_Mechanic_();
+                case "setmobscore":
+                    return new SetMobScore(Mechanic).get_Mechanic_();
+                case "setowner":
+                    return new SetOwner(Mechanic).get_Mechanic_();
+                case "settargetscore":
+                    return new SetOwner(Mechanic).get_Mechanic_();
+                case "setscore":
+                    return new SetScore(Mechanic).get_Mechanic_();
+                case "setstance":
+                    return new SetStance(Mechanic).get_Mechanic_();
+                case "shootfireball":
+                    return new ShootFireball(Mechanic).get_Mechanic_();
+                case "shootpotion":
+                    return new ShootPotion(Mechanic).get_Mechanic_();
+                case "shootskull":
+                    return new ShootSkull(Mechanic).get_Mechanic_();
+                case "signal":
+                    return new Signal(Mechanic).get_Mechanic_();
+                case "spring":
+                    return new Spring(Mechanic).get_Mechanic_();
+                case "suicide":
+                    return new Suicide(Mechanic).get_Mechanic_();
+                case "summon":
+                    return new Summon(Mechanic).get_Mechanic_();
+                case "addtag":
+                    return new AddTag(Mechanic).get_Mechanic_();
+                case "removetag":
+                    return new RemoveTag(Mechanic).get_Mechanic_();
+                case "teleport":
+                    return new Teleport(Mechanic).get_Mechanic_();
+                case "teleportto":
+                    return new TeleportTo(Mechanic).get_Mechanic_();
+                case "threat":
+                    return new Threat(Mechanic).get_Mechanic_();
+                case "throw":
+                    return new Throw(Mechanic).get_Mechanic_();
+                case "togglelever":
+                    return new ToggleLever(Mechanic).get_Mechanic_();
+                case "velocity":
+                    return new ToggleLever(Mechanic).get_Mechanic_();
+                case "weather":
+                    return new Weather(Mechanic).get_Mechanic_();
+                case "skill":
+                    return new Skill(Mechanic).get_Mechanic_();
+                default:
+                    return Mechanic;
+            }
+        }
+        private Effects Chose_Effects(string type, Effects Effects)
+        {
+            switch (type)
+            {
+                case "blockmask":
+                    return new BlockMask(Effects).get_Effects_();
+                case "ender":
+                    return new Ender(Effects).get_Effects_();
+                case "enderbeam":
+                    return new EnderBeam(Effects).get_Effects_();
+                case "explosion":
+                    return new Mob.Effects_type.Explosion(Effects).get_Effects_();
+                case "firework":
+                    return new Firework(Effects).get_Effects_();
+                case "flames":
+                    return new Flames(Effects).get_Effects_();
+                case "geyser":
+                    return new Geyser(Effects).get_Effects_();
+                case "itemspray":
+                    return new ItemSpraycs(Effects).get_Effects_();
+                case "lightning":
+                    return new Mob.Effects_type.Lightning(Effects).get_Effects_();
+                case "particles":
+                    return new Particles(Effects).get_Effects_();
+                case "particlebox":
+                    return new ParticleBox(Effects).get_Effects_();
+                case "particleline":
+                    return new ParticleLine(Effects).get_Effects_();
+                case "particlering":
+                    return new ParticleRing(Effects).get_Effects_();
+                case "particlesphere":
+                    return new ParticleSphere(Effects).get_Effects_();
+                case "particletornado":
+                    return new ParticleTornado(Effects).get_Effects_();
+                case "smoke":
+                    return new Smoke(Effects).get_Effects_();
+                case "smokeswirl":
+                    return new SmokeSwirl(Effects).get_Effects_();
+                case "sound":
+                    return new Sound(Effects).get_Effects_();
+                case "spin":
+                    return new Spin(Effects).get_Effects_();
+                case "glow":
+                    return new Glow(Effects).get_Effects_();
+                default:
+                    return Effects;
+            }
         }
     }
 }

@@ -1,29 +1,29 @@
 ﻿namespace MythicMobs_edit.Obj_save.Mob.Mechanic_type
 {
-    public class Potion
+    public class ShootPotion
     {
         /// <summary>
         /// 类型
         /// </summary>
-        public string type { get; set; }
+        public string type { get; set; } = "None";
         /// <summary>
-        /// 类型
+        /// 持续时间
         /// </summary>
         public int duration { get; set; } = 100;
         /// <summary>
-        /// 类型
+        /// 等级
         /// </summary>
         public int level { get; set; } = 1;
         /// <summary>
-        /// 类型
+        /// 速度
         /// </summary>
-        public bool force { get; set; } = false;
+        public int velocity { get; set; } = 1;
         /// <summary>
-        /// 类型
+        /// 有粒子
         /// </summary>
         public bool hasParticles { get; set; } = true;
         /// <summary>
-        /// 类型
+        /// 有粒子图标
         /// </summary>
         public bool hasIcon { get; set; } = true;
     }

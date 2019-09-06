@@ -131,6 +131,7 @@
     <Compile Include="Obj_save\Mob\Mechanic.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ActionMessage.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ActivateSpawner.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\AddTag.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\ArrowVolley.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\BaseDamage.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Command.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Obj_save\Mob\Mechanic_type\Rally.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\RandomMessage.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\Remove.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\RemoveTag.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\RunAIGoalSelector.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\RunAITargetSelector.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\SendTitle.cs" />
@@ -172,7 +174,17 @@
     <Compile Include="Obj_save\Mob\Mechanic_type\SetGlobalScore.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\SetLevel.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\SetScore.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\SetStance.cs" />
     <Compile Include="Obj_save\Mob\Mechanic_type\SetTargetScore.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ShootFireball.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ShootPotion.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\ShootSkull.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Signal.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Spring.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Summon.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Teleport.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\TeleportTo.cs" />
+    <Compile Include="Obj_save\Mob\Mechanic_type\Threat.cs" />
     <Compile Include="Obj_save\Mob\Mob_obj.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\ARMOR_STAND.cs" />
     <Compile Include="Obj_save\Mob\Mob_type\BABY_PIG_ZOMBIE.cs" />
@@ -258,6 +270,18 @@
     </Compile>
     <Compile Include="WPF\Mob\Effects_type\ParticleTornado.xaml.cs">
       <DependentUpon>ParticleTornado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\AddTag.xaml.cs">
+      <DependentUpon>AddTag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\RemoveTag.xaml.cs">
+      <DependentUpon>RemoveTag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\SetStance.xaml.cs">
+      <DependentUpon>SetStance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ShootFireball.xaml.cs">
+      <DependentUpon>ShootFireball.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Effects_type\Smoke.xaml.cs">
       <DependentUpon>Smoke.xaml</DependentUpon>
@@ -427,6 +451,33 @@
     </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\SetTargetScore.xaml.cs">
       <DependentUpon>SetTargetScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ShootPotion.xaml.cs">
+      <DependentUpon>ShootPotion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\ShootSkull.xaml.cs">
+      <DependentUpon>ShootSkull.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Signal.xaml.cs">
+      <DependentUpon>Signal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Spring.xaml.cs">
+      <DependentUpon>Spring.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Suicide.xaml.cs">
+      <DependentUpon>Suicide.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Summon.xaml.cs">
+      <DependentUpon>Summon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Teleport.xaml.cs">
+      <DependentUpon>Teleport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\TeleportTo.xaml.cs">
+      <DependentUpon>TeleportTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Mob\Mechanic_type\Threat.xaml.cs">
+      <DependentUpon>Threat.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Mechanic_type\Undisguise.xaml.cs">
       <DependentUpon>Undisguise.xaml</DependentUpon>
@@ -623,6 +674,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\Effects_type\ParticleTornado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\AddTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\RemoveTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\SetStance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ShootFireball.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -847,6 +914,42 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\Mechanic_type\SetTargetScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ShootPotion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\ShootSkull.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Signal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Spring.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Suicide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Summon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Teleport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\TeleportTo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Mob\Mechanic_type\Threat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
