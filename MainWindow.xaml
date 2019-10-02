@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit"
         mc:Ignorable="d"
-        Title="MythicMobs_edit" Height="376" Width="463" WindowStartupLocation="Manual" ResizeMode="NoResize" Icon="image/方的7.jpg">
+        Title="MythicMobs_edit" Height="376" Width="466" WindowStartupLocation="Manual" ResizeMode="NoResize" Icon="image/方的7.jpg">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="Background" Value="#22FF0000"/>
@@ -25,7 +25,7 @@
         <Image HorizontalAlignment="Left" Height="337" VerticalAlignment="Top" Width="337"
                Source="image/方的7.jpg">
         </Image>
-        <Button Content="添加生物" HorizontalAlignment="Left" Margin="337,0,0,0" VerticalAlignment="Top" Width="110"
+        <Button Content="添加生物" HorizontalAlignment="Left" Margin="337,4,0,0" VerticalAlignment="Top" Width="110"
                 Height="30" Click="Button_Click" Style="{StaticResource Button}"/>
         <Label Content="Color_yr" HorizontalAlignment="Left" Margin="337,294,0,0" VerticalAlignment="Top" FontSize="26"/>
         <CheckBox Content="高斯模糊" HorizontalAlignment="Left" Margin="342,283,0,0" VerticalAlignment="Top"
