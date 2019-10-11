@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Mechanic_type"
         xmlns:Other="clr-namespace:MythicMobs_edit.WPF.Mob.Other" 
         mc:Ignorable="d"
-        Title="机制修改：Weather" Height="431" Width="305"  Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="机制修改：Weather" Height="431" Width="308"  Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="68,32,0,0" Text="{Binding Mechanic.Option.duration}" VerticalAlignment="Top" Width="120"
                  PreviewTextInput="TextCompositionEventArgs" Style="{StaticResource TextBox}"/>

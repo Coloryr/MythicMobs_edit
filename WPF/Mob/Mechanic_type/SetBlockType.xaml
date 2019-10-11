@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Mechanic_type"
         xmlns:Other="clr-namespace:MythicMobs_edit.WPF.Mob.Other" 
         mc:Ignorable="d"
-        Title="机制修改：Set Block Type" Height="426" Width="305"  Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="机制修改：Set Block Type" Height="426" Width="308"  Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="方块" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="44,3,0,0" Text="{Binding Mechanic.Option.material}" VerticalAlignment="Top" Width="120"

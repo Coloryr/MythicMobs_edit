@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Effects_type"
         xmlns:Other="clr-namespace:MythicMobs_edit.WPF.Mob.Other" 
         mc:Ignorable="d"
-        Title="修改粒子效果：Spin" Height="431" Width="305" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="修改粒子效果：Spin" Height="431" Width="308" Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="间隔" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <TextBox HorizontalAlignment="Left" Height="20" Margin="44,3,0,0" Text="{Binding Effects.Option.duration}" VerticalAlignment="Top" Width="120"

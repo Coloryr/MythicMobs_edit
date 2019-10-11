@@ -16,7 +16,7 @@ using System.Windows.Media.Effects;
 using YamlDotNet.Serialization;
 using MythicMobs_edit.WPF.Mob.Mechanic_type;
 
-namespace MythicMobs_edit.WPF
+namespace MythicMobs_edit.WPF.Mob
 {
     /// <summary>
     /// Addmob.xaml 的交互逻辑

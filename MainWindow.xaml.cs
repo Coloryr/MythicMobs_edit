@@ -1,4 +1,5 @@
-﻿using MythicMobs_edit.WPF;
+﻿using MythicMobs_edit.WPF.Item;
+using MythicMobs_edit.WPF.Mob;
 using System.Windows;
 
 namespace MythicMobs_edit
@@ -13,9 +14,14 @@ namespace MythicMobs_edit
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Add_mob(object sender, RoutedEventArgs e)
         {
             new Addmob(gs.IsChecked == true ? true : false).Show();
+            this.Close();
+        }
+        private void Add_item(object sender, RoutedEventArgs e)
+        {
+            new AddItem(gs.IsChecked == true ? true : false).Show();
             this.Close();
         }
     }

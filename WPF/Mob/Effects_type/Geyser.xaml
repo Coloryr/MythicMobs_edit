@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Effects_type"
         xmlns:Other="clr-namespace:MythicMobs_edit.WPF.Mob.Other" 
         mc:Ignorable="d"
-        Title="修改粒子效果：Geyser" Height="461" Width="305"  Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="修改粒子效果：Geyser" Height="461" Width="308"  Background="Black" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="类型" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
         <Label Content="高度" HorizontalAlignment="Left" Margin="5,60,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>

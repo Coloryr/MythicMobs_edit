@@ -26,10 +26,12 @@
                Source="image/方的7.jpg">
         </Image>
         <Button Content="添加生物" HorizontalAlignment="Left" Margin="337,4,0,0" VerticalAlignment="Top" Width="110"
-                Height="30" Click="Button_Click" Style="{StaticResource Button}"/>
+                Height="30" Click="Add_mob" Style="{StaticResource Button}"/>
         <Label Content="Color_yr" HorizontalAlignment="Left" Margin="337,294,0,0" VerticalAlignment="Top" FontSize="26"/>
         <CheckBox Content="高斯模糊" HorizontalAlignment="Left" Margin="342,283,0,0" VerticalAlignment="Top"
                   Style="{StaticResource Check}" Name="gs"/>
+        <Button Content="添加物品" HorizontalAlignment="Left" Margin="337,39,0,0" VerticalAlignment="Top" Width="110"
+                Height="30" Click="Add_item" Style="{StaticResource Button}"/>
 
 
     </Grid>

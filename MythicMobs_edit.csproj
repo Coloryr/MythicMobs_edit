@@ -101,6 +101,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Obj_save\Item\Attributes_obj.cs" />
+    <Compile Include="Obj_save\Item\Body.cs" />
+    <Compile Include="Obj_save\Item\Item_obj.cs" />
+    <Compile Include="Obj_save\Item\List.cs" />
+    <Compile Include="Obj_save\Item\Options.cs" />
     <Compile Include="Obj_save\Mob\AI.cs" />
     <Compile Include="Obj_save\Mob\BossBar.cs" />
     <Compile Include="Obj_save\Mob\Conditions.cs" />
@@ -227,6 +232,12 @@
     <Compile Include="Obj_save\Mob\Options.cs" />
     <Compile Include="Obj_save\Mob\Skill_Tag.cs" />
     <Compile Include="Obj_save\Mob\Triggers.cs" />
+    <Compile Include="WPF\Item\AddItem.xaml.cs">
+      <DependentUpon>AddItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Item\Attributes.xaml.cs">
+      <DependentUpon>Attributes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\Mob\Addmob.xaml.cs">
       <DependentUpon>Addmob.xaml</DependentUpon>
     </Compile>
@@ -636,6 +647,14 @@
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Item\AddItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Item\Attributes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Mob\Addmob.xaml">
       <SubType>Designer</SubType>
@@ -1238,6 +1257,7 @@
   <ItemGroup>
     <Resource Include="image\方的7.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('packages\Fody.6.0.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
