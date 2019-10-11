@@ -10,13 +10,13 @@ namespace MythicMobs_edit.WPF.Item
     /// </summary>
     public partial class Attributes : Window
     {
-        public Attributes_obj obj { get; set; } = new Attributes_obj();
-        public Attributes(string a)
+        public Attributes_obj obj { get; set; }
+        public Attributes(Attributes_obj obj)
         {
             InitializeComponent();
             DataContext = this;
-            Title += a;
-            obj.Name = a;
+            Title += obj.Name;
+            this.obj = obj;
         }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
         {

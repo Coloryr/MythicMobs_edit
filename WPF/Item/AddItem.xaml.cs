@@ -20,7 +20,6 @@ namespace MythicMobs_edit.WPF.Item
         };
 
         private List<string> have_body;
-        public List<Attributes_obj> Attributes_L { get; set; } = new List<Attributes_obj>();
         public AddItem(bool gs)
         {
             InitializeComponent();
@@ -47,15 +46,62 @@ namespace MythicMobs_edit.WPF.Item
         {
             if (Attributes_S.SelectedItem == null)
                 return;
-            Attributes attributes = new Attributes((string)Attributes_S.SelectedItem);
+            Attributes_obj attributes = new Attributes_obj();
             switch (Attributes_S.SelectedItem)
             {
                 case "All":
-                    item.Body.All = attributes.obj_get();
+                    attributes = new Attributes(new Attributes_obj()
+                    {
+                        Name = "All"
+                    }).obj_get();
+                    item.Body.All = attributes;
+                    break;
+                case "MainHand":
+                    attributes = new Attributes(new Attributes_obj()
+                    {
+                        Name = "MainHand"
+                    }).obj_get();
+                    item.Body.MainHand = attributes;
+                    break;
+                case "OffHand":
+                    attributes = new Attributes(new Attributes_obj()
+                    {
+                        Name = "OffHand"
+                    }).obj_get();
+                    item.Body.OffHand = attributes;
+                    break;
+                case "Head":
+                    attributes = new Attributes(new Attributes_obj()
+                    {
+                        Name = "Head"
+                    }).obj_get();
+                    item.Body.Head = attributes;
+                    break;
+                case "Chest":
+                    attributes = new Attributes(new Attributes_obj()
+                    {
+                        Name = "Chest"
+                    }).obj_get();
+                    item.Body.Chest = attributes;
+                    break;
+                case "Legs":
+                    attributes = new Attributes(new Attributes_obj()
+                    {
+                        Name = "Legs"
+                    }).obj_get();
+                    item.Body.Legs = attributes;
+                    break;
+                case "Feet":
+                    attributes = new Attributes(new Attributes_obj()
+                    {
+                        Name = "Feet"
+                    }).obj_get();
+                    item.Body.Feet = attributes;
                     break;
             }
-            Attributes_T.Items.Add(item.Body.All);
+            Attributes_T.Items.Add(attributes);
             have_body.Remove((string)Attributes_S.SelectedItem);
+            Attributes_S.ItemsSource = null;
             Attributes_S.ItemsSource = have_body;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -69,15 +115,21 @@ namespace MythicMobs_edit.WPF.Item
         }
         private void DelectAttributes_TEvent(object sender, RoutedEventArgs e)
         {
-            if (Attributes_T.SelectedItems == null)
+            if (Attributes_T.SelectedItems.Count == 0)
                 return;
-            Attributes_T.Items.Remove(Attributes_T.SelectedItems);
-            Attributes_obj a = (Attributes_obj)Attributes_T.SelectedItems;
-
+            Attributes_obj attributes = (Attributes_obj)Attributes_T.SelectedItems[0];
+            have_body.Add(attributes.Name);
+            Attributes_S.ItemsSource = have_body;
+            Attributes_T.Items.Remove(attributes);
         }
         private void ChangeAttributes_TEvent(object sender, RoutedEventArgs e)
         {
-            
+            if (Attributes_T.SelectedItems.Count == 0)
+                return;
+            Attributes_obj attributes = (Attributes_obj)Attributes_T.SelectedItems[0];
+            Attributes_T.Items.Remove(attributes);
+            attributes = new Attributes(attributes).obj_get();
+            Attributes_T.Items.Add(attributes);
         }
     }
 }

@@ -42,5 +42,6 @@
         /// 移动速度
         /// </summary>
         public int MovementSpeed { get; set; }
+
     }
 }
