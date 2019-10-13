@@ -1,0 +1,18 @@
+﻿<Window x:Class="MythicMobs_edit.WPF.Item.BannerLayers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MythicMobs_edit.WPF.Item"
+        mc:Ignorable="d"
+        Title="Enchantments" Height="113" Width="268" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid Background="Black" Margin="0,0,0,0">
+        <Label Content="颜色" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="条纹" HorizontalAlignment="Left" Margin="5,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Button Content="完成" HorizontalAlignment="Left" Margin="174,53,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource Button}" Click="Button_Click"/>
+        <ComboBox HorizontalAlignment="Left" Margin="44,3,0,0" VerticalAlignment="Top" Width="205" Height="20" Style="{StaticResource ComboBoxStyle}"
+                  IsReadOnly="True" Name="List_C" Text="{Binding obj.color}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="44,28,0,0" VerticalAlignment="Top" Width="205" Height="20" Style="{StaticResource ComboBoxStyle}"
+                  IsReadOnly="True" x:Name="List_P" Text="{Binding obj.pattern}"/>
+    </Grid>
+</Window>

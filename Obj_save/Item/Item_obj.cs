@@ -5,13 +5,9 @@ namespace MythicMobs_edit.Obj_save.Item
     public class Item_obj
     {
         /// <summary>
-        /// 物品名字
-        /// </summary>
-        public string Name { get; set; }
-        /// <summary>
         /// 物品ID
         /// </summary>
-        public string ID { get; set; }
+        public string Id { get; set; }
         /// <summary>
         /// 物品数据
         /// </summary>
@@ -32,6 +28,22 @@ namespace MythicMobs_edit.Obj_save.Item
         /// 子选项
         /// </summary>
         public Options Options { get; set; }
+        /// <summary>
+        /// 附魔
+        /// </summary>
+        public List<string> Enchantments { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<string> Lore { get; set; }
+        /// <summary>
+        /// 药水效果
+        /// </summary>
+        public List<string> PotionEffects { get; set; }
+        /// <summary>
+        /// 旗帜样式
+        /// </summary>
+        public List<string> BannerLayers { get; set; }
         /// <summary>
         /// 允许隐藏特定的属性
         /// </summary>

@@ -3,10 +3,6 @@
     public class Attributes_obj
     {
         /// <summary>
-        /// 部位名字
-        /// </summary>
-        public string Name { get; set; }
-        /// <summary>
         /// 攻速
         /// </summary>
         public int AttackSpeed { get; set; }

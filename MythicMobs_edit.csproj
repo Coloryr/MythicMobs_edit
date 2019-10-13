@@ -102,10 +102,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Obj_save\Item\Attributes_obj.cs" />
+    <Compile Include="Obj_save\Item\BannerLayers_obj.cs" />
     <Compile Include="Obj_save\Item\Body.cs" />
+    <Compile Include="Obj_save\Item\Enchantments_obj.cs" />
     <Compile Include="Obj_save\Item\Item_obj.cs" />
     <Compile Include="Obj_save\Item\List.cs" />
     <Compile Include="Obj_save\Item\Options.cs" />
+    <Compile Include="Obj_save\Item\PotionEffects_obj.cs" />
     <Compile Include="Obj_save\Mob\AI.cs" />
     <Compile Include="Obj_save\Mob\BossBar.cs" />
     <Compile Include="Obj_save\Mob\Conditions.cs" />
@@ -237,6 +240,15 @@
     </Compile>
     <Compile Include="WPF\Item\Attributes.xaml.cs">
       <DependentUpon>Attributes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Item\BannerLayers.xaml.cs">
+      <DependentUpon>BannerLayers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Item\Enchantments.xaml.cs">
+      <DependentUpon>Enchantments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Item\PotionEffects.xaml.cs">
+      <DependentUpon>PotionEffects.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Mob\Addmob.xaml.cs">
       <DependentUpon>Addmob.xaml</DependentUpon>
@@ -626,11 +638,11 @@
     <Compile Include="WPF\Mob\Other\DropsChange.xaml.cs">
       <DependentUpon>DropsChange.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\Other\KillMessages.xaml.cs">
-      <DependentUpon>KillMessages.xaml</DependentUpon>
+    <Compile Include="WPF\Use\MessageEdit.xaml.cs">
+      <DependentUpon>MessageEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Mob\Other\Message.xaml.cs">
-      <DependentUpon>Message.xaml</DependentUpon>
+    <Compile Include="WPF\Use\Message_Box.xaml.cs">
+      <DependentUpon>Message_Box.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -653,6 +665,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\Item\Attributes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Item\BannerLayers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Item\Enchantments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Item\PotionEffects.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1172,11 +1196,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\Other\KillMessages.xaml">
+    <Page Include="WPF\Use\MessageEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Mob\Other\Message.xaml">
+    <Page Include="WPF\Use\Message_Box.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

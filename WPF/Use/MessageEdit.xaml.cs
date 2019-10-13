@@ -1,14 +1,14 @@
 ﻿using System.Windows;
 
-namespace MythicMobs_edit.WPF.Mob.Other
+namespace MythicMobs_edit.WPF.Use
 {
     /// <summary>
     /// KillMessages.xaml 的交互逻辑
     /// </summary>
-    public partial class KillMessages : Window
+    public partial class MessageEdit : Window
     {
         public string KillMessages_ { get; set; } = "";
-        public KillMessages(string KillMessages, bool show)
+        public MessageEdit(string KillMessages, bool show)
         {
             InitializeComponent();
             DataContext = this;

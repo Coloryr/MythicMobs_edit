@@ -1,5 +1,5 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
-using MythicMobs_edit.WPF.Mob.Other;
+using MythicMobs_edit.WPF.Use;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
@@ -53,13 +53,13 @@ namespace MythicMobs_edit.WPF.Mob.Mechanic_type
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ((Obj_save.Mob.Mechanic_type.SendTitle)Mechanic.Option).title =
-                new KillMessages(((Obj_save.Mob.Mechanic_type.SendTitle)Mechanic.Option).title, false).KillMessages_set();
+                new MessageEdit(((Obj_save.Mob.Mechanic_type.SendTitle)Mechanic.Option).title, false).KillMessages_set();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             ((Obj_save.Mob.Mechanic_type.SendTitle)Mechanic.Option).subtitle =
-                new KillMessages(((Obj_save.Mob.Mechanic_type.SendTitle)Mechanic.Option).subtitle, false).KillMessages_set();
+                new MessageEdit(((Obj_save.Mob.Mechanic_type.SendTitle)Mechanic.Option).subtitle, false).KillMessages_set();
         }
     }
 }

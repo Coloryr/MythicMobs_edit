@@ -1,0 +1,21 @@
+﻿<Window x:Class="MythicMobs_edit.WPF.Item.PotionEffects"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MythicMobs_edit.WPF.Item"
+        mc:Ignorable="d"
+        Title="Enchantments" Height="135.5" Width="268" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid Background="Black" Margin="0,0,0,0">
+        <Label Content="药水类型" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <Label Content="药水时间" HorizontalAlignment="Left" Margin="5,25,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,27,0,0" TextWrapping="Wrap" Text="{Binding obj.duration}" VerticalAlignment="Top"
+                 Width="181" Style="{StaticResource TextBox}" PreviewTextInput="TextCompositionEventArgs"/>
+        <Button Content="完成" HorizontalAlignment="Left" Margin="174,77,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource Button}" Click="Button_Click"/>
+        <Label Content="药水等级" HorizontalAlignment="Left" Margin="5,50,0,0" VerticalAlignment="Top" Style="{StaticResource Label}"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="68,52,0,0" TextWrapping="Wrap" Text="{Binding obj.level}" VerticalAlignment="Top"
+                 Width="181" Style="{StaticResource TextBox}" PreviewTextInput="TextCompositionEventArgs"/>
+        <ComboBox HorizontalAlignment="Left" Margin="68,3,0,0" VerticalAlignment="Top" Width="181" Height="20" Style="{StaticResource ComboBoxStyle}"
+                  IsReadOnly="True" Name="List_E" Text="{Binding obj.type}"/>
+    </Grid>
+</Window>

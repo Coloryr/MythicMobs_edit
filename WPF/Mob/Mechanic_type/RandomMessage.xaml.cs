@@ -1,5 +1,5 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
-using MythicMobs_edit.WPF.Mob.Other;
+using MythicMobs_edit.WPF.Use;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -67,7 +67,7 @@ namespace MythicMobs_edit.WPF.Mob.Mechanic_type
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string a = new KillMessages("message", false).KillMessages_set();
+            string a = new MessageEdit("message", false).KillMessages_set();
             if (string.IsNullOrWhiteSpace(a) == false)
             {
                 Message_T.Items.Add(a);
@@ -87,7 +87,7 @@ namespace MythicMobs_edit.WPF.Mob.Mechanic_type
                 return;
             string message = (string)Message_T.SelectedItem;
             Messages.Remove(message);
-            message = new KillMessages(message, false).KillMessages_set();
+            message = new MessageEdit(message, false).KillMessages_set();
             Messages.Add(message);
             refash_Messages();
         }

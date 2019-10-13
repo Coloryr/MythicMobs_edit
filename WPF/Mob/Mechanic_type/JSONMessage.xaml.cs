@@ -1,5 +1,5 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
-using MythicMobs_edit.WPF.Mob.Other;
+using MythicMobs_edit.WPF.Use;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
@@ -53,7 +53,7 @@ namespace MythicMobs_edit.WPF.Mob.Mechanic_type
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
             Obj_save.Mob.Mechanic_type.JSONMessage JSONMessage = (Obj_save.Mob.Mechanic_type.JSONMessage)Mechanic.Option;
-            JSONMessage.message = new KillMessages(JSONMessage.message, false).KillMessages_set();
+            JSONMessage.message = new MessageEdit(JSONMessage.message, false).KillMessages_set();
             Text_.Text = JSONMessage.message;
         }
     }

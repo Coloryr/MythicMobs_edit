@@ -2,6 +2,7 @@
 using MythicMobs_edit.WPF.Mob.Mob_type;
 using MythicMobs_edit.WPF.Mob.Effects_type;
 using MythicMobs_edit.WPF.Mob.Other;
+using MythicMobs_edit.WPF.Use;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -1532,7 +1533,7 @@ namespace MythicMobs_edit.WPF.Mob
         }
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            string KillMessages = new KillMessages("击杀", true).KillMessages_set();
+            string KillMessages = new MessageEdit("击杀", true).KillMessages_set();
             KillMessages_L.Add(KillMessages);
             KillMessages_T.Items.Add(KillMessages);
         }
@@ -1848,7 +1849,7 @@ namespace MythicMobs_edit.WPF.Mob
             if (KillMessages_T.SelectedItem != null)
             {
                 KillMessages_L.Remove((string)KillMessages_T.SelectedItem);
-                string KillMessages = new KillMessages((string)KillMessages_T.SelectedItem, true).KillMessages_set();
+                string KillMessages = new MessageEdit((string)KillMessages_T.SelectedItem, true).KillMessages_set();
                 KillMessages_L.Add(KillMessages);
                 refash_KillMessages();
             }

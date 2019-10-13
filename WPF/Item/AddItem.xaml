@@ -44,22 +44,22 @@
                     <Label Content="数量" HorizontalAlignment="Left" Height="25" Margin="17,100,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
 
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,4,0,0" Style="{StaticResource TextBox}"
-                             VerticalAlignment="Top" Width="243" Text="{Binding MobName}" x:Name ="Item_Name"/>
+                             VerticalAlignment="Top" Width="243" Text="{Binding item_Name}"/>
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,29,0,0" Style="{StaticResource TextBox}"
-                             VerticalAlignment="Top" Width="243" Text="{Binding Display}" x:Name ="Iten_ID"/>
+                             VerticalAlignment="Top" Width="243" Text="{Binding item.Id}"/>
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,54,0,0" Style="{StaticResource TextBox}"
-                             VerticalAlignment="Top" Width="243" Text="{Binding Mob.Health}" x:Name ="Item_Data" PreviewTextInput="TextCompositionEventArgs"/>
+                             VerticalAlignment="Top" Width="243" Text="{Binding item.Data}" PreviewTextInput="TextCompositionEventArgs"/>
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,79,0,0" Style="{StaticResource TextBox}"
-                             VerticalAlignment="Top" Width="243" Text="{Binding Mob.Damage}" x:Name ="Item_Display"/>
+                             VerticalAlignment="Top" Width="243" Text="{Binding item.Display}"/>
                     <TextBox HorizontalAlignment="Left" Height="20" Margin="70,104,0,0" Style="{StaticResource TextBox}"
-                             VerticalAlignment="Top" Width="243" Text="{Binding Mob.Armor}" x:Name ="Item_Amount" PreviewTextInput="TextCompositionEventArgs"/>
+                             VerticalAlignment="Top" Width="243" Text="{Binding item.Amount}" PreviewTextInput="TextCompositionEventArgs"/>
                 </Grid>
             </Expander>
             <Expander Header="物品属性" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFFFFF" Width="318">
-                <Grid Height="254">
+                <Grid>
                     <Label Content="部位选择" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="7,0,0,0"/>
                     <ComboBox HorizontalAlignment="Left" Margin="75,2,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
-                              Width="172" Height="20" x:Name="Attributes_S" Text="{Binding AI_Goal_T}" IsReadOnly="True"/>
+                              Width="172" Height="20" x:Name="Attributes_S" IsReadOnly="True"/>
                     <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="252,2,0,0" VerticalAlignment="Top" Width="60" 
                             Click="Attributes_Add" Style="{StaticResource Button}"/>
                     <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="309" x:Name="Attributes_T"
@@ -76,6 +76,134 @@
                             </ContextMenu>
                         </ListView.ContextMenu>
                     </ListView>
+                </Grid>
+            </Expander>
+            <Expander Header="物品选项" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFFFFF" Width="318">
+                <Grid>
+                    <Label Content="花费的经验" HorizontalAlignment="Left" Height="25" Margin="73,0,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+                    <TextBox HorizontalAlignment="Left" Height="20" Margin="148,3,0,0" Style="{StaticResource TextBox}" IsEnabled="False"
+                             VerticalAlignment="Top" Width="164" Text="{Binding Mob.Armor}" x:Name ="RepaireCost" PreviewTextInput="TextCompositionEventArgs"/>
+                    <CheckBox Content="可以修复" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Style="{StaticResource Check}" 
+                              IsChecked="{Binding obj.Options.Repairable}" Name="Optiong_Repairable" Click="CheckBox_Check"/>
+                    <CheckBox Content="不可损坏" HorizontalAlignment="Left" Margin="5,25,0,0" VerticalAlignment="Top" Style="{StaticResource Check}" IsChecked="{Binding obj.Options.Unbreakable}"/>
+                    <Label Content="头颅设置" HorizontalAlignment="Left" Height="25" Margin="5,45,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+                    <TextBox HorizontalAlignment="Left" Height="20" Margin="68,78,0,0" Style="{StaticResource TextBox}"
+                        VerticalAlignment="Top" Width="244" Text="{Binding obj.Options.Player}" x:Name ="Player" PreviewTextInput="TextCompositionEventArgs"/>
+                    <Label Content="玩家名字" HorizontalAlignment="Left" Height="25" Margin="5,75,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+                    <Label Content="头颅材质" HorizontalAlignment="Left" Height="25" Margin="5,105,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+                    <TextBox HorizontalAlignment="Left" Height="20" Margin="68,108,0,0" Style="{StaticResource TextBox}"
+                        VerticalAlignment="Top" Width="244" Text="{Binding obj.Options.SkinTexture}" x:Name ="Skin" PreviewTextInput="TextCompositionEventArgs"/>
+                    <Label Content="物品颜色" HorizontalAlignment="Left" Height="25" Margin="5,135,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
+                    <TextBox HorizontalAlignment="Left" Height="20" Margin="68,138,0,0" Style="{StaticResource TextBox}"
+                        VerticalAlignment="Top" Width="244" Text="{Binding obj.Options.Color}" x:Name ="Color" PreviewTextInput="TextCompositionEventArgs"/>
+                </Grid>
+            </Expander>
+            <Expander Header="物品附魔" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFFFFF" Width="318">
+                <Grid>
+                    <Label Content="附魔属性" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="7,0,0,0"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="75,2,0,0" VerticalAlignment="Top" Style="{StaticResource ComboBoxStyle}"
+                        Width="172" Height="20" x:Name="Enchantments_S" IsReadOnly="True"/>
+                    <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="252,2,0,0" VerticalAlignment="Top" Width="60" 
+                        Click="Enchantments_Add" Style="{StaticResource Button}"/>
+                    <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="309" x:Name="Enchantments_T"
+                        Style="{StaticResource ListViewStyle1}" Margin="3,27,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="附魔类型" Width="240" DisplayMemberBinding="{Binding ID}"/>
+                                <GridViewColumn Header="等级" Width="40" DisplayMemberBinding="{Binding Level}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="删除" Click="DelectEnchantments_TEvent"/>
+                                <MenuItem Header="修改" Click="ChangeEnchantments_TEvent"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Grid>
+            </Expander>
+            <Expander Header="Lore" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFFFFF" Width="318">
+                <Grid>
+                    <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="246,140,0,0" VerticalAlignment="Top" Width="60" 
+                        Click="Lore_Add" Style="{StaticResource Button}"/>
+                    <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="309" x:Name="Lore_T"
+                        Style="{StaticResource ListViewStyle1}" Margin="7,0,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Lore" Width="280" DisplayMemberBinding="{Binding StringFormat=string}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="删除" Click="DelectLore_TEvent"/>
+                                <MenuItem Header="修改" Click="ChangeLore_TEvent"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Grid>
+            </Expander>
+            <Expander Header="药水效果" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFFFFF" Width="318">
+                <Grid>
+                    <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="246,140,0,0" VerticalAlignment="Top" Width="60" 
+                            Click="PotionEffects_Add" Style="{StaticResource Button}"/>
+                    <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="309" x:Name="PotionEffects_T"
+                        Style="{StaticResource ListViewStyle1}" Margin="7,0,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="药水效果" Width="200" DisplayMemberBinding="{Binding type}"/>
+                                <GridViewColumn Header="时间" Width="40" DisplayMemberBinding="{Binding duration}"/>
+                                <GridViewColumn Header="等级" Width="40" DisplayMemberBinding="{Binding level}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="删除" Click="DelectPotionEffect_TEvent"/>
+                                <MenuItem Header="修改" Click="ChangePotionEffect_TEvent"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Grid>
+            </Expander>
+            <Expander Header="旗帜条纹" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFFFFF" Width="318">
+                <Grid>
+                    <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="246,140,0,0" VerticalAlignment="Top" Width="60" 
+                        Click="BannerLayers_Add" Style="{StaticResource Button}"/>
+                    <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="309" x:Name="BannerLayers_T"
+                        Style="{StaticResource ListViewStyle1}" Margin="7,0,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="颜色" Width="80" DisplayMemberBinding="{Binding color}"/>
+                                <GridViewColumn Header="条纹" Width="200" DisplayMemberBinding="{Binding pattern}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="删除" Click="DelectBannerLayers_TEvent"/>
+                                <MenuItem Header="修改" Click="ChangeBannerLayers_TEvent"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </Grid>
+            </Expander>
+            <Expander Header="隐藏属性" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFFFFF" Width="318">
+                <Grid>
+                    <Button Content="添加" HorizontalAlignment="Left" Height="20" Margin="246,140,0,0" VerticalAlignment="Top" Width="60" 
+                        Click="Hide_Add" Style="{StaticResource Button}"/>
+                    <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="309" x:Name="Hide_T"
+                        Style="{StaticResource ListViewStyle1}" Margin="7,0,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="属性" Width="280" DisplayMemberBinding="{Binding StringFormat=string}"/>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="删除" Click="DelectHide_TEvent"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                    <ComboBox HorizontalAlignment="Left" Margin="7,139,0,0" VerticalAlignment="Top" Width="234" Style="{StaticResource ComboBoxStyle}"
+                              Height="20" IsReadOnly="True" Name="Hide_S"/>
                 </Grid>
             </Expander>
         </StackPanel>

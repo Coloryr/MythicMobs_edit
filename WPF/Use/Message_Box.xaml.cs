@@ -1,17 +1,18 @@
 ﻿using System.Windows;
 
-namespace MythicMobs_edit.WPF.Mob.Other
+namespace MythicMobs_edit.WPF.Use
 {
     /// <summary>
     /// Message.xaml 的交互逻辑
     /// </summary>
-    public partial class Message : Window
+    public partial class Message_Box : Window
     {
-        public Message(string a, string b = "")
+        public Message_Box(string a, string b = "")
         {
             InitializeComponent();
             show.Content = a;
             Title = b;
+            ShowDialog();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

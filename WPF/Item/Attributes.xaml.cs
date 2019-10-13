@@ -15,7 +15,6 @@ namespace MythicMobs_edit.WPF.Item
         {
             InitializeComponent();
             DataContext = this;
-            Title += obj.Name;
             this.obj = obj;
         }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)

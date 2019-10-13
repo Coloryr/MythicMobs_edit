@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Other"
         mc:Ignorable="d"
         Title="掉落物修改" Height="150" Width="228" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/image/方的7.jpg" WindowStartupLocation="CenterScreen">
     <Grid Background="Black" Margin="0,0,0,0">
