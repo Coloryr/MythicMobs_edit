@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MythicMobs_edit.WPF.Mob.Other"
         mc:Ignorable="d"
-        Title="Condition修改" Height="96" Width="298" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/image/方的7.jpg">
+        Title="Condition修改" Height="96" Width="298" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/MythicMobs_edit;component/image/方的7.jpg" Closing="Window_Closing">
     <Grid Background="Black" Margin="0,0,0,0">
         <Label Content="条件参数" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Style="{StaticResource Label}" Margin="5,30,0,0"/>
 

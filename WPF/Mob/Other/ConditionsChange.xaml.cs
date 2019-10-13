@@ -1,5 +1,7 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
+using MythicMobs_edit.WPF.Use;
 using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -273,7 +275,19 @@ namespace MythicMobs_edit.WPF.Mob.Other
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            if (string.IsNullOrWhiteSpace(Conditions.Type))
+                new Message_Box("请选择类型");
+            else
+                Close();
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Conditions.Type))
+            {
+                new Message_Box("请选择类型");
+                e.Cancel = true;
+            }
         }
     }
 }

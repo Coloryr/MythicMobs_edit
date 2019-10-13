@@ -1,4 +1,6 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
+using MythicMobs_edit.WPF.Use;
+using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
@@ -22,16 +24,28 @@ namespace MythicMobs_edit.WPF.Mob.Other
             ShowDialog();
             return Drops;
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
         private void TextCompositionEventArgs(object sender, TextCompositionEventArgs e)
         {
             Regex re = new Regex("[^0-9.-]+");
 
             e.Handled = re.IsMatch(e.Text);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Drops.Type))
+                new Message_Box("请选择类型");
+            else
+                Close();
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Drops.Type))
+            {
+                new Message_Box("请选择类型");
+                e.Cancel = true;
+            }
         }
     }
 }

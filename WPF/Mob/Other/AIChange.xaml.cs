@@ -1,4 +1,6 @@
 ﻿using MythicMobs_edit.Obj_save.Mob;
+using MythicMobs_edit.WPF.Use;
+using System.ComponentModel;
 using System.Windows;
 
 namespace MythicMobs_edit.WPF.Mob.Other
@@ -23,7 +25,19 @@ namespace MythicMobs_edit.WPF.Mob.Other
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            if (string.IsNullOrWhiteSpace(AI_.Type))
+                new Message_Box("请输入类型");
+            else
+                Close();
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(AI_.Type))
+            {
+                new Message_Box("请输入类型");
+                e.Cancel = true;
+            }
         }
     }
 }

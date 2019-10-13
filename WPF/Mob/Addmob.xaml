@@ -279,7 +279,7 @@
                 </Grid>
             </Expander>
             <Expander Header="生物特殊设置" Foreground="#FFFFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319">
-                <StackPanel HorizontalAlignment="Left" Height="290" Margin="0,0,0,0" VerticalAlignment="Top" Width="319" x:Name="panel"/>
+                <StackPanel HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="319" x:Name="panel"/>
             </Expander>
             <Expander Header="怪物装备" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFFFFF" Width="319">
                 <Grid Height="88" Width="319">
