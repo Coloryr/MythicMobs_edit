@@ -91,7 +91,7 @@
                                     </Trigger>
                                     <!--下拉框背景色-->
                                     <Trigger Property="IsHighlighted" Value="True">
-                                        <Setter TargetName="Back" Property="Background" Value="#AA5EBDD3"></Setter>
+                                        <Setter TargetName="Back" Property="Background" Value="#FF5EBDD3"></Setter>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -124,7 +124,7 @@
                                 <!--下拉幕布边界背景设置 MaxHeight="{TemplateBinding MaxDropDownHeight}"-->
                                 <ScrollViewer Margin="0,0,0,0" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" BorderBrush="#AA5EBDD3" BorderThickness="2">
                                     <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
-                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="#445EBDD3" TextBlock.Foreground="#FFFFFFFF"/>
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="#BB303030" TextBlock.Foreground="#FFFFFFFF"/>
                                 </ScrollViewer>
                             </Border>
                         </Popup>
