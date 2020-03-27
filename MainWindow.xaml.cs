@@ -1,5 +1,6 @@
 ﻿using MythicMobs_edit.WPF.Item;
 using MythicMobs_edit.WPF.Mob;
+using MythicMobs_edit.WPF.Spawners;
 using System.Windows;
 
 namespace MythicMobs_edit
@@ -22,6 +23,11 @@ namespace MythicMobs_edit
         private void Add_item(object sender, RoutedEventArgs e)
         {
             new AddItem(gs.IsChecked == true ? true : false).Show();
+            this.Close();
+        }
+        private void test(object sender, RoutedEventArgs e)
+        {
+            new AddSpawners().Show();
             this.Close();
         }
     }

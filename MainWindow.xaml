@@ -32,6 +32,8 @@
                   Style="{StaticResource Check}" Name="gs"/>
         <Button Content="添加物品" HorizontalAlignment="Left" Margin="337,39,0,0" VerticalAlignment="Top" Width="110"
                 Height="30" Click="Add_item" Style="{StaticResource Button}"/>
+        <Button Content="test" HorizontalAlignment="Left" Margin="337,74,0,0" VerticalAlignment="Top" Width="110"
+            Height="30" Click="test" Style="{StaticResource Button}"/>
 
 
     </Grid>

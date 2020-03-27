@@ -4,15 +4,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MythicMobs_edit 添加生物" Height="746" Width="1280" ResizeMode="CanMinimize" Foreground="Black" Icon="/MythicMobs_edit;component/image/方的7.jpg">
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0.5"/>
-                <GradientStop Color="#FF252525" Offset="1"/>
-                <GradientStop Color="#FF252525"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+        Title="MythicMobs_edit 添加生物" Height="746" Width="1280" ResizeMode="CanMinimize"
+        Icon="/MythicMobs_edit;component/image/方的7.jpg" Loaded="Window_Loaded" Background="Transparent">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" />
+    </WindowChrome.WindowChrome>
+    <Grid Background="#00FFFFFF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -29,12 +26,12 @@
             </StackPanel.Effect>
         </StackPanel>
 
-        <TextBox Background="#AA898989" Name="Out" Style="{StaticResource TextBox}" Grid.Column="3" RenderTransformOrigin="0.0,0.0" TextWrapping="Wrap"/>
+        <TextBox Margin="0,30,0,0" Background="#AA898989" Name="Out" Style="{StaticResource TextBox}" Grid.Column="3" RenderTransformOrigin="0.0,0.0" TextWrapping="Wrap"/>
         <Button Content="返回" HorizontalAlignment="Left" Height="24" Margin="213,681,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Return" Grid.Column="2"/>
         <Button Content="就决定是你了" HorizontalAlignment="Left" Height="24" Margin="113,681,0,0" VerticalAlignment="Top" Width="95" Style="{StaticResource Button}"
                 Click="Button_Click" Grid.Column="2"/>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Height="717">
+        <StackPanel Margin="0,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Height="717" Background="#00FFFFFF">
             <Expander Header="基础设置" Foreground="#FFFFFFFF"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" IsExpanded="True">
                 <Grid>
                     <Label Content="生物名字" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource Label}"/>
@@ -200,7 +197,7 @@
                 </Grid>
             </Expander>
         </StackPanel>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="717" VerticalAlignment="Top" Width="319">
+        <StackPanel Margin="0,30,0,0" Grid.Column="1" HorizontalAlignment="Left" Height="717" VerticalAlignment="Top" Width="319">
             <Expander Header="生物掉落表" Foreground="#FFFFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Width="319">
                 <Grid Height="168" Width="319">
                     <Label Content="掉落类型选择" HorizontalAlignment="Left" Margin="0,140,0,0" VerticalAlignment="Top" Style="{StaticResource Label}" Width="83"/>
@@ -385,7 +382,7 @@
                 </Grid>
             </Expander>
         </StackPanel>
-        <StackPanel Grid.Column="2" HorizontalAlignment="Left" Height="678" VerticalAlignment="Top" Width="318">
+        <StackPanel Margin="0,30,0,0" Grid.Column="2" HorizontalAlignment="Left" Height="678" VerticalAlignment="Top" Width="318">
             <Expander Header="技能-机制" HorizontalAlignment="Left" VerticalAlignment="Top" Width="318" Foreground="White">
                 <Grid Height="190">
                     <ListView HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="313" x:Name="SkillMechanics_T"
