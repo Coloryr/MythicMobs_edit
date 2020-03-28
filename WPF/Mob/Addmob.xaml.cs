@@ -1,30 +1,31 @@
-﻿using MythicMobs_edit.Obj_save.Mob;
-using MythicMobs_edit.WPF.Mob.Mob_type;
+﻿using MahApps.Metro.Controls;
+using MythicMobs_edit.Obj_save.Mob;
 using MythicMobs_edit.WPF.Mob.Effects_type;
+using MythicMobs_edit.WPF.Mob.Mechanic_type;
+using MythicMobs_edit.WPF.Mob.Mob_type;
 using MythicMobs_edit.WPF.Mob.Other;
 using MythicMobs_edit.WPF.Use;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media.Effects;
 using YamlDotNet.Serialization;
-using MythicMobs_edit.WPF.Mob.Mechanic_type;
-using System.Runtime.InteropServices;
-using System.Windows.Interop;
 
 namespace MythicMobs_edit.WPF.Mob
 {
     /// <summary>
     /// Addmob.xaml 的交互逻辑
     /// </summary>
-    public partial class Addmob : Window
+    public partial class Addmob : MetroWindow
     {
         [DllImport("user32.dll")]
         internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
@@ -2157,7 +2158,7 @@ namespace MythicMobs_edit.WPF.Mob
                 case "spin":
                     return new Spin(Effects).get_Effects_();
                 case "glow":
-                    return new Glow(Effects).get_Effects_();
+                    return new Effects_type.Glow(Effects).get_Effects_();
                 default:
                     return Effects;
             }
