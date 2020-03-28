@@ -4,13 +4,14 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
+using Walterlv.Windows.Effects;
 
 namespace MythicMobs_edit.WPF.Spawners
 {
     /// <summary>
     /// AddSpawners.xaml 的交互逻辑
     /// </summary>
-    public partial class AddSpawners : MetroWindow
+    public partial class AddSpawners : Window
     {
         [DllImport("user32.dll")]
         internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
@@ -76,6 +77,7 @@ namespace MythicMobs_edit.WPF.Spawners
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //new WindowAccentCompositor(this).IsEnabled = true;
             EnableBlur();
         }
     }

@@ -25,7 +25,7 @@ namespace MythicMobs_edit.WPF.Mob
     /// <summary>
     /// Addmob.xaml 的交互逻辑
     /// </summary>
-    public partial class Addmob : MetroWindow
+    public partial class Addmob : Window
     {
         [DllImport("user32.dll")]
         internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
