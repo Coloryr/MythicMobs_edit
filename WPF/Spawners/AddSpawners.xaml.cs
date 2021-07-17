@@ -1,10 +1,9 @@
-﻿using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
-using Walterlv.Windows.Effects;
+
 
 namespace MythicMobs_edit.WPF.Spawners
 {

@@ -1,5 +1,4 @@
-﻿using MahApps.Metro.Controls;
-using MythicMobs_edit.Obj_save.Mob;
+﻿using MythicMobs_edit.Obj_save.Mob;
 using MythicMobs_edit.WPF.Mob.Effects_type;
 using MythicMobs_edit.WPF.Mob.Mechanic_type;
 using MythicMobs_edit.WPF.Mob.Mob_type;
